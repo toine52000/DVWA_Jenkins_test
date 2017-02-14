@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - HTMLPurifier_Lexer_DirectLex</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.html">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.html">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.html">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.html">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.html">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.html">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.html">Classes</a>
+          </li>
+          <li class="separator">HTMLPurifier_Lexer_DirectLex</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#tasks">Tasks</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Lexer/DirectLex.php.html#line13">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>HTMLPurifier_Lexer_DirectLex</h1>
+        <h4>Our in-house implementation of a parser.</h4>
+        <p>A pure PHP parser, DirectLex has absolutely no dependencies, making<br/>it a reasonably good default for PHP4. Written with efficiency in mind,<br/>it can be four times faster than HTMLPurifier_Lexer_PEARSax3, although it<br/>pales in comparison to HTMLPurifier_Lexer_DOMLex.</p>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class HTMLPurifier_Lexer_DirectLex
+                extends <a title="HTMLPurifier_Lexer" href="../classes/HTMLPurifier_Lexer.html">HTMLPurifier_Lexer</a>
+            {<br/><ul class="none"><li>// members</li><li>public boolean <a href="#members">$tracksLineNumbers</a> =
+                        true;
+                    </li><li>protected string <a href="#members">$_whitespace</a> =
+                        "\x20\x09\x0D\x0A";
+                    </li></ul><ul class="none"><li>// Inherited members from <span title="HTMLPurifier_Lexer">HTMLPurifier_Lexer</span></li><li>public boolean <a href="#members">$tracksLineNumbers</a>;
+                        </li><li>protected array <a href="#members">$_special_entity2str</a>;
+                        </li></ul><ul class="none"><li>// methods</li><li>protected void <a title="HTMLPurifier_Lexer_DirectLex" href="../classes/HTMLPurifier_Lexer_DirectLex/scriptCallback.html">scriptCallback</a>()
+                    </li><li>public void <a title="HTMLPurifier_Lexer_DirectLex" href="../classes/HTMLPurifier_Lexer_DirectLex/tokenizeHTML.html">tokenizeHTML</a>()
+                    </li><li>protected void <a title="HTMLPurifier_Lexer_DirectLex" href="../classes/HTMLPurifier_Lexer_DirectLex/substrCount.html">substrCount</a>()
+                    </li><li>public void <a title="HTMLPurifier_Lexer_DirectLex" href="../classes/HTMLPurifier_Lexer_DirectLex/parseAttributeString.html">parseAttributeString</a>()
+                    </li></ul><ul class="none"><li>// Inherited methods from <span title="HTMLPurifier_Lexer">HTMLPurifier_Lexer</span></li><li>public static Concrete <a title="HTMLPurifier_Lexer" href="../classes/HTMLPurifier_Lexer/create.html">create</a>()
+                        </li><li>public void <a title="HTMLPurifier_Lexer" href="../classes/HTMLPurifier_Lexer/__construct.html">__construct</a>()
+                        </li><li>public void <a title="HTMLPurifier_Lexer" href="../classes/HTMLPurifier_Lexer/parseData.html">parseData</a>()
+                        </li><li>public HTMLPurifier_Token <a title="HTMLPurifier_Lexer" href="../classes/HTMLPurifier_Lexer/tokenizeHTML.html">tokenizeHTML</a>()
+                        </li><li>protected static void <a title="HTMLPurifier_Lexer" href="../classes/HTMLPurifier_Lexer/escapeCDATA.html">escapeCDATA</a>()
+                        </li><li>protected static void <a title="HTMLPurifier_Lexer" href="../classes/HTMLPurifier_Lexer/escapeCommentedCDATA.html">escapeCommentedCDATA</a>()
+                        </li><li>protected static void <a title="HTMLPurifier_Lexer" href="../classes/HTMLPurifier_Lexer/CDATACallback.html">CDATACallback</a>()
+                        </li><li>public void <a title="HTMLPurifier_Lexer" href="../classes/HTMLPurifier_Lexer/normalize.html">normalize</a>()
+                        </li><li>public void <a title="HTMLPurifier_Lexer" href="../classes/HTMLPurifier_Lexer/extractBody.html">extractBody</a>()
+                        </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Extends</h4>
+          <ul>
+            <li>
+              <a title="HTMLPurifier_Lexer" href="../classes/HTMLPurifier_Lexer.html">HTMLPurifier_Lexer</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="tasks">Tasks</h2>
+        <table class="styled">
+          <thead>
+            <tr>
+              <th style="width:3em;">Line</th>
+              <th>Task</th>
+            </tr>
+          </thead>
+          <tr>
+            <td class="nummeric">13+</td>
+            <td>Reread XML spec and document differences.</td>
+          </tr>
+          <tr>
+            <td class="nummeric">252+</td>
+            <td>Consider making protected</td>
+          </tr>
+          <tr>
+            <td class="nummeric">286+</td>
+            <td>Consider making protected</td>
+          </tr>
+        </table>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="_special_entity2str">
+              <strong>$_special_entity2str</strong>
+              <br/>
+              <span class="indent">Most common entity to raw value conversion table for special entities.</span>
+            </li>
+            <li id="_whitespace">
+              <strong>$_whitespace</strong>
+              <br/>
+              <span class="indent">Whitespace characters for str(c)spn.</span>
+            </li>
+          </ul>
+          <h4>public</h4>
+          <ul class="members">
+            <li id="tracksLineNumbers">
+              <strong>$tracksLineNumbers</strong>
+            </li>
+            <li id="tracksLineNumbers">
+              <strong>$tracksLineNumbers</strong>
+              <br/>
+              <span class="indent">Whether or not this lexer implements line-number/column-number tracking.</span>
+            </li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>protected</h4>
+          <ul>
+            <li id="scriptCallback"><a title="HTMLPurifier_Lexer_DirectLex" href="../classes/HTMLPurifier_Lexer_DirectLex/scriptCallback.html">scriptCallback()</a>
+                — Callback function for script CDATA fudge</li>
+            <li id="substrCount"><a title="HTMLPurifier_Lexer_DirectLex" href="../classes/HTMLPurifier_Lexer_DirectLex/substrCount.html">substrCount()</a>
+                — PHP 5.0.x compatible substr_count that implements offset and length</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="parseAttributeString"><a title="HTMLPurifier_Lexer_DirectLex" href="../classes/HTMLPurifier_Lexer_DirectLex/parseAttributeString.html">parseAttributeString()</a>
+                — Takes the inside of an HTML tag and makes an assoc array of attributes.</li>
+            <li id="tokenizeHTML">
+              <a title="HTMLPurifier_Lexer_DirectLex" href="../classes/HTMLPurifier_Lexer_DirectLex/tokenizeHTML.html">tokenizeHTML()</a>
+            </li>
+          </ul>
+          <h3>Inherited from <a title="HTMLPurifier_Lexer" href="../classes/HTMLPurifier_Lexer.html">HTMLPurifier_Lexer</a></h3>
+          <h4>protected</h4>
+          <ul>
+            <li id="CDATACallback"><a title="HTMLPurifier_Lexer" href="../classes/HTMLPurifier_Lexer/CDATACallback.html">CDATACallback()</a>
+                — Callback function for escapeCDATA() that does the work.</li>
+            <li id="escapeCDATA"><a title="HTMLPurifier_Lexer" href="../classes/HTMLPurifier_Lexer/escapeCDATA.html">escapeCDATA()</a>
+                — Translates CDATA sections into regular sections (through escaping).</li>
+            <li id="escapeCommentedCDATA"><a title="HTMLPurifier_Lexer" href="../classes/HTMLPurifier_Lexer/escapeCommentedCDATA.html">escapeCommentedCDATA()</a>
+                — Special CDATA case that is especially convoluted for &lt;script&gt;</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="create"><a title="HTMLPurifier_Lexer" href="../classes/HTMLPurifier_Lexer/create.html">create()</a>
+                — Retrieves or sets the default Lexer as a Prototype Factory.</li>
+            <li id="extractBody"><a title="HTMLPurifier_Lexer" href="../classes/HTMLPurifier_Lexer/extractBody.html">extractBody()</a>
+                — Takes a string of HTML (fragment or document) and returns the content</li>
+            <li id="normalize"><a title="HTMLPurifier_Lexer" href="../classes/HTMLPurifier_Lexer/normalize.html">normalize()</a>
+                — Takes a piece of HTML and normalizes it by converting entities, fixing encoding, extracting bits, and other good stuff.</li>
+            <li id="parseData"><a title="HTMLPurifier_Lexer" href="../classes/HTMLPurifier_Lexer/parseData.html">parseData()</a>
+                — Parses special entities into the proper characters.</li>
+            <li id="tokenizeHTML"><a title="HTMLPurifier_Lexer" href="../classes/HTMLPurifier_Lexer/tokenizeHTML.html">tokenizeHTML()</a>
+                — Lexes an HTML string into tokens.</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.9.0 - Copyright (C) 2010 - 2017 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="HTMLPurifier_ErrorCollector" namespace="" name="HTMLPurifier_ErrorCollector" abstract="false" final="false" start="7" end="207">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier" file="ErrorCollector.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ErrorCollector.php" size="7697" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="436bda6d924dcc788c832320be9994cd302fc63d" relative="external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ErrorCollector.php"/>
+  <docblock>
+    <description compact="Error collection class that enables HTML Purifier to report HTML problems back to the user"/>
+  </docblock>
+  <constant type="integer" name="LINENO" value="0">
+    <docblock>
+      <description compact="Identifiers for the returned error array. These are purposely numeric so list() can be used."/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="SEVERITY" value="1"/>
+  <constant type="integer" name="MESSAGE" value="2"/>
+  <constant type="integer" name="CHILDREN" value="3"/>
+  <member name="errors" visibility="protected" static="false" line="19"/>
+  <member name="_current" visibility="protected" static="false" line="20"/>
+  <member name="_stacks" type="array" default="" visibility="protected" static="false" line="21"/>
+  <member name="locale" visibility="protected" static="false" line="22"/>
+  <member name="generator" visibility="protected" static="false" line="23"/>
+  <member name="context" visibility="protected" static="false" line="24"/>
+  <member name="lines" type="array" default="" visibility="protected" static="false" line="26"/>
+  <constructor name="__construct" start="28" end="33" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="context" byreference="false" type="{unknown}"/>
+  </constructor>
+  <method name="send" start="42" end="127" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sends an error message to the collector for later use"/>
+      <param description="Error severity, PHP error style (don't use E_USER_)" variable="$severity" type="int"/>
+      <param description="Error message text" variable="$msg" type="string"/>
+      <param description="First substitution for $msg" variable="$subst1" type="string"/>
+      <param description="..." variable="$subst2" type="string"/>
+    </docblock>
+    <parameter name="severity" byreference="false" type="{unknown}"/>
+    <parameter name="msg" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="perform special substitutions, also add custom parameters" line="56"/>
+      <comment value="(numerically indexed)" line="74"/>
+      <comment value="NEW CODE BELOW ..." line="84"/>
+      <comment value="Top-level errors are either:" line="87"/>
+      <comment value="TOKEN type, if $value is set appropriately, or" line="88"/>
+      <comment value="&quot;syntax&quot; type, if $value is null" line="89"/>
+      <comment value="Now, check if we need to operate on a lower structure" line="110"/>
+      <comment value="Ok, structs are all setup, now time to register the error" line="125"/>
+    </inline>
+  </method>
+  <method name="getRaw" start="135" end="137" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieves raw error data for custom formatter to use"/>
+      <param description="of arrays in format of array(line of error," type="object">error severity, error message,
+       recursive sub-errors array)<type full="List" namespace="" name="List"/></param>
+    </docblock>
+  </method>
+  <method name="getHTMLFormatted" start="144" end="169" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Default HTML formatting implementation for error messages"/>
+      <param description="array, vital for HTML output nature" variable="$config" type="object">
+        <type full="Configuration" namespace="" name="Configuration"/>
+      </param>
+      <param description="array to display; used for recursion." variable="$errors" type="object">
+        <type full="Errors" namespace="" name="Errors"/>
+      </param>
+    </docblock>
+    <parameter name="config" byreference="false" type="{unknown}"/>
+    <parameter name="errors" byreference="false" type="{unknown}" default="" constant="null"/>
+    <inline>
+      <comment value="'At line' message needs to be removed" line="150"/>
+      <comment value="generation code for new structure goes here. It needs to be recursive." line="152"/>
+    </inline>
+  </method>
+  <method name="_renderStruct" start="171" end="205" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="ret" byreference="true" type="{unknown}"/>
+    <parameter name="struct" byreference="false" type="{unknown}"/>
+    <parameter name="line" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="col" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+</class>

@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PDepend>
+  <Packages>
+    <Package name="+global">
+      <Stats>
+        <TotalClasses>214</TotalClasses>
+        <ConcreteClasses>202</ConcreteClasses>
+        <AbstractClasses>12</AbstractClasses>
+        <Ca>1</Ca>
+        <Ce>5</Ce>
+        <A>0.05607476635514</A>
+        <I>0.83333333333333</I>
+        <D>0.11059190031153</D>
+      </Stats>
+      <ConcreteClasses>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/docs/examples/cakephp/intrusion.php">Intrusion</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier.php">HTMLPurifier</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrCollections.php">HTMLPurifier_AttrCollections</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrDef/CSS.php">HTMLPurifier_AttrDef_CSS</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrDef/CSS/AlphaValue.php">HTMLPurifier_AttrDef_CSS_AlphaValue</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrDef/CSS/Background.php">HTMLPurifier_AttrDef_CSS_Background</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrDef/CSS/BackgroundPosition.php">HTMLPurifier_AttrDef_CSS_BackgroundPosition</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrDef/CSS/Border.php">HTMLPurifier_AttrDef_CSS_Border</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrDef/CSS/Color.php">HTMLPurifier_AttrDef_CSS_Color</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrDef/CSS/Composite.php">HTMLPurifier_AttrDef_CSS_Composite</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrDef/CSS/DenyElementDecorator.php">HTMLPurifier_AttrDef_CSS_DenyElementDecorator</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrDef/CSS/Filter.php">HTMLPurifier_AttrDef_CSS_Filter</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrDef/CSS/Font.php">HTMLPurifier_AttrDef_CSS_Font</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrDef/CSS/FontFamily.php">HTMLPurifier_AttrDef_CSS_FontFamily</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrDef/CSS/ImportantDecorator.php">HTMLPurifier_AttrDef_CSS_ImportantDecorator</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrDef/CSS/Length.php">HTMLPurifier_AttrDef_CSS_Length</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrDef/CSS/ListStyle.php">HTMLPurifier_AttrDef_CSS_ListStyle</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrDef/CSS/Multiple.php">HTMLPurifier_AttrDef_CSS_Multiple</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrDef/CSS/Number.php">HTMLPurifier_AttrDef_CSS_Number</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrDef/CSS/Percentage.php">HTMLPurifier_AttrDef_CSS_Percentage</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrDef/CSS/TextDecoration.php">HTMLPurifier_AttrDef_CSS_TextDecoration</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrDef/CSS/URI.php">HTMLPurifier_AttrDef_CSS_URI</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrDef/Enum.php">HTMLPurifier_AttrDef_Enum</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrDef/HTML/Bool.php">HTMLPurifier_AttrDef_HTML_Bool</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrDef/HTML/Color.php">HTMLPurifier_AttrDef_HTML_Color</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrDef/HTML/FrameTarget.php">HTMLPurifier_AttrDef_HTML_FrameTarget</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrDef/HTML/ID.php">HTMLPurifier_AttrDef_HTML_ID</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrDef/HTML/Length.php">HTMLPurifier_AttrDef_HTML_Length</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrDef/HTML/LinkTypes.php">HTMLPurifier_AttrDef_HTML_LinkTypes</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrDef/HTML/MultiLength.php">HTMLPurifier_AttrDef_HTML_MultiLength</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrDef/HTML/Nmtokens.php">HTMLPurifier_AttrDef_HTML_Nmtokens</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrDef/HTML/Pixels.php">HTMLPurifier_AttrDef_HTML_Pixels</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrDef/Integer.php">HTMLPurifier_AttrDef_Integer</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrDef/Lang.php">HTMLPurifier_AttrDef_Lang</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrDef/Switch.php">HTMLPurifier_AttrDef_Switch</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrDef/Text.php">HTMLPurifier_AttrDef_Text</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrDef/URI.php">HTMLPurifier_AttrDef_URI</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrDef/URI/Email/SimpleCheck.php">HTMLPurifier_AttrDef_URI_Email_SimpleCheck</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrDef/URI/Host.php">HTMLPurifier_AttrDef_URI_Host</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrDef/URI/IPv4.php">HTMLPurifier_AttrDef_URI_IPv4</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrDef/URI/IPv6.php">HTMLPurifier_AttrDef_URI_IPv6</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrTransform/Background.php">HTMLPurifier_AttrTransform_Background</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrTransform/BdoDir.php">HTMLPurifier_AttrTransform_BdoDir</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrTransform/BgColor.php">HTMLPurifier_AttrTransform_BgColor</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrTransform/BoolToCSS.php">HTMLPurifier_AttrTransform_BoolToCSS</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrTransform/Border.php">HTMLPurifier_AttrTransform_Border</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrTransform/EnumToCSS.php">HTMLPurifier_AttrTransform_EnumToCSS</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrTransform/ImgRequired.php">HTMLPurifier_AttrTransform_ImgRequired</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrTransform/ImgSpace.php">HTMLPurifier_AttrTransform_ImgSpace</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrTransform/Input.php">HTMLPurifier_AttrTransform_Input</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrTransform/Lang.php">HTMLPurifier_AttrTransform_Lang</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrTransform/Length.php">HTMLPurifier_AttrTransform_Length</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrTransform/Name.php">HTMLPurifier_AttrTransform_Name</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrTransform/SafeEmbed.php">HTMLPurifier_AttrTransform_SafeEmbed</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrTransform/SafeObject.php">HTMLPurifier_AttrTransform_SafeObject</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrTransform/SafeParam.php">HTMLPurifier_AttrTransform_SafeParam</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrTransform/ScriptRequired.php">HTMLPurifier_AttrTransform_ScriptRequired</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrTransform/Textarea.php">HTMLPurifier_AttrTransform_Textarea</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrTypes.php">HTMLPurifier_AttrTypes</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrValidator.php">HTMLPurifier_AttrValidator</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Bootstrap.php">HTMLPurifier_Bootstrap</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/CSSDefinition.php">HTMLPurifier_CSSDefinition</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ChildDef/Chameleon.php">HTMLPurifier_ChildDef_Chameleon</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ChildDef/Custom.php">HTMLPurifier_ChildDef_Custom</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ChildDef/Empty.php">HTMLPurifier_ChildDef_Empty</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ChildDef/Optional.php">HTMLPurifier_ChildDef_Optional</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ChildDef/Required.php">HTMLPurifier_ChildDef_Required</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ChildDef/StrictBlockquote.php">HTMLPurifier_ChildDef_StrictBlockquote</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ChildDef/Table.php">HTMLPurifier_ChildDef_Table</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Config.php">HTMLPurifier_Config</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ConfigDef/Directive.php">HTMLPurifier_ConfigDef_Directive</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ConfigDef/DirectiveAlias.php">HTMLPurifier_ConfigDef_DirectiveAlias</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ConfigDef/Namespace.php">HTMLPurifier_ConfigDef_Namespace</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ConfigSchema.php">HTMLPurifier_ConfigSchema</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ConfigSchema/Builder/ConfigSchema.php">HTMLPurifier_ConfigSchema_Builder_ConfigSchema</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ConfigSchema/Builder/Xml.php">HTMLPurifier_ConfigSchema_Builder_Xml</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ConfigSchema/Exception.php">HTMLPurifier_ConfigSchema_Exception</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ConfigSchema/Interchange.php">HTMLPurifier_ConfigSchema_Interchange</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ConfigSchema/Interchange/Directive.php">HTMLPurifier_ConfigSchema_Interchange_Directive</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ConfigSchema/Interchange/Id.php">HTMLPurifier_ConfigSchema_Interchange_Id</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ConfigSchema/Interchange/Namespace.php">HTMLPurifier_ConfigSchema_Interchange_Namespace</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ConfigSchema/InterchangeBuilder.php">HTMLPurifier_ConfigSchema_InterchangeBuilder</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ConfigSchema/Validator.php">HTMLPurifier_ConfigSchema_Validator</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ConfigSchema/ValidatorAtom.php">HTMLPurifier_ConfigSchema_ValidatorAtom</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ContentSets.php">HTMLPurifier_ContentSets</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Context.php">HTMLPurifier_Context</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/DefinitionCache/Decorator.php">HTMLPurifier_DefinitionCache_Decorator</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/DefinitionCache/Decorator/Cleanup.php">HTMLPurifier_DefinitionCache_Decorator_Cleanup</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/DefinitionCache/Decorator/Memory.php">HTMLPurifier_DefinitionCache_Decorator_Memory</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/DefinitionCache/Null.php">HTMLPurifier_DefinitionCache_Null</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/DefinitionCache/Serializer.php">HTMLPurifier_DefinitionCache_Serializer</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/DefinitionCacheFactory.php">HTMLPurifier_DefinitionCacheFactory</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Doctype.php">HTMLPurifier_Doctype</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/DoctypeRegistry.php">HTMLPurifier_DoctypeRegistry</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ElementDef.php">HTMLPurifier_ElementDef</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Encoder.php">HTMLPurifier_Encoder</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/EntityLookup.php">HTMLPurifier_EntityLookup</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/EntityParser.php">HTMLPurifier_EntityParser</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ErrorCollector.php">HTMLPurifier_ErrorCollector</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ErrorStruct.php">HTMLPurifier_ErrorStruct</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Exception.php">HTMLPurifier_Exception</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Filter.php">HTMLPurifier_Filter</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Filter/ExtractStyleBlocks.php">HTMLPurifier_Filter_ExtractStyleBlocks</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Filter/YouTube.php">HTMLPurifier_Filter_YouTube</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Generator.php">HTMLPurifier_Generator</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/HTMLDefinition.php">HTMLPurifier_HTMLDefinition</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/HTMLModule.php">HTMLPurifier_HTMLModule</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/HTMLModule/Bdo.php">HTMLPurifier_HTMLModule_Bdo</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/HTMLModule/CommonAttributes.php">HTMLPurifier_HTMLModule_CommonAttributes</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/HTMLModule/Edit.php">HTMLPurifier_HTMLModule_Edit</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/HTMLModule/Forms.php">HTMLPurifier_HTMLModule_Forms</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/HTMLModule/Hypertext.php">HTMLPurifier_HTMLModule_Hypertext</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/HTMLModule/Image.php">HTMLPurifier_HTMLModule_Image</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/HTMLModule/Legacy.php">HTMLPurifier_HTMLModule_Legacy</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/HTMLModule/List.php">HTMLPurifier_HTMLModule_List</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/HTMLModule/Name.php">HTMLPurifier_HTMLModule_Name</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/HTMLModule/NonXMLCommonAttributes.php">HTMLPurifier_HTMLModule_NonXMLCommonAttributes</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/HTMLModule/Object.php">HTMLPurifier_HTMLModule_Object</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/HTMLModule/Presentation.php">HTMLPurifier_HTMLModule_Presentation</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/HTMLModule/Proprietary.php">HTMLPurifier_HTMLModule_Proprietary</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/HTMLModule/Ruby.php">HTMLPurifier_HTMLModule_Ruby</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/HTMLModule/SafeEmbed.php">HTMLPurifier_HTMLModule_SafeEmbed</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/HTMLModule/SafeObject.php">HTMLPurifier_HTMLModule_SafeObject</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/HTMLModule/Scripting.php">HTMLPurifier_HTMLModule_Scripting</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/HTMLModule/StyleAttribute.php">HTMLPurifier_HTMLModule_StyleAttribute</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/HTMLModule/Tables.php">HTMLPurifier_HTMLModule_Tables</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/HTMLModule/Target.php">HTMLPurifier_HTMLModule_Target</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/HTMLModule/Text.php">HTMLPurifier_HTMLModule_Text</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/HTMLModule/Tidy.php">HTMLPurifier_HTMLModule_Tidy</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/HTMLModule/Tidy/Name.php">HTMLPurifier_HTMLModule_Tidy_Name</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/HTMLModule/Tidy/Proprietary.php">HTMLPurifier_HTMLModule_Tidy_Proprietary</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/HTMLModule/Tidy/Strict.php">HTMLPurifier_HTMLModule_Tidy_Strict</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/HTMLModule/Tidy/Transitional.php">HTMLPurifier_HTMLModule_Tidy_Transitional</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/HTMLModule/Tidy/XHTML.php">HTMLPurifier_HTMLModule_Tidy_XHTML</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/HTMLModule/Tidy/XHTMLAndHTML4.php">HTMLPurifier_HTMLModule_Tidy_XHTMLAndHTML4</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/HTMLModule/XMLCommonAttributes.php">HTMLPurifier_HTMLModule_XMLCommonAttributes</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/HTMLModuleManager.php">HTMLPurifier_HTMLModuleManager</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/IDAccumulator.php">HTMLPurifier_IDAccumulator</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Injector/AutoParagraph.php">HTMLPurifier_Injector_AutoParagraph</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Injector/DisplayLinkURI.php">HTMLPurifier_Injector_DisplayLinkURI</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Injector/Linkify.php">HTMLPurifier_Injector_Linkify</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Injector/PurifierLinkify.php">HTMLPurifier_Injector_PurifierLinkify</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Injector/RemoveEmpty.php">HTMLPurifier_Injector_RemoveEmpty</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Injector/SafeObject.php">HTMLPurifier_Injector_SafeObject</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Language.php">HTMLPurifier_Language</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Language/classes/en-x-test.php">HTMLPurifier_Language_en_x_test</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/LanguageFactory.php">HTMLPurifier_LanguageFactory</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Length.php">HTMLPurifier_Length</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Lexer.php">HTMLPurifier_Lexer</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Lexer/DOMLex.php">HTMLPurifier_Lexer_DOMLex</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Lexer/DirectLex.php">HTMLPurifier_Lexer_DirectLex</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Lexer/PEARSax3.php">HTMLPurifier_Lexer_PEARSax3</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Lexer/PH5P.php">HTMLPurifier_Lexer_PH5P</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Lexer/PH5P.php">HTML5</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Lexer/PH5P.php">HTML5TreeConstructer</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/PercentEncoder.php">HTMLPurifier_PercentEncoder</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Printer.php">HTMLPurifier_Printer</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Printer/CSSDefinition.php">HTMLPurifier_Printer_CSSDefinition</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Printer/ConfigForm.php">HTMLPurifier_Printer_ConfigForm</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Printer/ConfigForm.php">HTMLPurifier_Printer_ConfigForm_NullDecorator</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Printer/ConfigForm.php">HTMLPurifier_Printer_ConfigForm_default</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Printer/ConfigForm.php">HTMLPurifier_Printer_ConfigForm_bool</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Printer/HTMLDefinition.php">HTMLPurifier_Printer_HTMLDefinition</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Strategy/Core.php">HTMLPurifier_Strategy_Core</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Strategy/FixNesting.php">HTMLPurifier_Strategy_FixNesting</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Strategy/MakeWellFormed.php">HTMLPurifier_Strategy_MakeWellFormed</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Strategy/RemoveForeignElements.php">HTMLPurifier_Strategy_RemoveForeignElements</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Strategy/ValidateAttributes.php">HTMLPurifier_Strategy_ValidateAttributes</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/StringHash.php">HTMLPurifier_StringHash</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/StringHashParser.php">HTMLPurifier_StringHashParser</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/TagTransform/Font.php">HTMLPurifier_TagTransform_Font</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/TagTransform/Simple.php">HTMLPurifier_TagTransform_Simple</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Token.php">HTMLPurifier_Token</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Token/Comment.php">HTMLPurifier_Token_Comment</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Token/Empty.php">HTMLPurifier_Token_Empty</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Token/End.php">HTMLPurifier_Token_End</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Token/Start.php">HTMLPurifier_Token_Start</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Token/Tag.php">HTMLPurifier_Token_Tag</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Token/Text.php">HTMLPurifier_Token_Text</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/TokenFactory.php">HTMLPurifier_TokenFactory</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/URI.php">HTMLPurifier_URI</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/URIDefinition.php">HTMLPurifier_URIDefinition</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/URIFilter/DisableExternal.php">HTMLPurifier_URIFilter_DisableExternal</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/URIFilter/DisableExternalResources.php">HTMLPurifier_URIFilter_DisableExternalResources</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/URIFilter/HostBlacklist.php">HTMLPurifier_URIFilter_HostBlacklist</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/URIFilter/MakeAbsolute.php">HTMLPurifier_URIFilter_MakeAbsolute</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/URIFilter/Munge.php">HTMLPurifier_URIFilter_Munge</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/URIParser.php">HTMLPurifier_URIParser</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/URIScheme.php">HTMLPurifier_URIScheme</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/URIScheme/ftp.php">HTMLPurifier_URIScheme_ftp</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/URIScheme/http.php">HTMLPurifier_URIScheme_http</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/URIScheme/https.php">HTMLPurifier_URIScheme_https</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/URIScheme/mailto.php">HTMLPurifier_URIScheme_mailto</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/URIScheme/news.php">HTMLPurifier_URIScheme_news</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/URIScheme/nntp.php">HTMLPurifier_URIScheme_nntp</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/URISchemeRegistry.php">HTMLPurifier_URISchemeRegistry</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/UnitConverter.php">HTMLPurifier_UnitConverter</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/VarParser.php">HTMLPurifier_VarParser</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/VarParser/Flexible.php">HTMLPurifier_VarParser_Flexible</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/VarParser/Native.php">HTMLPurifier_VarParser_Native</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/VarParserException.php">HTMLPurifier_VarParserException</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/recaptcha/recaptchalib.php">ReCaptchaResponse</Class>
+      </ConcreteClasses>
+      <AbstractClasses>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrDef.php">HTMLPurifier_AttrDef</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrDef/URI/Email.php">HTMLPurifier_AttrDef_URI_Email</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrTransform.php">HTMLPurifier_AttrTransform</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ChildDef.php">HTMLPurifier_ChildDef</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ConfigDef.php">HTMLPurifier_ConfigDef</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Definition.php">HTMLPurifier_Definition</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/DefinitionCache.php">HTMLPurifier_DefinitionCache</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Injector.php">HTMLPurifier_Injector</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Strategy.php">HTMLPurifier_Strategy</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Strategy/Composite.php">HTMLPurifier_Strategy_Composite</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/TagTransform.php">HTMLPurifier_TagTransform</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/URIFilter.php">HTMLPurifier_URIFilter</Class>
+      </AbstractClasses>
+      <DependsUpon>
+        <Package>+core</Package>
+        <Package>+dom</Package>
+        <Package>+reflection</Package>
+        <Package>+spl</Package>
+        <Package>+xmlwriter</Package>
+      </DependsUpon>
+      <UsedBy>
+        <Package>PHPIDS</Package>
+      </UsedBy>
+    </Package>
+    <Package name="PHPIDS">
+      <Stats>
+        <TotalClasses>27</TotalClasses>
+        <ConcreteClasses>25</ConcreteClasses>
+        <AbstractClasses>2</AbstractClasses>
+        <Ca>0</Ca>
+        <Ce>5</Ce>
+        <A>0.074074074074074</A>
+        <I>1</I>
+        <D>0.074074074074074</D>
+      </Stats>
+      <ConcreteClasses>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/docs/examples/cakephp/ids.php">IdsComponent</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/Caching/Database.php">IDS_Caching_Database</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/Caching/Factory.php">IDS_Caching</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/Caching/File.php">IDS_Caching_File</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/Caching/Memcached.php">IDS_Caching_Memcached</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/Caching/Session.php">IDS_Caching_Session</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/Converter.php">IDS_Converter</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/Event.php">IDS_Event</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/Filter.php">IDS_Filter</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/Filter/Storage.php">IDS_Filter_Storage</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/Init.php">IDS_Init</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/Log/Composite.php">IDS_Log_Composite</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/Log/Database.php">IDS_Log_Database</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/Log/Email.php">IDS_Log_Email</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/Log/File.php">IDS_Log_File</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/Monitor.php">IDS_Monitor</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/Report.php">IDS_Report</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/tests/IDS/CachingTest.php">IDS_CachingTest</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/tests/IDS/EventTest.php">IDS_EventTest</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/tests/IDS/ExceptionTest.php">IDS_ExceptionTest</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/tests/IDS/FilterTest.php">IDS_FilterTest</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/tests/IDS/InitTest.php">IDS_InitTest</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/tests/IDS/MonitorTest.php">IDS_MonitorTest</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/tests/IDS/ReportTest.php">IDS_ReportTest</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/tests/allTests.php">allTests</Class>
+      </ConcreteClasses>
+      <AbstractClasses>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/Caching/Interface.php">IDS_Caching_Interface</Class>
+        <Class sourceFile="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/Log/Interface.php">IDS_Log_Interface</Class>
+      </AbstractClasses>
+      <DependsUpon>
+        <Package>+core</Package>
+        <Package>+global</Package>
+        <Package>+pdo</Package>
+        <Package>+simplexml</Package>
+        <Package>+spl</Package>
+      </DependsUpon>
+      <UsedBy/>
+    </Package>
+  </Packages>
+  <Cycles/>
+</PDepend>

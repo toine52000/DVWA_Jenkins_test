@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="IDS_Converter" namespace="" name="IDS_Converter" abstract="false" final="false" start="51" end="713">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS" file="Converter.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/Converter.php" size="22495" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="439ea59c2a2e8ed30994f1e611495f887d9d61f8" relative="external/phpids/0.6/lib/IDS/Converter.php"/>
+  <docblock>
+    <description compact="PHPIDS specific utility class to convert charsets manually">Note that if you make use of IDS_Converter::runAll(), existing class
+methods will be executed in the same order as they are implemented in the
+class tree!</description>
+    <category value="Security"/>
+    <package value="PHPIDS"/>
+    <author value="Christian Matthies &lt;ch0012@gmail.com&gt;"/>
+    <author value="Mario Heiderich &lt;mario.heiderich@gmail.com&gt;"/>
+    <author value="Lars Strojny &lt;lars@strojny.net&gt;"/>
+    <copyright value="2007 The PHPIDS Group"/>
+    <license name="http://www.gnu.org/licenses/lgpl.html LGPL"/>
+    <version value="Release: $Id:Converter.php 517 2007-09-15 15:04:13Z mario $"/>
+    <link value="http://php-ids.org/"/>
+  </docblock>
+  <method name="runAll" start="65" end="76" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Runs all converter functions">Note that if you make use of IDS_Converter::runAll(), existing class
+methods will be executed in the same order as they are implemented in the
+class tree!</description>
+      <param description="the value to convert" type="string" variable="$value"/>
+      <static/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="convertFromCommented" start="86" end="111" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Check for comments and erases them if available"/>
+      <param description="the value to convert" type="string" variable="$value"/>
+      <static/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="check for existing comments" line="88"/>
+      <comment value="deal with x509 false alerts" line="102"/>
+      <comment value="make sure inline comments are detected and converted correctly" line="106"/>
+    </inline>
+  </method>
+  <method name="convertFromNewLines" start="121" end="129" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Strip newlines"/>
+      <param description="the value to convert" type="string" variable="$value"/>
+      <static/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="check for inline linebreaks" line="123"/>
+      <comment value="convert real linebreaks" line="127"/>
+    </inline>
+  </method>
+  <method name="convertFromJSCharcode" start="139" end="209" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Checks for common charcode pattern and decodes them"/>
+      <param description="the value to convert" type="string" variable="$value"/>
+      <static/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="check if value matches typical charCode pattern" line="143"/>
+      <comment value="check for octal charcode pattern" line="174"/>
+      <comment value="check for hexadecimal charcode pattern" line="191"/>
+    </inline>
+  </method>
+  <method name="convertJSRegexModifiers" start="219" end="224" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Eliminate JS regex modifiers"/>
+      <param description="the value to convert" type="string" variable="$value"/>
+      <static/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="convertEntities" start="234" end="248" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Converts from hex/dec entities"/>
+      <param description="the value to convert" type="string" variable="$value"/>
+      <static/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="deal with double encoded payload" line="238"/>
+    </inline>
+  </method>
+  <method name="convertQuotes" start="258" end="265" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Normalize quotes"/>
+      <param description="the value to convert" type="string" variable="$value"/>
+      <static/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="normalize different quotes to &quot;" line="260"/>
+    </inline>
+  </method>
+  <method name="convertFromSQLHex" start="275" end="293" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Converts SQLHEX to plain text"/>
+      <param description="the value to convert" type="string" variable="$value"/>
+      <static/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="take care of hex encoded ctrl chars" line="289"/>
+    </inline>
+  </method>
+  <method name="convertFromSQLKeywords" start="303" end="327" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Converts basic SQL keywords and obfuscations"/>
+      <param description="the value to convert" type="string" variable="$value"/>
+      <static/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="convertFromControlChars" start="337" end="364" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Detects nullbytes and controls chars via ord()"/>
+      <param description="the value to convert" type="string" variable="$value"/>
+      <static/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="critical ctrl values" line="339"/>
+      <comment value="take care for malicious unicode characters" line="349"/>
+    </inline>
+  </method>
+  <method name="convertFromNestedBase64" start="375" end="389" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="This method matches and translates base64 strings and fragments used in data URIs"/>
+      <param description="the value to convert" type="string" variable="$value"/>
+      <static/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="convertFromOutOfRangeChars" start="399" end="409" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Detects nullbytes and controls chars via ord()"/>
+      <param description="the value to convert" type="string" variable="$value"/>
+      <static/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="convertFromXML" start="419" end="427" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Strip XML patterns"/>
+      <param description="the value to convert" type="string" variable="$value"/>
+      <static/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="convertFromJSUnicode" start="438" end="454" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="This method converts JS unicode code points to regular characters"/>
+      <param description="the value to convert" type="string" variable="$value"/>
+      <static/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="convertFromUTF7" start="465" end="512" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Converts relevant UTF-7 tags to UTF-8"/>
+      <param description="the value to convert" type="string" variable="$value"/>
+      <static/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="convertFromConcatenated" start="522" end="568" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Converts basic concatenations"/>
+      <param description="the value to convert" type="string" variable="$value"/>
+      <static/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="normalize remaining backslashes" line="524"/>
+      <comment value="strip out concatenations" line="550"/>
+      <comment value="strip object traversal" line="553"/>
+      <comment value="normalize obfuscated method calls" line="556"/>
+      <comment value="convert JS special numbers" line="559"/>
+    </inline>
+  </method>
+  <method name="convertFromProprietaryEncodings" start="579" end="616" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="This method collects and decodes proprietary encoding types"/>
+      <param description="the value to convert" type="string" variable="$value"/>
+      <param description="the monitor object" type="object" variable="$monitor">
+        <type full="IDS_Monitor" namespace="" name="IDS_Monitor"/>
+      </param>
+      <static/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Xajax error reportings" line="581"/>
+      <comment value="strip false alert triggering apostrophes" line="584"/>
+      <comment value="strip quotes within typical search patterns" line="587"/>
+      <comment value="OpenID login tokens" line="590"/>
+      <comment value="convert Content and \sdo\s to null" line="593"/>
+      <comment value="strip emoticons" line="596"/>
+      <comment value="normalize separation char repetion" line="603"/>
+      <comment value="normalize multiple single quotes" line="606"/>
+      <comment value="normalize ampersand listings" line="609"/>
+      <comment value="normalize JS backspace linebreaks" line="612"/>
+    </inline>
+  </method>
+  <method name="runCentrifuge" start="627" end="712" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="This method is the centrifuge prototype"/>
+      <param description="the value to convert" type="string" variable="$value"/>
+      <param description="the monitor object" type="object" variable="$monitor">
+        <type full="IDS_Monitor" namespace="" name="IDS_Monitor"/>
+      </param>
+      <static/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="monitor" byreference="false" type="{unknown}" default="" constant="null">
+      <type full="IDS_Monitor" namespace="" name="IDS_Monitor"/>
+    </parameter>
+  </method>
+</class>

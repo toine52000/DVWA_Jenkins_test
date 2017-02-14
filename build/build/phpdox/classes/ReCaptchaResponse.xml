@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="ReCaptchaResponse" namespace="" name="ReCaptchaResponse" abstract="false" final="false" start="139" end="142">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/recaptcha" file="recaptchalib.php" realpath="/home/user/Documents/DVWA-master/src/external/recaptcha/recaptchalib.php" size="10022" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="77e53c90824cd02da0d6768cb12cdd1b6cb8c9d0" relative="external/recaptcha/recaptchalib.php"/>
+  <docblock>
+    <description compact="A ReCaptchaResponse is returned from recaptcha_check_answer()"/>
+  </docblock>
+  <member name="is_valid" visibility="public" static="false" line="140"/>
+  <member name="error" visibility="public" static="false" line="141"/>
+</class>

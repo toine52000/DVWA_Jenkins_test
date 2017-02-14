@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="HTMLPurifier_Strategy_ValidateAttributes" namespace="" name="HTMLPurifier_Strategy_ValidateAttributes" abstract="false" final="false" start="7" end="37">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Strategy" file="ValidateAttributes.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Strategy/ValidateAttributes.php" size="1143" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="b7dfdcc1a7e311516fab8b16e253987f962f3ab8" relative="external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Strategy/ValidateAttributes.php"/>
+  <docblock>
+    <description compact="Validate all attributes in the tokens."/>
+  </docblock>
+  <extends full="HTMLPurifier_Strategy" namespace="" name="HTMLPurifier_Strategy"/>
+  <method name="execute" start="10" end="35" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="tokens" byreference="false" type="{unknown}"/>
+    <parameter name="config" byreference="false" type="{unknown}"/>
+    <parameter name="context" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="setup validator" line="12"/>
+    </inline>
+  </method>
+  <parent full="HTMLPurifier_Strategy" namespace="" name="HTMLPurifier_Strategy">
+    <method name="execute" start="22" end="22" abstract="true" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Executes the strategy on the tokens."/>
+        <param description="of HTMLPurifier_Token objects to be operated on." variable="$tokens" type="object">
+          <type full="Array" namespace="" name="Array"/>
+        </param>
+        <param description="options" variable="$config" type="object">
+          <type full="Configuration" namespace="" name="Configuration"/>
+        </param>
+        <returns value="Processed array of token objects."/>
+      </docblock>
+      <parameter name="tokens" byreference="false" type="{unknown}"/>
+      <parameter name="config" byreference="false" type="{unknown}"/>
+      <parameter name="context" byreference="false" type="{unknown}"/>
+    </method>
+  </parent>
+</class>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="HTMLPurifier_URIScheme_http" namespace="" name="HTMLPurifier_URIScheme_http" abstract="false" final="false" start="6" end="18">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/URIScheme" file="http.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/URIScheme/http.php" size="450" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="6d2182bec52b3617cf59353a071e3c5dcd0535ba" relative="external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/URIScheme/http.php"/>
+  <docblock>
+    <description compact="Validates http (HyperText Transfer Protocol) as defined by RFC 2616"/>
+  </docblock>
+  <extends full="HTMLPurifier_URIScheme" namespace="" name="HTMLPurifier_URIScheme"/>
+  <member name="default_port" type="integer" default="80" visibility="public" static="false" line="8"/>
+  <member name="browsable" type="boolean" default="true" visibility="public" static="false" line="9"/>
+  <member name="hierarchical" type="boolean" default="true" visibility="public" static="false" line="10"/>
+  <method name="validate" start="12" end="16" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="uri" byreference="true" type="{unknown}"/>
+    <parameter name="config" byreference="false" type="{unknown}"/>
+    <parameter name="context" byreference="false" type="{unknown}"/>
+  </method>
+  <parent full="HTMLPurifier_URIScheme" namespace="" name="HTMLPurifier_URIScheme">
+    <member name="default_port" type="{unknown}" default="" constant="null" visibility="public" static="false" line="12">
+      <docblock>
+        <description compact="Scheme's default port (integer)"/>
+      </docblock>
+    </member>
+    <member name="browsable" type="boolean" default="false" visibility="public" static="false" line="18">
+      <docblock>
+        <description compact="Whether or not URIs of this schem are locatable by a browser http and ftp are accessible, while mailto and news are not."/>
+      </docblock>
+    </member>
+    <member name="hierarchical" type="boolean" default="false" visibility="public" static="false" line="24">
+      <docblock>
+        <description compact="Whether or not the URI always uses &lt;hier_part&gt;, resolves edge cases with making relative URIs absolute"/>
+      </docblock>
+    </member>
+    <method name="validate" start="35" end="38" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Validates the components of a URI"/>
+        <note value="This implementation should be called by children if they define">a default port, as it does port processing.</note>
+        <param description="of HTMLPurifier_URI" variable="$uri" type="object">
+          <type full="Instance" namespace="" name="Instance"/>
+        </param>
+        <param description="object" variable="$config" type="object">
+          <type full="HTMLPurifier_Config" namespace="" name="HTMLPurifier_Config"/>
+        </param>
+        <param description="object" variable="$context" type="object">
+          <type full="HTMLPurifier_Context" namespace="" name="HTMLPurifier_Context"/>
+        </param>
+        <return description="success or failure" type="object">
+          <type full="Bool" namespace="" name="Bool"/>
+        </return>
+      </docblock>
+      <parameter name="uri" byreference="true" type="{unknown}"/>
+      <parameter name="config" byreference="false" type="{unknown}"/>
+      <parameter name="context" byreference="false" type="{unknown}"/>
+    </method>
+  </parent>
+  <extenders>
+    <extender full="HTMLPurifier_URIScheme_https" namespace="" name="HTMLPurifier_URIScheme_https"/>
+  </extenders>
+</class>

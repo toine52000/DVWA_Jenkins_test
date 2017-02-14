@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - HTMLPurifier_ChildDef_Required</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.html">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.html">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.html">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.html">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.html">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.html">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.html">Classes</a>
+          </li>
+          <li class="separator">HTMLPurifier_ChildDef_Required</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ChildDef/Required.php.html#line6">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>HTMLPurifier_ChildDef_Required</h1>
+        <h4>Definition that allows a set of elements, but disallows empty children.</h4>
+        <p/>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class HTMLPurifier_ChildDef_Required
+                extends <a title="HTMLPurifier_ChildDef" href="../classes/HTMLPurifier_ChildDef.html">HTMLPurifier_ChildDef</a>
+            {<br/><ul class="none"><li>// members</li><li>public array <a href="#members">$elements</a> =
+                        ;
+                    </li><li>public boolean <a href="#members">$allow_empty</a> =
+                        false;
+                    </li><li>public string <a href="#members">$type</a> =
+                        'required';
+                    </li></ul><ul class="none"><li>// Inherited members from <span title="HTMLPurifier_ChildDef">HTMLPurifier_ChildDef</span></li><li>public  <a href="#members">$type</a>;
+                        </li><li>public  <a href="#members">$allow_empty</a>;
+                        </li><li>public array <a href="#members">$elements</a>;
+                        </li></ul><ul class="none"><li>// methods</li><li>public void <a title="HTMLPurifier_ChildDef_Required" href="../classes/HTMLPurifier_ChildDef_Required/__construct.html">__construct</a>()
+                    </li><li>public void <a title="HTMLPurifier_ChildDef_Required" href="../classes/HTMLPurifier_ChildDef_Required/validateChildren.html">validateChildren</a>()
+                    </li></ul><ul class="none"><li>// Inherited methods from <span title="HTMLPurifier_ChildDef">HTMLPurifier_ChildDef</span></li><li>public void <a title="HTMLPurifier_ChildDef" href="../classes/HTMLPurifier_ChildDef/getNonAutoCloseElements.html">getNonAutoCloseElements</a>()
+                        </li><li>public abstract bool <a title="HTMLPurifier_ChildDef" href="../classes/HTMLPurifier_ChildDef/validateChildren.html">validateChildren</a>()
+                        </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Extends</h4>
+          <ul>
+            <li>
+              <a title="HTMLPurifier_ChildDef" href="../classes/HTMLPurifier_ChildDef.html">HTMLPurifier_ChildDef</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>public</h4>
+          <ul class="members">
+            <li id="allow_empty">
+              <strong>$allow_empty</strong>
+            </li>
+            <li id="allow_empty">
+              <strong>$allow_empty</strong>
+              <br/>
+              <span class="indent">Bool that indicates whether or not an empty array of children is okay</span>
+            </li>
+            <li id="elements">
+              <strong>$elements</strong>
+              <br/>
+              <span class="indent">Lookup table of allowed elements.</span>
+            </li>
+            <li id="elements">
+              <strong>$elements</strong>
+              <br/>
+              <span class="indent">Lookup array of all elements that this definition could possibly allow</span>
+            </li>
+            <li id="type">
+              <strong>$type</strong>
+            </li>
+            <li id="type">
+              <strong>$type</strong>
+              <br/>
+              <span class="indent">Type of child definition, usually right-most part of class name lowercase.</span>
+            </li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>public</h4>
+          <ul>
+            <li id="__construct">
+              <a title="HTMLPurifier_ChildDef_Required" href="../classes/HTMLPurifier_ChildDef_Required/__construct.html">__construct()</a>
+            </li>
+            <li id="validateChildren">
+              <a title="HTMLPurifier_ChildDef_Required" href="../classes/HTMLPurifier_ChildDef_Required/validateChildren.html">validateChildren()</a>
+            </li>
+          </ul>
+          <h3>Inherited from <a title="HTMLPurifier_ChildDef" href="../classes/HTMLPurifier_ChildDef.html">HTMLPurifier_ChildDef</a></h3>
+          <h4>public</h4>
+          <ul>
+            <li id="getNonAutoCloseElements"><a title="HTMLPurifier_ChildDef" href="../classes/HTMLPurifier_ChildDef/getNonAutoCloseElements.html">getNonAutoCloseElements()</a>
+                — Get lookup of tag names that should not close this element automatically.</li>
+            <li id="validateChildren"><a title="HTMLPurifier_ChildDef" href="../classes/HTMLPurifier_ChildDef/validateChildren.html">validateChildren()</a>
+                — Validates nodes according to definition and returns modification.</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.9.0 - Copyright (C) 2010 - 2017 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="IdsComponent" namespace="" name="IdsComponent" abstract="false" final="false" start="73" end="269">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/docs/examples/cakephp" file="ids.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/docs/examples/cakephp/ids.php" size="7886" time="2017-02-13T08:45:28+00:00" unixtime="1486975528" sha1="89ffb65e5c15ca95633a361b711a68dcddcaf93c" relative="external/phpids/0.6/docs/examples/cakephp/ids.php"/>
+  <docblock>
+    <description compact="The CakePHP IDS component"/>
+    <package value="PHPIDS"/>
+  </docblock>
+  <extends full="Object" namespace="" name="Object" unresolved="true"/>
+  <member name="threshold" type="array" default="" visibility="private" static="false" line="78">
+    <docblock>
+      <description compact="define the threshold for the ids reactions"/>
+    </docblock>
+  </member>
+  <member name="email" type="array" default="" visibility="private" static="false" line="88">
+    <docblock>
+      <description compact="define the email addresses for idsmail"/>
+    </docblock>
+  </member>
+  <member name="init" type="{unknown}" default="" constant="NULL" visibility="private" static="false" line="96">
+    <docblock>
+      <description compact="the init object"/>
+    </docblock>
+  </member>
+  <method name="detect" start="105" end="136" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="This function includes the IDS vendor parts and runs the detection routines on the request array."/>
+      <param description="cake controller object" type="object"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="controller" byreference="true" type="{unknown}"/>
+    <inline>
+      <comment value="set include path for IDS  and store old one" line="110"/>
+      <comment value="require the needed files" line="114"/>
+      <comment value="add request url and user agent" line="117"/>
+      <comment value="init the PHPIDS and pass the REQUEST array" line="123"/>
+      <comment value="Re-set include path" line="128"/>
+    </inline>
+  </method>
+  <method name="react" start="148" end="178" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="This function rects on the values in the incoming results array.">Depending on the impact value certain actions are
+performed.</description>
+      <param type="object" variable="$result">
+        <type full="IDS_Report" namespace="" name="IDS_Report"/>
+      </param>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="result" byreference="false" type="object">
+      <type full="IDS_Report" namespace="" name="IDS_Report"/>
+    </parameter>
+  </method>
+  <method name="idslog" start="187" end="221" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="This function writes an entry about the intrusion to the intrusion database"/>
+      <param type="array" variable="$results"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="result" byreference="false" type="{unknown}"/>
+    <parameter name="reaction" byreference="false" type="integer" default="0"/>
+  </method>
+  <method name="idsmail" start="230" end="250" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="This function sends out a mail about the intrusion including the intrusion details"/>
+      <param type="array" variable="$results"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="result" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="idswarn" start="257" end="259" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="//todo"/>
+    </docblock>
+    <parameter name="result" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="idskick" start="266" end="268" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="//todo"/>
+    </docblock>
+    <parameter name="result" byreference="false" type="{unknown}"/>
+  </method>
+</class>

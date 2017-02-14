@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="HTMLPurifier_AttrDef_HTML_MultiLength" namespace="" name="HTMLPurifier_AttrDef_HTML_MultiLength" abstract="false" final="false" start="9" end="39">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrDef/HTML" file="MultiLength.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrDef/HTML/MultiLength.php" size="1083" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="665257f4f49a4e61d083f69810af22001e0b3d4a" relative="external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrDef/HTML/MultiLength.php"/>
+  <docblock>
+    <description compact="Validates a MultiLength as defined by the HTML spec.">A multilength is either a integer (pixel count), a percentage, or
+a relative number.</description>
+  </docblock>
+  <extends full="HTMLPurifier_AttrDef_HTML_Length" namespace="" name="HTMLPurifier_AttrDef_HTML_Length"/>
+  <method name="validate" start="12" end="37" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="string" byreference="false" type="{unknown}"/>
+    <parameter name="config" byreference="false" type="{unknown}"/>
+    <parameter name="context" byreference="false" type="{unknown}"/>
+  </method>
+  <parent full="HTMLPurifier_AttrDef_HTML_Length" namespace="" name="HTMLPurifier_AttrDef_HTML_Length">
+    <extends full="HTMLPurifier_AttrDef_HTML_Pixels" namespace="" name="HTMLPurifier_AttrDef_HTML_Pixels"/>
+    <method name="validate" start="13" end="37" abstract="false" final="false" static="false" visibility="public">
+      <parameter name="string" byreference="false" type="{unknown}"/>
+      <parameter name="config" byreference="false" type="{unknown}"/>
+      <parameter name="context" byreference="false" type="{unknown}"/>
+    </method>
+  </parent>
+  <parent full="HTMLPurifier_AttrDef_HTML_Pixels" namespace="" name="HTMLPurifier_AttrDef_HTML_Pixels">
+    <extends full="HTMLPurifier_AttrDef" namespace="" name="HTMLPurifier_AttrDef"/>
+    <member name="max" visibility="protected" static="false" line="9"/>
+    <constructor name="__construct" start="11" end="13" abstract="false" final="false" static="false" visibility="public">
+      <parameter name="max" byreference="false" type="{unknown}" default="" constant="null"/>
+    </constructor>
+    <method name="validate" start="15" end="37" abstract="false" final="false" static="false" visibility="public">
+      <parameter name="string" byreference="false" type="{unknown}"/>
+      <parameter name="config" byreference="false" type="{unknown}"/>
+      <parameter name="context" byreference="false" type="{unknown}"/>
+      <inline>
+        <comment value="upper-bound value, extremely high values can" line="29"/>
+        <comment value="crash operating systems, see &lt;http://ha.ckers.org/imagecrash.html&gt;" line="30"/>
+        <comment value="WARNING, above link WILL crash you if you're using Windows" line="31"/>
+      </inline>
+    </method>
+    <method name="make" start="39" end="44" abstract="false" final="false" static="false" visibility="public">
+      <parameter name="string" byreference="false" type="{unknown}"/>
+    </method>
+  </parent>
+  <parent full="HTMLPurifier_AttrDef" namespace="" name="HTMLPurifier_AttrDef">
+    <member name="minimized" type="boolean" default="false" visibility="public" static="false" line="20">
+      <docblock>
+        <description compact="Tells us whether or not an HTML attribute is minimized. Has no meaning in other contexts."/>
+      </docblock>
+    </member>
+    <member name="required" type="boolean" default="false" visibility="public" static="false" line="26">
+      <docblock>
+        <description compact="Tells us whether or not an HTML attribute is required. Has no meaning in other contexts"/>
+      </docblock>
+    </member>
+    <method name="validate" start="35" end="35" abstract="true" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Validates and cleans passed string according to a definition."/>
+        <param description="to be validated and cleaned." variable="$string" type="object">
+          <type full="String" namespace="" name="String"/>
+        </param>
+        <param description="HTMLPurifier_Config object." variable="$config" type="object">
+          <type full="Mandatory" namespace="" name="Mandatory"/>
+        </param>
+        <param description="HTMLPurifier_AttrContext object." variable="$context" type="object">
+          <type full="Mandatory" namespace="" name="Mandatory"/>
+        </param>
+      </docblock>
+      <parameter name="string" byreference="false" type="{unknown}"/>
+      <parameter name="config" byreference="false" type="{unknown}"/>
+      <parameter name="context" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="parseCDATA" start="58" end="62" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Convenience method that parses a string as if it were CDATA.">This method process a string in the manner specified at
+&lt;http://www.w3.org/TR/html4/types.html#h-6.2&gt; by removing
+leading and trailing whitespace, ignoring line feeds, and replacing
+carriage returns and tabs with spaces.  While most useful for HTML
+attributes specified as CDATA, it can also be applied to most CSS
+values.</description>
+        <note value="This method is not entirely standards compliant, as trim() removes">more types of whitespace than specified in the spec. In practice,
+      this is rarely a problem, as those extra characters usually have
+      already been removed by HTMLPurifier_Encoder.</note>
+        <warning value="This processing is inconsistent with XML's whitespace handling">as specified by section 3.3.3 and referenced XHTML 1.0 section
+         4.7.  However, note that we are NOT necessarily
+         parsing XML, thus, this behavior may still be correct. We
+         assume that newlines have been normalized.</warning>
+      </docblock>
+      <parameter name="string" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="make" start="69" end="75" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Factory method for creating this class from a string."/>
+        <param description="construction info" variable="$string" type="object">
+          <type full="String" namespace="" name="String"/>
+        </param>
+        <return description="AttrDef object corresponding to $string" type="object">
+          <type full="Created" namespace="" name="Created"/>
+        </return>
+      </docblock>
+      <parameter name="string" byreference="false" type="{unknown}"/>
+      <inline>
+        <comment value="default implementation, return a flyweight of this object." line="70"/>
+        <comment value="If $string has an effect on the returned object (i.e. you" line="71"/>
+        <comment value="need to overload this method), it is best" line="72"/>
+        <comment value="to clone or instantiate new copies. (Instantiation is safer.)" line="73"/>
+      </inline>
+    </method>
+    <method name="mungeRgb" start="81" end="83" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Removes spaces from rgb(0, 0, 0) so that shorthand CSS properties work properly. THIS IS A HACK!"/>
+      </docblock>
+      <parameter name="string" byreference="false" type="{unknown}"/>
+    </method>
+  </parent>
+</class>

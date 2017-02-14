@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="HTMLPurifier_TagTransform" namespace="" name="HTMLPurifier_TagTransform" abstract="true" final="false" start="6" end="34">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier" file="TagTransform.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/TagTransform.php" size="1027" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="bbe3a895c69e5a2ffaab4f0951b8ddf69fd23c4b" relative="external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/TagTransform.php"/>
+  <docblock>
+    <description compact="Defines a mutation of an obsolete tag into a valid tag."/>
+  </docblock>
+  <member name="transform_to" visibility="public" static="false" line="12">
+    <docblock>
+      <description compact="Tag name to transform the tag to."/>
+    </docblock>
+  </member>
+  <method name="transform" start="20" end="20" abstract="true" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Transforms the obsolete tag into the valid tag."/>
+      <param description="to be transformed." variable="$tag" type="object">
+        <type full="Tag" namespace="" name="Tag"/>
+      </param>
+      <param description="HTMLPurifier_Config object" variable="$config" type="object">
+        <type full="Mandatory" namespace="" name="Mandatory"/>
+      </param>
+      <param description="HTMLPurifier_Context object" variable="$context" type="object">
+        <type full="Mandatory" namespace="" name="Mandatory"/>
+      </param>
+    </docblock>
+    <parameter name="tag" byreference="false" type="{unknown}"/>
+    <parameter name="config" byreference="false" type="{unknown}"/>
+    <parameter name="context" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="prependCSS" start="29" end="32" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Prepends CSS properties to the style attribute, creating the attribute if it doesn't exist."/>
+      <warning value="Copied over from AttrTransform, be sure to keep in sync"/>
+      <param description="array to process (passed by reference)" variable="$attr" type="object">
+        <type full="Attribute" namespace="" name="Attribute"/>
+      </param>
+      <param description="to prepend" variable="$css" type="object">
+        <type full="CSS" namespace="" name="CSS"/>
+      </param>
+    </docblock>
+    <parameter name="attr" byreference="true" type="{unknown}"/>
+    <parameter name="css" byreference="false" type="{unknown}"/>
+  </method>
+  <extenders>
+    <extender full="HTMLPurifier_TagTransform_Simple" namespace="" name="HTMLPurifier_TagTransform_Simple"/>
+    <extender full="HTMLPurifier_TagTransform_Font" namespace="" name="HTMLPurifier_TagTransform_Font"/>
+  </extenders>
+</class>

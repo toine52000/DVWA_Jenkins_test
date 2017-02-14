@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="IDS_Filter" namespace="" name="IDS_Filter" abstract="false" final="false" start="52" end="178">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS" file="Filter.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/Filter.php" size="4392" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="3531bebb37c68d10f23269ab70ee82f362165e00" relative="external/phpids/0.6/lib/IDS/Filter.php"/>
+  <docblock>
+    <description compact="PHPIDS Filter object">Each object of this class serves as a container for a specific filter. The
+object provides methods to get information about this particular filter and
+also to match an arbitrary string against it.</description>
+    <category value="Security"/>
+    <package value="PHPIDS"/>
+    <author value="Christian Matthies &lt;ch0012@gmail.com&gt;"/>
+    <author value="Mario Heiderich &lt;mario.heiderich@gmail.com&gt;"/>
+    <author value="Lars Strojny &lt;lars@strojny.net&gt;"/>
+    <copyright value="2007 The PHPIDS Group"/>
+    <license name="http://www.gnu.org/licenses/lgpl.html LGPL"/>
+    <version value="Release: $Id:Filter.php 517 2007-09-15 15:04:13Z mario $"/>
+    <link value="http://php-ids.org/"/>
+    <since value="Version 0.4"/>
+  </docblock>
+  <member name="rule" visibility="protected" static="false" line="60">
+    <docblock>
+      <description compact="Filter rule"/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="tags" type="array" default="" visibility="protected" static="false" line="67">
+    <docblock>
+      <description compact="List of tags of the filter"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="impact" type="integer" default="0" visibility="protected" static="false" line="74">
+    <docblock>
+      <description compact="Filter impact level"/>
+      <var type="integer"/>
+    </docblock>
+  </member>
+  <member name="description" type="{unknown}" default="" constant="null" visibility="protected" static="false" line="81">
+    <docblock>
+      <description compact="Filter description"/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="93" end="100" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Constructor"/>
+      <param description="filter rule" type="mixed" variable="$rule"/>
+      <param description="filter description" type="string" variable="$description"/>
+      <param description="list of tags" type="array" variable="$tags"/>
+      <param description="filter impact level" type="integer" variable="$impact"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+    <parameter name="rule" byreference="false" type="{unknown}"/>
+    <parameter name="description" byreference="false" type="{unknown}"/>
+    <parameter name="tags" byreference="false" type="array"/>
+    <parameter name="impact" byreference="false" type="{unknown}"/>
+  </constructor>
+  <method name="match" start="113" end="124" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Matches a string against current filter">Matches given string against the filter rule the specific object of this
+class represents</description>
+      <param description="the string to match" type="string" variable="$string"/>
+      <throws description="if argument is no string" type="object">
+        <type full="InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+      </throws>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="string" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getDescription" start="131" end="134" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns filter description"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getTags" start="144" end="147" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return list of affected tags">Each filter rule is concerned with a certain kind of attack vectors.
+This method returns those affected kinds.</description>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="getRule" start="154" end="157" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns filter rule"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getImpact" start="164" end="167" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get filter impact level"/>
+      <return type="integer"/>
+    </docblock>
+  </method>
+  <method name="getId" start="174" end="177" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get filter ID"/>
+      <return type="integer"/>
+    </docblock>
+  </method>
+</class>

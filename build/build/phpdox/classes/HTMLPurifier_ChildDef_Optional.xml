@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="HTMLPurifier_ChildDef_Optional" namespace="" name="HTMLPurifier_ChildDef_Optional" abstract="false" final="false" start="10" end="22">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ChildDef" file="Optional.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ChildDef/Optional.php" size="830" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="cde167a207ca1f230dcdddb7f7c48da22325df9f" relative="external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ChildDef/Optional.php"/>
+  <docblock>
+    <description compact="Definition that allows a set of elements, and allows no children."/>
+    <note value="This is a hack to reuse code from HTMLPurifier_ChildDef_Required,">really, one shouldn't inherit from the other.  Only altered behavior
+      is to overload a returned false with an array.  Thus, it will never
+      return false.</note>
+  </docblock>
+  <extends full="HTMLPurifier_ChildDef_Required" namespace="" name="HTMLPurifier_ChildDef_Required"/>
+  <member name="allow_empty" type="boolean" default="true" visibility="public" static="false" line="12"/>
+  <member name="type" type="string" default="'optional'" visibility="public" static="false" line="13"/>
+  <method name="validateChildren" start="14" end="21" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="tokens_of_children" byreference="false" type="{unknown}"/>
+    <parameter name="config" byreference="false" type="{unknown}"/>
+    <parameter name="context" byreference="false" type="{unknown}"/>
+  </method>
+  <parent full="HTMLPurifier_ChildDef_Required" namespace="" name="HTMLPurifier_ChildDef_Required">
+    <extends full="HTMLPurifier_ChildDef" namespace="" name="HTMLPurifier_ChildDef"/>
+    <member name="elements" type="array" default="" visibility="public" static="false" line="12">
+      <docblock>
+        <description compact="Lookup table of allowed elements."/>
+        <public/>
+      </docblock>
+    </member>
+    <member name="allow_empty" type="boolean" default="false" visibility="public" static="false" line="31"/>
+    <member name="type" type="string" default="'required'" visibility="public" static="false" line="32"/>
+    <constructor name="__construct" start="16" end="30" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description/>
+        <param description="of allowed element names (lowercase)." variable="$elements" type="object">
+          <type full="List" namespace="" name="List"/>
+        </param>
+      </docblock>
+      <parameter name="elements" byreference="false" type="{unknown}"/>
+    </constructor>
+    <method name="validateChildren" start="33" end="104" abstract="false" final="false" static="false" visibility="public">
+      <parameter name="tokens_of_children" byreference="false" type="{unknown}"/>
+      <parameter name="config" byreference="false" type="{unknown}"/>
+      <parameter name="context" byreference="false" type="{unknown}"/>
+      <inline>
+        <comment value="if there are no tokens, delete parent node" line="34"/>
+        <comment value="the new set of children" line="37"/>
+        <comment value="current depth into the nest" line="40"/>
+        <comment value="whether or not we're deleting a node" line="43"/>
+        <comment value="whether or not parsed character data is allowed" line="46"/>
+        <comment value="this controls whether or not we silently drop a tag" line="47"/>
+        <comment value="or generate escaped HTML from it" line="48"/>
+        <comment value="a little sanity check to make sure it's not ALL whitespace" line="51"/>
+        <comment value="some configuration" line="54"/>
+        <comment value="generator" line="57"/>
+      </inline>
+    </method>
+  </parent>
+  <parent full="HTMLPurifier_ChildDef" namespace="" name="HTMLPurifier_ChildDef">
+    <member name="type" visibility="public" static="false" line="12">
+      <docblock>
+        <description compact="Type of child definition, usually right-most part of class name lowercase.">Used occasionally in terms of context.</description>
+      </docblock>
+    </member>
+    <member name="allow_empty" visibility="public" static="false" line="20">
+      <docblock>
+        <description compact="Bool that indicates whether or not an empty array of children is okay">This is necessary for redundant checking when changes affecting
+a child node may cause a parent node to now be disallowed.</description>
+      </docblock>
+    </member>
+    <member name="elements" type="array" default="" visibility="public" static="false" line="25">
+      <docblock>
+        <description compact="Lookup array of all elements that this definition could possibly allow"/>
+      </docblock>
+    </member>
+    <method name="getNonAutoCloseElements" start="31" end="33" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Get lookup of tag names that should not close this element automatically.">All other elements will do so.</description>
+      </docblock>
+      <parameter name="config" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="validateChildren" start="45" end="45" abstract="true" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Validates nodes according to definition and returns modification."/>
+        <param description="of HTMLPurifier_Token" variable="$tokens_of_children" type="object">
+          <type full="Array" namespace="" name="Array"/>
+        </param>
+        <param description="object" variable="$config" type="object">
+          <type full="HTMLPurifier_Config" namespace="" name="HTMLPurifier_Config"/>
+        </param>
+        <param description="object" variable="$context" type="object">
+          <type full="HTMLPurifier_Context" namespace="" name="HTMLPurifier_Context"/>
+        </param>
+        <return description="true to leave nodes as is" type="object">
+          <type full="bool" namespace="" name="bool"/>
+        </return>
+        <return description="false to remove parent node" type="object">
+          <type full="bool" namespace="" name="bool"/>
+        </return>
+        <return description="of replacement child tokens" type="array"/>
+      </docblock>
+      <parameter name="tokens_of_children" byreference="false" type="{unknown}"/>
+      <parameter name="config" byreference="false" type="{unknown}"/>
+      <parameter name="context" byreference="false" type="{unknown}"/>
+    </method>
+  </parent>
+</class>

@@ -1,0 +1,164 @@
+<?xml version="1.0"?>
+<source xmlns="http://xml.phpdox.net/token">
+  <file xmlns="http://xml.phpdox.net/src" path="/home/user/Documents/DVWA-master/build/../src/vulnerabilities/fi" file="include.php" realpath="/home/user/Documents/DVWA-master/src/vulnerabilities/fi/include.php" size="971" time="2017-02-13T08:45:28+00:00" unixtime="1486975528" sha1="c39a21f24c8dc79ba7a2441711c3ac92047eb2e7" relative="vulnerabilities/fi/include.php"/>
+  <line no="1">
+    <token name="T_OPEN_TAG">&lt;?php</token>
+  </line>
+  <line no="2"/>
+  <line no="3">
+    <token name="T_COMMENT">// Check if the right PHP functions are enabled</token>
+  </line>
+  <line no="4">
+    <token name="T_VARIABLE">$WarningHtml</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">''</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="5">
+    <token name="T_IF">if</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EXCLAMATION_MARK">!</token>
+    <token name="T_STRING">ini_get</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'allow_url_include'</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_OPEN_CURLY">{</token>
+  </line>
+  <line no="6">
+    <token name="T_WHITESPACE">	</token>
+    <token name="T_VARIABLE">$WarningHtml</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONCAT_EQUAL">.=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;div class=\"warning\"&gt;The PHP function &lt;em&gt;allow_url_include&lt;/em&gt; is not enabled.&lt;/div&gt;"</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="7">
+    <token name="T_PHPDOX_CLOSE_CURLY">}</token>
+  </line>
+  <line no="8">
+    <token name="T_IF">if</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EXCLAMATION_MARK">!</token>
+    <token name="T_STRING">ini_get</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'allow_url_fopen'</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_OPEN_CURLY">{</token>
+  </line>
+  <line no="9">
+    <token name="T_WHITESPACE">	</token>
+    <token name="T_VARIABLE">$WarningHtml</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONCAT_EQUAL">.=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;div class=\"warning\"&gt;The PHP function &lt;em&gt;allow_url_fopen&lt;/em&gt; is not enabled.&lt;/div&gt;"</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="10">
+    <token name="T_PHPDOX_CLOSE_CURLY">}</token>
+  </line>
+  <line no="11"/>
+  <line no="12"/>
+  <line no="13">
+    <token name="T_VARIABLE">$page</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'body'</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONCAT_EQUAL">.=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_DOUBLE_QUOTES">"</token>
+  </line>
+  <line no="14">
+    <token name="T_ENCAPSED_AND_WHITESPACE">&lt;div class=\"body_padded\"&gt;</token>
+  </line>
+  <line no="15">
+    <token name="T_ENCAPSED_AND_WHITESPACE">	&lt;h1&gt;Vulnerability: File Inclusion&lt;/h1&gt;</token>
+  </line>
+  <line no="16"/>
+  <line no="17">
+    <token name="T_ENCAPSED_AND_WHITESPACE">	</token>
+    <token name="T_CURLY_OPEN">{</token>
+    <token name="T_VARIABLE">$WarningHtml</token>
+    <token name="T_PHPDOX_CLOSE_CURLY">}</token>
+  </line>
+  <line no="18"/>
+  <line no="19">
+    <token name="T_ENCAPSED_AND_WHITESPACE">	&lt;div class=\"vulnerable_code_area\"&gt;</token>
+  </line>
+  <line no="20">
+    <token name="T_ENCAPSED_AND_WHITESPACE">		[&lt;em&gt;&lt;a href=\"?page=file1.php\"&gt;file1.php&lt;/a&gt;&lt;/em&gt;] - [&lt;em&gt;&lt;a href=\"?page=file2.php\"&gt;file2.php&lt;/a&gt;&lt;/em&gt;] - [&lt;em&gt;&lt;a href=\"?page=file3.php\"&gt;file3.php&lt;/a&gt;&lt;/em&gt;]</token>
+  </line>
+  <line no="21">
+    <token name="T_ENCAPSED_AND_WHITESPACE">	&lt;/div&gt;</token>
+  </line>
+  <line no="22"/>
+  <line no="23">
+    <token name="T_ENCAPSED_AND_WHITESPACE">	&lt;h2&gt;More Information&lt;/h2&gt;</token>
+  </line>
+  <line no="24">
+    <token name="T_ENCAPSED_AND_WHITESPACE">	&lt;ul&gt;</token>
+  </line>
+  <line no="25">
+    <token name="T_ENCAPSED_AND_WHITESPACE">		&lt;li&gt;</token>
+    <token name="T_PHPDOX_DOUBLE_QUOTES">"</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">dvwaExternalLinkUrlGet</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'https://en.wikipedia.org/wiki/Remote_File_Inclusion'</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;/li&gt;</token>
+  </line>
+  <line no="26">
+    <token name="T_CONSTANT_ENCAPSED_STRING">		&lt;li&gt;"</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">dvwaExternalLinkUrlGet</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'https://www.owasp.org/index.php/Top_10_2007-A3'</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;/li&gt;</token>
+  </line>
+  <line no="27">
+    <token name="T_CONSTANT_ENCAPSED_STRING">	&lt;/ul&gt;</token>
+  </line>
+  <line no="28">
+    <token name="T_CONSTANT_ENCAPSED_STRING">&lt;/div&gt;\n"</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="29"/>
+  <line no="30">
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="31"/>
+</source>

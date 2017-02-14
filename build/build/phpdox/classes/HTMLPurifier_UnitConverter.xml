@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="HTMLPurifier_UnitConverter" namespace="" name="HTMLPurifier_UnitConverter" abstract="false" final="false" start="7" end="252">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier" file="UnitConverter.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/UnitConverter.php" size="9686" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="4d0bfaaae349c3e2223ea26ab5dbe0f36355abbf" relative="external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/UnitConverter.php"/>
+  <docblock>
+    <description compact="Class for converting between different unit-lengths as specified by CSS."/>
+  </docblock>
+  <constant type="integer" name="ENGLISH" value="1"/>
+  <constant type="integer" name="METRIC" value="2"/>
+  <constant type="integer" name="DIGITAL" value="3"/>
+  <member name="units" type="array" default="" visibility="protected" static="true" line="23">
+    <docblock>
+      <description compact="Units information array. Units are grouped into measuring systems (English, Metric), and are assigned an integer representing the conversion factor between that unit and the smallest unit in the system. Numeric indexes are actually magical constants that encode conversion data from one system to the next, with a O(n^2) constraint on memory (this is generally not a problem, since the number of measuring systems is small.)"/>
+    </docblock>
+  </member>
+  <member name="outputPrecision" visibility="protected" static="false" line="41">
+    <docblock>
+      <description compact="Minimum bcmath precision for output."/>
+    </docblock>
+  </member>
+  <member name="internalPrecision" visibility="protected" static="false" line="46">
+    <docblock>
+      <description compact="Bcmath precision for internal calculations."/>
+    </docblock>
+  </member>
+  <member name="bcmath" visibility="private" static="false" line="51">
+    <docblock>
+      <description compact="Whether or not BCMath is available"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="53" end="57" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="output_precision" byreference="false" type="integer" default="4"/>
+    <parameter name="internal_precision" byreference="false" type="integer" default="10"/>
+    <parameter name="force_no_bcmath" byreference="false" type="boolean" default="false"/>
+  </constructor>
+  <method name="convert" start="77" end="166" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Converts a length object of one unit into another unit."/>
+      <param type="object" variable="$length">Instance of HTMLPurifier_Length to convert. You must validate()
+     it before passing it here!<type full="HTMLPurifier_Length" namespace="" name="HTMLPurifier_Length"/></param>
+      <param type="string" variable="$to_unit">Unit to convert to.</param>
+      <note>About precision: This conversion function pays very special
+     attention to the incoming precision of values and attempts
+     to maintain a number of significant figure. Results are
+     fairly accurate up to nine digits. Some caveats:
+         - If a number is zero-padded as a result of this significant
+           figure tracking, the zeroes will be eliminated.
+         - If a number contains less than four sigfigs ($outputPrecision)
+           and this causes some decimals to be excluded, those
+           decimals will be added on.</note>
+    </docblock>
+    <parameter name="length" byreference="false" type="{unknown}"/>
+    <parameter name="to_unit" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Some calculations about the initial precision of the number;" line="95"/>
+      <comment value="this will be useful when we need to do final rounding." line="96"/>
+      <comment value="BCMath's internal precision deals only with decimals. Use" line="100"/>
+      <comment value="our default if the initial number has no decimals, or increase" line="101"/>
+      <comment value="it by how ever many decimals, thus, the number of guard digits" line="102"/>
+      <comment value="will always be greater than or equal to internalPrecision." line="103"/>
+      <comment value="internal precision" line="105"/>
+      <comment value="Post-condition: $unit == $to_unit" line="154"/>
+      <comment value="Useful for debugging:" line="157"/>
+      <comment value="echo &quot;&lt;pre&gt;n&quot;;" line="158"/>
+      <comment value="echo &quot;$n\nsigfigs = $sigfigs\nnew_log = $new_log\nlog = $log\nrp = $rp\n&lt;/pre&gt;\n&quot;;" line="159"/>
+    </inline>
+  </method>
+  <method name="getSigFigs" start="173" end="183" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the number of significant figures in a string number."/>
+      <param description="Decimal number" type="string" variable="$n"/>
+      <return description="number of sigfigs" type="int"/>
+    </docblock>
+    <parameter name="n" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="decimal position" line="175"/>
+    </inline>
+  </method>
+  <method name="add" start="188" end="191" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Adds two numbers, using arbitrary precision when available."/>
+    </docblock>
+    <parameter name="s1" byreference="false" type="{unknown}"/>
+    <parameter name="s2" byreference="false" type="{unknown}"/>
+    <parameter name="scale" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="mul" start="196" end="199" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Multiples two numbers, using arbitrary precision when available."/>
+    </docblock>
+    <parameter name="s1" byreference="false" type="{unknown}"/>
+    <parameter name="s2" byreference="false" type="{unknown}"/>
+    <parameter name="scale" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="div" start="204" end="207" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Divides two numbers, using arbitrary precision when available."/>
+    </docblock>
+    <parameter name="s1" byreference="false" type="{unknown}"/>
+    <parameter name="s2" byreference="false" type="{unknown}"/>
+    <parameter name="scale" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="round" start="213" end="231" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Rounds a number according to the number of sigfigs it should have, using arbitrary precision when available."/>
+    </docblock>
+    <parameter name="n" byreference="false" type="{unknown}"/>
+    <parameter name="sigfigs" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Number of digits left of decimal - 1" line="214"/>
+      <comment value="Number of decimal places needed" line="215"/>
+      <comment value="Negative sign" line="216"/>
+    </inline>
+  </method>
+  <method name="scale" start="236" end="250" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Scales a float to $scale digits right of decimal point, like BCMath."/>
+    </docblock>
+    <parameter name="r" byreference="false" type="{unknown}"/>
+    <parameter name="scale" byreference="false" type="{unknown}"/>
+  </method>
+</class>

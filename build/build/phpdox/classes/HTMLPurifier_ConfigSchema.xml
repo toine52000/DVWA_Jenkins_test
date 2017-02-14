@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="HTMLPurifier_ConfigSchema" namespace="" name="HTMLPurifier_ConfigSchema" abstract="false" final="false" start="6" end="219">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier" file="ConfigSchema.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ConfigSchema.php" size="8775" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="e32e556c175f4f86e3b7e71f3e35cd132a0abd86" relative="external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ConfigSchema.php"/>
+  <docblock>
+    <description compact="Configuration definition, defines directives and their defaults."/>
+  </docblock>
+  <member name="defaults" type="array" default="" visibility="public" static="false" line="12">
+    <docblock>
+      <description compact="Defaults of the directives and namespaces."/>
+      <note value="This shares the exact same structure as HTMLPurifier_Config::$conf"/>
+    </docblock>
+  </member>
+  <member name="info" type="array" default="" visibility="public" static="false" line="43">
+    <docblock>
+      <description compact="Definition of the directives. The structure of this is:">array(
+     'Namespace' =&gt; array(
+         'Directive' =&gt; new stdclass(),
+     )
+ )
+
+The stdclass may have the following properties:
+
+ - If isAlias isn't set:
+     - type: Integer type of directive, see HTMLPurifier_VarParser for definitions
+     - allow_null: If set, this directive allows null values
+     - aliases: If set, an associative array of value aliases to real values
+     - allowed: If set, a lookup array of allowed (string) values
+ - If isAlias is set:
+     - namespace: Namespace this directive aliases to
+     - name: Directive name this directive aliases to
+
+In certain degenerate cases, stdclass will actually be an integer. In
+that case, the value is equivalent to an stdclass with the type
+property set to the integer. If the integer is negative, type is
+equal to the absolute value of integer, and allow_null is true.
+
+This class is friendly with HTMLPurifier_Config. If you need introspection
+about the schema, you're better of using the ConfigSchema_Interchange,
+which uses more memory but has much richer information.</description>
+    </docblock>
+  </member>
+  <member name="singleton" visibility="protected" static="true" line="48">
+    <docblock>
+      <description compact="Application-wide singleton"/>
+    </docblock>
+  </member>
+  <method name="makeFromSerial" start="53" end="55" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Unserializes the default ConfigSchema."/>
+    </docblock>
+  </method>
+  <method name="instance" start="60" end="67" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Retrieves an instance of the application-wide configuration definition."/>
+    </docblock>
+    <parameter name="prototype" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="add" start="81" end="87" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Defines a directive for configuration"/>
+      <warning value="Will fail of directive's namespace is defined."/>
+      <warning value="This method's signature is slightly different from the legacy">define() static method! Beware!</warning>
+      <param description="the directive is in" variable="$namespace" type="object">
+        <type full="Namespace" namespace="" name="Namespace"/>
+      </param>
+      <param description="of directive" variable="$name" type="object">
+        <type full="Key" namespace="" name="Key"/>
+      </param>
+      <param description="value of directive" variable="$default" type="object">
+        <type full="Default" namespace="" name="Default"/>
+      </param>
+      <param description="type of the directive. See" variable="$type" type="object">HTMLPurifier_DirectiveDef::$type for allowed values<type full="Allowed" namespace="" name="Allowed"/></param>
+      <param description="or not to allow null values" variable="$allow_null" type="object">
+        <type full="Whether" namespace="" name="Whether"/>
+      </param>
+    </docblock>
+    <parameter name="namespace" byreference="false" type="{unknown}"/>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="default" byreference="false" type="{unknown}"/>
+    <parameter name="type" byreference="false" type="{unknown}"/>
+    <parameter name="allow_null" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="addNamespace" start="95" end="98" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Defines a namespace for directives to be put into."/>
+      <warning value="This is slightly different from the corresponding static">method.</warning>
+      <param description="name" variable="$namespace" type="object">
+        <type full="Namespace's" namespace="" name="Namespace's"/>
+      </param>
+    </docblock>
+    <parameter name="namespace" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="addValueAliases" start="109" end="116" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Defines a directive value alias.">Directive value aliases are convenient for developers because it lets
+them set a directive to several values and get the same result.</description>
+      <param description="namespace" variable="$namespace" type="object">
+        <type full="Directive's" namespace="" name="Directive's"/>
+      </param>
+      <param description="of Directive" variable="$name" type="object">
+        <type full="Name" namespace="" name="Name"/>
+      </param>
+      <param description="of aliased values to the real alias" variable="$aliases" type="object">
+        <type full="Hash" namespace="" name="Hash"/>
+      </param>
+    </docblock>
+    <parameter name="namespace" byreference="false" type="{unknown}"/>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="aliases" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="addAllowedValues" start="126" end="128" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Defines a set of allowed values for a directive."/>
+      <warning value="This is slightly different from the corresponding static">method definition.</warning>
+      <param description="of directive" variable="$namespace" type="object">
+        <type full="Namespace" namespace="" name="Namespace"/>
+      </param>
+      <param description="of directive" variable="$name" type="object">
+        <type full="Name" namespace="" name="Name"/>
+      </param>
+      <param description="array of allowed values" variable="$allowed" type="object">
+        <type full="Lookup" namespace="" name="Lookup"/>
+      </param>
+    </docblock>
+    <parameter name="namespace" byreference="false" type="{unknown}"/>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="allowed" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="addAlias" start="137" end="143" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Defines a directive alias for backwards compatibility"/>
+      <param variable="$namespace"/>
+      <param description="that will be aliased" variable="$name" type="object">
+        <type full="Directive" namespace="" name="Directive"/>
+      </param>
+      <param variable="$new_namespace"/>
+      <param description="that the alias will be to" variable="$new_name" type="object">
+        <type full="Directive" namespace="" name="Directive"/>
+      </param>
+    </docblock>
+    <parameter name="namespace" byreference="false" type="{unknown}"/>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="new_namespace" byreference="false" type="{unknown}"/>
+    <parameter name="new_name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="postProcess" start="148" end="158" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Replaces any stdclass that only has the type property with type integer."/>
+    </docblock>
+  </method>
+  <method name="define" start="163" end="171" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <see value="HTMLPurifier_ConfigSchema-&gt;set()"/>
+    </docblock>
+    <parameter name="namespace" byreference="false" type="{unknown}"/>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="default" byreference="false" type="{unknown}"/>
+    <parameter name="type" byreference="false" type="{unknown}"/>
+    <parameter name="description" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="defineNamespace" start="174" end="178" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <see value="HTMLPurifier_ConfigSchema-&gt;addNamespace()"/>
+    </docblock>
+    <parameter name="namespace" byreference="false" type="{unknown}"/>
+    <parameter name="description" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="defineValueAliases" start="181" end="185" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <see value="HTMLPurifier_ConfigSchema-&gt;addValueAliases()"/>
+    </docblock>
+    <parameter name="namespace" byreference="false" type="{unknown}"/>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="aliases" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="defineAllowedValues" start="188" end="196" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <see value="HTMLPurifier_ConfigSchema-&gt;addAllowedValues()"/>
+    </docblock>
+    <parameter name="namespace" byreference="false" type="{unknown}"/>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="allowed_values" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="defineAlias" start="199" end="203" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <see value="HTMLPurifier_ConfigSchema-&gt;addAlias()"/>
+    </docblock>
+    <parameter name="namespace" byreference="false" type="{unknown}"/>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="new_namespace" byreference="false" type="{unknown}"/>
+    <parameter name="new_name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validate" start="206" end="210" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <deprecated value=", use HTMLPurifier_VarParser-&gt;parse()"/>
+    </docblock>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+    <parameter name="b" byreference="false" type="{unknown}"/>
+    <parameter name="c" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="deprecated" start="215" end="217" abstract="false" final="false" static="true" visibility="private">
+    <docblock>
+      <description compact="Throws an E_USER_NOTICE stating that a method is deprecated."/>
+    </docblock>
+    <parameter name="method" byreference="false" type="{unknown}"/>
+  </method>
+</class>

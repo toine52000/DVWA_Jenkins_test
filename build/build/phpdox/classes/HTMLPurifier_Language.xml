@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="HTMLPurifier_Language" namespace="" name="HTMLPurifier_Language" abstract="false" final="false" start="7" end="161">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier" file="Language.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Language.php" size="5620" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="b70514682961298c816a6085c4ced5b1a257b470" relative="external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Language.php"/>
+  <docblock>
+    <description compact="Represents a language and defines localizable string formatting and other functions, as well as the localized messages for HTML Purifier."/>
+  </docblock>
+  <member name="code" type="string" default="'en'" visibility="public" static="false" line="13">
+    <docblock>
+      <description compact="ISO 639 language code of language. Prefers shortest possible version"/>
+    </docblock>
+  </member>
+  <member name="fallback" type="boolean" default="false" visibility="public" static="false" line="18">
+    <docblock>
+      <description compact="Fallback language code"/>
+    </docblock>
+  </member>
+  <member name="messages" type="array" default="" visibility="public" static="false" line="23">
+    <docblock>
+      <description compact="Array of localizable messages"/>
+    </docblock>
+  </member>
+  <member name="errorNames" type="array" default="" visibility="public" static="false" line="28">
+    <docblock>
+      <description compact="Array of localizable error codes"/>
+    </docblock>
+  </member>
+  <member name="error" type="boolean" default="false" visibility="public" static="false" line="35">
+    <docblock>
+      <description compact="True if no message file was found for this language, so English is being used instead. Check this if you'd like to notify the user that they've used a non-supported language."/>
+    </docblock>
+  </member>
+  <member name="_loaded" type="boolean" default="false" visibility="public" static="false" line="41">
+    <docblock>
+      <description compact="Has the language object been loaded yet?"/>
+      <todo value="Make it private, fix usage in HTMLPurifier_LanguageTest"/>
+    </docblock>
+  </member>
+  <member name="config" visibility="protected" static="false" line="46">
+    <docblock>
+      <description compact="Instances of HTMLPurifier_Config and HTMLPurifier_Context"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="48" end="51" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="config" byreference="false" type="{unknown}"/>
+    <parameter name="context" byreference="false" type="{unknown}"/>
+  </constructor>
+  <method name="load" start="57" end="65" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Loads language object with necessary info from factory cache"/>
+      <note value="This is a lazy loader"/>
+    </docblock>
+  </method>
+  <method name="getMessage" start="72" end="76" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieves a localised message."/>
+      <param description="identifier of message" variable="$key" type="string"/>
+      <return description="localised message" type="string"/>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getErrorName" start="84" end="88" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieves a localised error name."/>
+      <param description="error number, corresponding to PHP's error" variable="$int" type="integer">reporting</param>
+      <return description="localised message" type="string"/>
+    </docblock>
+    <parameter name="int" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="listify" start="93" end="107" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Converts an array list into a string readable representation"/>
+    </docblock>
+    <parameter name="array" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="formatMessage" start="117" end="159" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Formats a localised message with passed parameters"/>
+      <param description="identifier of message" variable="$key" type="string"/>
+      <param description="to substitute in" variable="$args" type="object">
+        <type full="Parameters" namespace="" name="Parameters"/>
+      </param>
+      <return description="localised message" type="string"/>
+      <todo value="Implement conditionals? Right now, some messages make">reference to line numbers, but those aren't always available</todo>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+    <parameter name="args" byreference="false" type="array" default=""/>
+  </method>
+  <extenders>
+    <extender full="HTMLPurifier_Language_en_x_test" namespace="" name="HTMLPurifier_Language_en_x_test"/>
+  </extenders>
+</class>

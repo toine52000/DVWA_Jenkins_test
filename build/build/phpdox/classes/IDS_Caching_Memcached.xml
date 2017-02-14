@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="IDS_Caching_Memcached" namespace="" name="IDS_Caching_Memcached" abstract="false" final="false" start="52" end="220">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/Caching" file="Memcached.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/Caching/Memcached.php" size="5890" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="a33a4addb6e47e709c22daf956946e4a80cda99c" relative="external/phpids/0.6/lib/IDS/Caching/Memcached.php"/>
+  <docblock>
+    <description compact="File caching wrapper">This class inhabits functionality to get and set cache via memcached.</description>
+    <category value="Security"/>
+    <package value="PHPIDS"/>
+    <author value="Christian Matthies &lt;ch0012@gmail.com&gt;"/>
+    <author value="Mario Heiderich &lt;mario.heiderich@gmail.com&gt;"/>
+    <author value="Lars Strojny &lt;lars@strojny.net&gt;"/>
+    <copyright value="2007 The PHPIDS Groupoup"/>
+    <license name="http://www.gnu.org/licenses/lgpl.html LGPL"/>
+    <version value="Release: $Id:Memcached.php 517 2007-09-15 15:04:13Z mario $"/>
+    <link value="http://php-ids.org/"/>
+    <since value="Version 0.4"/>
+  </docblock>
+  <implements full="IDS_Caching_Interface" namespace="" name="IDS_Caching_Interface"/>
+  <member name="type" type="{unknown}" default="" constant="null" visibility="private" static="false" line="60">
+    <docblock>
+      <description compact="Caching type"/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="config" type="{unknown}" default="" constant="null" visibility="private" static="false" line="67">
+    <docblock>
+      <description compact="Cache configuration"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="path" type="{unknown}" default="" constant="null" visibility="private" static="false" line="74">
+    <docblock>
+      <description compact="Path to memcache timestamp file"/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="isCached" type="boolean" default="false" visibility="private" static="false" line="81">
+    <docblock>
+      <description compact="Flag if the filter storage has been found in memcached"/>
+      <var type="boolean"/>
+    </docblock>
+  </member>
+  <member name="memcache" type="{unknown}" default="" constant="null" visibility="private" static="false" line="88">
+    <docblock>
+      <description compact="Memcache object"/>
+      <var type="object"/>
+    </docblock>
+  </member>
+  <member name="cachingInstance" type="{unknown}" default="" constant="null" visibility="private" static="true" line="95">
+    <docblock>
+      <description compact="Holds an instance of this class"/>
+      <var type="object"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="107" end="121" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Constructor"/>
+      <param description="caching type" type="string" variable="$type"/>
+      <param description="the IDS_Init object" type="array" variable="$init"/>
+      <throws description="if necessary files aren't writeable" type="object">
+        <type full="Exception" namespace="" name="Exception"/>
+      </throws>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="type" byreference="false" type="{unknown}"/>
+    <parameter name="init" byreference="false" type="{unknown}"/>
+  </constructor>
+  <method name="getInstance" start="131" end="139" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Returns an instance of this class"/>
+      <param description="caching type" type="string" variable="$type"/>
+      <param description="the IDS_Init object" type="array" variable="$init"/>
+      <return description="$this" type="object"/>
+    </docblock>
+    <parameter name="type" byreference="false" type="{unknown}"/>
+    <parameter name="init" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setCache" start="149" end="171" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Writes cache data"/>
+      <param description="the caching data" type="array" variable="$data"/>
+      <throws description="if necessary files aren't writeable" type="object">
+        <type full="Exception" namespace="" name="Exception"/>
+      </throws>
+      <return description="$this" type="object"/>
+    </docblock>
+    <parameter name="data" byreference="false" type="array"/>
+  </method>
+  <method name="getCache" start="181" end="191" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the cached data">Note that this method returns false if either type or file cache is
+not set</description>
+      <return description="cache data or false" type="mixed"/>
+    </docblock>
+  </method>
+  <method name="_connect" start="199" end="219" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Connect to the memcached server"/>
+      <throws description="if connection parameters are insufficient" type="object">
+        <type full="Exception" namespace="" name="Exception"/>
+      </throws>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <interface full="IDS_Caching_Interface" namespace="" name="IDS_Caching_Interface">
+    <method name="setCache" start="57" end="57" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Interface method"/>
+        <param description="the cache data" type="array" variable="$data"/>
+        <return type="object">
+          <type full="void" namespace="" name="void"/>
+        </return>
+      </docblock>
+      <parameter name="data" byreference="false" type="array"/>
+    </method>
+    <method name="getCache" start="64" end="64" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Interface method"/>
+        <return type="object">
+          <type full="void" namespace="" name="void"/>
+        </return>
+      </docblock>
+    </method>
+  </interface>
+</class>

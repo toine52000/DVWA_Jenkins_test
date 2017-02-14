@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface xmlns="http://xml.phpdox.net/src" full="Countable" namespace="" name="Countable">
+  <method name="count" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact="Count elements of an object"/>
+      <return type="int"/>
+    </docblock>
+  </method>
+<implementors><class full="IDS_Event" namespace="" name="IDS_Event"/><class full="IDS_Report" namespace="" name="IDS_Report"/></implementors></interface>

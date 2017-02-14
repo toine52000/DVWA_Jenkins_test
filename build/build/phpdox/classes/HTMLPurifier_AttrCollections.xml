@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="HTMLPurifier_AttrCollections" namespace="" name="HTMLPurifier_AttrCollections" abstract="false" final="false" start="7" end="126">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier" file="AttrCollections.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrCollections.php" size="4606" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="7b5e5262f1bef07b35cacac134acfbbd81f71e91" relative="external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrCollections.php"/>
+  <docblock>
+    <description compact="Defines common attribute collections that modules reference"/>
+  </docblock>
+  <member name="info" type="array" default="" visibility="public" static="false" line="13">
+    <docblock>
+      <description compact="Associative array of attribute collections, indexed by name"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="22" end="47" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Performs all expansions on internal data for use by other inclusions It also collects all attribute collection extensions from modules"/>
+      <param description="instance" variable="$attr_types" type="object">
+        <type full="HTMLPurifier_AttrTypes" namespace="" name="HTMLPurifier_AttrTypes"/>
+      </param>
+      <param description="array of HTMLPurifier_HTMLModule members" variable="$modules" type="object">
+        <type full="Hash" namespace="" name="Hash"/>
+      </param>
+    </docblock>
+    <parameter name="attr_types" byreference="false" type="{unknown}"/>
+    <parameter name="modules" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="load extensions from the modules" line="23"/>
+      <comment value="perform internal expansions and inclusions" line="40"/>
+    </inline>
+  </constructor>
+  <method name="performInclusions" start="54" end="74" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Takes a reference to an attribute associative array and performs all inclusions specified by the zero index."/>
+      <param description="Reference to attribute array" type="object">
+        <type full="&amp;$attr" namespace="" name="&amp;$attr"/>
+      </param>
+    </docblock>
+    <parameter name="attr" byreference="true" type="{unknown}"/>
+    <inline>
+      <comment value="recursion guard" line="57"/>
+      <comment value="loop through all the inclusions" line="58"/>
+    </inline>
+  </method>
+  <method name="expandIdentifiers" start="82" end="124" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Expands all string identifiers in an attribute array by replacing them with the appropriate values inside HTMLPurifier_AttrTypes"/>
+      <param description="Reference to attribute array" type="object">
+        <type full="&amp;$attr" namespace="" name="&amp;$attr"/>
+      </param>
+      <param description="instance" variable="$attr_types" type="object">
+        <type full="HTMLPurifier_AttrTypes" namespace="" name="HTMLPurifier_AttrTypes"/>
+      </param>
+    </docblock>
+    <parameter name="attr" byreference="true" type="{unknown}"/>
+    <parameter name="attr_types" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="because foreach will process new elements we add, make sure we" line="84"/>
+      <comment value="skip duplicates" line="85"/>
+    </inline>
+  </method>
+</class>

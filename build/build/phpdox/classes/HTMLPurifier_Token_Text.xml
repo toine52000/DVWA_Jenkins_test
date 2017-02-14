@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="HTMLPurifier_Token_Text" namespace="" name="HTMLPurifier_Token_Text" abstract="false" final="false" start="12" end="31">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Token" file="Text.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Token/Text.php" size="1036" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="59218a198e7ce64ce6f895735948c74511bbdde7" relative="external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Token/Text.php"/>
+  <docblock>
+    <description compact="Concrete text token class.">Text tokens comprise of regular parsed character data (PCDATA) and raw
+character data (from the CDATA sections). Internally, their
+data is parsed with all entities expanded. Surprisingly, the text token
+does have a "tag name" called #PCDATA, which is how the DTD represents it
+in permissible child nodes.</description>
+  </docblock>
+  <extends full="HTMLPurifier_Token" namespace="" name="HTMLPurifier_Token"/>
+  <member name="name" type="string" default="'#PCDATA'" visibility="public" static="false" line="15"/>
+  <member name="data" visibility="public" static="false" line="16"/>
+  <member name="is_whitespace" visibility="public" static="false" line="17"/>
+  <constructor name="__construct" start="24" end="29" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Constructor, accepts data and determines if it is whitespace."/>
+      <param description="parsed character data." variable="$data" type="object">
+        <type full="String" namespace="" name="String"/>
+      </param>
+    </docblock>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+    <parameter name="line" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="col" byreference="false" type="{unknown}" default="" constant="null"/>
+  </constructor>
+  <parent full="HTMLPurifier_Token" namespace="" name="HTMLPurifier_Token">
+    <member name="line" visibility="public" static="false" line="7"/>
+    <member name="col" visibility="public" static="false" line="8"/>
+    <member name="armor" type="array" default="" visibility="public" static="false" line="15">
+      <docblock>
+        <description compact="Lookup array of processing that this token is exempt from.">Currently, valid values are "ValidateAttributes" and
+"MakeWellFormed_TagClosedError"</description>
+      </docblock>
+    </member>
+    <member name="skip" visibility="public" static="false" line="20">
+      <docblock>
+        <description compact="Used during MakeWellFormed."/>
+      </docblock>
+    </member>
+    <member name="rewind" visibility="public" static="false" line="21"/>
+    <method name="__get" start="23" end="35" abstract="false" final="false" static="false" visibility="public">
+      <parameter name="n" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="position" start="40" end="43" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Sets the position of the token in the source document."/>
+      </docblock>
+      <parameter name="l" byreference="false" type="{unknown}" default="" constant="null"/>
+      <parameter name="c" byreference="false" type="{unknown}" default="" constant="null"/>
+    </method>
+    <method name="rawPosition" start="48" end="52" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Convenience function for DirectLex settings line/col position."/>
+      </docblock>
+      <parameter name="l" byreference="false" type="{unknown}"/>
+      <parameter name="c" byreference="false" type="{unknown}"/>
+    </method>
+  </parent>
+</class>

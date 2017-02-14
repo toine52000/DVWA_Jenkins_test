@@ -1,0 +1,199 @@
+<?xml version="1.0"?>
+<source xmlns="http://xml.phpdox.net/token">
+  <file xmlns="http://xml.phpdox.net/src" path="/home/user/Documents/DVWA-master/build/../src/vulnerabilities/brute/help" file="help.php" realpath="/home/user/Documents/DVWA-master/src/vulnerabilities/brute/help/help.php" size="3768" time="2017-02-13T08:45:28+00:00" unixtime="1486975528" sha1="2ba81513c2f7da07980189ffa339a5ae6b27984e" relative="vulnerabilities/brute/help/help.php"/>
+  <line no="1">
+    <token name="T_INLINE_HTML">&lt;div class="body_padded"&gt;</token>
+  </line>
+  <line no="2">
+    <token name="T_INLINE_HTML">	&lt;h1&gt;Help - Brute Force (Login)&lt;/h1&gt;</token>
+  </line>
+  <line no="3"/>
+  <line no="4">
+    <token name="T_INLINE_HTML">	&lt;div id="code"&gt;</token>
+  </line>
+  <line no="5">
+    <token name="T_INLINE_HTML">	&lt;table width='100%' bgcolor='white' style="border:2px #C0C0C0 solid"&gt;</token>
+  </line>
+  <line no="6">
+    <token name="T_INLINE_HTML">	&lt;tr&gt;</token>
+  </line>
+  <line no="7">
+    <token name="T_INLINE_HTML">	&lt;td&gt;&lt;div id="code"&gt;</token>
+  </line>
+  <line no="8">
+    <token name="T_INLINE_HTML">		&lt;h3&gt;About&lt;/h3&gt;</token>
+  </line>
+  <line no="9">
+    <token name="T_INLINE_HTML">		&lt;p&gt;Password cracking is the process of recovering passwords from data that has been stored in or transmitted by a computer system.</token>
+  </line>
+  <line no="10">
+    <token name="T_INLINE_HTML">			A common approach is to repeatedly try guesses for the password.&lt;/p&gt;</token>
+  </line>
+  <line no="11"/>
+  <line no="12">
+    <token name="T_INLINE_HTML">		&lt;p&gt;Users often choose weak passwords. Examples of insecure choices include single words found in dictionaries, family names, any too short password</token>
+  </line>
+  <line no="13">
+    <token name="T_INLINE_HTML">			(usually thought to be less than 6 or 7 characters), or predictable patterns</token>
+  </line>
+  <line no="14">
+    <token name="T_INLINE_HTML">			(e.g. alternating vowels and consonants, which is known as leetspeak, so "password" becomes "p@55w0rd").&lt;/p&gt;</token>
+  </line>
+  <line no="15"/>
+  <line no="16">
+    <token name="T_INLINE_HTML">		&lt;p&gt;Creating a targeted wordlists, which is generated towards the target, often gives the highest success rate. There are public tools out there that will create a dictionary</token>
+  </line>
+  <line no="17">
+    <token name="T_INLINE_HTML">			based on a combination of company websites, personal social networks and other common information (such as birthdays or year of graduation).</token>
+  </line>
+  <line no="18"/>
+  <line no="19">
+    <token name="T_INLINE_HTML">		&lt;p&gt;A last resort is to try every possible password, known as a brute force attack. In theory, if there is no limit to the number of attempts, a brute force attack will always</token>
+  </line>
+  <line no="20">
+    <token name="T_INLINE_HTML">			be successful since the rules for acceptable passwords must be publicly known; but as the length of the password increases, so does the number of possible passwords</token>
+  </line>
+  <line no="21">
+    <token name="T_INLINE_HTML">			making the attack time longer.&lt;/p&gt;</token>
+  </line>
+  <line no="22"/>
+  <line no="23">
+    <token name="T_INLINE_HTML">		&lt;br /&gt;&lt;hr /&gt;&lt;br /&gt;</token>
+  </line>
+  <line no="24"/>
+  <line no="25">
+    <token name="T_INLINE_HTML">		&lt;h3&gt;Objective&lt;/h3&gt;</token>
+  </line>
+  <line no="26">
+    <token name="T_INLINE_HTML">		&lt;p&gt;Your goal is to get the administrator&#x2019;s password by brute forcing. Bonus points for getting the other four user passwords!&lt;/p&gt;</token>
+  </line>
+  <line no="27"/>
+  <line no="28">
+    <token name="T_INLINE_HTML">		&lt;br /&gt;&lt;hr /&gt;&lt;br /&gt;</token>
+  </line>
+  <line no="29"/>
+  <line no="30">
+    <token name="T_INLINE_HTML">		&lt;h3&gt;Low Level&lt;/h3&gt;</token>
+  </line>
+  <line no="31">
+    <token name="T_INLINE_HTML">		&lt;p&gt;The developer has completely missed out &lt;u&gt;any protections methods&lt;/u&gt;, allowing for anyone to try as many times as they wish, to login to any user without any repercussions.&lt;/p&gt;</token>
+  </line>
+  <line no="32"/>
+  <line no="33">
+    <token name="T_INLINE_HTML">		&lt;br /&gt;</token>
+  </line>
+  <line no="34"/>
+  <line no="35">
+    <token name="T_INLINE_HTML">		&lt;h3&gt;Medium Level&lt;/h3&gt;</token>
+  </line>
+  <line no="36">
+    <token name="T_INLINE_HTML">		&lt;p&gt;This stage adds a sleep on the failed login screen. This mean when you login incorrectly, there will be an extra two second wait before the page is visible.&lt;/p&gt;</token>
+  </line>
+  <line no="37"/>
+  <line no="38">
+    <token name="T_INLINE_HTML">		&lt;p&gt;This will only slow down the amount of requests which can be processed a minute, making it longer to brute force.&lt;/p&gt;</token>
+  </line>
+  <line no="39"/>
+  <line no="40">
+    <token name="T_INLINE_HTML">		&lt;br /&gt;</token>
+  </line>
+  <line no="41"/>
+  <line no="42">
+    <token name="T_INLINE_HTML">		&lt;h3&gt;High Level&lt;/h3&gt;</token>
+  </line>
+  <line no="43">
+    <token name="T_INLINE_HTML">		&lt;p&gt;There has been an "anti Cross-Site Request Forgery (CSRF) token" used. There is a old myth that this protection will stop brute force attacks. This is not the case.</token>
+  </line>
+  <line no="44">
+    <token name="T_INLINE_HTML">			This level also extends on the medium level, by waiting when there is a failed login but this time it is a random amount of time between two and four seconds.</token>
+  </line>
+  <line no="45">
+    <token name="T_INLINE_HTML">			The idea of this is to try and confuse any timing predictions.&lt;/p&gt;</token>
+  </line>
+  <line no="46"/>
+  <line no="47">
+    <token name="T_INLINE_HTML">		&lt;p&gt;Using a </token>
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_ECHO">echo</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">dvwaExternalLinkUrlGet</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'http://www.captcha.net/'</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'CAPTCHA'</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML"> form could have a similar effect as a CSRF token.&lt;/p&gt;</token>
+  </line>
+  <line no="48"/>
+  <line no="49">
+    <token name="T_INLINE_HTML">		&lt;br /&gt;</token>
+  </line>
+  <line no="50"/>
+  <line no="51">
+    <token name="T_INLINE_HTML">		&lt;h3&gt;Impossible Level&lt;/h3&gt;</token>
+  </line>
+  <line no="52">
+    <token name="T_INLINE_HTML">		&lt;p&gt;Brute force (and user enumeration) should not be possible in the impossible level. The developer has added a "lock out" feature, where if there are five bad logins within</token>
+  </line>
+  <line no="53">
+    <token name="T_INLINE_HTML">			the last 15 minutes, the locked out user cannot log in.&lt;/p&gt;</token>
+  </line>
+  <line no="54"/>
+  <line no="55">
+    <token name="T_INLINE_HTML">		&lt;p&gt;If the locked out user tries to login, even with a valid password, it will say their username or password is incorrect. This will make it impossible to know</token>
+  </line>
+  <line no="56">
+    <token name="T_INLINE_HTML">			if there is a valid account on the system, with that password, and if the account is locked.&lt;/p&gt;</token>
+  </line>
+  <line no="57"/>
+  <line no="58">
+    <token name="T_INLINE_HTML">		&lt;p&gt;This can cause a "Denial of Service" (DoS), by having someone continually trying to login to someone's account.</token>
+  </line>
+  <line no="59">
+    <token name="T_INLINE_HTML">			This level would need to be extended by blacklisting the attacker (e.g. IP address, country, user-agent).&lt;/p&gt;</token>
+  </line>
+  <line no="60">
+    <token name="T_INLINE_HTML">	&lt;/div&gt;&lt;/td&gt;</token>
+  </line>
+  <line no="61">
+    <token name="T_INLINE_HTML">	&lt;/tr&gt;</token>
+  </line>
+  <line no="62">
+    <token name="T_INLINE_HTML">	&lt;/table&gt;</token>
+  </line>
+  <line no="63"/>
+  <line no="64">
+    <token name="T_INLINE_HTML">	&lt;/div&gt;</token>
+  </line>
+  <line no="65"/>
+  <line no="66">
+    <token name="T_INLINE_HTML">	&lt;br /&gt;</token>
+  </line>
+  <line no="67"/>
+  <line no="68">
+    <token name="T_INLINE_HTML">	&lt;p&gt;Reference: </token>
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_ECHO">echo</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">dvwaExternalLinkUrlGet</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'https://en.wikipedia.org/wiki/Password_cracking'</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">&lt;/p&gt;</token>
+  </line>
+  <line no="69">
+    <token name="T_INLINE_HTML">&lt;/div&gt;</token>
+  </line>
+  <line no="70"/>
+</source>

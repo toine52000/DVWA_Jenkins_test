@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="HTMLPurifier_LanguageFactory" namespace="" name="HTMLPurifier_LanguageFactory" abstract="false" final="false" start="10" end="196">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier" file="LanguageFactory.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/LanguageFactory.php" size="6776" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="2372544c5611e943b56b0b1daf171ac15f1b4acd" relative="external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/LanguageFactory.php"/>
+  <docblock>
+    <description compact="Class responsible for generating HTMLPurifier_Language objects, managing caching and fallbacks."/>
+    <note value="Thanks to MediaWiki for the general logic, although this version">has been entirely rewritten</note>
+    <todo value="Serialized cache for languages"/>
+  </docblock>
+  <member name="cache" visibility="public" static="false" line="18">
+    <docblock>
+      <description compact="Cache of language code information used to load HTMLPurifier_Language objects Structure is: $factory-&gt;cache[$language_code][$key] = $value"/>
+      <value value="array map"/>
+    </docblock>
+  </member>
+  <member name="keys" type="array" default="" visibility="public" static="false" line="25">
+    <docblock>
+      <description compact="Valid keys in the HTMLPurifier_Language object. Designates which variables to slurp out of a message file."/>
+      <value value="array list"/>
+    </docblock>
+  </member>
+  <member name="validator" visibility="protected" static="false" line="31">
+    <docblock>
+      <description compact="Instance of HTMLPurifier_AttrDef_Lang to validate language codes"/>
+      <value value="object HTMLPurifier_AttrDef_Lang"/>
+    </docblock>
+  </member>
+  <member name="dir" visibility="protected" static="false" line="38">
+    <docblock>
+      <description compact="Cached copy of dirname(__FILE__), directory of current file without trailing slash"/>
+      <value value="string filename"/>
+    </docblock>
+  </member>
+  <member name="mergeable_keys_map" type="array" default="" visibility="protected" static="false" line="44">
+    <docblock>
+      <description compact="Keys whose contents are a hash map and can be merged"/>
+      <value value="array lookup"/>
+    </docblock>
+  </member>
+  <member name="mergeable_keys_list" type="array" default="" visibility="protected" static="false" line="50">
+    <docblock>
+      <description compact="Keys whose contents are a list and can be merged"/>
+      <value value="array lookup"/>
+    </docblock>
+  </member>
+  <method name="instance" start="57" end="66" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Retrieve sole instance of the factory."/>
+      <param description="prototype to overload sole instance with," variable="$prototype" type="object">or bool true to reset to default factory.<type full="Optional" namespace="" name="Optional"/></param>
+    </docblock>
+    <parameter name="prototype" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="setup" start="72" end="75" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets up the singleton, much like a constructor"/>
+      <note value="Prevents people from getting this outside of the singleton"/>
+    </docblock>
+  </method>
+  <method name="create" start="83" end="122" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Creates a language object, handles class fallbacks"/>
+      <param description="of HTMLPurifier_Config" variable="$config" type="object">
+        <type full="Instance" namespace="" name="Instance"/>
+      </param>
+      <param description="of HTMLPurifier_Context" variable="$context" type="object">
+        <type full="Instance" namespace="" name="Instance"/>
+      </param>
+      <param description="to override configuration with. Private parameter." variable="$code" type="object">
+        <type full="Code" namespace="" name="Code"/>
+      </param>
+    </docblock>
+    <parameter name="config" byreference="false" type="{unknown}"/>
+    <parameter name="context" byreference="false" type="{unknown}"/>
+    <parameter name="code" byreference="false" type="boolean" default="false"/>
+    <inline>
+      <comment value="validate language code" line="85"/>
+      <comment value="malformed code becomes English" line="93"/>
+      <comment value="make valid PHP classname" line="95"/>
+      <comment value="recursion protection" line="96"/>
+    </inline>
+  </method>
+  <method name="getFallbackFor" start="129" end="132" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the fallback language for language"/>
+      <note value="Loads the original language into cache"/>
+      <param description="language code" variable="$code" type="string"/>
+    </docblock>
+    <parameter name="code" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="loadLanguage" start="138" end="194" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Loads language into the cache, handles message file and fallbacks"/>
+      <param description="language code" variable="$code" type="string"/>
+    </docblock>
+    <parameter name="code" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="recursion guard" line="139"/>
+      <comment value="abort if we've already loaded it" line="141"/>
+      <comment value="generate filename" line="144"/>
+      <comment value="default fallback : may be overwritten by the ensuing include" line="147"/>
+      <comment value="load primary localisation" line="150"/>
+      <comment value="load fallback localisation" line="160"/>
+      <comment value="save to cache for later retrieval" line="190"/>
+    </inline>
+  </method>
+</class>

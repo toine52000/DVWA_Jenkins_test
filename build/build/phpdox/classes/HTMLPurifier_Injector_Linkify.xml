@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="HTMLPurifier_Injector_Linkify" namespace="" name="HTMLPurifier_Injector_Linkify" abstract="false" final="false" start="6" end="44">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Injector" file="Linkify.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Injector/Linkify.php" size="1507" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="56d7899c59b89b468d202d1e7ee2d1439ed3bf37" relative="external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Injector/Linkify.php"/>
+  <docblock>
+    <description compact="Injector that converts http, https and ftp text URLs to actual links."/>
+  </docblock>
+  <extends full="HTMLPurifier_Injector" namespace="" name="HTMLPurifier_Injector"/>
+  <member name="name" type="string" default="'Linkify'" visibility="public" static="false" line="9"/>
+  <member name="needed" type="array" default="" visibility="public" static="false" line="10"/>
+  <method name="handleText" start="12" end="42" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="token" byreference="true" type="{unknown}"/>
+    <inline>
+      <comment value="there is/are URL(s). Let's split the string:" line="22"/>
+      <comment value="Note: this regex is extremely permissive" line="23"/>
+      <comment value="$i = index" line="28"/>
+      <comment value="$c = count" line="29"/>
+      <comment value="$l = is link" line="30"/>
+    </inline>
+  </method>
+  <parent full="HTMLPurifier_Injector" namespace="" name="HTMLPurifier_Injector">
+    <member name="name" visibility="public" static="false" line="22">
+      <docblock>
+        <description compact="Advisory name of injector, this is for friendly error messages"/>
+      </docblock>
+    </member>
+    <member name="htmlDefinition" visibility="protected" static="false" line="27">
+      <docblock>
+        <description compact="Instance of HTMLPurifier_HTMLDefinition"/>
+      </docblock>
+    </member>
+    <member name="currentNesting" visibility="protected" static="false" line="33">
+      <docblock>
+        <description compact="Reference to CurrentNesting variable in Context. This is an array list of tokens that we are currently &quot;inside&quot;"/>
+      </docblock>
+    </member>
+    <member name="inputTokens" visibility="protected" static="false" line="39">
+      <docblock>
+        <description compact="Reference to InputTokens variable in Context. This is an array list of the input tokens that are being processed."/>
+      </docblock>
+    </member>
+    <member name="inputIndex" visibility="protected" static="false" line="46">
+      <docblock>
+        <description compact="Reference to InputIndex variable in Context. This is an integer array index for $this-&gt;inputTokens that indicates what token is currently being processed."/>
+      </docblock>
+    </member>
+    <member name="needed" type="array" default="" visibility="public" static="false" line="53">
+      <docblock>
+        <description compact="Array of elements and attributes this injector creates and therefore need to be allowed by the definition. Takes form of array('element' =&gt; array('attr', 'attr2'), 'element2')"/>
+      </docblock>
+    </member>
+    <member name="rewind" type="boolean" default="false" visibility="protected" static="false" line="58">
+      <docblock>
+        <description compact="Index of inputTokens to rewind to."/>
+      </docblock>
+    </member>
+    <method name="rewind" start="68" end="70" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Rewind to a spot to re-perform processing. This is useful if you deleted a node, and now need to see if this change affected any earlier nodes. Rewinding does not affect other injectors, and can result in infinite loops if not used carefully."/>
+        <warning value="HTML Purifier will prevent you from fast-forwarding with this">function.</warning>
+      </docblock>
+      <parameter name="index" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="getRewind" start="75" end="79" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Retrieves rewind, and then unsets it."/>
+      </docblock>
+    </method>
+    <method name="prepare" start="90" end="101" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Prepares the injector by giving it the config and context objects: this allows references to important variables to be made within the injector. This function also checks if the HTML environment will work with the Injector (see checkNeeded())."/>
+        <param description="of HTMLPurifier_Config" variable="$config" type="object">
+          <type full="Instance" namespace="" name="Instance"/>
+        </param>
+        <param description="of HTMLPurifier_Context" variable="$context" type="object">
+          <type full="Instance" namespace="" name="Instance"/>
+        </param>
+        <return description="false if success, string of missing needed element/attribute if failure" type="object">
+          <type full="Boolean" namespace="" name="Boolean"/>
+        </return>
+      </docblock>
+      <parameter name="config" byreference="false" type="{unknown}"/>
+      <parameter name="context" byreference="false" type="{unknown}"/>
+      <inline>
+        <comment value="Even though this might fail, some unit tests ignore this and" line="92"/>
+        <comment value="still test checkNeeded, so be careful. Maybe get rid of that" line="93"/>
+        <comment value="dependency." line="94"/>
+      </inline>
+    </method>
+    <method name="checkNeeded" start="111" end="122" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="This function checks if the HTML environment will work with the Injector: if p tags are not allowed, the Auto-Paragraphing injector should not be enabled."/>
+        <param description="of HTMLPurifier_Config" variable="$config" type="object">
+          <type full="Instance" namespace="" name="Instance"/>
+        </param>
+        <param description="of HTMLPurifier_Context" variable="$context" type="object">
+          <type full="Instance" namespace="" name="Instance"/>
+        </param>
+        <return description="false if success, string of missing needed element/attribute if failure" type="object">
+          <type full="Boolean" namespace="" name="Boolean"/>
+        </return>
+      </docblock>
+      <parameter name="config" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="allowsElement" start="129" end="141" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Tests if the context node allows a certain element"/>
+        <param description="of element to test for" variable="$name" type="object">
+          <type full="Name" namespace="" name="Name"/>
+        </param>
+        <return description="if element is allowed, false if it is not" type="object">
+          <type full="True" namespace="" name="True"/>
+        </return>
+      </docblock>
+      <parameter name="name" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="forward" start="151" end="157" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Iterator function, which starts with the next token and continues until you reach the end of the input tokens."/>
+        <warning value="Please prevent previous references from interfering with this">functions by setting $i = null beforehand!</warning>
+        <param description="Current integer index variable for inputTokens" type="object">
+          <type full="&amp;$i" namespace="" name="&amp;$i"/>
+        </param>
+        <param description="Current token variable. Do NOT use $token, as that variable is also a reference" type="object">
+          <type full="&amp;$current" namespace="" name="&amp;$current"/>
+        </param>
+      </docblock>
+      <parameter name="i" byreference="true" type="{unknown}"/>
+      <parameter name="current" byreference="true" type="{unknown}"/>
+    </method>
+    <method name="forwardUntilEndToken" start="164" end="174" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Similar to _forward, but accepts a third parameter $nesting (which should be initialized at 0) and stops when we hit the end tag for the node $this-&gt;inputIndex starts in."/>
+      </docblock>
+      <parameter name="i" byreference="true" type="{unknown}"/>
+      <parameter name="current" byreference="true" type="{unknown}"/>
+      <parameter name="nesting" byreference="true" type="{unknown}"/>
+    </method>
+    <method name="backward" start="184" end="190" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Iterator function, starts with the previous token and continues until you reach the beginning of input tokens."/>
+        <warning value="Please prevent previous references from interfering with this">functions by setting $i = null beforehand!</warning>
+        <param description="Current integer index variable for inputTokens" type="object">
+          <type full="&amp;$i" namespace="" name="&amp;$i"/>
+        </param>
+        <param description="Current token variable. Do NOT use $token, as that variable is also a reference" type="object">
+          <type full="&amp;$current" namespace="" name="&amp;$current"/>
+        </param>
+      </docblock>
+      <parameter name="i" byreference="true" type="{unknown}"/>
+      <parameter name="current" byreference="true" type="{unknown}"/>
+    </method>
+    <method name="current" start="201" end="204" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Initializes the iterator at the current position. Use in a do {} while; loop to force the _forward and _backward functions to start at the current location."/>
+        <warning value="Please prevent previous references from interfering with this">functions by setting $i = null beforehand!</warning>
+        <param description="Current integer index variable for inputTokens" type="object">
+          <type full="&amp;$i" namespace="" name="&amp;$i"/>
+        </param>
+        <param description="Current token variable. Do NOT use $token, as that variable is also a reference" type="object">
+          <type full="&amp;$current" namespace="" name="&amp;$current"/>
+        </param>
+      </docblock>
+      <parameter name="i" byreference="true" type="{unknown}"/>
+      <parameter name="current" byreference="true" type="{unknown}"/>
+    </method>
+    <method name="handleText" start="209" end="209" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Handler that is called when a text token is processed"/>
+      </docblock>
+      <parameter name="token" byreference="true" type="{unknown}"/>
+    </method>
+    <method name="handleElement" start="214" end="214" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Handler that is called when a start or empty token is processed"/>
+      </docblock>
+      <parameter name="token" byreference="true" type="{unknown}"/>
+    </method>
+    <method name="handleEnd" start="219" end="221" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Handler that is called when an end token is processed"/>
+      </docblock>
+      <parameter name="token" byreference="true" type="{unknown}"/>
+    </method>
+    <method name="notifyEnd" start="228" end="228" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Notifier that is called when an end token is processed"/>
+        <note value="This differs from handlers in that the token is read-only"/>
+        <deprecated/>
+      </docblock>
+      <parameter name="token" byreference="false" type="{unknown}"/>
+    </method>
+  </parent>
+</class>

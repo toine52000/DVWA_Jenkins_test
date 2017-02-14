@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="HTMLPurifier_EntityLookup" namespace="" name="HTMLPurifier_EntityLookup" abstract="false" final="false" start="6" end="42">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier" file="EntityLookup.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/EntityLookup.php" size="1330" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="6b793b690c3990b505bebc85f54439fa29ff22fc" relative="external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/EntityLookup.php"/>
+  <docblock>
+    <description compact="Object that provides entity lookup table from entity name to character"/>
+  </docblock>
+  <member name="table" visibility="public" static="false" line="11">
+    <docblock>
+      <description compact="Assoc array of entity name to character represented."/>
+    </docblock>
+  </member>
+  <method name="setup" start="19" end="24" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets up the entity lookup table from the serialized file contents."/>
+      <note value="The serialized contents are versioned, but were generated">using the maintenance script generate_entity_file.php</note>
+      <warning value="This is not in constructor to help enforce the Singleton"/>
+    </docblock>
+    <parameter name="file" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="instance" start="30" end="40" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Retrieves sole instance of the object."/>
+      <param description="prototype of custom lookup table to overload with." type="object">
+        <type full="Optional" namespace="" name="Optional"/>
+      </param>
+    </docblock>
+    <parameter name="prototype" byreference="false" type="boolean" default="false"/>
+    <inline>
+      <comment value="no references, since PHP doesn't copy unless modified" line="31"/>
+    </inline>
+  </method>
+</class>

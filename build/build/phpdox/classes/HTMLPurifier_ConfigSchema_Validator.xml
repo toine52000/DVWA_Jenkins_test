@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="HTMLPurifier_ConfigSchema_Validator" namespace="" name="HTMLPurifier_ConfigSchema_Validator" abstract="false" final="false" start="11" end="223">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ConfigSchema" file="Validator.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ConfigSchema/Validator.php" size="8665" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="2b492c96187bec181b0e71a624131e45648015cf" relative="external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ConfigSchema/Validator.php"/>
+  <docblock>
+    <description compact="Performs validations on HTMLPurifier_ConfigSchema_Interchange"/>
+    <note value="If you see '// handled by InterchangeBuilder', that means a">design decision in that class would prevent this validation from
+      ever being necessary. We have them anyway, however, for
+      redundancy.</note>
+  </docblock>
+  <member name="interchange" visibility="protected" static="false" line="17">
+    <docblock>
+      <description compact="Easy to access global objects."/>
+    </docblock>
+  </member>
+  <member name="context" type="array" default="" visibility="protected" static="false" line="22">
+    <docblock>
+      <description compact="Context-stack to provide easy to read error messages."/>
+    </docblock>
+  </member>
+  <member name="parser" visibility="protected" static="false" line="27">
+    <docblock>
+      <description compact="HTMLPurifier_VarParser to test default's type."/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="29" end="31" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="validate" start="37" end="52" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Validates a fully-formed interchange object. Throws an HTMLPurifier_ConfigSchema_Exception if there's a problem."/>
+    </docblock>
+    <parameter name="interchange" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="PHP is a bit lax with integer &lt;=&gt; string conversions in" line="40"/>
+      <comment value="arrays, so we don't use the identical !== comparison" line="41"/>
+    </inline>
+  </method>
+  <method name="validateNamespace" start="57" end="66" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Validates a HTMLPurifier_ConfigSchema_Interchange_Namespace object."/>
+    </docblock>
+    <parameter name="n" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="implicit assertIsString handled by InterchangeBuilder" line="61"/>
+      <comment value="handled by InterchangeBuilder" line="64"/>
+    </inline>
+  </method>
+  <method name="validateId" start="71" end="85" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Validates a HTMLPurifier_ConfigSchema_Interchange_Id object."/>
+    </docblock>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="implicit assertIsString handled by InterchangeBuilder" line="83"/>
+    </inline>
+  </method>
+  <method name="validateDirective" start="90" end="125" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Validates a HTMLPurifier_ConfigSchema_Interchange_Directive object."/>
+    </docblock>
+    <parameter name="d" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="BEGIN - handled by InterchangeBuilder" line="98"/>
+      <comment value="END - handled by InterchangeBuilder" line="109"/>
+    </inline>
+  </method>
+  <method name="validateDirectiveAllowed" start="131" end="144" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Extra validation if $allowed member variable of HTMLPurifier_ConfigSchema_Interchange_Directive is defined."/>
+    </docblock>
+    <parameter name="d" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="handled by InterchangeBuilder" line="135"/>
+    </inline>
+  </method>
+  <method name="validateDirectiveValueAliases" start="150" end="172" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Extra validation if $valueAliases member variable of HTMLPurifier_ConfigSchema_Interchange_Directive is defined."/>
+    </docblock>
+    <parameter name="d" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="handled by InterchangeBuilder" line="153"/>
+    </inline>
+  </method>
+  <method name="validateDirectiveAliases" start="178" end="195" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Extra validation if $aliases member variable of HTMLPurifier_ConfigSchema_Interchange_Directive is defined."/>
+    </docblock>
+    <parameter name="d" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="handled by InterchangeBuilder" line="180"/>
+    </inline>
+  </method>
+  <method name="with" start="203" end="205" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Convenience function for generating HTMLPurifier_ConfigSchema_ValidatorAtom for validating simple member variables of objects."/>
+    </docblock>
+    <parameter name="obj" byreference="false" type="{unknown}"/>
+    <parameter name="member" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="error" start="210" end="214" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Emits an error, providing helpful context."/>
+    </docblock>
+    <parameter name="target" byreference="false" type="{unknown}"/>
+    <parameter name="msg" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getFormattedContext" start="219" end="221" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Returns a formatted context string."/>
+    </docblock>
+  </method>
+</class>

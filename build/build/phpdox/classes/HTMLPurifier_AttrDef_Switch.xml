@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="HTMLPurifier_AttrDef_Switch" namespace="" name="HTMLPurifier_AttrDef_Switch" abstract="false" final="false" start="6" end="32">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrDef" file="Switch.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrDef/Switch.php" size="997" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="752597891bf19cfda432fddf64bd7cdf654f4e83" relative="external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrDef/Switch.php"/>
+  <docblock>
+    <description compact="Decorator that, depending on a token, switches between two definitions."/>
+  </docblock>
+  <member name="tag" visibility="protected" static="false" line="9"/>
+  <member name="withTag" visibility="protected" static="false" line="10"/>
+  <constructor name="__construct" start="17" end="21" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param description="Tag name to switch upon" type="string" variable="$tag"/>
+      <param description="Call if token matches tag" type="object" variable="$with_tag">
+        <type full="HTMLPurifier_AttrDef" namespace="" name="HTMLPurifier_AttrDef"/>
+      </param>
+      <param description="Call if token doesn't match, or there is no token" type="object" variable="$without_tag">
+        <type full="HTMLPurifier_AttrDef" namespace="" name="HTMLPurifier_AttrDef"/>
+      </param>
+    </docblock>
+    <parameter name="tag" byreference="false" type="{unknown}"/>
+    <parameter name="with_tag" byreference="false" type="{unknown}"/>
+    <parameter name="without_tag" byreference="false" type="{unknown}"/>
+  </constructor>
+  <method name="validate" start="23" end="30" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="string" byreference="false" type="{unknown}"/>
+    <parameter name="config" byreference="false" type="{unknown}"/>
+    <parameter name="context" byreference="false" type="{unknown}"/>
+  </method>
+</class>

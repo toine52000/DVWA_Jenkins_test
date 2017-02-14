@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="HTML5TreeConstructer" namespace="" name="HTML5TreeConstructer" abstract="false" final="false" start="1180" end="3905">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Lexer" file="PH5P.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Lexer/PH5P.php" size="168940" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="40591263575aae03d60e52b4b02bcf543ab312c1" relative="external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Lexer/PH5P.php"/>
+  <member name="stack" type="array" default="" visibility="public" static="false" line="1181"/>
+  <member name="phase" visibility="private" static="false" line="1183"/>
+  <member name="mode" visibility="private" static="false" line="1184"/>
+  <member name="dom" visibility="private" static="false" line="1185"/>
+  <member name="foster_parent" type="{unknown}" default="" constant="null" visibility="private" static="false" line="1186"/>
+  <member name="a_formatting" type="array" default="" visibility="private" static="false" line="1187"/>
+  <member name="head_pointer" type="{unknown}" default="" constant="null" visibility="private" static="false" line="1189"/>
+  <member name="form_pointer" type="{unknown}" default="" constant="null" visibility="private" static="false" line="1190"/>
+  <member name="scoping" type="array" default="" visibility="private" static="false" line="1192"/>
+  <member name="formatting" type="array" default="" visibility="private" static="false" line="1193"/>
+  <member name="special" type="array" default="" visibility="private" static="false" line="1194"/>
+  <constant type="integer" name="INIT_PHASE" value="0"/>
+  <constant type="integer" name="ROOT_PHASE" value="1"/>
+  <constant type="integer" name="MAIN_PHASE" value="2"/>
+  <constant type="integer" name="END_PHASE" value="3"/>
+  <constant type="integer" name="BEFOR_HEAD" value="0"/>
+  <constant type="integer" name="IN_HEAD" value="1"/>
+  <constant type="integer" name="AFTER_HEAD" value="2"/>
+  <constant type="integer" name="IN_BODY" value="3"/>
+  <constant type="integer" name="IN_TABLE" value="4"/>
+  <constant type="integer" name="IN_CAPTION" value="5"/>
+  <constant type="integer" name="IN_CGROUP" value="6"/>
+  <constant type="integer" name="IN_TBODY" value="7"/>
+  <constant type="integer" name="IN_ROW" value="8"/>
+  <constant type="integer" name="IN_CELL" value="9"/>
+  <constant type="integer" name="IN_SELECT" value="10"/>
+  <constant type="integer" name="AFTER_BODY" value="11"/>
+  <constant type="integer" name="IN_FRAME" value="12"/>
+  <constant type="integer" name="AFTR_FRAME" value="13"/>
+  <constant type="integer" name="SPECIAL" value="0"/>
+  <constant type="integer" name="SCOPING" value="1"/>
+  <constant type="integer" name="FORMATTING" value="2"/>
+  <constant type="integer" name="PHRASING" value="3"/>
+  <constant type="integer" name="MARKER" value="0"/>
+  <constructor name="__construct" start="1232" end="1241" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="emitToken" start="1244" end="1251" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="token" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="initPhase" start="1253" end="1301" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="token" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Initially, the tree construction stage must handle each token" line="1254"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="emitted from the tokenisation stage as follows:" line="1255"/>
+      <comment value="A DOCTYPE token that is marked as being in error" line="1257"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="A comment token" line="1258"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="A start tag token" line="1259"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="An end tag token" line="1260"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="A character token that is not one of one of U+0009 CHARACTER TABULATION," line="1261"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="U+000A LINE FEED (LF), U+000B LINE TABULATION, U+000C FORM FEED (FF)," line="1262"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="or U+0020 SPACE" line="1263"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="An end-of-file token" line="1264"/>
+    </inline>
+  </method>
+  <method name="rootElementPhase" start="1303" end="1348" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="token" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="After the initial phase, as each token is emitted from the tokenisation" line="1304"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="stage, it must be processed as described in this section." line="1305"/>
+      <comment value="A DOCTYPE token" line="1307"/>
+    </inline>
+  </method>
+  <method name="mainPhase" start="1350" end="1398" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="token" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Tokens in the main phase must be handled as follows:" line="1351"/>
+      <comment value="A DOCTYPE token" line="1353"/>
+    </inline>
+  </method>
+  <method name="beforeHead" start="1400" end="1452" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="token" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Handle the token as follows:" line="1401"/>
+      <comment value="A character token that is one of one of U+0009 CHARACTER TABULATION," line="1403"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="U+000A LINE FEED (LF), U+000B LINE TABULATION, U+000C FORM FEED (FF)," line="1404"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="or U+0020 SPACE" line="1405"/>
+    </inline>
+  </method>
+  <method name="inHead" start="1454" end="1576" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="token" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Handle the token as follows:" line="1455"/>
+      <comment value="A character token that is one of one of U+0009 CHARACTER TABULATION," line="1457"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="U+000A LINE FEED (LF), U+000B LINE TABULATION, U+000C FORM FEED (FF)," line="1458"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="or U+0020 SPACE." line="1459"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="THIS DIFFERS FROM THE SPEC: If the current node is either a title, style" line="1460"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="or script element, append the character to the current node regardless" line="1461"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="of its content." line="1462"/>
+    </inline>
+  </method>
+  <method name="afterHead" start="1578" end="1632" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="token" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Handle the token as follows:" line="1579"/>
+      <comment value="A character token that is one of one of U+0009 CHARACTER TABULATION," line="1581"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="U+000A LINE FEED (LF), U+000B LINE TABULATION, U+000C FORM FEED (FF)," line="1582"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="or U+0020 SPACE" line="1583"/>
+    </inline>
+  </method>
+  <method name="inBody" start="1634" end="2630" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="token" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Handle the token as follows:" line="1635"/>
+    </inline>
+  </method>
+  <method name="inTable" start="2632" end="2807" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="token" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="A character token that is one of one of U+0009 CHARACTER TABULATION," line="2635"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="U+000A LINE FEED (LF), U+000B LINE TABULATION, U+000C FORM FEED (FF)," line="2636"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="or U+0020 SPACE" line="2637"/>
+    </inline>
+  </method>
+  <method name="inCaption" start="2809" end="2875" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="token" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="An end tag whose tag name is &quot;caption&quot;" line="2810"/>
+    </inline>
+  </method>
+  <method name="inColumnGroup" start="2877" end="2932" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="token" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="A character token that is one of one of U+0009 CHARACTER TABULATION," line="2878"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="U+000A LINE FEED (LF), U+000B LINE TABULATION, U+000C FORM FEED (FF)," line="2879"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="or U+0020 SPACE" line="2880"/>
+    </inline>
+  </method>
+  <method name="inTableBody" start="2934" end="3018" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="token" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="A start tag whose tag name is &quot;tr&quot;" line="2937"/>
+    </inline>
+  </method>
+  <method name="inRow" start="3020" end="3103" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="token" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="A start tag whose tag name is one of: &quot;th&quot;, &quot;td&quot;" line="3023"/>
+    </inline>
+  </method>
+  <method name="inCell" start="3105" end="3210" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="token" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="An end tag whose tag name is one of: &quot;td&quot;, &quot;th&quot;" line="3106"/>
+    </inline>
+  </method>
+  <method name="inSelect" start="3212" end="3359" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="token" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Handle the token as follows:" line="3213"/>
+      <comment value="A character token" line="3215"/>
+    </inline>
+  </method>
+  <method name="afterBody" start="3361" end="3398" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="token" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Handle the token as follows:" line="3362"/>
+      <comment value="A character token that is one of one of U+0009 CHARACTER TABULATION," line="3364"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="U+000A LINE FEED (LF), U+000B LINE TABULATION, U+000C FORM FEED (FF)," line="3365"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="or U+0020 SPACE" line="3366"/>
+    </inline>
+  </method>
+  <method name="inFrameset" start="3400" end="3461" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="token" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Handle the token as follows:" line="3401"/>
+      <comment value="A character token that is one of one of U+0009 CHARACTER TABULATION," line="3403"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="U+000A LINE FEED (LF), U+000B LINE TABULATION, U+000C FORM FEED (FF)," line="3404"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="U+000D CARRIAGE RETURN (CR), or U+0020 SPACE" line="3405"/>
+    </inline>
+  </method>
+  <method name="afterFrameset" start="3463" end="3496" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="token" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Handle the token as follows:" line="3464"/>
+      <comment value="A character token that is one of one of U+0009 CHARACTER TABULATION," line="3466"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="U+000A LINE FEED (LF), U+000B LINE TABULATION, U+000C FORM FEED (FF)," line="3467"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="U+000D CARRIAGE RETURN (CR), or U+0020 SPACE" line="3468"/>
+    </inline>
+  </method>
+  <method name="trailingEndPhase" start="3498" end="3536" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="token" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="After the main phase, as each token is emitted from the tokenisation" line="3499"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="stage, it must be processed as described in this section." line="3500"/>
+      <comment value="A DOCTYPE token" line="3502"/>
+    </inline>
+  </method>
+  <method name="insertElement" start="3538" end="3562" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="token" byreference="false" type="{unknown}"/>
+    <parameter name="append" byreference="false" type="boolean" default="true"/>
+    <parameter name="check" byreference="false" type="boolean" default="false"/>
+    <inline>
+      <comment value="Proprietary workaround for libxml2's limitations with tag names" line="3539"/>
+    </inline>
+  </method>
+  <method name="insertText" start="3564" end="3567" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="data" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="insertComment" start="3569" end="3572" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="data" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="appendToRealParent" start="3574" end="3600" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="node" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="elementInScope" start="3602" end="3649" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="el" byreference="false" type="{unknown}"/>
+    <parameter name="table" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="reconstructActiveFormattingElements" start="3651" end="3720" abstract="false" final="false" static="false" visibility="private">
+    <inline>
+      <comment value="1. If there are no entries in the list of active formatting elements," line="3652"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="then there is nothing to reconstruct; stop this algorithm." line="3653"/>
+      <comment value="3. Let entry be the last (most recently added) element in the list" line="3660"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="of active formatting elements." line="3661"/>
+      <comment value="2. If the last (most recently added) entry in the list of active" line="3664"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="formatting elements is a marker, or if it is an element that is in the" line="3665"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="stack of open elements, then there is nothing to reconstruct; stop this" line="3666"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="algorithm." line="3667"/>
+    </inline>
+  </method>
+  <method name="clearTheActiveFormattingElementsUpToTheLastMarker" start="3722" end="3741" abstract="false" final="false" static="false" visibility="private">
+    <inline>
+      <comment value="When the steps below require the UA to clear the list of active" line="3723"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="formatting elements up to the last marker, the UA must perform the" line="3724"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="following steps:" line="3725"/>
+    </inline>
+  </method>
+  <method name="generateImpliedEndTags" start="3743" end="3755" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="exclude" byreference="false" type="array" default=""/>
+    <inline>
+      <comment value="When the steps below require the UA to generate implied end tags," line="3744"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="then, if the current node is a dd element, a dt element, an li element," line="3745"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="a p element, a td element, a th  element, or a tr element, the UA must" line="3746"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="act as if an end tag with the respective tag name had been seen and" line="3747"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="then generate implied end tags again." line="3748"/>
+    </inline>
+  </method>
+  <method name="getElementCategory" start="3757" end="3770" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="node" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="clearStackToTableContext" start="3772" end="3787" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="elements" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="When the steps above require the UA to clear the stack back to a" line="3773"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="table context, it means that the UA must, while the current node is not" line="3774"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="a table element or an html element, pop elements from the stack of open" line="3775"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="elements. If this causes any elements to be popped from the stack, then" line="3776"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="this is a parse error." line="3777"/>
+    </inline>
+  </method>
+  <method name="resetInsertionMode" start="3789" end="3885" abstract="false" final="false" static="false" visibility="private">
+    <inline>
+      <comment value="1. Let last be false." line="3790"/>
+    </inline>
+  </method>
+  <method name="closeCell" start="3887" end="3900" abstract="false" final="false" static="false" visibility="private">
+    <inline>
+      <comment value="If the stack of open elements has a td or th element in table scope," line="3888"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="then act as if an end tag token with that tag name had been seen." line="3889"/>
+    </inline>
+  </method>
+  <method name="save" start="3902" end="3904" abstract="false" final="false" static="false" visibility="public"/>
+</class>

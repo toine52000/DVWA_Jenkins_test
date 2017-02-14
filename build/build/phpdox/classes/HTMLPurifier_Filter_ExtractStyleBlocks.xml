@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="HTMLPurifier_Filter_ExtractStyleBlocks" namespace="" name="HTMLPurifier_Filter_ExtractStyleBlocks" abstract="false" final="false" start="17" end="133">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Filter" file="ExtractStyleBlocks.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Filter/ExtractStyleBlocks.php" size="5292" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="565cf9176a38866774689bae4fb4911ff224c569" relative="external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Filter/ExtractStyleBlocks.php"/>
+  <docblock>
+    <description compact="This filter extracts &lt;style&gt; blocks from input HTML, cleans them up using CSSTidy, and then places them in $purifier-&gt;context-&gt;get('StyleBlocks') so they can be used elsewhere in the document."/>
+    <note>See tests/HTMLPurifier/Filter/ExtractStyleBlocksTest.php for
+     sample usage.</note>
+    <note>This filter can also be used on stylesheets not included in the
+     document--something purists would probably prefer. Just directly
+     call HTMLPurifier_Filter_ExtractStyleBlocks-&gt;cleanCSS()</note>
+  </docblock>
+  <extends full="HTMLPurifier_Filter" namespace="" name="HTMLPurifier_Filter"/>
+  <member name="name" type="string" default="'ExtractStyleBlocks'" visibility="public" static="false" line="20"/>
+  <member name="_styleMatches" type="array" default="" visibility="private" static="false" line="21"/>
+  <member name="_tidy" visibility="private" static="false" line="22"/>
+  <constructor name="__construct" start="24" end="26" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="styleCallback" start="32" end="34" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Save the contents of CSS blocks to style matches"/>
+      <param description="style $matches array" variable="$matches" type="object">
+        <type full="preg_replace" namespace="" name="preg_replace"/>
+      </param>
+    </docblock>
+    <parameter name="matches" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="preFilter" start="40" end="53" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Removes inline &lt;style&gt; tags from HTML, saves them for later use"/>
+      <todo value="Extend to indicate non-text/css style blocks"/>
+    </docblock>
+    <parameter name="html" byreference="false" type="{unknown}"/>
+    <parameter name="config" byreference="false" type="{unknown}"/>
+    <parameter name="context" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="reset" line="45"/>
+      <comment value="$context must not be reused" line="46"/>
+    </inline>
+  </method>
+  <method name="cleanCSS" start="63" end="131" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Takes CSS (the stuff found in &lt;style&gt;) and cleans it."/>
+      <warning value="Requires CSSTidy &lt;http://csstidy.sourceforge.net/&gt;"/>
+      <param description="styling to clean" variable="$css" type="object">
+        <type full="CSS" namespace="" name="CSS"/>
+      </param>
+      <param description="of HTMLPurifier_Config" variable="$config" type="object">
+        <type full="Instance" namespace="" name="Instance"/>
+      </param>
+      <param description="of HTMLPurifier_Context" variable="$context" type="object">
+        <type full="Instance" namespace="" name="Instance"/>
+      </param>
+      <return description="CSS" type="object">
+        <type full="Cleaned" namespace="" name="Cleaned"/>
+      </return>
+    </docblock>
+    <parameter name="css" byreference="false" type="{unknown}"/>
+    <parameter name="config" byreference="false" type="{unknown}"/>
+    <parameter name="context" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="prepare scope" line="64"/>
+      <comment value="remove comments from CSS" line="71"/>
+      <comment value="remove stuff that shouldn't be used, could be reenabled" line="115"/>
+      <comment value="after security risks are analyzed" line="116"/>
+      <comment value="we are going to escape any special characters &lt;&gt;&amp; to ensure" line="121"/>
+      <comment value="that no funny business occurs (i.e. &lt;/style&gt; in a font-family prop)." line="122"/>
+    </inline>
+  </method>
+  <parent full="HTMLPurifier_Filter" namespace="" name="HTMLPurifier_Filter">
+    <member name="name" visibility="public" static="false" line="28">
+      <docblock>
+        <description compact="Name of the filter for identification purposes"/>
+      </docblock>
+    </member>
+    <method name="preFilter" start="33" end="35" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Pre-processor function, handles HTML before HTML Purifier"/>
+      </docblock>
+      <parameter name="html" byreference="false" type="{unknown}"/>
+      <parameter name="config" byreference="false" type="{unknown}"/>
+      <parameter name="context" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="postFilter" start="40" end="42" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Post-processor function, handles HTML after HTML Purifier"/>
+      </docblock>
+      <parameter name="html" byreference="false" type="{unknown}"/>
+      <parameter name="config" byreference="false" type="{unknown}"/>
+      <parameter name="context" byreference="false" type="{unknown}"/>
+    </method>
+  </parent>
+</class>

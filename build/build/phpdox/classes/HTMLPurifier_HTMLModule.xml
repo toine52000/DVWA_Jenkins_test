@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="HTMLPurifier_HTMLModule" namespace="" name="HTMLPurifier_HTMLModule" abstract="false" final="false" start="18" end="242">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier" file="HTMLModule.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/HTMLModule.php" size="9794" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="2c26e481cea84b119d0f1aff95287d3bdccae192" relative="external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/HTMLModule.php"/>
+  <docblock>
+    <description compact="Represents an XHTML 1.1 module, with information on elements, tags and attributes."/>
+    <note value="Even though this is technically XHTML 1.1, it is also used for">regular HTML parsing. We are using modulization as a convenient
+      way to represent the internals of HTMLDefinition, and our
+      implementation is by no means conforming and does not directly
+      use the normative DTDs or XML schemas.</note>
+    <note value="The public variables in a module should almost directly">correspond to the variables in HTMLPurifier_HTMLDefinition.
+      However, the prefix info carries no special meaning in these
+      objects (include it anyway if that's the correspondence though).</note>
+    <todo value="Consider making some member functions protected"/>
+  </docblock>
+  <member name="name" visibility="public" static="false" line="26">
+    <docblock>
+      <description compact="Short unique string identifier of the module"/>
+    </docblock>
+  </member>
+  <member name="elements" type="array" default="" visibility="public" static="false" line="32">
+    <docblock>
+      <description compact="Informally, a list of elements this module changes. Not used in any significant way."/>
+    </docblock>
+  </member>
+  <member name="info" type="array" default="" visibility="public" static="false" line="39">
+    <docblock>
+      <description compact="Associative array of element names to element definitions.">Some definitions may be incomplete, to be merged in later
+with the full definition.</description>
+    </docblock>
+  </member>
+  <member name="content_sets" type="array" default="" visibility="public" static="false" line="47">
+    <docblock>
+      <description compact="Associative array of content set names to content set additions.">This is commonly used to, say, add an A element to the Inline
+content set. This corresponds to an internal variable $content_sets
+and NOT info_content_sets member variable of HTMLDefinition.</description>
+    </docblock>
+  </member>
+  <member name="attr_collections" type="array" default="" visibility="public" static="false" line="57">
+    <docblock>
+      <description compact="Associative array of attribute collection names to attribute collection additions. More rarely used for adding attributes to the global collections. Example is the StyleAttribute module adding the style attribute to the Core. Corresponds to HTMLDefinition's attr_collections-&gt;info, since the object's data is only info, with extra behavior associated with it."/>
+    </docblock>
+  </member>
+  <member name="info_tag_transform" type="array" default="" visibility="public" static="false" line="62">
+    <docblock>
+      <description compact="Associative array of deprecated tag name to HTMLPurifier_TagTransform"/>
+    </docblock>
+  </member>
+  <member name="info_attr_transform_pre" type="array" default="" visibility="public" static="false" line="67">
+    <docblock>
+      <description compact="List of HTMLPurifier_AttrTransform to be performed before validation."/>
+    </docblock>
+  </member>
+  <member name="info_attr_transform_post" type="array" default="" visibility="public" static="false" line="72">
+    <docblock>
+      <description compact="List of HTMLPurifier_AttrTransform to be performed after validation."/>
+    </docblock>
+  </member>
+  <member name="info_injector" type="array" default="" visibility="public" static="false" line="80">
+    <docblock>
+      <description compact="List of HTMLPurifier_Injector to be performed during well-formedness fixing.">An injector will only be invoked if all of it's pre-requisites are met;
+if an injector fails setup, there will be no error; it will simply be
+silently disabled.</description>
+    </docblock>
+  </member>
+  <member name="defines_child_def" type="boolean" default="false" visibility="public" static="false" line="88">
+    <docblock>
+      <description compact="Boolean flag that indicates whether or not getChildDef is implemented.">For optimization reasons: may save a call to a function. Be sure
+to set it if you do implement getChildDef(), otherwise it will have
+no effect!</description>
+    </docblock>
+  </member>
+  <member name="safe" type="boolean" default="true" visibility="public" static="false" line="102">
+    <docblock>
+      <description compact="Boolean flag whether or not this module is safe. If it is not safe, all of its members are unsafe. Modules are safe by default (this might be slightly dangerous, but it doesn't make much sense to force HTML Purifier, which is based off of safe HTML, to explicitly say, &quot;This is safe,&quot; even though there are modules which are &quot;unsafe&quot;)"/>
+      <note value="Previously, safety could be applied at an element level granularity.">We've removed this ability, so in order to add "unsafe" elements
+      or attributes, a dedicated module with this property set to false
+      must be used.</note>
+    </docblock>
+  </member>
+  <method name="getChildDef" start="112" end="112" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieves a proper HTMLPurifier_ChildDef subclass based on content_model and content_model_type member variables of the HTMLPurifier_ElementDef class. There is a similar function in HTMLPurifier_HTMLDefinition."/>
+      <param description="instance" variable="$def" type="object">
+        <type full="HTMLPurifier_ElementDef" namespace="" name="HTMLPurifier_ElementDef"/>
+      </param>
+      <return description="subclass" type="object">
+        <type full="HTMLPurifier_ChildDef" namespace="" name="HTMLPurifier_ChildDef"/>
+      </return>
+    </docblock>
+    <parameter name="def" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="addElement" start="130" end="145" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Convenience function that sets up a new element"/>
+      <param description="of element to add" variable="$element" type="object">
+        <type full="Name" namespace="" name="Name"/>
+      </param>
+      <param description="content set should element be registered to?" variable="$type" type="object">Set as false to skip this step.<type full="What" namespace="" name="What"/></param>
+      <param description="children in form of:" variable="$contents" type="object">"$content_model_type: $content_model"<type full="Allowed" namespace="" name="Allowed"/></param>
+      <param description="attribute collections to register to" variable="$attr_includes" type="object">element?<type full="What" namespace="" name="What"/></param>
+      <param description="unique attributes does the element define?" variable="$attr" type="object">
+        <type full="What" namespace="" name="What"/>
+      </param>
+      <note value="See ElementDef for in-depth descriptions of these parameters."/>
+      <return description="element definition object, so you" type="object">can set advanced parameters<type full="Created" namespace="" name="Created"/></return>
+    </docblock>
+    <parameter name="element" byreference="false" type="{unknown}"/>
+    <parameter name="type" byreference="false" type="{unknown}"/>
+    <parameter name="contents" byreference="false" type="{unknown}"/>
+    <parameter name="attr_includes" byreference="false" type="array" default=""/>
+    <parameter name="attr" byreference="false" type="array" default=""/>
+    <inline>
+      <comment value="parse content_model" line="132"/>
+      <comment value="merge in attribute inclusions" line="134"/>
+      <comment value="add element to content sets" line="136"/>
+      <comment value="create element" line="138"/>
+      <comment value="literal object $contents means direct child manipulation" line="142"/>
+    </inline>
+  </method>
+  <method name="addBlankElement" start="153" end="162" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Convenience function that creates a totally blank, non-standalone element."/>
+      <param description="of element to create" variable="$element" type="object">
+        <type full="Name" namespace="" name="Name"/>
+      </param>
+      <return description="element" type="object">
+        <type full="Created" namespace="" name="Created"/>
+      </return>
+    </docblock>
+    <parameter name="element" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="addElementToContentSet" start="170" end="174" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Convenience function that registers an element to a content set"/>
+      <param description="to register" type="object">
+        <type full="Element" namespace="" name="Element"/>
+      </param>
+      <param description="content set (warning: case sensitive, usually upper-case" type="object">first letter)<type full="Name" namespace="" name="Name"/></param>
+    </docblock>
+    <parameter name="element" byreference="false" type="{unknown}"/>
+    <parameter name="type" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="parseContents" start="185" end="200" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Convenience function that transforms single-string contents into separate content model and content model type"/>
+      <param description="children in form of:" variable="$contents" type="object">"$content_model_type: $content_model"<type full="Allowed" namespace="" name="Allowed"/></param>
+      <note value="If contents is an object, an array of two nulls will be">returned, and the callee needs to take the original $contents
+      and use it directly.</note>
+    </docblock>
+    <parameter name="contents" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="defer" line="186"/>
+    </inline>
+  </method>
+  <method name="mergeInAttrIncludes" start="208" end="214" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Convenience function that merges a list of attribute includes into an attribute array."/>
+      <param description="to attr array to modify" variable="$attr" type="object">
+        <type full="Reference" namespace="" name="Reference"/>
+      </param>
+      <param description="of includes / string include to merge in" variable="$attr_includes" type="object">
+        <type full="Array" namespace="" name="Array"/>
+      </param>
+    </docblock>
+    <parameter name="attr" byreference="true" type="{unknown}"/>
+    <parameter name="attr_includes" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="makeLookup" start="224" end="232" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Convenience function that generates a lookup table with boolean true as value."/>
+      <param description="of values to turn into a lookup" variable="$list" type="object">
+        <type full="List" namespace="" name="List"/>
+      </param>
+      <note value="You can also pass an arbitrary number of arguments in">place of the regular argument</note>
+      <return description="array equivalent of list" type="object">
+        <type full="Lookup" namespace="" name="Lookup"/>
+      </return>
+    </docblock>
+    <parameter name="list" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setup" start="240" end="240" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Lazy load construction of the module after determining whether or not it's needed, and also when a finalized configuration object is available."/>
+      <param description="of HTMLPurifier_Config" variable="$config" type="object">
+        <type full="Instance" namespace="" name="Instance"/>
+      </param>
+    </docblock>
+    <parameter name="config" byreference="false" type="{unknown}"/>
+  </method>
+  <extenders>
+    <extender full="HTMLPurifier_HTMLModule_List" namespace="" name="HTMLPurifier_HTMLModule_List"/>
+    <extender full="HTMLPurifier_HTMLModule_Name" namespace="" name="HTMLPurifier_HTMLModule_Name"/>
+    <extender full="HTMLPurifier_HTMLModule_Image" namespace="" name="HTMLPurifier_HTMLModule_Image"/>
+    <extender full="HTMLPurifier_HTMLModule_NonXMLCommonAttributes" namespace="" name="HTMLPurifier_HTMLModule_NonXMLCommonAttributes"/>
+    <extender full="HTMLPurifier_HTMLModule_Legacy" namespace="" name="HTMLPurifier_HTMLModule_Legacy"/>
+    <extender full="HTMLPurifier_HTMLModule_StyleAttribute" namespace="" name="HTMLPurifier_HTMLModule_StyleAttribute"/>
+    <extender full="HTMLPurifier_HTMLModule_Tidy_Name" namespace="" name="HTMLPurifier_HTMLModule_Tidy_Name"/>
+    <extender full="HTMLPurifier_HTMLModule_Tidy_Strict" namespace="" name="HTMLPurifier_HTMLModule_Tidy_Strict"/>
+    <extender full="HTMLPurifier_HTMLModule_Tidy_Proprietary" namespace="" name="HTMLPurifier_HTMLModule_Tidy_Proprietary"/>
+    <extender full="HTMLPurifier_HTMLModule_Tidy_Transitional" namespace="" name="HTMLPurifier_HTMLModule_Tidy_Transitional"/>
+    <extender full="HTMLPurifier_HTMLModule_Tidy_XHTMLAndHTML4" namespace="" name="HTMLPurifier_HTMLModule_Tidy_XHTMLAndHTML4"/>
+    <extender full="HTMLPurifier_HTMLModule_Tidy_XHTML" namespace="" name="HTMLPurifier_HTMLModule_Tidy_XHTML"/>
+    <extender full="HTMLPurifier_HTMLModule_Scripting" namespace="" name="HTMLPurifier_HTMLModule_Scripting"/>
+    <extender full="HTMLPurifier_HTMLModule_SafeEmbed" namespace="" name="HTMLPurifier_HTMLModule_SafeEmbed"/>
+    <extender full="HTMLPurifier_HTMLModule_Proprietary" namespace="" name="HTMLPurifier_HTMLModule_Proprietary"/>
+    <extender full="HTMLPurifier_HTMLModule_XMLCommonAttributes" namespace="" name="HTMLPurifier_HTMLModule_XMLCommonAttributes"/>
+    <extender full="HTMLPurifier_HTMLModule_Forms" namespace="" name="HTMLPurifier_HTMLModule_Forms"/>
+    <extender full="HTMLPurifier_HTMLModule_Presentation" namespace="" name="HTMLPurifier_HTMLModule_Presentation"/>
+    <extender full="HTMLPurifier_HTMLModule_CommonAttributes" namespace="" name="HTMLPurifier_HTMLModule_CommonAttributes"/>
+    <extender full="HTMLPurifier_HTMLModule_Object" namespace="" name="HTMLPurifier_HTMLModule_Object"/>
+    <extender full="HTMLPurifier_HTMLModule_Bdo" namespace="" name="HTMLPurifier_HTMLModule_Bdo"/>
+    <extender full="HTMLPurifier_HTMLModule_Tables" namespace="" name="HTMLPurifier_HTMLModule_Tables"/>
+    <extender full="HTMLPurifier_HTMLModule_SafeObject" namespace="" name="HTMLPurifier_HTMLModule_SafeObject"/>
+    <extender full="HTMLPurifier_HTMLModule_Edit" namespace="" name="HTMLPurifier_HTMLModule_Edit"/>
+    <extender full="HTMLPurifier_HTMLModule_Tidy" namespace="" name="HTMLPurifier_HTMLModule_Tidy"/>
+    <extender full="HTMLPurifier_HTMLModule_Text" namespace="" name="HTMLPurifier_HTMLModule_Text"/>
+    <extender full="HTMLPurifier_HTMLModule_Target" namespace="" name="HTMLPurifier_HTMLModule_Target"/>
+    <extender full="HTMLPurifier_HTMLModule_Ruby" namespace="" name="HTMLPurifier_HTMLModule_Ruby"/>
+    <extender full="HTMLPurifier_HTMLModule_Hypertext" namespace="" name="HTMLPurifier_HTMLModule_Hypertext"/>
+  </extenders>
+</class>

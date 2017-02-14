@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="IDS_Caching_Database" namespace="" name="IDS_Caching_Database" abstract="false" final="false" start="72" end="278">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/Caching" file="Database.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/Caching/Database.php" size="7198" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="f27c6631e56f17e1bf4504bb6d781806acbeead4" relative="external/phpids/0.6/lib/IDS/Caching/Database.php"/>
+  <docblock>
+    <description compact="Database caching wrapper">This class inhabits functionality to get and set cache via a database.</description>
+    <category value="Security"/>
+    <package value="PHPIDS"/>
+    <author value="Christian Matthies &lt;ch0012@gmail.com&gt;"/>
+    <author value="Mario Heiderich &lt;mario.heiderich@gmail.com&gt;"/>
+    <author value="Lars Strojny &lt;lars@strojny.net&gt;"/>
+    <copyright value="2007 The PHPIDS Groupup"/>
+    <license name="http://www.gnu.org/licenses/lgpl.html LGPL"/>
+    <version value="Release: $Id:Database.php 517 2007-09-15 15:04:13Z mario $"/>
+    <link value="http://php-ids.org/"/>
+    <since value="Version 0.4"/>
+  </docblock>
+  <implements full="IDS_Caching_Interface" namespace="" name="IDS_Caching_Interface"/>
+  <member name="type" type="{unknown}" default="" constant="null" visibility="private" static="false" line="80">
+    <docblock>
+      <description compact="Caching type"/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="config" type="{unknown}" default="" constant="null" visibility="private" static="false" line="87">
+    <docblock>
+      <description compact="Cache configuration"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="handle" type="{unknown}" default="" constant="null" visibility="private" static="false" line="94">
+    <docblock>
+      <description compact="DBH"/>
+      <var type="object"/>
+    </docblock>
+  </member>
+  <member name="cachingInstance" type="{unknown}" default="" constant="null" visibility="private" static="true" line="101">
+    <docblock>
+      <description compact="Holds an instance of this class"/>
+      <var type="object"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="113" end="119" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Constructor">Connects to database.</description>
+      <param description="caching type" type="string" variable="$type"/>
+      <param description="the IDS_Init object" type="array" variable="$init"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="type" byreference="false" type="{unknown}"/>
+    <parameter name="init" byreference="false" type="{unknown}"/>
+  </constructor>
+  <method name="getInstance" start="129" end="136" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Returns an instance of this class"/>
+      <param description="caching type" type="string" variable="$type"/>
+      <param description="the IDS_Init object" type="array" variable="$init"/>
+      <return description="$this" type="object"/>
+    </docblock>
+    <parameter name="type" byreference="false" type="{unknown}"/>
+    <parameter name="init" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setCache" start="146" end="170" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Writes cache data into the database"/>
+      <param description="the caching data" type="array" variable="$data"/>
+      <throws description="if a db error occurred" type="object">
+        <type full="PDOException" namespace="" name="PDOException"/>
+      </throws>
+      <return description="$this" type="object"/>
+    </docblock>
+    <parameter name="data" byreference="false" type="array"/>
+  </method>
+  <method name="getCache" start="181" end="199" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the cached data">Note that this method returns false if either type or file cache is
+not set</description>
+      <throws description="if a db error occurred" type="object">
+        <type full="PDOException" namespace="" name="PDOException"/>
+      </throws>
+      <return description="cache data or false" type="mixed"/>
+    </docblock>
+  </method>
+  <method name="_connect" start="207" end="233" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Connect to database and return a handle"/>
+      <return description="dbh" type="object"/>
+      <throws description="if a db error occurred" type="object">
+        <type full="PDOException" namespace="" name="PDOException"/>
+      </throws>
+    </docblock>
+    <inline>
+      <comment value="validate connection parameters" line="210"/>
+      <comment value="try to connect" line="221"/>
+    </inline>
+  </method>
+  <method name="_write" start="244" end="277" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Write the cache data to the table"/>
+      <param description="the database handle" type="object" variable="$handle"/>
+      <param description="the caching data" type="array" variable="$data"/>
+      <return description="dbh" type="object"/>
+      <throws description="if a db error occurred" type="object">
+        <type full="PDOException" namespace="" name="PDOException"/>
+      </throws>
+    </docblock>
+    <parameter name="handle" byreference="false" type="{unknown}"/>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+  </method>
+  <interface full="IDS_Caching_Interface" namespace="" name="IDS_Caching_Interface">
+    <method name="setCache" start="57" end="57" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Interface method"/>
+        <param description="the cache data" type="array" variable="$data"/>
+        <return type="object">
+          <type full="void" namespace="" name="void"/>
+        </return>
+      </docblock>
+      <parameter name="data" byreference="false" type="array"/>
+    </method>
+    <method name="getCache" start="64" end="64" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Interface method"/>
+        <return type="object">
+          <type full="void" namespace="" name="void"/>
+        </return>
+      </docblock>
+    </method>
+  </interface>
+</class>

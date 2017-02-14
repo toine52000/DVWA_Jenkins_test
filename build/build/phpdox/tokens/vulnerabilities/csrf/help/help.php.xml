@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+<source xmlns="http://xml.phpdox.net/token">
+  <file xmlns="http://xml.phpdox.net/src" path="/home/user/Documents/DVWA-master/build/../src/vulnerabilities/csrf/help" file="help.php" realpath="/home/user/Documents/DVWA-master/src/vulnerabilities/csrf/help/help.php" size="2735" time="2017-02-13T08:45:28+00:00" unixtime="1486975528" sha1="22bc42b09b2247ce937cf13e4b2b5aeb7e771c93" relative="vulnerabilities/csrf/help/help.php"/>
+  <line no="1">
+    <token name="T_INLINE_HTML">&lt;div class="body_padded"&gt;</token>
+  </line>
+  <line no="2">
+    <token name="T_INLINE_HTML">	&lt;h1&gt;Help - Cross Site Request Forgery (CSRF)&lt;/h1&gt;</token>
+  </line>
+  <line no="3"/>
+  <line no="4">
+    <token name="T_INLINE_HTML">	&lt;div id="code"&gt;</token>
+  </line>
+  <line no="5">
+    <token name="T_INLINE_HTML">	&lt;table width='100%' bgcolor='white' style="border:2px #C0C0C0 solid"&gt;</token>
+  </line>
+  <line no="6">
+    <token name="T_INLINE_HTML">	&lt;tr&gt;</token>
+  </line>
+  <line no="7">
+    <token name="T_INLINE_HTML">	&lt;td&gt;&lt;div id="code"&gt;</token>
+  </line>
+  <line no="8">
+    <token name="T_INLINE_HTML">		&lt;h3&gt;About&lt;/h3&gt;</token>
+  </line>
+  <line no="9">
+    <token name="T_INLINE_HTML">		&lt;p&gt;CSRF is an attack that forces an end user to execute unwanted actions on a web application in which they are currently authenticated.</token>
+  </line>
+  <line no="10">
+    <token name="T_INLINE_HTML">			With a little help of social engineering (such as sending a link via email/chat), an attacker may force the users of a web application to execute actions of</token>
+  </line>
+  <line no="11">
+    <token name="T_INLINE_HTML">			the attacker's choosing.&lt;/p&gt;</token>
+  </line>
+  <line no="12"/>
+  <line no="13">
+    <token name="T_INLINE_HTML">		&lt;p&gt;A successful CSRF exploit can compromise end user data and operation in case of normal user. If the targeted end user is</token>
+  </line>
+  <line no="14">
+    <token name="T_INLINE_HTML">			the administrator account, this can compromise the entire web application.&lt;/p&gt;</token>
+  </line>
+  <line no="15"/>
+  <line no="16">
+    <token name="T_INLINE_HTML">		&lt;p&gt;This attack may also be called "XSRF", similar to "Cross Site scripting (XSS)", and they are often used together.&lt;/p&gt;</token>
+  </line>
+  <line no="17"/>
+  <line no="18">
+    <token name="T_INLINE_HTML">		&lt;br /&gt;&lt;hr /&gt;&lt;br /&gt;</token>
+  </line>
+  <line no="19"/>
+  <line no="20">
+    <token name="T_INLINE_HTML">		&lt;h3&gt;Objective&lt;/h3&gt;</token>
+  </line>
+  <line no="21">
+    <token name="T_INLINE_HTML">		&lt;p&gt;Your task is to make the current user change their own password, without them knowing about their actions, using a CSRF attack.&lt;/p&gt;</token>
+  </line>
+  <line no="22"/>
+  <line no="23">
+    <token name="T_INLINE_HTML">		&lt;br /&gt;&lt;hr /&gt;&lt;br /&gt;</token>
+  </line>
+  <line no="24"/>
+  <line no="25">
+    <token name="T_INLINE_HTML">		&lt;h3&gt;Low Level&lt;/h3&gt;</token>
+  </line>
+  <line no="26">
+    <token name="T_INLINE_HTML">		&lt;p&gt;There are no measures in place to protect against this attack. This means a link can be crafted to achieve a certain action (in this case, change the current users password).</token>
+  </line>
+  <line no="27">
+    <token name="T_INLINE_HTML">			Then with some basic social engineering, have the target click the link (or just visit a certain page), to trigger the action.&lt;/p&gt;</token>
+  </line>
+  <line no="28">
+    <token name="T_INLINE_HTML">		&lt;pre&gt;Spoiler: &lt;span class="spoiler"&gt;?password_new=password&amp;password_conf=password&amp;Change=Change&lt;/span&gt;.&lt;/pre&gt;</token>
+  </line>
+  <line no="29"/>
+  <line no="30">
+    <token name="T_INLINE_HTML">		&lt;br /&gt;</token>
+  </line>
+  <line no="31"/>
+  <line no="32">
+    <token name="T_INLINE_HTML">		&lt;h3&gt;Medium Level&lt;/h3&gt;</token>
+  </line>
+  <line no="33">
+    <token name="T_INLINE_HTML">		&lt;p&gt;For the medium level challenge, there is a check to see where the last requested page came from. The developer believes if it matches the current domain,</token>
+  </line>
+  <line no="34">
+    <token name="T_INLINE_HTML">			it must of come from the web application so it can be trusted.&lt;/p&gt;</token>
+  </line>
+  <line no="35">
+    <token name="T_INLINE_HTML">		&lt;p&gt;It may be required to link in multiple vulnerabilities to exploit this vector, such as reflective XSS.&lt;/p&gt;</token>
+  </line>
+  <line no="36"/>
+  <line no="37">
+    <token name="T_INLINE_HTML">		&lt;br /&gt;</token>
+  </line>
+  <line no="38"/>
+  <line no="39">
+    <token name="T_INLINE_HTML">		&lt;h3&gt;High Level&lt;/h3&gt;</token>
+  </line>
+  <line no="40">
+    <token name="T_INLINE_HTML">		&lt;p&gt;In the high level, the developer has added an "anti Cross-Site Request Forgery (CSRF) token". In order by bypass this protection method, another vulnerability will be required.&lt;/p&gt;</token>
+  </line>
+  <line no="41">
+    <token name="T_INLINE_HTML">		&lt;pre&gt;Spoiler: &lt;span class="spoiler"&gt;e.g. Javascript is a executed on the client side, in the browser&lt;/span&gt;.&lt;/pre&gt;</token>
+  </line>
+  <line no="42"/>
+  <line no="43">
+    <token name="T_INLINE_HTML">		&lt;br /&gt;</token>
+  </line>
+  <line no="44"/>
+  <line no="45">
+    <token name="T_INLINE_HTML">		&lt;h3&gt;Impossible Level&lt;/h3&gt;</token>
+  </line>
+  <line no="46">
+    <token name="T_INLINE_HTML">		&lt;p&gt;In the impossible level, the challenge will extent the high level and asks for the current user's password. As this cannot be found out (only predicted or brute forced),</token>
+  </line>
+  <line no="47">
+    <token name="T_INLINE_HTML">			there is not an attack vector here.&lt;/p&gt;</token>
+  </line>
+  <line no="48">
+    <token name="T_INLINE_HTML">	&lt;/div&gt;&lt;/td&gt;</token>
+  </line>
+  <line no="49">
+    <token name="T_INLINE_HTML">	&lt;/tr&gt;</token>
+  </line>
+  <line no="50">
+    <token name="T_INLINE_HTML">	&lt;/table&gt;</token>
+  </line>
+  <line no="51"/>
+  <line no="52">
+    <token name="T_INLINE_HTML">	&lt;/div&gt;</token>
+  </line>
+  <line no="53"/>
+  <line no="54">
+    <token name="T_INLINE_HTML">	&lt;br /&gt;</token>
+  </line>
+  <line no="55"/>
+  <line no="56">
+    <token name="T_INLINE_HTML">	&lt;p&gt;Reference: </token>
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_ECHO">echo</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">dvwaExternalLinkUrlGet</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)'</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">&lt;/p&gt;</token>
+  </line>
+  <line no="57">
+    <token name="T_INLINE_HTML">&lt;/div&gt;</token>
+  </line>
+  <line no="58"/>
+</source>

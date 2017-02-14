@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="HTMLPurifier_Doctype" namespace="" name="HTMLPurifier_Doctype" abstract="false" final="false" start="9" end="58">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier" file="Doctype.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Doctype.php" size="1463" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="e3ecca84cd8f1fedfbca0277d8f49aaf7f3d7684" relative="external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Doctype.php"/>
+  <docblock>
+    <description compact="Represents a document type, contains information on which modules need to be loaded."/>
+    <note value="This class is inspected by Printer_HTMLDefinition-&gt;renderDoctype.">If structure changes, please update that function.</note>
+  </docblock>
+  <member name="name" visibility="public" static="false" line="14">
+    <docblock>
+      <description compact="Full name of doctype"/>
+    </docblock>
+  </member>
+  <member name="modules" type="array" default="" visibility="public" static="false" line="20">
+    <docblock>
+      <description compact="List of standard modules (string identifiers or literal objects) that this doctype uses"/>
+    </docblock>
+  </member>
+  <member name="tidyModules" type="array" default="" visibility="public" static="false" line="25">
+    <docblock>
+      <description compact="List of modules to use for tidying up code"/>
+    </docblock>
+  </member>
+  <member name="xml" type="boolean" default="true" visibility="public" static="false" line="30">
+    <docblock>
+      <description compact="Is the language derived from XML (i.e. XHTML)?"/>
+    </docblock>
+  </member>
+  <member name="aliases" type="array" default="" visibility="public" static="false" line="35">
+    <docblock>
+      <description compact="List of aliases for this doctype"/>
+    </docblock>
+  </member>
+  <member name="dtdPublic" visibility="public" static="false" line="40">
+    <docblock>
+      <description compact="Public DTD identifier"/>
+    </docblock>
+  </member>
+  <member name="dtdSystem" visibility="public" static="false" line="45">
+    <docblock>
+      <description compact="System DTD identifier"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="47" end="57" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="name" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="xml" byreference="false" type="boolean" default="true"/>
+    <parameter name="modules" byreference="false" type="array" default=""/>
+    <parameter name="tidyModules" byreference="false" type="array" default=""/>
+    <parameter name="aliases" byreference="false" type="array" default=""/>
+    <parameter name="dtd_public" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="dtd_system" byreference="false" type="{unknown}" default="" constant="null"/>
+  </constructor>
+</class>

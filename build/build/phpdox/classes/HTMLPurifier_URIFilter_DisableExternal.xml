@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="HTMLPurifier_URIFilter_DisableExternal" namespace="" name="HTMLPurifier_URIFilter_DisableExternal" abstract="false" final="false" start="3" end="21">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/URIFilter" file="DisableExternal.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/URIFilter/DisableExternal.php" size="820" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="0ca56da71e4f97b780d5497d5530cff01ca6a451" relative="external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/URIFilter/DisableExternal.php"/>
+  <extends full="HTMLPurifier_URIFilter" namespace="" name="HTMLPurifier_URIFilter"/>
+  <member name="name" type="string" default="'DisableExternal'" visibility="public" static="false" line="5"/>
+  <member name="ourHostParts" type="boolean" default="false" visibility="protected" static="false" line="6"/>
+  <method name="prepare" start="7" end="10" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="config" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="filter" start="11" end="20" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="uri" byreference="true" type="{unknown}"/>
+    <parameter name="config" byreference="false" type="{unknown}"/>
+    <parameter name="context" byreference="false" type="{unknown}"/>
+  </method>
+  <parent full="HTMLPurifier_URIFilter" namespace="" name="HTMLPurifier_URIFilter">
+    <member name="name" visibility="public" static="false" line="20">
+      <docblock>
+        <description compact="Unique identifier of filter"/>
+      </docblock>
+    </member>
+    <member name="post" type="boolean" default="false" visibility="public" static="false" line="25">
+      <docblock>
+        <description compact="True if this filter should be run after scheme validation."/>
+      </docblock>
+    </member>
+    <method name="prepare" start="30" end="30" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Performs initialization for the filter"/>
+      </docblock>
+      <parameter name="config" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="filter" start="41" end="41" abstract="true" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Filter a URI object"/>
+        <param description="to URI object variable" variable="$uri" type="object">
+          <type full="Reference" namespace="" name="Reference"/>
+        </param>
+        <param description="of HTMLPurifier_Config" variable="$config" type="object">
+          <type full="Instance" namespace="" name="Instance"/>
+        </param>
+        <param description="of HTMLPurifier_Context" variable="$context" type="object">
+          <type full="Instance" namespace="" name="Instance"/>
+        </param>
+        <return description="Whether or not to continue processing: false indicates" type="object">URL is no good, true indicates continue processing. Note that
+        all changes are committed directly on the URI object<type full="bool" namespace="" name="bool"/></return>
+      </docblock>
+      <parameter name="uri" byreference="true" type="{unknown}"/>
+      <parameter name="config" byreference="false" type="{unknown}"/>
+      <parameter name="context" byreference="false" type="{unknown}"/>
+    </method>
+  </parent>
+  <extenders>
+    <extender full="HTMLPurifier_URIFilter_DisableExternalResources" namespace="" name="HTMLPurifier_URIFilter_DisableExternalResources"/>
+  </extenders>
+</class>

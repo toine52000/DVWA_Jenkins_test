@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - HTMLPurifier_Injector_DisplayLinkURI</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.html">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.html">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.html">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.html">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.html">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.html">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.html">Classes</a>
+          </li>
+          <li class="separator">HTMLPurifier_Injector_DisplayLinkURI</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Injector/DisplayLinkURI.php.html#line6">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>HTMLPurifier_Injector_DisplayLinkURI</h1>
+        <h4>Injector that displays the URL of an anchor instead of linking to it, in addition to showing the text of the link.</h4>
+        <p/>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class HTMLPurifier_Injector_DisplayLinkURI
+                extends <a title="HTMLPurifier_Injector" href="../classes/HTMLPurifier_Injector.html">HTMLPurifier_Injector</a>
+            {<br/><ul class="none"><li>// members</li><li>public string <a href="#members">$name</a> =
+                        'DisplayLinkURI';
+                    </li><li>public array <a href="#members">$needed</a> =
+                        ;
+                    </li></ul><ul class="none"><li>// Inherited members from <span title="HTMLPurifier_Injector">HTMLPurifier_Injector</span></li><li>public  <a href="#members">$name</a>;
+                        </li><li>protected  <a href="#members">$htmlDefinition</a>;
+                        </li><li>protected  <a href="#members">$currentNesting</a>;
+                        </li><li>protected  <a href="#members">$inputTokens</a>;
+                        </li><li>protected  <a href="#members">$inputIndex</a>;
+                        </li><li>public array <a href="#members">$needed</a>;
+                        </li><li>protected boolean <a href="#members">$rewind</a>;
+                        </li></ul><ul class="none"><li>// methods</li><li>public void <a title="HTMLPurifier_Injector_DisplayLinkURI" href="../classes/HTMLPurifier_Injector_DisplayLinkURI/handleElement.html">handleElement</a>()
+                    </li><li>public void <a title="HTMLPurifier_Injector_DisplayLinkURI" href="../classes/HTMLPurifier_Injector_DisplayLinkURI/handleEnd.html">handleEnd</a>()
+                    </li></ul><ul class="none"><li>// Inherited methods from <span title="HTMLPurifier_Injector">HTMLPurifier_Injector</span></li><li>public void <a title="HTMLPurifier_Injector" href="../classes/HTMLPurifier_Injector/rewind.html">rewind</a>()
+                        </li><li>public void <a title="HTMLPurifier_Injector" href="../classes/HTMLPurifier_Injector/getRewind.html">getRewind</a>()
+                        </li><li>public Boolean <a title="HTMLPurifier_Injector" href="../classes/HTMLPurifier_Injector/prepare.html">prepare</a>()
+                        </li><li>public Boolean <a title="HTMLPurifier_Injector" href="../classes/HTMLPurifier_Injector/checkNeeded.html">checkNeeded</a>()
+                        </li><li>public True <a title="HTMLPurifier_Injector" href="../classes/HTMLPurifier_Injector/allowsElement.html">allowsElement</a>()
+                        </li><li>protected void <a title="HTMLPurifier_Injector" href="../classes/HTMLPurifier_Injector/forward.html">forward</a>()
+                        </li><li>protected void <a title="HTMLPurifier_Injector" href="../classes/HTMLPurifier_Injector/forwardUntilEndToken.html">forwardUntilEndToken</a>()
+                        </li><li>protected void <a title="HTMLPurifier_Injector" href="../classes/HTMLPurifier_Injector/backward.html">backward</a>()
+                        </li><li>protected void <a title="HTMLPurifier_Injector" href="../classes/HTMLPurifier_Injector/current.html">current</a>()
+                        </li><li>public void <a title="HTMLPurifier_Injector" href="../classes/HTMLPurifier_Injector/handleText.html">handleText</a>()
+                        </li><li>public void <a title="HTMLPurifier_Injector" href="../classes/HTMLPurifier_Injector/handleElement.html">handleElement</a>()
+                        </li><li>public void <a title="HTMLPurifier_Injector" href="../classes/HTMLPurifier_Injector/handleEnd.html">handleEnd</a>()
+                        </li><li>public void <a title="HTMLPurifier_Injector" href="../classes/HTMLPurifier_Injector/notifyEnd.html">notifyEnd</a>()
+                        </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Extends</h4>
+          <ul>
+            <li>
+              <a title="HTMLPurifier_Injector" href="../classes/HTMLPurifier_Injector.html">HTMLPurifier_Injector</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="currentNesting">
+              <strong>$currentNesting</strong>
+              <br/>
+              <span class="indent">Reference to CurrentNesting variable in Context. This is an array list of tokens that we are currently "inside"</span>
+            </li>
+            <li id="htmlDefinition">
+              <strong>$htmlDefinition</strong>
+              <br/>
+              <span class="indent">Instance of HTMLPurifier_HTMLDefinition</span>
+            </li>
+            <li id="inputIndex">
+              <strong>$inputIndex</strong>
+              <br/>
+              <span class="indent">Reference to InputIndex variable in Context. This is an integer array index for $this-&gt;inputTokens that indicates what token is currently being processed.</span>
+            </li>
+            <li id="inputTokens">
+              <strong>$inputTokens</strong>
+              <br/>
+              <span class="indent">Reference to InputTokens variable in Context. This is an array list of the input tokens that are being processed.</span>
+            </li>
+            <li id="rewind">
+              <strong>$rewind</strong>
+              <br/>
+              <span class="indent">Index of inputTokens to rewind to.</span>
+            </li>
+          </ul>
+          <h4>public</h4>
+          <ul class="members">
+            <li id="name">
+              <strong>$name</strong>
+            </li>
+            <li id="name">
+              <strong>$name</strong>
+              <br/>
+              <span class="indent">Advisory name of injector, this is for friendly error messages</span>
+            </li>
+            <li id="needed">
+              <strong>$needed</strong>
+            </li>
+            <li id="needed">
+              <strong>$needed</strong>
+              <br/>
+              <span class="indent">Array of elements and attributes this injector creates and therefore need to be allowed by the definition. Takes form of array('element' =&gt; array('attr', 'attr2'), 'element2')</span>
+            </li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>public</h4>
+          <ul>
+            <li id="handleElement">
+              <a title="HTMLPurifier_Injector_DisplayLinkURI" href="../classes/HTMLPurifier_Injector_DisplayLinkURI/handleElement.html">handleElement()</a>
+            </li>
+            <li id="handleEnd">
+              <a title="HTMLPurifier_Injector_DisplayLinkURI" href="../classes/HTMLPurifier_Injector_DisplayLinkURI/handleEnd.html">handleEnd()</a>
+            </li>
+          </ul>
+          <h3>Inherited from <a title="HTMLPurifier_Injector" href="../classes/HTMLPurifier_Injector.html">HTMLPurifier_Injector</a></h3>
+          <h4>protected</h4>
+          <ul>
+            <li id="backward"><a title="HTMLPurifier_Injector" href="../classes/HTMLPurifier_Injector/backward.html">backward()</a>
+                — Iterator function, starts with the previous token and continues until you reach the beginning of input tokens.</li>
+            <li id="current"><a title="HTMLPurifier_Injector" href="../classes/HTMLPurifier_Injector/current.html">current()</a>
+                — Initializes the iterator at the current position. Use in a do {} while; loop to force the _forward and _backward functions to start at the current location.</li>
+            <li id="forward"><a title="HTMLPurifier_Injector" href="../classes/HTMLPurifier_Injector/forward.html">forward()</a>
+                — Iterator function, which starts with the next token and continues until you reach the end of the input tokens.</li>
+            <li id="forwardUntilEndToken"><a title="HTMLPurifier_Injector" href="../classes/HTMLPurifier_Injector/forwardUntilEndToken.html">forwardUntilEndToken()</a>
+                — Similar to _forward, but accepts a third parameter $nesting (which should be initialized at 0) and stops when we hit the end tag for the node $this-&gt;inputIndex starts in.</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="allowsElement"><a title="HTMLPurifier_Injector" href="../classes/HTMLPurifier_Injector/allowsElement.html">allowsElement()</a>
+                — Tests if the context node allows a certain element</li>
+            <li id="checkNeeded"><a title="HTMLPurifier_Injector" href="../classes/HTMLPurifier_Injector/checkNeeded.html">checkNeeded()</a>
+                — This function checks if the HTML environment will work with the Injector: if p tags are not allowed, the Auto-Paragraphing injector should not be enabled.</li>
+            <li id="getRewind"><a title="HTMLPurifier_Injector" href="../classes/HTMLPurifier_Injector/getRewind.html">getRewind()</a>
+                — Retrieves rewind, and then unsets it.</li>
+            <li id="handleElement"><a title="HTMLPurifier_Injector" href="../classes/HTMLPurifier_Injector/handleElement.html">handleElement()</a>
+                — Handler that is called when a start or empty token is processed</li>
+            <li id="handleEnd"><a title="HTMLPurifier_Injector" href="../classes/HTMLPurifier_Injector/handleEnd.html">handleEnd()</a>
+                — Handler that is called when an end token is processed</li>
+            <li id="handleText"><a title="HTMLPurifier_Injector" href="../classes/HTMLPurifier_Injector/handleText.html">handleText()</a>
+                — Handler that is called when a text token is processed</li>
+            <li id="notifyEnd"><a title="HTMLPurifier_Injector" href="../classes/HTMLPurifier_Injector/notifyEnd.html">notifyEnd()</a>
+                — Notifier that is called when an end token is processed</li>
+            <li id="prepare"><a title="HTMLPurifier_Injector" href="../classes/HTMLPurifier_Injector/prepare.html">prepare()</a>
+                — Prepares the injector by giving it the config and context objects: this allows references to important variables to be made within the injector. This function also checks if the HTML environment will work with the Injector (see checkNeeded()).</li>
+            <li id="rewind"><a title="HTMLPurifier_Injector" href="../classes/HTMLPurifier_Injector/rewind.html">rewind()</a>
+                — Rewind to a spot to re-perform processing. This is useful if you deleted a node, and now need to see if this change affected any earlier nodes. Rewinding does not affect other injectors, and can result in infinite loops if not used carefully.</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.9.0 - Copyright (C) 2010 - 2017 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

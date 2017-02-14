@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - IDS_Monitor</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.html">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.html">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.html">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.html">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.html">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.html">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.html">Classes</a>
+          </li>
+          <li class="separator">IDS_Monitor</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/external/phpids/0.6/lib/IDS/Monitor.php.html#line51">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>IDS_Monitor</h1>
+        <h4>Monitoring engine</h4>
+        <p>This class represents the core of the frameworks attack detection mechanism<br/>and provides functions to scan incoming data for malicious appearing script<br/>fragments.</p>
+        <ul>
+          <li>Author: Christian Matthies &lt;ch0012@gmail.com&gt;</li>
+          <li>Copyright: 2007 The PHPIDS Group</li>
+          <li>License: http://www.gnu.org/licenses/lgpl.html LGPL</li>
+        </ul>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class IDS_Monitor
+            {<br/><ul class="none"><li>// members</li><li>private array <a href="#members">$tags</a> =
+                        null;
+                    </li><li>private array <a href="#members">$request</a> =
+                        null;
+                    </li><li>private <span title=""/> <a href="#members">$storage</a> =
+                        null;
+                    </li><li>private <span title=""/> <a href="#members">$report</a> =
+                        null;
+                    </li><li>public boolean <a href="#members">$scanKeys</a> =
+                        false;
+                    </li><li>private array <a href="#members">$exceptions</a> =
+                        ;
+                    </li><li>private array <a href="#members">$html</a> =
+                        ;
+                    </li><li>private array <a href="#members">$json</a> =
+                        ;
+                    </li><li>private <span title=""/> <a href="#members">$htmlpurifier</a> =
+                        NULL;
+                    </li><li>private string <a href="#members">$pathToHTMLPurifier</a> =
+                        '';
+                    </li><li>private string <a href="#members">$HTMLPurifierCache</a> =
+                        '';
+                    </li><li>private string <a href="#members">$tmpJsonString</a> =
+                        '';
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="IDS_Monitor" href="../classes/IDS_Monitor/__construct.html">__construct</a>()
+                    </li><li>public  <a title="IDS_Monitor" href="../classes/IDS_Monitor/run.html">run</a>()
+                    </li><li>private void <a title="IDS_Monitor" href="../classes/IDS_Monitor/_iterate.html">_iterate</a>()
+                    </li><li>private bool|array <a title="IDS_Monitor" href="../classes/IDS_Monitor/_detect.html">_detect</a>()
+                    </li><li>private array <a title="IDS_Monitor" href="../classes/IDS_Monitor/_purifyValues.html">_purifyValues</a>()
+                    </li><li>private string <a title="IDS_Monitor" href="../classes/IDS_Monitor/_diff.html">_diff</a>()
+                    </li><li>private array <a title="IDS_Monitor" href="../classes/IDS_Monitor/_jsonDecodeValues.html">_jsonDecodeValues</a>()
+                    </li><li>private void <a title="IDS_Monitor" href="../classes/IDS_Monitor/_jsonConcatContents.html">_jsonConcatContents</a>()
+                    </li><li>private boolean <a title="IDS_Monitor" href="../classes/IDS_Monitor/_match.html">_match</a>()
+                    </li><li>public void <a title="IDS_Monitor" href="../classes/IDS_Monitor/setExceptions.html">setExceptions</a>()
+                    </li><li>public array <a title="IDS_Monitor" href="../classes/IDS_Monitor/getExceptions.html">getExceptions</a>()
+                    </li><li>public void <a title="IDS_Monitor" href="../classes/IDS_Monitor/setHtml.html">setHtml</a>()
+                    </li><li>public void <a title="IDS_Monitor" href="../classes/IDS_Monitor/addHtml.html">addHtml</a>()
+                    </li><li>public array <a title="IDS_Monitor" href="../classes/IDS_Monitor/getHtml.html">getHtml</a>()
+                    </li><li>public void <a title="IDS_Monitor" href="../classes/IDS_Monitor/setJson.html">setJson</a>()
+                    </li><li>public void <a title="IDS_Monitor" href="../classes/IDS_Monitor/addJson.html">addJson</a>()
+                    </li><li>public array <a title="IDS_Monitor" href="../classes/IDS_Monitor/getJson.html">getJson</a>()
+                    </li><li>public array <a title="IDS_Monitor" href="../classes/IDS_Monitor/getStorage.html">getStorage</a>()
+                    </li><li>public  <a title="IDS_Monitor" href="../classes/IDS_Monitor/getReport.html">getReport</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="HTMLPurifierCache"><strong>$HTMLPurifierCache</strong>
+                —
+                string<br/><span class="indent">HTMLPurifier cache directory</span></li>
+            <li id="exceptions"><strong>$exceptions</strong>
+                —
+                array<br/><span class="indent">Exception container</span></li>
+            <li id="html"><strong>$html</strong>
+                —
+                array<br/><span class="indent">Html container</span></li>
+            <li id="htmlpurifier"><strong>$htmlpurifier</strong>
+                —
+                <a title="" href="../classes/.html"/><br/><span class="indent">Holds HTMLPurifier object</span></li>
+            <li id="json"><strong>$json</strong>
+                —
+                array<br/><span class="indent">JSON container</span></li>
+            <li id="pathToHTMLPurifier"><strong>$pathToHTMLPurifier</strong>
+                —
+                string<br/><span class="indent">Path to HTMLPurifier source</span></li>
+            <li id="report"><strong>$report</strong>
+                —
+                <a title="" href="../classes/.html"/><br/><span class="indent">Results</span></li>
+            <li id="request"><strong>$request</strong>
+                —
+                array<br/><span class="indent">Request array</span></li>
+            <li id="storage"><strong>$storage</strong>
+                —
+                <a title="" href="../classes/.html"/><br/><span class="indent">Container for filter rules</span></li>
+            <li id="tags"><strong>$tags</strong>
+                —
+                array<br/><span class="indent">Tags to define what to search for</span></li>
+            <li id="tmpJsonString"><strong>$tmpJsonString</strong>
+                —
+                string<br/><span class="indent">This property holds the tmp JSON string from the _jsonDecodeValues() callback</span></li>
+          </ul>
+          <h4>public</h4>
+          <ul class="members">
+            <li id="scanKeys"><strong>$scanKeys</strong>
+                —
+                boolean<br/><span class="indent">Scan keys switch</span></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>private</h4>
+          <ul>
+            <li id="_detect"><a title="IDS_Monitor" href="../classes/IDS_Monitor/_detect.html">_detect()</a>
+                — Checks whether given value matches any of the supplied filter patterns</li>
+            <li id="_diff"><a title="IDS_Monitor" href="../classes/IDS_Monitor/_diff.html">_diff()</a>
+                — This method calculates the difference between the original and the purified markup strings.</li>
+            <li id="_iterate"><a title="IDS_Monitor" href="../classes/IDS_Monitor/_iterate.html">_iterate()</a>
+                — Iterates through given data and delegates it to IDS_Monitor::_detect() in order to check for malicious appearing fragments</li>
+            <li id="_jsonConcatContents"><a title="IDS_Monitor" href="../classes/IDS_Monitor/_jsonConcatContents.html">_jsonConcatContents()</a>
+                — This is the callback used in _jsonDecodeValues(). The method concatenates key and value and stores them in $this-&gt;tmpJsonString.</li>
+            <li id="_jsonDecodeValues"><a title="IDS_Monitor" href="../classes/IDS_Monitor/_jsonDecodeValues.html">_jsonDecodeValues()</a>
+                — This method prepares incoming JSON data for the PHPIDS detection process. It utilizes _jsonConcatContents() as callback and returns a string version of the JSON data structures.</li>
+            <li id="_match"><a title="IDS_Monitor" href="../classes/IDS_Monitor/_match.html">_match()</a>
+                — Matches given value and/or key against given filter</li>
+            <li id="_purifyValues"><a title="IDS_Monitor" href="../classes/IDS_Monitor/_purifyValues.html">_purifyValues()</a>
+                — Purifies given key and value variables using HTMLPurifier</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="IDS_Monitor" href="../classes/IDS_Monitor/__construct.html">__construct()</a>
+                — Constructor</li>
+            <li id="addHtml"><a title="IDS_Monitor" href="../classes/IDS_Monitor/addHtml.html">addHtml()</a>
+                — Adds a value to the html array</li>
+            <li id="addJson"><a title="IDS_Monitor" href="../classes/IDS_Monitor/addJson.html">addJson()</a>
+                — Adds a value to the json array</li>
+            <li id="getExceptions"><a title="IDS_Monitor" href="../classes/IDS_Monitor/getExceptions.html">getExceptions()</a>
+                — Returns exception array</li>
+            <li id="getHtml"><a title="IDS_Monitor" href="../classes/IDS_Monitor/getHtml.html">getHtml()</a>
+                — Returns html array</li>
+            <li id="getJson"><a title="IDS_Monitor" href="../classes/IDS_Monitor/getJson.html">getJson()</a>
+                — Returns json array</li>
+            <li id="getReport"><a title="IDS_Monitor" href="../classes/IDS_Monitor/getReport.html">getReport()</a>
+                — Returns report object providing various functions to work with detected results. Also the centrifuge data is being set as property of the report object.</li>
+            <li id="getStorage"><a title="IDS_Monitor" href="../classes/IDS_Monitor/getStorage.html">getStorage()</a>
+                — Returns storage container</li>
+            <li id="run"><a title="IDS_Monitor" href="../classes/IDS_Monitor/run.html">run()</a>
+                — Starts the scan mechanism</li>
+            <li id="setExceptions"><a title="IDS_Monitor" href="../classes/IDS_Monitor/setExceptions.html">setExceptions()</a>
+                — Sets exception array</li>
+            <li id="setHtml"><a title="IDS_Monitor" href="../classes/IDS_Monitor/setHtml.html">setHtml()</a>
+                — Sets html array</li>
+            <li id="setJson"><a title="IDS_Monitor" href="../classes/IDS_Monitor/setJson.html">setJson()</a>
+                — Sets json array</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.9.0 - Copyright (C) 2010 - 2017 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

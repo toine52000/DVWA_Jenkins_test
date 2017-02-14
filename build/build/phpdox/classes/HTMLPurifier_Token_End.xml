@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="HTMLPurifier_Token_End" namespace="" name="HTMLPurifier_Token_End" abstract="false" final="false" start="10" end="17">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Token" file="End.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Token/End.php" size="435" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="12f23172a315e91b091fd84f5bd1d4c3800e48ac" relative="external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Token/End.php"/>
+  <docblock>
+    <description compact="Concrete end token class."/>
+    <warning value="This class accepts attributes even though end tags cannot. This">is for optimization reasons, as under normal circumstances, the Lexers
+do not pass attributes.</warning>
+  </docblock>
+  <extends full="HTMLPurifier_Token_Tag" namespace="" name="HTMLPurifier_Token_Tag"/>
+  <member name="start" visibility="public" static="false" line="16">
+    <docblock>
+      <description compact="Token that started this node. Added by MakeWellFormed. Please do not edit this!"/>
+    </docblock>
+  </member>
+  <parent full="HTMLPurifier_Token_Tag" namespace="" name="HTMLPurifier_Token_Tag">
+    <extends full="HTMLPurifier_Token" namespace="" name="HTMLPurifier_Token"/>
+    <member name="is_tag" type="boolean" default="true" visibility="public" static="false" line="14">
+      <docblock>
+        <description compact="Static bool marker that indicates the class is a tag.">This allows us to check objects with &lt;tt&gt;!empty($obj-&gt;is_tag)&lt;/tt&gt;
+without having to use a function call &lt;tt&gt;is_a()&lt;/tt&gt;.</description>
+      </docblock>
+    </member>
+    <member name="name" visibility="public" static="false" line="23">
+      <docblock>
+        <description compact="The lower-case name of the tag, like 'a', 'b' or 'blockquote'."/>
+        <note value="Strictly speaking, XML tags are case sensitive, so we shouldn't">be lower-casing them, but these tokens cater to HTML tags, which are
+insensitive.</note>
+      </docblock>
+    </member>
+    <member name="attr" type="array" default="" visibility="public" static="false" line="28">
+      <docblock>
+        <description compact="Associative array of the tag's attributes."/>
+      </docblock>
+    </member>
+    <constructor name="__construct" start="36" end="53" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Non-overloaded constructor, which lower-cases passed tag name."/>
+        <param description="name." variable="$name" type="object">
+          <type full="String" namespace="" name="String"/>
+        </param>
+        <param description="array of attributes." variable="$attr" type="object">
+          <type full="Associative" namespace="" name="Associative"/>
+        </param>
+      </docblock>
+      <parameter name="name" byreference="false" type="{unknown}"/>
+      <parameter name="attr" byreference="false" type="array" default=""/>
+      <parameter name="line" byreference="false" type="{unknown}" default="" constant="null"/>
+      <parameter name="col" byreference="false" type="{unknown}" default="" constant="null"/>
+    </constructor>
+  </parent>
+  <parent full="HTMLPurifier_Token" namespace="" name="HTMLPurifier_Token">
+    <member name="line" visibility="public" static="false" line="7"/>
+    <member name="col" visibility="public" static="false" line="8"/>
+    <member name="armor" type="array" default="" visibility="public" static="false" line="15">
+      <docblock>
+        <description compact="Lookup array of processing that this token is exempt from.">Currently, valid values are "ValidateAttributes" and
+"MakeWellFormed_TagClosedError"</description>
+      </docblock>
+    </member>
+    <member name="skip" visibility="public" static="false" line="20">
+      <docblock>
+        <description compact="Used during MakeWellFormed."/>
+      </docblock>
+    </member>
+    <member name="rewind" visibility="public" static="false" line="21"/>
+    <method name="__get" start="23" end="35" abstract="false" final="false" static="false" visibility="public">
+      <parameter name="n" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="position" start="40" end="43" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Sets the position of the token in the source document."/>
+      </docblock>
+      <parameter name="l" byreference="false" type="{unknown}" default="" constant="null"/>
+      <parameter name="c" byreference="false" type="{unknown}" default="" constant="null"/>
+    </method>
+    <method name="rawPosition" start="48" end="52" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Convenience function for DirectLex settings line/col position."/>
+      </docblock>
+      <parameter name="l" byreference="false" type="{unknown}"/>
+      <parameter name="c" byreference="false" type="{unknown}"/>
+    </method>
+  </parent>
+</class>

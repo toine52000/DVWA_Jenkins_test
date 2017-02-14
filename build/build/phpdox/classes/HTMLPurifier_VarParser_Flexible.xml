@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="HTMLPurifier_VarParser_Flexible" namespace="" name="HTMLPurifier_VarParser_Flexible" abstract="false" final="false" start="8" end="94">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/VarParser" file="Flexible.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/VarParser/Flexible.php" size="3973" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="beb7d7ecccef652aeb0fea6468ebffe17a84049f" relative="external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/VarParser/Flexible.php"/>
+  <docblock>
+    <description compact="Performs safe variable parsing based on types which can be used by users. This may not be able to represent all possible data inputs, however."/>
+  </docblock>
+  <extends full="HTMLPurifier_VarParser" namespace="" name="HTMLPurifier_VarParser"/>
+  <method name="parseImplementation" start="11" end="92" abstract="false" final="false" static="false" visibility="protected">
+    <parameter name="var" byreference="false" type="{unknown}"/>
+    <parameter name="type" byreference="false" type="{unknown}"/>
+    <parameter name="allow_null" byreference="false" type="{unknown}"/>
+  </method>
+  <parent full="HTMLPurifier_VarParser" namespace="" name="HTMLPurifier_VarParser">
+    <constant type="{unknown}" name="STRING" value="1"/>
+    <constant type="{unknown}" name="ISTRING" value="2"/>
+    <constant type="{unknown}" name="TEXT" value="3"/>
+    <constant type="{unknown}" name="ITEXT" value="4"/>
+    <constant type="{unknown}" name="INT" value="5"/>
+    <constant type="{unknown}" name="FLOAT" value="6"/>
+    <constant type="{unknown}" name="BOOL" value="7"/>
+    <constant type="{unknown}" name="LOOKUP" value="8"/>
+    <constant type="{unknown}" name="ALIST" value="9"/>
+    <constant type="{unknown}" name="HASH" value="10"/>
+    <constant type="{unknown}" name="MIXED" value="11"/>
+    <member name="types" type="array" default="" visibility="public" static="true" line="26">
+      <docblock>
+        <description compact="Lookup table of allowed types. Mainly for backwards compatibility, but also convenient for transforming string type names to the integer constants."/>
+      </docblock>
+    </member>
+    <member name="stringTypes" type="array" default="" visibility="public" static="true" line="44">
+      <docblock>
+        <description compact="Lookup table of types that are string, and can have aliases or allowed value lists."/>
+      </docblock>
+    </member>
+    <method name="parse" start="61" end="107" abstract="false" final="true" static="false" visibility="public">
+      <docblock>
+        <description compact="Validate a variable according to type. Throws HTMLPurifier_VarParserException if invalid.">It may return NULL as a valid type if $allow_null is true.</description>
+        <param description="to validate" variable="$var" type="object">
+          <type full="Variable" namespace="" name="Variable"/>
+        </param>
+        <param description="of variable, see HTMLPurifier_VarParser-&gt;types" variable="$type" type="object">
+          <type full="Type" namespace="" name="Type"/>
+        </param>
+        <param description="or not to permit null as a value" variable="$allow_null" type="object">
+          <type full="Whether" namespace="" name="Whether"/>
+        </param>
+        <return description="and type-coerced variable" type="object">
+          <type full="Validated" namespace="" name="Validated"/>
+        </return>
+      </docblock>
+      <parameter name="var" byreference="false" type="{unknown}"/>
+      <parameter name="type" byreference="false" type="{unknown}"/>
+      <parameter name="allow_null" byreference="false" type="boolean" default="false"/>
+      <inline>
+        <comment value="These are basic checks, to make sure nothing horribly wrong" line="71"/>
+        <comment value="happened in our implementations." line="72"/>
+      </inline>
+    </method>
+    <method name="parseImplementation" start="113" end="115" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Actually implements the parsing. Base implementation is to not do anything to $var. Subclasses should overload this!"/>
+      </docblock>
+      <parameter name="var" byreference="false" type="{unknown}"/>
+      <parameter name="type" byreference="false" type="{unknown}"/>
+      <parameter name="allow_null" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="error" start="120" end="122" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Throws an exception."/>
+      </docblock>
+      <parameter name="msg" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="errorInconsistent" start="130" end="132" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Throws an inconsistency exception."/>
+        <note value="This should not ever be called. It would be called if we">extend the allowed values of HTMLPurifier_VarParser without
+      updating subclasses.</note>
+      </docblock>
+      <parameter name="class" byreference="false" type="{unknown}"/>
+      <parameter name="type" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="errorGeneric" start="137" end="140" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Generic error for if a type didn't work."/>
+      </docblock>
+      <parameter name="var" byreference="false" type="{unknown}"/>
+      <parameter name="type" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="getTypeName" start="142" end="150" abstract="false" final="false" static="true" visibility="public">
+      <parameter name="type" byreference="false" type="{unknown}"/>
+    </method>
+  </parent>
+</class>

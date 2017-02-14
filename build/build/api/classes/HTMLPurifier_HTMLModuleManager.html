@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - HTMLPurifier_HTMLModuleManager</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.html">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.html">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.html">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.html">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.html">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.html">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.html">Classes</a>
+          </li>
+          <li class="separator">HTMLPurifier_HTMLModuleManager</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/HTMLModuleManager.php.html#line3">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>HTMLPurifier_HTMLModuleManager</h1>
+        <h4/>
+        <p/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class HTMLPurifier_HTMLModuleManager
+            {<br/><ul class="none"><li>// members</li><li>public  <a href="#members">$doctypes</a>;
+                    </li><li>public  <a href="#members">$doctype</a>;
+                    </li><li>public  <a href="#members">$attrTypes</a>;
+                    </li><li>public array <a href="#members">$modules</a> =
+                        ;
+                    </li><li>public array <a href="#members">$registeredModules</a> =
+                        ;
+                    </li><li>public array <a href="#members">$userModules</a> =
+                        ;
+                    </li><li>public array <a href="#members">$elementLookup</a> =
+                        ;
+                    </li><li>public array <a href="#members">$prefixes</a> =
+                        ;
+                    </li><li>public  <a href="#members">$contentSets</a>;
+                    </li><li>public  <a href="#members">$attrCollections</a>;
+                    </li><li>public boolean <a href="#members">$trusted</a> =
+                        false;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="HTMLPurifier_HTMLModuleManager" href="../classes/HTMLPurifier_HTMLModuleManager/__construct.html">__construct</a>()
+                    </li><li>public void <a title="HTMLPurifier_HTMLModuleManager" href="../classes/HTMLPurifier_HTMLModuleManager/registerModule.html">registerModule</a>()
+                    </li><li>public void <a title="HTMLPurifier_HTMLModuleManager" href="../classes/HTMLPurifier_HTMLModuleManager/addModule.html">addModule</a>()
+                    </li><li>public void <a title="HTMLPurifier_HTMLModuleManager" href="../classes/HTMLPurifier_HTMLModuleManager/addPrefix.html">addPrefix</a>()
+                    </li><li>public void <a title="HTMLPurifier_HTMLModuleManager" href="../classes/HTMLPurifier_HTMLModuleManager/setup.html">setup</a>()
+                    </li><li>public void <a title="HTMLPurifier_HTMLModuleManager" href="../classes/HTMLPurifier_HTMLModuleManager/processModule.html">processModule</a>()
+                    </li><li>public Array <a title="HTMLPurifier_HTMLModuleManager" href="../classes/HTMLPurifier_HTMLModuleManager/getElements.html">getElements</a>()
+                    </li><li>public Merged <a title="HTMLPurifier_HTMLModuleManager" href="../classes/HTMLPurifier_HTMLModuleManager/getElement.html">getElement</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>public</h4>
+          <ul class="members">
+            <li id="attrCollections">
+              <strong>$attrCollections</strong>
+            </li>
+            <li id="attrTypes">
+              <strong>$attrTypes</strong>
+              <br/>
+              <span class="indent">Instance of HTMLPurifier_AttrTypes</span>
+            </li>
+            <li id="contentSets">
+              <strong>$contentSets</strong>
+            </li>
+            <li id="doctype">
+              <strong>$doctype</strong>
+              <br/>
+              <span class="indent">Instance of current doctype</span>
+            </li>
+            <li id="doctypes">
+              <strong>$doctypes</strong>
+              <br/>
+              <span class="indent">Instance of HTMLPurifier_DoctypeRegistry</span>
+            </li>
+            <li id="elementLookup">
+              <strong>$elementLookup</strong>
+              <br/>
+              <span class="indent">Associative array of element name to list of modules that have definitions for the element; this array is dynamically filled.</span>
+            </li>
+            <li id="modules">
+              <strong>$modules</strong>
+              <br/>
+              <span class="indent">Active instances of modules for the specified doctype are indexed, by name, in this array.</span>
+            </li>
+            <li id="prefixes">
+              <strong>$prefixes</strong>
+              <br/>
+              <span class="indent">List of prefixes we should use for registering small names</span>
+            </li>
+            <li id="registeredModules">
+              <strong>$registeredModules</strong>
+              <br/>
+              <span class="indent">Array of recognized HTMLPurifier_Module instances, indexed by module's class name. This array is usually lazy loaded, but a user can overload a module by pre-emptively registering it.</span>
+            </li>
+            <li id="trusted">
+              <strong>$trusted</strong>
+              <br/>
+              <span class="indent">If set to true, unsafe elements and attributes will be allowed</span>
+            </li>
+            <li id="userModules">
+              <strong>$userModules</strong>
+              <br/>
+              <span class="indent">List of extra modules that were added by the user using addModule().</span>
+            </li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>public</h4>
+          <ul>
+            <li id="__construct">
+              <a title="HTMLPurifier_HTMLModuleManager" href="../classes/HTMLPurifier_HTMLModuleManager/__construct.html">__construct()</a>
+            </li>
+            <li id="addModule"><a title="HTMLPurifier_HTMLModuleManager" href="../classes/HTMLPurifier_HTMLModuleManager/addModule.html">addModule()</a>
+                — Adds a module to the current doctype by first registering it, and then tacking it on to the active doctype</li>
+            <li id="addPrefix"><a title="HTMLPurifier_HTMLModuleManager" href="../classes/HTMLPurifier_HTMLModuleManager/addPrefix.html">addPrefix()</a>
+                — Adds a class prefix that registerModule() will use to resolve a string name to a concrete class</li>
+            <li id="getElement"><a title="HTMLPurifier_HTMLModuleManager" href="../classes/HTMLPurifier_HTMLModuleManager/getElement.html">getElement()</a>
+                — Retrieves a single merged element definition</li>
+            <li id="getElements"><a title="HTMLPurifier_HTMLModuleManager" href="../classes/HTMLPurifier_HTMLModuleManager/getElements.html">getElements()</a>
+                — Retrieves merged element definitions.</li>
+            <li id="processModule"><a title="HTMLPurifier_HTMLModuleManager" href="../classes/HTMLPurifier_HTMLModuleManager/processModule.html">processModule()</a>
+                — Takes a module and adds it to the active module collection, registering it if necessary.</li>
+            <li id="registerModule"><a title="HTMLPurifier_HTMLModuleManager" href="../classes/HTMLPurifier_HTMLModuleManager/registerModule.html">registerModule()</a>
+                — Registers a module to the recognized module list, useful for overloading pre-existing modules.</li>
+            <li id="setup"><a title="HTMLPurifier_HTMLModuleManager" href="../classes/HTMLPurifier_HTMLModuleManager/setup.html">setup()</a>
+                — Performs processing on modules, after being called you may use getElement() and getElements()</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.9.0 - Copyright (C) 2010 - 2017 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

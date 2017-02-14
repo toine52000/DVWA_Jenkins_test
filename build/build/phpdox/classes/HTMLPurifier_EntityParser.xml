@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="HTMLPurifier_EntityParser" namespace="" name="HTMLPurifier_EntityParser" abstract="false" final="false" start="10" end="142">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier" file="EntityParser.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/EntityParser.php" size="4954" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="736588bdbdb4b89bfdf8cd5655a366ca7343f029" relative="external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/EntityParser.php"/>
+  <docblock>
+    <description compact="Handles referencing and derefencing character entities"/>
+  </docblock>
+  <member name="_entity_lookup" visibility="protected" static="false" line="16">
+    <docblock>
+      <description compact="Reference to entity lookup table."/>
+    </docblock>
+  </member>
+  <member name="_substituteEntitiesRegex" type="string" default="'/&amp;(?:[#]x([a-fA-F0-9]+)|[#]0*(\d+)|([A-Za-z_:][A-Za-z0-9.\-_:]*));?/'" visibility="protected" static="false" line="21">
+    <docblock>
+      <description compact="Callback regex string for parsing entities."/>
+    </docblock>
+  </member>
+  <member name="_special_dec2str" type="array" default="" visibility="protected" static="false" line="29">
+    <docblock>
+      <description compact="Decimal to parsed string conversion table for special entities."/>
+    </docblock>
+  </member>
+  <member name="_special_ent2dec" type="array" default="" visibility="protected" static="false" line="41">
+    <docblock>
+      <description compact="Stripped entity names to decimal conversion table for special entities."/>
+    </docblock>
+  </member>
+  <method name="substituteNonSpecialEntities" start="57" end="64" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Substitutes non-special entities with their parsed equivalents. Since running this whenever you have parsed character is t3h 5uck, we run it before everything else."/>
+      <param description="to have non-special entities parsed." variable="$string" type="object">
+        <type full="String" namespace="" name="String"/>
+      </param>
+      <returns value="Parsed string."/>
+    </docblock>
+    <parameter name="string" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="it will try to detect missing semicolons, but don't rely on it" line="58"/>
+    </inline>
+  </method>
+  <method name="nonSpecialEntityCallback" start="75" end="98" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Callback function for substituteNonSpecialEntities() that does the work."/>
+      <param description="matches array, with 0 the entire match, and" variable="$matches" type="object">either index 1, 2 or 3 set with a hex value, dec value,
+                 or string (respectively).<type full="PCRE" namespace="" name="PCRE"/></param>
+      <returns value="Replacement string."/>
+    </docblock>
+    <parameter name="matches" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="replaces all but big five" line="76"/>
+    </inline>
+  </method>
+  <method name="substituteSpecialEntities" start="109" end="114" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Substitutes only special entities with their parsed equivalents."/>
+      <notice value="We try to avoid calling this function because otherwise, it">would have to be called a lot (for every parsed section).</notice>
+      <param description="to have non-special entities parsed." variable="$string" type="object">
+        <type full="String" namespace="" name="String"/>
+      </param>
+      <returns value="Parsed string."/>
+    </docblock>
+    <parameter name="string" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="specialEntityCallback" start="126" end="140" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Callback function for substituteSpecialEntities() that does the work.">This callback has same syntax as nonSpecialEntityCallback().</description>
+      <param description="matches array, with 0 the entire match, and" variable="$matches" type="object">either index 1, 2 or 3 set with a hex value, dec value,
+                 or string (respectively).<type full="PCRE-style" namespace="" name="PCRE-style"/></param>
+      <returns value="Replacement string."/>
+    </docblock>
+    <parameter name="matches" byreference="false" type="{unknown}"/>
+  </method>
+</class>

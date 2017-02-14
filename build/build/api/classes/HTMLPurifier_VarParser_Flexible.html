@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - HTMLPurifier_VarParser_Flexible</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.html">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.html">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.html">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.html">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.html">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.html">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.html">Classes</a>
+          </li>
+          <li class="separator">HTMLPurifier_VarParser_Flexible</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#constants">Constants</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/VarParser/Flexible.php.html#line8">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>HTMLPurifier_VarParser_Flexible</h1>
+        <h4>Performs safe variable parsing based on types which can be used by users. This may not be able to represent all possible data inputs, however.</h4>
+        <p/>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class HTMLPurifier_VarParser_Flexible
+                extends <a title="HTMLPurifier_VarParser" href="../classes/HTMLPurifier_VarParser.html">HTMLPurifier_VarParser</a>
+            {<br/><ul class="none"><li>// Inherited constants from <a title="HTMLPurifier_VarParser" href="../classes/HTMLPurifier_VarParser.html">HTMLPurifier_VarParser</a></li><li>const <a href="#STRING">STRING</a> = 1;</li><li>const <a href="#ISTRING">ISTRING</a> = 2;</li><li>const <a href="#TEXT">TEXT</a> = 3;</li><li>const <a href="#ITEXT">ITEXT</a> = 4;</li><li>const <a href="#INT">INT</a> = 5;</li><li>const <a href="#FLOAT">FLOAT</a> = 6;</li><li>const <a href="#BOOL">BOOL</a> = 7;</li><li>const <a href="#LOOKUP">LOOKUP</a> = 8;</li><li>const <a href="#ALIST">ALIST</a> = 9;</li><li>const <a href="#HASH">HASH</a> = 10;</li><li>const <a href="#MIXED">MIXED</a> = 11;</li></ul><ul class="none"><li>// Inherited members from <span title="HTMLPurifier_VarParser">HTMLPurifier_VarParser</span></li><li>public static array <a href="#members">$types</a>;
+                        </li><li>public static array <a href="#members">$stringTypes</a>;
+                        </li></ul><ul class="none"><li>// methods</li><li>protected void <a title="HTMLPurifier_VarParser_Flexible" href="../classes/HTMLPurifier_VarParser_Flexible/parseImplementation.html">parseImplementation</a>()
+                    </li></ul><ul class="none"><li>// Inherited methods from <span title="HTMLPurifier_VarParser">HTMLPurifier_VarParser</span></li><li>public final Validated <a title="HTMLPurifier_VarParser" href="../classes/HTMLPurifier_VarParser/parse.html">parse</a>()
+                        </li><li>protected void <a title="HTMLPurifier_VarParser" href="../classes/HTMLPurifier_VarParser/parseImplementation.html">parseImplementation</a>()
+                        </li><li>protected void <a title="HTMLPurifier_VarParser" href="../classes/HTMLPurifier_VarParser/error.html">error</a>()
+                        </li><li>protected void <a title="HTMLPurifier_VarParser" href="../classes/HTMLPurifier_VarParser/errorInconsistent.html">errorInconsistent</a>()
+                        </li><li>protected void <a title="HTMLPurifier_VarParser" href="../classes/HTMLPurifier_VarParser/errorGeneric.html">errorGeneric</a>()
+                        </li><li>public static void <a title="HTMLPurifier_VarParser" href="../classes/HTMLPurifier_VarParser/getTypeName.html">getTypeName</a>()
+                        </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Extends</h4>
+          <ul>
+            <li>
+              <a title="HTMLPurifier_VarParser" href="../classes/HTMLPurifier_VarParser.html">HTMLPurifier_VarParser</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="constants">Constants</h2>
+        <table class="styled">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="STRING">STRING</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td id="ISTRING">ISTRING</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td id="TEXT">TEXT</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td id="ITEXT">ITEXT</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td id="INT">INT</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td id="FLOAT">FLOAT</td>
+              <td>6</td>
+            </tr>
+            <tr>
+              <td id="BOOL">BOOL</td>
+              <td>7</td>
+            </tr>
+            <tr>
+              <td id="LOOKUP">LOOKUP</td>
+              <td>8</td>
+            </tr>
+            <tr>
+              <td id="ALIST">ALIST</td>
+              <td>9</td>
+            </tr>
+            <tr>
+              <td id="HASH">HASH</td>
+              <td>10</td>
+            </tr>
+            <tr>
+              <td id="MIXED">MIXED</td>
+              <td>11</td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>public</h4>
+          <ul class="members">
+            <li id="stringTypes">
+              <strong>$stringTypes</strong>
+              <br/>
+              <span class="indent">Lookup table of types that are string, and can have aliases or allowed value lists.</span>
+            </li>
+            <li id="types">
+              <strong>$types</strong>
+              <br/>
+              <span class="indent">Lookup table of allowed types. Mainly for backwards compatibility, but also convenient for transforming string type names to the integer constants.</span>
+            </li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>protected</h4>
+          <ul>
+            <li id="parseImplementation">
+              <a title="HTMLPurifier_VarParser_Flexible" href="../classes/HTMLPurifier_VarParser_Flexible/parseImplementation.html">parseImplementation()</a>
+            </li>
+          </ul>
+          <h3>Inherited from <a title="HTMLPurifier_VarParser" href="../classes/HTMLPurifier_VarParser.html">HTMLPurifier_VarParser</a></h3>
+          <h4>protected</h4>
+          <ul>
+            <li id="error"><a title="HTMLPurifier_VarParser" href="../classes/HTMLPurifier_VarParser/error.html">error()</a>
+                — Throws an exception.</li>
+            <li id="errorGeneric"><a title="HTMLPurifier_VarParser" href="../classes/HTMLPurifier_VarParser/errorGeneric.html">errorGeneric()</a>
+                — Generic error for if a type didn't work.</li>
+            <li id="errorInconsistent"><a title="HTMLPurifier_VarParser" href="../classes/HTMLPurifier_VarParser/errorInconsistent.html">errorInconsistent()</a>
+                — Throws an inconsistency exception.</li>
+            <li id="parseImplementation"><a title="HTMLPurifier_VarParser" href="../classes/HTMLPurifier_VarParser/parseImplementation.html">parseImplementation()</a>
+                — Actually implements the parsing. Base implementation is to not do anything to $var. Subclasses should overload this!</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="getTypeName">
+              <a title="HTMLPurifier_VarParser" href="../classes/HTMLPurifier_VarParser/getTypeName.html">getTypeName()</a>
+            </li>
+            <li id="parse"><a title="HTMLPurifier_VarParser" href="../classes/HTMLPurifier_VarParser/parse.html">parse()</a>
+                — Validate a variable according to type. Throws HTMLPurifier_VarParserException if invalid.</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.9.0 - Copyright (C) 2010 - 2017 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

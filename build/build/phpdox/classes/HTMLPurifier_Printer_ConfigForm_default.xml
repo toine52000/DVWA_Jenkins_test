@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="HTMLPurifier_Printer_ConfigForm_default" namespace="" name="HTMLPurifier_Printer_ConfigForm_default" abstract="false" final="false" start="238" end="315">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Printer" file="ConfigForm.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Printer/ConfigForm.php" size="13952" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="05111f5bed6cd8e3d939e764bb70fc0f2103df61" relative="external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Printer/ConfigForm.php"/>
+  <docblock>
+    <description compact="Swiss-army knife configuration form field printer"/>
+  </docblock>
+  <extends full="HTMLPurifier_Printer" namespace="" name="HTMLPurifier_Printer"/>
+  <member name="cols" type="integer" default="18" visibility="public" static="false" line="239"/>
+  <member name="rows" type="integer" default="5" visibility="public" static="false" line="240"/>
+  <method name="render" start="241" end="314" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="ns" byreference="false" type="{unknown}"/>
+    <parameter name="directive" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="config" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="this should probably be split up a little" line="249"/>
+    </inline>
+  </method>
+  <parent full="HTMLPurifier_Printer" namespace="" name="HTMLPurifier_Printer">
+    <member name="generator" visibility="protected" static="false" line="12">
+      <docblock>
+        <description compact="Instance of HTMLPurifier_Generator for HTML generation convenience funcs"/>
+      </docblock>
+    </member>
+    <member name="config" visibility="protected" static="false" line="17">
+      <docblock>
+        <description compact="Instance of HTMLPurifier_Config, for easy access"/>
+      </docblock>
+    </member>
+    <constructor name="__construct" start="22" end="23" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Initialize $generator."/>
+      </docblock>
+    </constructor>
+    <method name="prepareGenerator" start="28" end="32" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Give generator necessary configuration if possible"/>
+      </docblock>
+      <parameter name="config" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="start" start="45" end="49" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Returns a start tag"/>
+        <param description="name" variable="$tag" type="object">
+          <type full="Tag" namespace="" name="Tag"/>
+        </param>
+        <param description="array" variable="$attr" type="object">
+          <type full="Attribute" namespace="" name="Attribute"/>
+        </param>
+      </docblock>
+      <parameter name="tag" byreference="false" type="{unknown}"/>
+      <parameter name="attr" byreference="false" type="array" default=""/>
+    </method>
+    <method name="end" start="55" end="59" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Returns an end teg"/>
+        <param description="name" variable="$tag" type="object">
+          <type full="Tag" namespace="" name="Tag"/>
+        </param>
+      </docblock>
+      <parameter name="tag" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="element" start="68" end="72" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Prints a complete element with content inside"/>
+        <param description="name" variable="$tag" type="object">
+          <type full="Tag" namespace="" name="Tag"/>
+        </param>
+        <param description="contents" variable="$contents" type="object">
+          <type full="Element" namespace="" name="Element"/>
+        </param>
+        <param description="attributes" variable="$attr" type="object">
+          <type full="Tag" namespace="" name="Tag"/>
+        </param>
+        <param description="whether or not to escape contents" variable="$escape" type="object">
+          <type full="Bool" namespace="" name="Bool"/>
+        </param>
+      </docblock>
+      <parameter name="tag" byreference="false" type="{unknown}"/>
+      <parameter name="contents" byreference="false" type="{unknown}"/>
+      <parameter name="attr" byreference="false" type="array" default=""/>
+      <parameter name="escape" byreference="false" type="boolean" default="true"/>
+    </method>
+    <method name="elementEmpty" start="74" end="78" abstract="false" final="false" static="false" visibility="protected">
+      <parameter name="tag" byreference="false" type="{unknown}"/>
+      <parameter name="attr" byreference="false" type="array" default=""/>
+    </method>
+    <method name="text" start="80" end="84" abstract="false" final="false" static="false" visibility="protected">
+      <parameter name="text" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="row" start="91" end="99" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Prints a simple key/value row in a table."/>
+        <param variable="$name" type="object">
+          <type full="Key" namespace="" name="Key"/>
+        </param>
+        <param variable="$value" type="object">
+          <type full="Value" namespace="" name="Value"/>
+        </param>
+      </docblock>
+      <parameter name="name" byreference="false" type="{unknown}"/>
+      <parameter name="value" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="escape" start="105" end="109" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Escapes a string for HTML output."/>
+        <param description="to escape" variable="$string" type="object">
+          <type full="String" namespace="" name="String"/>
+        </param>
+      </docblock>
+      <parameter name="string" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="listify" start="116" end="127" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Takes a list of strings and turns them into a single list"/>
+        <param description="of strings" variable="$array" type="object">
+          <type full="List" namespace="" name="List"/>
+        </param>
+        <param description="whether or not to add an end before the last" variable="$polite" type="object">
+          <type full="Bool" namespace="" name="Bool"/>
+        </param>
+      </docblock>
+      <parameter name="array" byreference="false" type="{unknown}"/>
+      <parameter name="polite" byreference="false" type="boolean" default="false"/>
+    </method>
+    <method name="getClass" start="134" end="164" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Retrieves the class of an object without prefixes, as well as metadata"/>
+        <param description="to determine class of" variable="$obj" type="object">
+          <type full="Object" namespace="" name="Object"/>
+        </param>
+        <param description="prefix to remove" variable="$prefix" type="object">
+          <type full="Further" namespace="" name="Further"/>
+        </param>
+      </docblock>
+      <parameter name="obj" byreference="false" type="{unknown}"/>
+      <parameter name="sec_prefix" byreference="false" type="string" default="''"/>
+    </method>
+  </parent>
+</class>

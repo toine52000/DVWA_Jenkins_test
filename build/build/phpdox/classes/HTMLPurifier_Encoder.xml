@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="HTMLPurifier_Encoder" namespace="" name="HTMLPurifier_Encoder" abstract="false" final="false" start="7" end="418">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier" file="Encoder.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Encoder.php" size="19071" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="5c86c78848bf519380f4ec50610468523fb47868" relative="external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Encoder.php"/>
+  <docblock>
+    <description compact="A UTF-8 specific character encoder that handles cleaning and transforming."/>
+    <note value="All functions in this class should be static."/>
+  </docblock>
+  <constructor name="__construct" start="13" end="15" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Constructor throws fatal error if you attempt to instantiate class"/>
+    </docblock>
+  </constructor>
+  <method name="muteErrorHandler" start="20" end="20" abstract="false" final="false" static="true" visibility="private">
+    <docblock>
+      <description compact="Error-handler that mutes errors, alternative to shut-up operator."/>
+    </docblock>
+  </method>
+  <method name="cleanUTF8" start="47" end="198" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Cleans a UTF-8 string for well-formedness and SGML validity">It will parse according to UTF-8 and return a valid UTF8 string, with
+non-SGML codepoints excluded.</description>
+      <note value="Just for reference, the non-SGML code points are 0 to 31 and">127 to 159, inclusive.  However, we allow code points 9, 10
+      and 13, which are the tab, line feed and carriage return
+      respectively. 128 and above the code points map to multibyte
+      UTF-8 representations.</note>
+      <note value="Fallback code adapted from utf8ToUnicode by Henri Sivonen and">hsivonen@iki.fi at &lt;http://iki.fi/hsivonen/php-utf8/&gt; under the
+      LGPL license.  Notes on what changed are inside, but in general,
+      the original code transformed UTF-8 text into an array of integer
+      Unicode codepoints. Understandably, transforming that back to
+      a string would be somewhat expensive, so the function was modded to
+      directly operate on the string.  However, this discourages code
+      reuse, and the logic enumerated here would be useful for any
+      function that needs to be able to understand UTF-8 characters.
+      As of right now, only smart lossless character encoding converters
+      would need that, and I'm probably not going to implement them.
+      Once again, PHP 6 should solve all our problems.</note>
+    </docblock>
+    <parameter name="str" byreference="false" type="{unknown}"/>
+    <parameter name="force_php" byreference="false" type="boolean" default="false"/>
+    <inline>
+      <comment value="UTF-8 validity is checked since PHP 4.3.5" line="49"/>
+      <comment value="This is an optimization: if the string is already valid UTF-8, no" line="50"/>
+      <comment value="need to do PHP stuff. 99% of the time, this will be the case." line="51"/>
+      <comment value="The regexp matches the XML char production, as well as well as excluding" line="52"/>
+      <comment value="non-SGML codepoints U+007F to U+009F" line="53"/>
+      <comment value="cached expected number of octets after the current octet" line="58"/>
+      <comment value="until the beginning of the next UTF8 character sequence" line="59"/>
+      <comment value="cached Unicode character" line="60"/>
+      <comment value="cached expected number of octets in the current sequence" line="61"/>
+      <comment value="original code involved an $out that was an array of Unicode" line="63"/>
+      <comment value="codepoints.  Instead of having to convert back into UTF-8, we've" line="64"/>
+      <comment value="decided to directly append valid UTF-8 characters onto a string" line="65"/>
+      <comment value="$out once they're done.  $char accumulates raw bytes, while $mUcs4" line="66"/>
+      <comment value="turns into the Unicode code point, so there's some redundancy." line="67"/>
+    </inline>
+  </method>
+  <method name="unichr" start="226" end="261" abstract="false" final="false" static="true" visibility="public">
+    <parameter name="code" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="set up the actual character" line="253"/>
+    </inline>
+  </method>
+  <method name="convertToUTF8" start="266" end="292" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Converts a string to UTF-8 based on configuration."/>
+    </docblock>
+    <parameter name="str" byreference="false" type="{unknown}"/>
+    <parameter name="config" byreference="false" type="{unknown}"/>
+    <parameter name="context" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="convertFromUTF8" start="299" end="327" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Converts a string from UTF-8 based on configuration."/>
+      <note value="Currently, this is a lossy conversion, with unexpressable">characters being omitted.</note>
+    </docblock>
+    <parameter name="str" byreference="false" type="{unknown}"/>
+    <parameter name="config" byreference="false" type="{unknown}"/>
+    <parameter name="context" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="convertToASCIIDumbLossless" start="345" end="374" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Lossless (character-wise) conversion of HTML to ASCII"/>
+      <param description="string to be converted to ASCII" variable="$str" type="object">
+        <type full="UTF-8" namespace="" name="UTF-8"/>
+      </param>
+      <returns value="ASCII encoded string with non-ASCII character entity-ized"/>
+      <warning value="Adapted from MediaWiki, claiming fair use: this is a common">algorithm. If you disagree with this license fudgery,
+      implement it yourself.</warning>
+      <note value="Uses decimal numeric entities since they are best supported."/>
+      <note value="This is a DUMB function: it has no concept of keeping">character entities that the projected character encoding
+      can allow. We could possibly implement a smart version
+      but that would require it to also know which Unicode
+      codepoints the charset supported (not an easy task).</note>
+      <note value="Sort of with cleanUTF8() but it assumes that $str is">well-formed UTF-8</note>
+    </docblock>
+    <parameter name="str" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testEncodingSupportsASCII" start="387" end="415" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="This expensive function tests whether or not a given character encoding supports ASCII. 7/8-bit encodings like Shift_JIS will fail this test, and require special processing. Variable width encodings shouldn't ever fail."/>
+      <param description="Encoding name to test, as per iconv format" type="string" variable="$encoding"/>
+      <param description="Whether or not to bypass the precompiled arrays." type="object" variable="$bypass">
+        <type full="bool" namespace="" name="bool"/>
+      </param>
+      <return description="of UTF-8 characters to their corresponding ASCII," type="object">which can be used to "undo" any overzealous iconv action.<type full="Array" namespace="" name="Array"/></return>
+    </docblock>
+    <parameter name="encoding" byreference="false" type="{unknown}"/>
+    <parameter name="bypass" byreference="false" type="boolean" default="false"/>
+  </method>
+</class>

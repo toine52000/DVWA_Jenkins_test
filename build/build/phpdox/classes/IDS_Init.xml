@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="IDS_Init" namespace="" name="IDS_Init" abstract="false" final="false" start="51" end="224">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS" file="Init.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/Init.php" size="6372" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="5710fb2faed5b8d49b7b24910830adea90724b2d" relative="external/phpids/0.6/lib/IDS/Init.php"/>
+  <docblock>
+    <description compact="Framework initiation">This class is used for the purpose to initiate the framework and inhabits
+functionality to parse the needed configuration file.</description>
+    <category value="Security"/>
+    <package value="PHPIDS"/>
+    <author value="Christian Matthies &lt;ch0012@gmail.com&gt;"/>
+    <author value="Mario Heiderich &lt;mario.heiderich@gmail.com&gt;"/>
+    <author value="Lars Strojny &lt;lars@strojny.net&gt;"/>
+    <copyright value="2007 The PHPIDS Groupup"/>
+    <license name="http://www.gnu.org/licenses/lgpl.html LGPL"/>
+    <version value="Release: $Id:Init.php 517 2007-09-15 15:04:13Z mario $"/>
+    <link value="http://php-ids.org/"/>
+    <since value="Version 0.4"/>
+  </docblock>
+  <member name="config" type="array" default="" visibility="public" static="false" line="59">
+    <docblock>
+      <description compact="Holds config settings"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="instances" type="array" default="" visibility="private" static="true" line="67">
+    <docblock>
+      <description compact="Instance of this class depending on the supplied config file"/>
+      <var type="array"/>
+      <static/>
+    </docblock>
+  </member>
+  <member name="configPath" type="{unknown}" default="" constant="null" visibility="private" static="false" line="74">
+    <docblock>
+      <description compact="Path to the config file"/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="85" end="94" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Constructor">Includes needed classes and parses the configuration file</description>
+      <param description="the path to the config file" type="string" variable="$configPath"/>
+      <return description="$this" type="object"/>
+    </docblock>
+    <parameter name="configPath" byreference="false" type="{unknown}" default="" constant="null"/>
+  </constructor>
+  <method name="__clone" start="103" end="105" abstract="false" final="true" static="false" visibility="public">
+    <docblock>
+      <description compact="Permitting to clone this object">For the sake of correctness of a singleton pattern, this is necessary</description>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="init" start="115" end="122" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Returns an instance of this class. Also a PHP version check is being performed to avoid compatibility problems with PHP &lt; 5.1.6"/>
+      <param description="the path to the config file" type="string" variable="$configPath"/>
+      <return type="object"/>
+    </docblock>
+    <parameter name="configPath" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="setConfigPath" start="132" end="142" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets the path to the configuration file"/>
+      <param description="the path to the config" type="string" variable="$path"/>
+      <throws description="if file not found" type="object">
+        <type full="Exception" namespace="" name="Exception"/>
+      </throws>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getConfigPath" start="149" end="152" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns path to configuration file"/>
+      <return description="the config path" type="string"/>
+    </docblock>
+  </method>
+  <method name="getBasePath" start="161" end="168" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="This method checks if a base path is given and usage is set to true.">If all that tests succeed the base path will be returned as a string -
+else null will be returned.</description>
+      <return description="the base path or null" type="string"/>
+    </docblock>
+  </method>
+  <method name="setConfig" start="178" end="185" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Merges new settings into the exsiting ones or overwrites them"/>
+      <param description="the config array" type="array" variable="$config"/>
+      <param description="config overwrite flag" type="boolean" variable="$overwrite"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="config" byreference="false" type="array"/>
+    <parameter name="overwrite" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="_mergeConfig" start="198" end="213" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Merge config hashes recursivly">The algorithm merges configuration arrays recursively. If an element is
+an array in both, the values will be appended. If it is a scalar in both,
+the value will be replaced.</description>
+      <param description="The legacy hash" type="array" variable="$current"/>
+      <param description="The hash which values count more when in doubt" type="array" variable="$successor"/>
+      <return description="Merged hash" type="array"/>
+    </docblock>
+    <parameter name="current" byreference="false" type="{unknown}"/>
+    <parameter name="successor" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getConfig" start="220" end="223" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the config array"/>
+      <return description="the config array" type="array"/>
+    </docblock>
+  </method>
+</class>

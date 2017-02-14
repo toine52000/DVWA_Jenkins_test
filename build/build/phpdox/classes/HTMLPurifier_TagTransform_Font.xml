@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="HTMLPurifier_TagTransform_Font" namespace="" name="HTMLPurifier_TagTransform_Font" abstract="false" final="false" start="15" end="91">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/TagTransform" file="Font.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/TagTransform/Font.php" size="2817" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="cdd85693fc294f834f4c5a9cb669fb13e48c792a" relative="external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/TagTransform/Font.php"/>
+  <docblock>
+    <description compact="Transforms FONT tags to the proper form (SPAN with CSS styling)">This transformation takes the three proprietary attributes of FONT and
+transforms them into their corresponding CSS attributes.  These are color,
+face, and size.</description>
+    <note value="Size is an interesting case because it doesn't map cleanly to CSS.">Thanks to
+      http://style.cleverchimp.com/font_size_intervals/altintervals.html
+      for reasonable mappings.</note>
+  </docblock>
+  <extends full="HTMLPurifier_TagTransform" namespace="" name="HTMLPurifier_TagTransform"/>
+  <member name="transform_to" type="string" default="'span'" visibility="public" static="false" line="18"/>
+  <member name="_size_lookup" type="array" default="" visibility="protected" static="false" line="20"/>
+  <method name="transform" start="37" end="90" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="tag" byreference="false" type="{unknown}"/>
+    <parameter name="config" byreference="false" type="{unknown}"/>
+    <parameter name="context" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="handle color transform" line="48"/>
+      <comment value="handle face transform" line="54"/>
+      <comment value="handle size transform" line="60"/>
+    </inline>
+  </method>
+  <parent full="HTMLPurifier_TagTransform" namespace="" name="HTMLPurifier_TagTransform">
+    <member name="transform_to" visibility="public" static="false" line="12">
+      <docblock>
+        <description compact="Tag name to transform the tag to."/>
+      </docblock>
+    </member>
+    <method name="transform" start="20" end="20" abstract="true" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Transforms the obsolete tag into the valid tag."/>
+        <param description="to be transformed." variable="$tag" type="object">
+          <type full="Tag" namespace="" name="Tag"/>
+        </param>
+        <param description="HTMLPurifier_Config object" variable="$config" type="object">
+          <type full="Mandatory" namespace="" name="Mandatory"/>
+        </param>
+        <param description="HTMLPurifier_Context object" variable="$context" type="object">
+          <type full="Mandatory" namespace="" name="Mandatory"/>
+        </param>
+      </docblock>
+      <parameter name="tag" byreference="false" type="{unknown}"/>
+      <parameter name="config" byreference="false" type="{unknown}"/>
+      <parameter name="context" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="prependCSS" start="29" end="32" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Prepends CSS properties to the style attribute, creating the attribute if it doesn't exist."/>
+        <warning value="Copied over from AttrTransform, be sure to keep in sync"/>
+        <param description="array to process (passed by reference)" variable="$attr" type="object">
+          <type full="Attribute" namespace="" name="Attribute"/>
+        </param>
+        <param description="to prepend" variable="$css" type="object">
+          <type full="CSS" namespace="" name="CSS"/>
+        </param>
+      </docblock>
+      <parameter name="attr" byreference="true" type="{unknown}"/>
+      <parameter name="css" byreference="false" type="{unknown}"/>
+    </method>
+  </parent>
+</class>

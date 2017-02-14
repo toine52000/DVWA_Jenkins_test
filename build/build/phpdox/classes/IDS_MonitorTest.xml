@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="IDS_MonitorTest" namespace="" name="IDS_MonitorTest" abstract="false" final="false" start="27" end="1381">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/tests/IDS" file="MonitorTest.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/tests/IDS/MonitorTest.php" size="72699" time="2017-02-13T08:45:28+00:00" unixtime="1486975528" sha1="fb0a125967366c87ebebe8ddafe487c8888cdad8" relative="external/phpids/0.6/tests/IDS/MonitorTest.php"/>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase" unresolved="true"/>
+  <method name="setUp" start="29" end="35" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetHTML" start="37" end="45" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetStorage" start="47" end="53" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testRunWithTags" start="55" end="67" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testRun" start="69" end="80" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testNoResult" start="82" end="85" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSetExceptionsString" start="87" end="94" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSetExceptionsArray" start="96" end="102" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testList" start="104" end="115" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testListWithJsonFilters" start="117" end="134" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testListWithKeyScanning" start="136" end="148" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testListWithException" start="150" end="161" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testListWithSubKeys" start="163" end="173" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testListWithSubKeysAndExceptions" start="175" end="186" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testAttributeBreakerList" start="188" end="205" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testCommentList" start="207" end="221" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testConcatenatedXSSList" start="223" end="291" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testConcatenatedXSSList2" start="293" end="446" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testXMLPredicateXSSList" start="448" end="469" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testConditionalCompilationXSSList" start="471" end="487" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testXSSList" start="489" end="556" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSelfContainedXSSList" start="558" end="596" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSQLIList" start="598" end="646" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSQLIList2" start="648" end="705" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSQLIList3" start="707" end="749" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSQLIList4" start="751" end="810" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSQLIList5" start="812" end="888" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSQLIList6" start="890" end="931" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testDTList" start="933" end="985" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testURIList" start="987" end="1005" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testRFEList" start="1007" end="1067" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testUTF7List" start="1069" end="1085" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testBase64CCConverter" start="1087" end="1103" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testDecimalCCConverter" start="1105" end="1119" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testOctalCCConverter" start="1121" end="1143" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testHexCCConverter" start="1145" end="1176" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testLDAPInjectionList" start="1178" end="1193" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testAllowedHTMLScanningPositive" start="1195" end="1231" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testAllowedHTMLScanningNegative" start="1233" end="1267" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testJSONScanning" start="1269" end="1280" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testForFalseAlerts" start="1282" end="1348" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="_testForPlainEvent" start="1357" end="1371" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="This method checks for the plain event of every single exploit array item"/>
+      <access value="private"/>
+      <param type="array" variable="$exploits"/>
+    </docblock>
+    <parameter name="exploits" byreference="false" type="array" default=""/>
+  </method>
+  <method name="assertImpact" start="1373" end="1380" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="result" byreference="false" type="object">
+      <type full="IDS_Report" namespace="" name="IDS_Report"/>
+    </parameter>
+    <parameter name="impact" byreference="false" type="{unknown}"/>
+    <parameter name="suhosinImpact" byreference="false" type="{unknown}"/>
+  </method>
+</class>

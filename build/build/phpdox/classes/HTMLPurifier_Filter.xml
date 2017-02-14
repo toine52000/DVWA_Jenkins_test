@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="HTMLPurifier_Filter" namespace="" name="HTMLPurifier_Filter" abstract="false" final="false" start="22" end="44">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier" file="Filter.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Filter.php" size="1370" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="d1b069cb61caf77d3a73bc26f42175ee4b05aa63" relative="external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Filter.php"/>
+  <docblock>
+    <description compact="Represents a pre or post processing filter on HTML Purifier's output">Sometimes, a little ad-hoc fixing of HTML has to be done before
+it gets sent through HTML Purifier: you can use filters to acheive
+this effect. For instance, YouTube videos can be preserved using
+this manner. You could have used a decorator for this task, but
+PHP's support for them is not terribly robust, so we're going
+to just loop through the filters.
+
+Filters should be exited first in, last out. If there are three filters,
+named 1, 2 and 3, the order of execution should go 1-&gt;preFilter,
+2-&gt;preFilter, 3-&gt;preFilter, purify, 3-&gt;postFilter, 2-&gt;postFilter,
+1-&gt;postFilter.</description>
+    <note value="Methods are not declared abstract as it is perfectly legitimate">for an implementation not to want anything to happen on a step</note>
+  </docblock>
+  <member name="name" visibility="public" static="false" line="28">
+    <docblock>
+      <description compact="Name of the filter for identification purposes"/>
+    </docblock>
+  </member>
+  <method name="preFilter" start="33" end="35" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Pre-processor function, handles HTML before HTML Purifier"/>
+    </docblock>
+    <parameter name="html" byreference="false" type="{unknown}"/>
+    <parameter name="config" byreference="false" type="{unknown}"/>
+    <parameter name="context" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="postFilter" start="40" end="42" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Post-processor function, handles HTML after HTML Purifier"/>
+    </docblock>
+    <parameter name="html" byreference="false" type="{unknown}"/>
+    <parameter name="config" byreference="false" type="{unknown}"/>
+    <parameter name="context" byreference="false" type="{unknown}"/>
+  </method>
+  <extenders>
+    <extender full="HTMLPurifier_Filter_ExtractStyleBlocks" namespace="" name="HTMLPurifier_Filter_ExtractStyleBlocks"/>
+    <extender full="HTMLPurifier_Filter_YouTube" namespace="" name="HTMLPurifier_Filter_YouTube"/>
+  </extenders>
+</class>

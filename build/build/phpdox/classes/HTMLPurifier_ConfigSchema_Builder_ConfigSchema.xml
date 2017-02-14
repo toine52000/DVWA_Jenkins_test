@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="HTMLPurifier_ConfigSchema_Builder_ConfigSchema" namespace="" name="HTMLPurifier_ConfigSchema_Builder_ConfigSchema" abstract="false" final="false" start="7" end="50">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ConfigSchema/Builder" file="ConfigSchema.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ConfigSchema/Builder/ConfigSchema.php" size="1519" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="8dd851c45fb32f23af15f11776a55f590303a6a3" relative="external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ConfigSchema/Builder/ConfigSchema.php"/>
+  <docblock>
+    <description compact="Converts HTMLPurifier_ConfigSchema_Interchange to our runtime representation used to perform checks on user configuration."/>
+  </docblock>
+  <method name="build" start="10" end="48" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="interchange" byreference="false" type="{unknown}"/>
+  </method>
+</class>

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - HTMLPurifier_LanguageFactory</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.html">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.html">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.html">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.html">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.html">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.html">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.html">Classes</a>
+          </li>
+          <li class="separator">HTMLPurifier_LanguageFactory</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#tasks">Tasks</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/LanguageFactory.php.html#line10">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>HTMLPurifier_LanguageFactory</h1>
+        <h4>Class responsible for generating HTMLPurifier_Language objects, managing caching and fallbacks.</h4>
+        <p/>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class HTMLPurifier_LanguageFactory
+            {<br/><ul class="none"><li>// members</li><li>public  <a href="#members">$cache</a>;
+                    </li><li>public array <a href="#members">$keys</a> =
+                        ;
+                    </li><li>protected  <a href="#members">$validator</a>;
+                    </li><li>protected  <a href="#members">$dir</a>;
+                    </li><li>protected array <a href="#members">$mergeable_keys_map</a> =
+                        ;
+                    </li><li>protected array <a href="#members">$mergeable_keys_list</a> =
+                        ;
+                    </li></ul><ul class="none"><li>// methods</li><li>public static void <a title="HTMLPurifier_LanguageFactory" href="../classes/HTMLPurifier_LanguageFactory/instance.html">instance</a>()
+                    </li><li>public void <a title="HTMLPurifier_LanguageFactory" href="../classes/HTMLPurifier_LanguageFactory/setup.html">setup</a>()
+                    </li><li>public void <a title="HTMLPurifier_LanguageFactory" href="../classes/HTMLPurifier_LanguageFactory/create.html">create</a>()
+                    </li><li>public void <a title="HTMLPurifier_LanguageFactory" href="../classes/HTMLPurifier_LanguageFactory/getFallbackFor.html">getFallbackFor</a>()
+                    </li><li>public void <a title="HTMLPurifier_LanguageFactory" href="../classes/HTMLPurifier_LanguageFactory/loadLanguage.html">loadLanguage</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="tasks">Tasks</h2>
+        <table class="styled">
+          <thead>
+            <tr>
+              <th style="width:3em;">Line</th>
+              <th>Task</th>
+            </tr>
+          </thead>
+          <tr>
+            <td class="nummeric">10+</td>
+            <td>Serialized cache for languages</td>
+          </tr>
+        </table>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="dir">
+              <strong>$dir</strong>
+              <br/>
+              <span class="indent">Cached copy of dirname(__FILE__), directory of current file without trailing slash</span>
+            </li>
+            <li id="mergeable_keys_list">
+              <strong>$mergeable_keys_list</strong>
+              <br/>
+              <span class="indent">Keys whose contents are a list and can be merged</span>
+            </li>
+            <li id="mergeable_keys_map">
+              <strong>$mergeable_keys_map</strong>
+              <br/>
+              <span class="indent">Keys whose contents are a hash map and can be merged</span>
+            </li>
+            <li id="validator">
+              <strong>$validator</strong>
+              <br/>
+              <span class="indent">Instance of HTMLPurifier_AttrDef_Lang to validate language codes</span>
+            </li>
+          </ul>
+          <h4>public</h4>
+          <ul class="members">
+            <li id="cache">
+              <strong>$cache</strong>
+              <br/>
+              <span class="indent">Cache of language code information used to load HTMLPurifier_Language objects Structure is: $factory-&gt;cache[$language_code][$key] = $value</span>
+            </li>
+            <li id="keys">
+              <strong>$keys</strong>
+              <br/>
+              <span class="indent">Valid keys in the HTMLPurifier_Language object. Designates which variables to slurp out of a message file.</span>
+            </li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>public</h4>
+          <ul>
+            <li id="create"><a title="HTMLPurifier_LanguageFactory" href="../classes/HTMLPurifier_LanguageFactory/create.html">create()</a>
+                — Creates a language object, handles class fallbacks</li>
+            <li id="getFallbackFor"><a title="HTMLPurifier_LanguageFactory" href="../classes/HTMLPurifier_LanguageFactory/getFallbackFor.html">getFallbackFor()</a>
+                — Returns the fallback language for language</li>
+            <li id="instance"><a title="HTMLPurifier_LanguageFactory" href="../classes/HTMLPurifier_LanguageFactory/instance.html">instance()</a>
+                — Retrieve sole instance of the factory.</li>
+            <li id="loadLanguage"><a title="HTMLPurifier_LanguageFactory" href="../classes/HTMLPurifier_LanguageFactory/loadLanguage.html">loadLanguage()</a>
+                — Loads language into the cache, handles message file and fallbacks</li>
+            <li id="setup"><a title="HTMLPurifier_LanguageFactory" href="../classes/HTMLPurifier_LanguageFactory/setup.html">setup()</a>
+                — Sets up the singleton, much like a constructor</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.9.0 - Copyright (C) 2010 - 2017 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

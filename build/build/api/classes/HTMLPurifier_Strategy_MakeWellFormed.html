@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - HTMLPurifier_Strategy_MakeWellFormed</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.html">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.html">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.html">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.html">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.html">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.html">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.html">Classes</a>
+          </li>
+          <li class="separator">HTMLPurifier_Strategy_MakeWellFormed</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Strategy/MakeWellFormed.php.html#line6">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>HTMLPurifier_Strategy_MakeWellFormed</h1>
+        <h4>Takes tokens makes them well-formed (balance end tags, etc.)</h4>
+        <p/>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class HTMLPurifier_Strategy_MakeWellFormed
+                extends <a title="HTMLPurifier_Strategy" href="../classes/HTMLPurifier_Strategy.html">HTMLPurifier_Strategy</a>
+            {<br/><ul class="none"><li>// members</li><li>protected  <a href="#members">$tokens</a>;
+                    </li><li>protected  <a href="#members">$t</a>;
+                    </li><li>protected  <a href="#members">$stack</a>;
+                    </li><li>protected  <a href="#members">$injectors</a>;
+                    </li><li>protected  <a href="#members">$config</a>;
+                    </li><li>protected  <a href="#members">$context</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="HTMLPurifier_Strategy_MakeWellFormed" href="../classes/HTMLPurifier_Strategy_MakeWellFormed/execute.html">execute</a>()
+                    </li><li>protected void <a title="HTMLPurifier_Strategy_MakeWellFormed" href="../classes/HTMLPurifier_Strategy_MakeWellFormed/processToken.html">processToken</a>()
+                    </li><li>private void <a title="HTMLPurifier_Strategy_MakeWellFormed" href="../classes/HTMLPurifier_Strategy_MakeWellFormed/insertBefore.html">insertBefore</a>()
+                    </li><li>private void <a title="HTMLPurifier_Strategy_MakeWellFormed" href="../classes/HTMLPurifier_Strategy_MakeWellFormed/remove.html">remove</a>()
+                    </li><li>private void <a title="HTMLPurifier_Strategy_MakeWellFormed" href="../classes/HTMLPurifier_Strategy_MakeWellFormed/swap.html">swap</a>()
+                    </li></ul><ul class="none"><li>// Inherited methods from <span title="HTMLPurifier_Strategy">HTMLPurifier_Strategy</span></li><li>public abstract void <a title="HTMLPurifier_Strategy" href="../classes/HTMLPurifier_Strategy/execute.html">execute</a>()
+                        </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Extends</h4>
+          <ul>
+            <li>
+              <a title="HTMLPurifier_Strategy" href="../classes/HTMLPurifier_Strategy.html">HTMLPurifier_Strategy</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="config">
+              <strong>$config</strong>
+              <br/>
+              <span class="indent">Current instance of HTMLPurifier_Config.</span>
+            </li>
+            <li id="context">
+              <strong>$context</strong>
+              <br/>
+              <span class="indent">Current instance of HTMLPurifier_Context.</span>
+            </li>
+            <li id="injectors">
+              <strong>$injectors</strong>
+              <br/>
+              <span class="indent">Injectors active in this stream processing.</span>
+            </li>
+            <li id="stack">
+              <strong>$stack</strong>
+              <br/>
+              <span class="indent">Current nesting of elements.</span>
+            </li>
+            <li id="t">
+              <strong>$t</strong>
+              <br/>
+              <span class="indent">Current index in $tokens.</span>
+            </li>
+            <li id="tokens">
+              <strong>$tokens</strong>
+              <br/>
+              <span class="indent">Array stream of tokens being processed.</span>
+            </li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>private</h4>
+          <ul>
+            <li id="insertBefore"><a title="HTMLPurifier_Strategy_MakeWellFormed" href="../classes/HTMLPurifier_Strategy_MakeWellFormed/insertBefore.html">insertBefore()</a>
+                — Inserts a token before the current token. Cursor now points to this token</li>
+            <li id="remove"><a title="HTMLPurifier_Strategy_MakeWellFormed" href="../classes/HTMLPurifier_Strategy_MakeWellFormed/remove.html">remove()</a>
+                — Removes current token. Cursor now points to new token occupying previously occupied space.</li>
+            <li id="swap"><a title="HTMLPurifier_Strategy_MakeWellFormed" href="../classes/HTMLPurifier_Strategy_MakeWellFormed/swap.html">swap()</a>
+                — Swap current token with new token. Cursor points to new token (no change).</li>
+          </ul>
+          <h4>protected</h4>
+          <ul>
+            <li id="processToken"><a title="HTMLPurifier_Strategy_MakeWellFormed" href="../classes/HTMLPurifier_Strategy_MakeWellFormed/processToken.html">processToken()</a>
+                — Processes arbitrary token values for complicated substitution patterns.</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="execute">
+              <a title="HTMLPurifier_Strategy_MakeWellFormed" href="../classes/HTMLPurifier_Strategy_MakeWellFormed/execute.html">execute()</a>
+            </li>
+          </ul>
+          <h3>Inherited from <a title="HTMLPurifier_Strategy" href="../classes/HTMLPurifier_Strategy.html">HTMLPurifier_Strategy</a></h3>
+          <h4>public</h4>
+          <ul>
+            <li id="execute"><a title="HTMLPurifier_Strategy" href="../classes/HTMLPurifier_Strategy/execute.html">execute()</a>
+                — Executes the strategy on the tokens.</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.9.0 - Copyright (C) 2010 - 2017 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

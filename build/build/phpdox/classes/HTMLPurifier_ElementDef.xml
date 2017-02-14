@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="HTMLPurifier_ElementDef" namespace="" name="HTMLPurifier_ElementDef" abstract="false" final="false" start="9" end="159">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier" file="ElementDef.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ElementDef.php" size="5818" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="fccb5fe6ea9df36476d40b8b47936c9b98cbdd7a" relative="external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ElementDef.php"/>
+  <docblock>
+    <description compact="Structure that stores an HTML element definition. Used by HTMLPurifier_HTMLDefinition and HTMLPurifier_HTMLModule."/>
+    <note value="This class is inspected by HTMLPurifier_Printer_HTMLDefinition.">Please update that class too.</note>
+  </docblock>
+  <member name="standalone" type="boolean" default="true" visibility="public" static="false" line="16">
+    <docblock>
+      <description compact="Does the definition work by itself, or is it created solely for the purpose of merging into another definition?"/>
+    </docblock>
+  </member>
+  <member name="attr" type="array" default="" visibility="public" static="false" line="29">
+    <docblock>
+      <description compact="Associative array of attribute name to HTMLPurifier_AttrDef"/>
+      <note value="Before being processed by HTMLPurifier_AttrCollections">when modules are finalized during
+      HTMLPurifier_HTMLDefinition-&gt;setup(), this array may also
+      contain an array at index 0 that indicates which attribute
+      collections to load into the full array. It may also
+      contain string indentifiers in lieu of HTMLPurifier_AttrDef,
+      see HTMLPurifier_AttrTypes on how they are expanded during
+      HTMLPurifier_HTMLDefinition-&gt;setup() processing.</note>
+    </docblock>
+  </member>
+  <member name="attr_transform_pre" type="array" default="" visibility="public" static="false" line="34">
+    <docblock>
+      <description compact="Indexed list of tag's HTMLPurifier_AttrTransform to be done before validation"/>
+    </docblock>
+  </member>
+  <member name="attr_transform_post" type="array" default="" visibility="public" static="false" line="39">
+    <docblock>
+      <description compact="Indexed list of tag's HTMLPurifier_AttrTransform to be done after validation"/>
+    </docblock>
+  </member>
+  <member name="child" visibility="public" static="false" line="44">
+    <docblock>
+      <description compact="HTMLPurifier_ChildDef of this tag."/>
+    </docblock>
+  </member>
+  <member name="content_model" visibility="public" static="false" line="53">
+    <docblock>
+      <description compact="Abstract string representation of internal ChildDef rules. See HTMLPurifier_ContentSets for how this is parsed and then transformed into an HTMLPurifier_ChildDef."/>
+      <warning value="This is a temporary variable that is not available after">being processed by HTMLDefinition</warning>
+    </docblock>
+  </member>
+  <member name="content_model_type" visibility="public" static="false" line="62">
+    <docblock>
+      <description compact="Value of $child-&gt;type, used to determine which ChildDef to use, used in combination with $content_model."/>
+      <warning value="This must be lowercase"/>
+      <warning value="This is a temporary variable that is not available after">being processed by HTMLDefinition</warning>
+    </docblock>
+  </member>
+  <member name="descendants_are_inline" type="boolean" default="false" visibility="public" static="false" line="72">
+    <docblock>
+      <description compact="Does the element have a content model (#PCDATA | Inline)*? This is important for chameleon ins and del processing in HTMLPurifier_ChildDef_Chameleon. Dynamically set: modules don't have to worry about this one."/>
+    </docblock>
+  </member>
+  <member name="required_attr" type="array" default="" visibility="public" static="false" line="78">
+    <docblock>
+      <description compact="List of the names of required attributes this element has. Dynamically populated by HTMLPurifier_HTMLDefinition::getElement"/>
+    </docblock>
+  </member>
+  <member name="excludes" type="array" default="" visibility="public" static="false" line="91">
+    <docblock>
+      <description compact="Lookup table of tags excluded from all descendants of this tag."/>
+      <note value="SGML permits exclusions for all descendants, but this is">not possible with DTDs or XML Schemas. W3C has elected to
+      use complicated compositions of content_models to simulate
+      exclusion for children, but we go the simpler, SGML-style
+      route of flat-out exclusions, which correctly apply to
+      all descendants and not just children. Note that the XHTML
+      Modularization Abstract Modules are blithely unaware of such
+      distinctions.</note>
+    </docblock>
+  </member>
+  <method name="create" start="96" end="102" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Low-level factory constructor for creating new standalone element defs"/>
+    </docblock>
+    <parameter name="content_model" byreference="false" type="{unknown}"/>
+    <parameter name="content_model_type" byreference="false" type="{unknown}"/>
+    <parameter name="attr" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="mergeIn" start="109" end="142" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Merges the values of another element definition into this one.">Values from the new element def take precedence if a value is
+not mergeable.</description>
+    </docblock>
+    <parameter name="def" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="later keys takes precedence" line="111"/>
+    </inline>
+  </method>
+  <method name="_mergeAssocArray" start="149" end="157" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Merges one array into another, removes values which equal false"/>
+      <param description="by reference that is merged into" variable="$a1" type="object">
+        <type full="Array" namespace="" name="Array"/>
+      </param>
+      <param description="that merges into $a1" variable="$a2" type="object">
+        <type full="Array" namespace="" name="Array"/>
+      </param>
+    </docblock>
+    <parameter name="a1" byreference="true" type="{unknown}"/>
+    <parameter name="a2" byreference="false" type="{unknown}"/>
+  </method>
+</class>

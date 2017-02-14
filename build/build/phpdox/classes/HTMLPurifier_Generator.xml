@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="HTMLPurifier_Generator" namespace="" name="HTMLPurifier_Generator" abstract="false" final="false" start="10" end="181">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier" file="Generator.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Generator.php" size="6876" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="df0da16ddf958330be5d1b05d1c9153730d02b84" relative="external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Generator.php"/>
+  <docblock>
+    <description compact="Generates HTML from tokens."/>
+    <todo value="Refactor interface so that configuration/context is determined">upon instantiation, no need for messy generateFromTokens() calls</todo>
+    <todo value="Make some of the more internal functions protected, and have">unit tests work around that</todo>
+  </docblock>
+  <member name="_xhtml" type="boolean" default="true" visibility="private" static="false" line="16">
+    <docblock>
+      <description compact="Whether or not generator should produce XML output"/>
+    </docblock>
+  </member>
+  <member name="_scriptFix" type="boolean" default="false" visibility="private" static="false" line="21">
+    <docblock>
+      <description compact=":HACK: Whether or not generator should comment the insides of &lt;script&gt; tags"/>
+    </docblock>
+  </member>
+  <member name="_def" visibility="private" static="false" line="27">
+    <docblock>
+      <description compact="Cache of HTMLDefinition during HTML output to determine whether or not attributes should be minimized."/>
+    </docblock>
+  </member>
+  <member name="_sortAttr" visibility="private" static="false" line="32">
+    <docblock>
+      <description compact="Cache of %Output.SortAttr"/>
+    </docblock>
+  </member>
+  <member name="config" visibility="protected" static="false" line="37">
+    <docblock>
+      <description compact="Configuration for the generator"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="43" end="49" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param description="of HTMLPurifier_Config" variable="$config" type="object">
+        <type full="Instance" namespace="" name="Instance"/>
+      </param>
+      <param description="of HTMLPurifier_Context" variable="$context" type="object">
+        <type full="Instance" namespace="" name="Instance"/>
+      </param>
+    </docblock>
+    <parameter name="config" byreference="false" type="{unknown}"/>
+    <parameter name="context" byreference="false" type="{unknown}"/>
+  </constructor>
+  <method name="generateFromTokens" start="57" end="93" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generates HTML from an array of tokens."/>
+      <param description="of HTMLPurifier_Token" variable="$tokens" type="object">
+        <type full="Array" namespace="" name="Array"/>
+      </param>
+      <param description="object" variable="$config" type="object">
+        <type full="HTMLPurifier_Config" namespace="" name="HTMLPurifier_Config"/>
+      </param>
+      <return description="HTML" type="object">
+        <type full="Generated" namespace="" name="Generated"/>
+      </return>
+    </docblock>
+    <parameter name="tokens" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Basic algorithm" line="60"/>
+      <comment value="Tidy cleanup" line="74"/>
+      <comment value="Normalize newlines to system defined value" line="88"/>
+    </inline>
+  </method>
+  <method name="generateFromToken" start="100" end="127" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generates HTML from a single token."/>
+      <param description="object." variable="$token" type="object">
+        <type full="HTMLPurifier_Token" namespace="" name="HTMLPurifier_Token"/>
+      </param>
+      <return description="HTML" type="object">
+        <type full="Generated" namespace="" name="Generated"/>
+      </return>
+    </docblock>
+    <parameter name="token" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="generateScriptFromToken" start="134" end="139" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Special case processor for the contents of script tags"/>
+      <warning value="This runs into problems if there's already a literal">--&gt; somewhere inside the script contents.</warning>
+    </docblock>
+    <parameter name="token" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Thanks &lt;http://lachy.id.au/log/2005/05/script-comments&gt;" line="136"/>
+    </inline>
+  </method>
+  <method name="generateAttributes" start="149" end="165" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generates attribute declarations from attribute array."/>
+      <note value="This does not include the leading or trailing space."/>
+      <param description="array" variable="$assoc_array_of_attributes" type="object">
+        <type full="Attribute" namespace="" name="Attribute"/>
+      </param>
+      <param description="of element attributes are for, used to check" variable="$element" type="object">attribute minimization.<type full="Name" namespace="" name="Name"/></param>
+      <return description="HTML fragment for insertion." type="object">
+        <type full="Generate" namespace="" name="Generate"/>
+      </return>
+    </docblock>
+    <parameter name="assoc_array_of_attributes" byreference="false" type="{unknown}"/>
+    <parameter name="element" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="escape" start="177" end="179" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Escapes raw text data."/>
+      <todo value="This really ought to be protected, but until we have a facility">for properly generating HTML here w/o using tokens, it stays
+      public.</todo>
+      <param description="data to escape for HTML." variable="$string" type="object">
+        <type full="String" namespace="" name="String"/>
+      </param>
+      <param description="style, like htmlspecialchars. ENT_NOQUOTES is" variable="$quote" type="object">permissible for non-attribute output.<type full="Quoting" namespace="" name="Quoting"/></param>
+      <return description="escaped data." type="object">
+        <type full="String" namespace="" name="String"/>
+      </return>
+    </docblock>
+    <parameter name="string" byreference="false" type="{unknown}"/>
+    <parameter name="quote" byreference="false" type="{unknown}" default="" constant="ENT_COMPAT"/>
+  </method>
+</class>

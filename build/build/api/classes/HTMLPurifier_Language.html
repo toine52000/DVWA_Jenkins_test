@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - HTMLPurifier_Language</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.html">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.html">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.html">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.html">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.html">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.html">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.html">Classes</a>
+          </li>
+          <li class="separator">HTMLPurifier_Language</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#tasks">Tasks</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Language.php.html#line7">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>HTMLPurifier_Language</h1>
+        <h4>Represents a language and defines localizable string formatting and other functions, as well as the localized messages for HTML Purifier.</h4>
+        <p/>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class HTMLPurifier_Language
+            {<br/><ul class="none"><li>// members</li><li>public string <a href="#members">$code</a> =
+                        'en';
+                    </li><li>public boolean <a href="#members">$fallback</a> =
+                        false;
+                    </li><li>public array <a href="#members">$messages</a> =
+                        ;
+                    </li><li>public array <a href="#members">$errorNames</a> =
+                        ;
+                    </li><li>public boolean <a href="#members">$error</a> =
+                        false;
+                    </li><li>public boolean <a href="#members">$_loaded</a> =
+                        false;
+                    </li><li>protected  <a href="#members">$config</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="HTMLPurifier_Language" href="../classes/HTMLPurifier_Language/__construct.html">__construct</a>()
+                    </li><li>public void <a title="HTMLPurifier_Language" href="../classes/HTMLPurifier_Language/load.html">load</a>()
+                    </li><li>public string <a title="HTMLPurifier_Language" href="../classes/HTMLPurifier_Language/getMessage.html">getMessage</a>()
+                    </li><li>public string <a title="HTMLPurifier_Language" href="../classes/HTMLPurifier_Language/getErrorName.html">getErrorName</a>()
+                    </li><li>public void <a title="HTMLPurifier_Language" href="../classes/HTMLPurifier_Language/listify.html">listify</a>()
+                    </li><li>public string <a title="HTMLPurifier_Language" href="../classes/HTMLPurifier_Language/formatMessage.html">formatMessage</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="tasks">Tasks</h2>
+        <table class="styled">
+          <thead>
+            <tr>
+              <th style="width:3em;">Line</th>
+              <th>Task</th>
+            </tr>
+          </thead>
+          <tr>
+            <td class="nummeric">+</td>
+            <td>Make it private, fix usage in HTMLPurifier_LanguageTest</td>
+          </tr>
+          <tr>
+            <td class="nummeric">117+</td>
+            <td>Implement conditionals? Right now, some messages make</td>
+          </tr>
+        </table>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="config">
+              <strong>$config</strong>
+              <br/>
+              <span class="indent">Instances of HTMLPurifier_Config and HTMLPurifier_Context</span>
+            </li>
+          </ul>
+          <h4>public</h4>
+          <ul class="members">
+            <li id="_loaded">
+              <strong>$_loaded</strong>
+              <br/>
+              <span class="indent">Has the language object been loaded yet?</span>
+            </li>
+            <li id="code">
+              <strong>$code</strong>
+              <br/>
+              <span class="indent">ISO 639 language code of language. Prefers shortest possible version</span>
+            </li>
+            <li id="error">
+              <strong>$error</strong>
+              <br/>
+              <span class="indent">True if no message file was found for this language, so English is being used instead. Check this if you'd like to notify the user that they've used a non-supported language.</span>
+            </li>
+            <li id="errorNames">
+              <strong>$errorNames</strong>
+              <br/>
+              <span class="indent">Array of localizable error codes</span>
+            </li>
+            <li id="fallback">
+              <strong>$fallback</strong>
+              <br/>
+              <span class="indent">Fallback language code</span>
+            </li>
+            <li id="messages">
+              <strong>$messages</strong>
+              <br/>
+              <span class="indent">Array of localizable messages</span>
+            </li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>public</h4>
+          <ul>
+            <li id="__construct">
+              <a title="HTMLPurifier_Language" href="../classes/HTMLPurifier_Language/__construct.html">__construct()</a>
+            </li>
+            <li id="formatMessage"><a title="HTMLPurifier_Language" href="../classes/HTMLPurifier_Language/formatMessage.html">formatMessage()</a>
+                — Formats a localised message with passed parameters</li>
+            <li id="getErrorName"><a title="HTMLPurifier_Language" href="../classes/HTMLPurifier_Language/getErrorName.html">getErrorName()</a>
+                — Retrieves a localised error name.</li>
+            <li id="getMessage"><a title="HTMLPurifier_Language" href="../classes/HTMLPurifier_Language/getMessage.html">getMessage()</a>
+                — Retrieves a localised message.</li>
+            <li id="listify"><a title="HTMLPurifier_Language" href="../classes/HTMLPurifier_Language/listify.html">listify()</a>
+                — Converts an array list into a string readable representation</li>
+            <li id="load"><a title="HTMLPurifier_Language" href="../classes/HTMLPurifier_Language/load.html">load()</a>
+                — Loads language object with necessary info from factory cache</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.9.0 - Copyright (C) 2010 - 2017 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

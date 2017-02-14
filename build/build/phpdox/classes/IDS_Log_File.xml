@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="IDS_Log_File" namespace="" name="IDS_Log_File" abstract="false" final="false" start="52" end="221">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/Log" file="File.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/Log/File.php" size="6333" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="60a5c1a3dd3768b1e21c96a1c16d502705962f36" relative="external/phpids/0.6/lib/IDS/Log/File.php"/>
+  <docblock>
+    <description compact="File logging wrapper">The file wrapper is designed to store data into a flatfile. It implements the
+singleton pattern.</description>
+    <category value="Security"/>
+    <package value="PHPIDS"/>
+    <author value="Christian Matthies &lt;ch0012@gmail.com&gt;"/>
+    <author value="Mario Heiderich &lt;mario.heiderich@gmail.com&gt;"/>
+    <author value="Lars Strojny &lt;lars@strojny.net&gt;"/>
+    <copyright value="2007 The PHPIDS Group"/>
+    <license name="http://www.gnu.org/licenses/lgpl.html LGPL"/>
+    <version value="Release: $Id:File.php 517 2007-09-15 15:04:13Z mario $"/>
+    <link value="http://php-ids.org/"/>
+  </docblock>
+  <implements full="IDS_Log_Interface" namespace="" name="IDS_Log_Interface"/>
+  <member name="logfile" type="{unknown}" default="" constant="null" visibility="private" static="false" line="60">
+    <docblock>
+      <description compact="Path to the log file"/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="instances" type="array" default="" visibility="private" static="true" line="70">
+    <docblock>
+      <description compact="Instance container">Due to the singleton pattern this class allows to initiate only one
+instance for each file.</description>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="ip" type="string" default="'local/unknown'" visibility="private" static="false" line="77">
+    <docblock>
+      <description compact="Holds current remote address"/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="86" end="97" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Constructor"/>
+      <param description="path to the log file" type="string" variable="$logfile"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="logfile" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="determine correct IP address" line="89"/>
+    </inline>
+  </constructor>
+  <method name="getInstance" start="110" end="123" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Returns an instance of this class">This method allows the passed argument to be either an instance of
+IDS_Init or a path to a log file. Due to the singleton pattern only one
+instance for each file can be initiated.</description>
+      <param description="IDS_Init or path to a file" type="mixed" variable="$config"/>
+      <return description="$this" type="object"/>
+    </docblock>
+    <parameter name="config" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="__clone" start="132" end="134" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Permitting to clone this object">For the sake of correctness of a singleton pattern, this is necessary</description>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="prepareData" start="146" end="167" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Prepares data">Converts given data into a format that can be stored into a file.
+You might edit this method to your requirements.</description>
+      <param description="incoming report data" type="mixed" variable="$data"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="execute" start="177" end="220" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Stores given data into a file"/>
+      <param description="IDS_Report" type="object" variable="$data"/>
+      <throws description="if the logfile isn't writeable" type="object">
+        <type full="Exception" namespace="" name="Exception"/>
+      </throws>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="data" byreference="false" type="object">
+      <type full="IDS_Report" namespace="" name="IDS_Report"/>
+    </parameter>
+    <inline>
+      <comment value="In case the data has been modified before it might  be necessary" line="180"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="to convert it to string since we can't store array or object" line="181"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="into a file" line="182"/>
+    </inline>
+  </method>
+  <interface full="IDS_Log_Interface" namespace="" name="IDS_Log_Interface">
+    <method name="execute" start="56" end="56" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Interface method"/>
+        <param description="the report data" type="object" variable="$data">
+          <type full="IDS_Report" namespace="" name="IDS_Report"/>
+        </param>
+        <return type="object">
+          <type full="void" namespace="" name="void"/>
+        </return>
+      </docblock>
+      <parameter name="data" byreference="false" type="object">
+        <type full="IDS_Report" namespace="" name="IDS_Report"/>
+      </parameter>
+    </method>
+  </interface>
+</class>

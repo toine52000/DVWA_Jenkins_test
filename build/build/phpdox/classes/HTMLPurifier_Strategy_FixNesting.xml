@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="HTMLPurifier_Strategy_FixNesting" namespace="" name="HTMLPurifier_Strategy_FixNesting" abstract="false" final="false" start="31" end="326">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Strategy" file="FixNesting.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Strategy/FixNesting.php" size="14072" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="8bea53440f73537bb9c7f7c243badb7b1950b87f" relative="external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Strategy/FixNesting.php"/>
+  <docblock>
+    <description compact="Takes a well formed list of tokens and fixes their nesting.">HTML elements dictate which elements are allowed to be their children,
+for example, you can't have a p tag in a span tag.  Other elements have
+much more rigorous definitions: tables, for instance, require a specific
+order for their elements.  There are also constraints not expressible by
+document type definitions, such as the chameleon nature of ins/del
+tags and global child exclusions.
+
+The first major objective of this strategy is to iterate through all the
+nodes (not tokens) of the list of tokens and determine whether or not
+their children conform to the element's definition.  If they do not, the
+child definition may optionally supply an amended list of elements that
+is valid or require that the entire node be deleted (and the previous
+node rescanned).
+
+The second objective is to ensure that explicitly excluded elements of
+an element do not appear in its children.  Code that accomplishes this
+task is pervasive through the strategy, though the two are distinct tasks
+and could, theoretically, be seperated (although it's not recommended).</description>
+    <note value="Whether or not unrecognized children are silently dropped or">translated into text depends on the child definitions.</note>
+    <todo value="Enable nodes to be bubbled out of the structure."/>
+  </docblock>
+  <extends full="HTMLPurifier_Strategy" namespace="" name="HTMLPurifier_Strategy"/>
+  <method name="execute" start="34" end="324" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="tokens" byreference="false" type="{unknown}"/>
+    <parameter name="config" byreference="false" type="{unknown}"/>
+    <parameter name="context" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="####################################################################//" line="35"/>
+      <comment value="Pre-processing" line="36"/>
+      <comment value="get a copy of the HTML definition" line="38"/>
+      <comment value="insert implicit &quot;parent&quot; node, will be removed at end." line="41"/>
+      <comment value="DEFINITION CALL" line="42"/>
+      <comment value="setup the context variable 'IsInline', for chameleon processing" line="47"/>
+      <comment value="is 'false' when we are not inline, 'true' when it must always" line="48"/>
+      <comment value="be inline, and an integer when it is inline for a certain" line="49"/>
+      <comment value="branch of the document tree" line="50"/>
+      <comment value="setup error collector" line="54"/>
+      <comment value="####################################################################//" line="57"/>
+      <comment value="Loop initialization" line="58"/>
+      <comment value="stack that contains the indexes of all parents," line="60"/>
+      <comment value="$stack[count($stack)-1] being the current parent" line="61"/>
+      <comment value="stack that contains all elements that are excluded" line="64"/>
+      <comment value="it is organized by parent elements, similar to $stack," line="65"/>
+      <comment value="but it is only populated when an element with exclusions is" line="66"/>
+      <comment value="processed, i.e. there won't be empty exclusions." line="67"/>
+      <comment value="nodes. This enables error reporting to do its job" line="71"/>
+      <comment value="####################################################################//" line="75"/>
+      <comment value="Loop" line="76"/>
+      <comment value="iterate through all start nodes. Determining the start node" line="78"/>
+      <comment value="is complicated so it has been omitted from the loop construct" line="79"/>
+      <comment value="####################################################################//" line="308"/>
+      <comment value="Post-processing" line="309"/>
+      <comment value="remove implicit parent tokens at the beginning and end" line="311"/>
+      <comment value="remove context variables" line="315"/>
+      <comment value="####################################################################//" line="319"/>
+      <comment value="Return" line="320"/>
+    </inline>
+  </method>
+  <parent full="HTMLPurifier_Strategy" namespace="" name="HTMLPurifier_Strategy">
+    <method name="execute" start="22" end="22" abstract="true" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Executes the strategy on the tokens."/>
+        <param description="of HTMLPurifier_Token objects to be operated on." variable="$tokens" type="object">
+          <type full="Array" namespace="" name="Array"/>
+        </param>
+        <param description="options" variable="$config" type="object">
+          <type full="Configuration" namespace="" name="Configuration"/>
+        </param>
+        <returns value="Processed array of token objects."/>
+      </docblock>
+      <parameter name="tokens" byreference="false" type="{unknown}"/>
+      <parameter name="config" byreference="false" type="{unknown}"/>
+      <parameter name="context" byreference="false" type="{unknown}"/>
+    </method>
+  </parent>
+</class>

@@ -1,0 +1,173 @@
+<?xml version="1.0"?>
+<source xmlns="http://xml.phpdox.net/token">
+  <file xmlns="http://xml.phpdox.net/src" path="/home/user/Documents/DVWA-master/build/../src/vulnerabilities/xss_r/help" file="help.php" realpath="/home/user/Documents/DVWA-master/src/vulnerabilities/xss_r/help/help.php" size="2702" time="2017-02-13T08:45:28+00:00" unixtime="1486975528" sha1="ccc2d9f795c2fca0b9f42bc2415701baa32ff170" relative="vulnerabilities/xss_r/help/help.php"/>
+  <line no="1">
+    <token name="T_INLINE_HTML">&lt;div class="body_padded"&gt;</token>
+  </line>
+  <line no="2">
+    <token name="T_INLINE_HTML">	&lt;h1&gt;Help - Cross Site Scripting (Reflected)&lt;/h1&gt;</token>
+  </line>
+  <line no="3"/>
+  <line no="4">
+    <token name="T_INLINE_HTML">	&lt;div id="code"&gt;</token>
+  </line>
+  <line no="5">
+    <token name="T_INLINE_HTML">	&lt;table width='100%' bgcolor='white' style="border:2px #C0C0C0 solid"&gt;</token>
+  </line>
+  <line no="6">
+    <token name="T_INLINE_HTML">	&lt;tr&gt;</token>
+  </line>
+  <line no="7">
+    <token name="T_INLINE_HTML">	&lt;td&gt;&lt;div id="code"&gt;</token>
+  </line>
+  <line no="8">
+    <token name="T_INLINE_HTML">		&lt;h3&gt;About&lt;/h3&gt;</token>
+  </line>
+  <line no="9">
+    <token name="T_INLINE_HTML">		&lt;p&gt;"Cross-Site Scripting (XSS)" attacks are a type of injection problem, in which malicious scripts are injected into the otherwise benign and trusted web sites.</token>
+  </line>
+  <line no="10">
+    <token name="T_INLINE_HTML">			XSS attacks occur when an attacker uses a web application to send malicious code, generally in the form of a browser side script,</token>
+  </line>
+  <line no="11">
+    <token name="T_INLINE_HTML">			to a different end user. Flaws that allow these attacks to succeed are quite widespread and occur anywhere a web application using input from a user in the output,</token>
+  </line>
+  <line no="12">
+    <token name="T_INLINE_HTML">			without validating or encoding it.&lt;/p&gt;</token>
+  </line>
+  <line no="13"/>
+  <line no="14">
+    <token name="T_INLINE_HTML">		&lt;p&gt;An attacker can use XSS to send a malicious script to an unsuspecting user. The end user's browser has no way to know that the script should not be trusted,</token>
+  </line>
+  <line no="15">
+    <token name="T_INLINE_HTML">			and will execute the JavaScript. Because it thinks the script came from a trusted source, the malicious script can access any cookies, session tokens, or other</token>
+  </line>
+  <line no="16">
+    <token name="T_INLINE_HTML">			sensitive information retained by your browser and used with that site. These scripts can even rewrite the content of the HTML page.&lt;/p&gt;</token>
+  </line>
+  <line no="17"/>
+  <line no="18">
+    <token name="T_INLINE_HTML">		&lt;p&gt;Because its a reflected XSS, the malicious code is not stored in the remote web application, so requires some social engineering (such as a link via email/chat).&lt;/p&gt;</token>
+  </line>
+  <line no="19"/>
+  <line no="20">
+    <token name="T_INLINE_HTML">		&lt;br /&gt;&lt;hr /&gt;&lt;br /&gt;</token>
+  </line>
+  <line no="21"/>
+  <line no="22">
+    <token name="T_INLINE_HTML">		&lt;h3&gt;Objective&lt;/h3&gt;</token>
+  </line>
+  <line no="23">
+    <token name="T_INLINE_HTML">		&lt;p&gt;One way or another, steal the cookie of a logged in user.&lt;/p&gt;</token>
+  </line>
+  <line no="24"/>
+  <line no="25">
+    <token name="T_INLINE_HTML">		&lt;br /&gt;&lt;hr /&gt;&lt;br /&gt;</token>
+  </line>
+  <line no="26"/>
+  <line no="27">
+    <token name="T_INLINE_HTML">		&lt;h3&gt;Low Level&lt;/h3&gt;</token>
+  </line>
+  <line no="28">
+    <token name="T_INLINE_HTML">		&lt;p&gt;Low level will not check the requested input, before including it to be used in the output text.&lt;/p&gt;</token>
+  </line>
+  <line no="29">
+    <token name="T_INLINE_HTML">		&lt;pre&gt;Spoiler: &lt;span class="spoiler"&gt;?name=&amp;lt;script&amp;gt;alert("XSS");&amp;lt;/script&amp;gt;&lt;/span&gt;.&lt;/pre&gt;</token>
+  </line>
+  <line no="30"/>
+  <line no="31">
+    <token name="T_INLINE_HTML">		&lt;br /&gt;</token>
+  </line>
+  <line no="32"/>
+  <line no="33">
+    <token name="T_INLINE_HTML">		&lt;h3&gt;Medium Level&lt;/h3&gt;</token>
+  </line>
+  <line no="34">
+    <token name="T_INLINE_HTML">		&lt;p&gt;The developer has tried to add a simple pattern matching to remove any references to "&amp;lt;script&amp;gt;", to disable any JavaScript.&lt;/p&gt;</token>
+  </line>
+  <line no="35">
+    <token name="T_INLINE_HTML">		&lt;pre&gt;Spoiler: &lt;span class="spoiler"&gt;Its cAse sENSiTiVE&lt;/span&gt;.&lt;/pre&gt;</token>
+  </line>
+  <line no="36"/>
+  <line no="37">
+    <token name="T_INLINE_HTML">		&lt;br /&gt;</token>
+  </line>
+  <line no="38"/>
+  <line no="39">
+    <token name="T_INLINE_HTML">		&lt;h3&gt;High Level&lt;/h3&gt;</token>
+  </line>
+  <line no="40">
+    <token name="T_INLINE_HTML">		&lt;p&gt;The developer now believes they can disable all JavaScript by removing the pattern "&amp;lt;s*c*r*i*p*t".&lt;/p&gt;</token>
+  </line>
+  <line no="41">
+    <token name="T_INLINE_HTML">		&lt;pre&gt;Spoiler: &lt;span class="spoiler"&gt;HTML events&lt;/span&gt;.&lt;/pre&gt;</token>
+  </line>
+  <line no="42"/>
+  <line no="43">
+    <token name="T_INLINE_HTML">		&lt;br /&gt;</token>
+  </line>
+  <line no="44"/>
+  <line no="45">
+    <token name="T_INLINE_HTML">		&lt;h3&gt;Impossible Level&lt;/h3&gt;</token>
+  </line>
+  <line no="46">
+    <token name="T_INLINE_HTML">		&lt;p&gt;Using inbuilt PHP functions (such as "</token>
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_ECHO">echo</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">dvwaExternalLinkUrlGet</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'https://secure.php.net/manual/en/function.htmlspecialchars.php'</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'htmlspecialchars()'</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">"),</token>
+  </line>
+  <line no="47">
+    <token name="T_INLINE_HTML">			its possible to escape any values which would alter the behaviour of the input.&lt;/p&gt;</token>
+  </line>
+  <line no="48">
+    <token name="T_INLINE_HTML">	&lt;/div&gt;&lt;/td&gt;</token>
+  </line>
+  <line no="49">
+    <token name="T_INLINE_HTML">	&lt;/tr&gt;</token>
+  </line>
+  <line no="50">
+    <token name="T_INLINE_HTML">	&lt;/table&gt;</token>
+  </line>
+  <line no="51"/>
+  <line no="52">
+    <token name="T_INLINE_HTML">	&lt;/div&gt;</token>
+  </line>
+  <line no="53"/>
+  <line no="54">
+    <token name="T_INLINE_HTML">	&lt;br /&gt;</token>
+  </line>
+  <line no="55"/>
+  <line no="56">
+    <token name="T_INLINE_HTML">	&lt;p&gt;Reference: </token>
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_ECHO">echo</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">dvwaExternalLinkUrlGet</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)'</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">&lt;/p&gt;</token>
+  </line>
+  <line no="57">
+    <token name="T_INLINE_HTML">&lt;/div&gt;</token>
+  </line>
+  <line no="58"/>
+</source>

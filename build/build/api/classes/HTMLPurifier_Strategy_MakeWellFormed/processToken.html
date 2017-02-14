@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:pu="http://schema.phpunit.de/coverage/1.0" lang="en">
+  <head>
+    <title>phpDox - HTMLPurifier_Strategy_MakeWellFormed::processToken</title>
+    <link rel="stylesheet" type="text/css" href="../../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../../index.html">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../../namespaces.html">Namespaces</a>
+        </li>
+        <li>
+          <a href="../../interfaces.html">Interfaces</a>
+        </li>
+        <li>
+          <a href="../../classes.html">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../../source/index.html">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../../index.html">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../../classes.html">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../../classes.html#"/>
+          </li>
+          <li class="separator">
+            <a title="HTMLPurifier_Strategy_MakeWellFormed" href="../../classes/HTMLPurifier_Strategy_MakeWellFormed.html">HTMLPurifier_Strategy_MakeWellFormed</a>
+          </li>
+          <li class="separator">processToken</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#parameter">Parameter</a>
+          </li>
+          <li>
+            <a href="../../source/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Strategy/MakeWellFormed.php.html#line381">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1><small>HTMLPurifier_Strategy_MakeWellFormed::</small>processToken</h1>
+        <h4>Processes arbitrary token values for complicated substitution patterns.</h4>
+        <p>In general:
+
+If $token is an array, it is a list of tokens to substitute for the
+current token. These tokens then get individually processed. If there
+is a leading integer in the list, that integer determines how many
+tokens from the stream should be removed.
+
+If $token is a regular token, it is swapped with the current token.
+
+If $token is false, the current token is deleted.
+
+If $token is an integer, that number of tokens (with the first token
+being the current one) will be deleted.</p>
+        <ul/>
+        <h2 id="signature">Signature</h2>
+        <div class="styled synopsis">
+          <code>protected function processToken(<a title="Token" href="../../classes/Token.html">Token</a>
+        $token,
+            [integer
+        $injector = 1] )
+            </code>
+        </div>
+        <h2 id="parameterlist">Parameters</h2>
+        <dl class="styled">
+          <dt><code>$token</code>
+                —
+                object</dt>
+          <dd>substitution value<br/><br/><br/>      </dd>
+          <dt><code>$injector</code>
+                —
+                integer</dt>
+          <dd>that performed the substitution; default is if<br/>this is not an injector related operation.</dd>
+        </dl>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.9.0 - Copyright (C) 2010 - 2017 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

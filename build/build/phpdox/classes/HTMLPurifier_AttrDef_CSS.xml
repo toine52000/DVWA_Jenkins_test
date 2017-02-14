@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="HTMLPurifier_AttrDef_CSS" namespace="" name="HTMLPurifier_AttrDef_CSS" abstract="false" final="false" start="14" end="85">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrDef" file="CSS.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrDef/CSS.php" size="3242" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="22040dfc5bd6f7a859c8168d0290c36fc2c880a8" relative="external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrDef/CSS.php"/>
+  <docblock>
+    <description compact="Validates the HTML attribute style, otherwise known as CSS."/>
+    <note value="We don't implement the whole CSS specification, so it might be">difficult to reuse this component in the context of validating
+      actual stylesheet declarations.</note>
+    <note value="If we were really serious about validating the CSS, we would">tokenize the styles and then parse the tokens. Obviously, we
+      are not doing that. Doing that could seriously harm performance,
+      but would make these components a lot more viable for a CSS
+      filtering solution.</note>
+  </docblock>
+  <extends full="HTMLPurifier_AttrDef" namespace="" name="HTMLPurifier_AttrDef"/>
+  <method name="validate" start="17" end="83" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="css" byreference="false" type="{unknown}"/>
+    <parameter name="config" byreference="false" type="{unknown}"/>
+    <parameter name="context" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="we're going to break the spec and explode by semicolons." line="23"/>
+      <comment value="This is because semicolon rarely appears in escaped form" line="24"/>
+      <comment value="Doing this is generally flaky but fast" line="25"/>
+      <comment value="IT MIGHT APPEAR IN URIs, see HTMLPurifier_AttrDef_CSSURI" line="26"/>
+      <comment value="for details" line="27"/>
+      <comment value="Name of the current CSS property being validated." line="32"/>
+      <comment value="procedure does not write the new CSS simultaneously, so it's" line="72"/>
+      <comment value="slightly inefficient, but it's the only way of getting rid of" line="73"/>
+      <comment value="duplicates. Perhaps config to optimize it, but not now." line="74"/>
+    </inline>
+  </method>
+  <parent full="HTMLPurifier_AttrDef" namespace="" name="HTMLPurifier_AttrDef">
+    <member name="minimized" type="boolean" default="false" visibility="public" static="false" line="20">
+      <docblock>
+        <description compact="Tells us whether or not an HTML attribute is minimized. Has no meaning in other contexts."/>
+      </docblock>
+    </member>
+    <member name="required" type="boolean" default="false" visibility="public" static="false" line="26">
+      <docblock>
+        <description compact="Tells us whether or not an HTML attribute is required. Has no meaning in other contexts"/>
+      </docblock>
+    </member>
+    <method name="validate" start="35" end="35" abstract="true" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Validates and cleans passed string according to a definition."/>
+        <param description="to be validated and cleaned." variable="$string" type="object">
+          <type full="String" namespace="" name="String"/>
+        </param>
+        <param description="HTMLPurifier_Config object." variable="$config" type="object">
+          <type full="Mandatory" namespace="" name="Mandatory"/>
+        </param>
+        <param description="HTMLPurifier_AttrContext object." variable="$context" type="object">
+          <type full="Mandatory" namespace="" name="Mandatory"/>
+        </param>
+      </docblock>
+      <parameter name="string" byreference="false" type="{unknown}"/>
+      <parameter name="config" byreference="false" type="{unknown}"/>
+      <parameter name="context" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="parseCDATA" start="58" end="62" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Convenience method that parses a string as if it were CDATA.">This method process a string in the manner specified at
+&lt;http://www.w3.org/TR/html4/types.html#h-6.2&gt; by removing
+leading and trailing whitespace, ignoring line feeds, and replacing
+carriage returns and tabs with spaces.  While most useful for HTML
+attributes specified as CDATA, it can also be applied to most CSS
+values.</description>
+        <note value="This method is not entirely standards compliant, as trim() removes">more types of whitespace than specified in the spec. In practice,
+      this is rarely a problem, as those extra characters usually have
+      already been removed by HTMLPurifier_Encoder.</note>
+        <warning value="This processing is inconsistent with XML's whitespace handling">as specified by section 3.3.3 and referenced XHTML 1.0 section
+         4.7.  However, note that we are NOT necessarily
+         parsing XML, thus, this behavior may still be correct. We
+         assume that newlines have been normalized.</warning>
+      </docblock>
+      <parameter name="string" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="make" start="69" end="75" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Factory method for creating this class from a string."/>
+        <param description="construction info" variable="$string" type="object">
+          <type full="String" namespace="" name="String"/>
+        </param>
+        <return description="AttrDef object corresponding to $string" type="object">
+          <type full="Created" namespace="" name="Created"/>
+        </return>
+      </docblock>
+      <parameter name="string" byreference="false" type="{unknown}"/>
+      <inline>
+        <comment value="default implementation, return a flyweight of this object." line="70"/>
+        <comment value="If $string has an effect on the returned object (i.e. you" line="71"/>
+        <comment value="need to overload this method), it is best" line="72"/>
+        <comment value="to clone or instantiate new copies. (Instantiation is safer.)" line="73"/>
+      </inline>
+    </method>
+    <method name="mungeRgb" start="81" end="83" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Removes spaces from rgb(0, 0, 0) so that shorthand CSS properties work properly. THIS IS A HACK!"/>
+      </docblock>
+      <parameter name="string" byreference="false" type="{unknown}"/>
+    </method>
+  </parent>
+</class>

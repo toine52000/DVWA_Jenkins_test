@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="IDS_Event" namespace="" name="IDS_Event" abstract="false" final="false" start="53" end="227">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS" file="Event.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/Event.php" size="5471" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="86eace716f4f3df3a332c2bc63c7cc88a7fe6399" relative="external/phpids/0.6/lib/IDS/Event.php"/>
+  <docblock>
+    <description compact="PHPIDS event object">This class represents a certain event that occured while applying the filters
+to the supplied data. It aggregates a bunch of IDS_Filter implementations and
+is a assembled in IDS_Report.
+
+Note that this class implements both Countable and IteratorAggregate</description>
+    <category value="Security"/>
+    <package value="PHPIDS"/>
+    <author value="Christian Matthies &lt;ch0012@gmail.com&gt;"/>
+    <author value="Mario Heiderich &lt;mario.heiderich@gmail.com&gt;"/>
+    <author value="Lars Strojny &lt;lars@strojny.net&gt;"/>
+    <copyright value="2007 The PHPIDS Group"/>
+    <license name="http://www.gnu.org/licenses/lgpl.html LGPL"/>
+    <version value="Release: $Id:Event.php 517 2007-09-15 15:04:13Z mario $"/>
+    <link value="http://php-ids.org/"/>
+  </docblock>
+  <implements full="Countable" namespace="" name="Countable"/>
+  <implements full="IteratorAggregate" namespace="" name="IteratorAggregate"/>
+  <member name="name" type="{unknown}" default="" constant="null" visibility="protected" static="false" line="61">
+    <docblock>
+      <description compact="Event name"/>
+      <var type="object">
+        <type full="scalar" namespace="" name="scalar"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="value" type="{unknown}" default="" constant="null" visibility="protected" static="false" line="68">
+    <docblock>
+      <description compact="Value of the event"/>
+      <var type="object">
+        <type full="scalar" namespace="" name="scalar"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="filters" type="array" default="" visibility="protected" static="false" line="77">
+    <docblock>
+      <description compact="List of filter objects">Filter objects in this array are those that matched the events value</description>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="impact" type="integer" default="0" visibility="protected" static="false" line="86">
+    <docblock>
+      <description compact="Calculated impact">Total impact of the event</description>
+      <var type="integer"/>
+    </docblock>
+  </member>
+  <member name="tags" type="array" default="" visibility="protected" static="false" line="93">
+    <docblock>
+      <description compact="Affecte tags"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="106" end="132" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Constructor">Fills event properties</description>
+      <param description="the event name" type="object" variable="$name">
+        <type full="scalar" namespace="" name="scalar"/>
+      </param>
+      <param description="the event value" type="object" variable="$value">
+        <type full="scalar" namespace="" name="scalar"/>
+      </param>
+      <param description="the corresponding filters" type="array" variable="$filters"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="filters" byreference="false" type="array"/>
+  </constructor>
+  <method name="getName" start="142" end="145" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns event name">The name of the event usually is the key of the variable that was
+considered to be malicious</description>
+      <return type="object">
+        <type full="scalar" namespace="" name="scalar"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getValue" start="152" end="155" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns event value"/>
+      <return type="object">
+        <type full="scalar" namespace="" name="scalar"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getImpact" start="162" end="172" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns calculated impact"/>
+      <return type="integer"/>
+    </docblock>
+  </method>
+  <method name="getTags" start="179" end="191" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns affected tags"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="getFilters" start="198" end="201" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns list of filter objects"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="count" start="211" end="214" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns number of filters">To implement interface Countable this returns the number of filters
+appended.</description>
+      <return type="integer"/>
+    </docblock>
+  </method>
+  <method name="getIterator" start="223" end="226" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="IteratorAggregate iterator getter">Returns an iterator to iterate over the appended filters.</description>
+      <return type="object">
+        <type full="Iterator|IteratorAggregate" namespace="" name="Iterator|IteratorAggregate"/>
+      </return>
+    </docblock>
+  </method>
+  <interface full="Countable" namespace="" name="Countable">
+    <method name="count" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact="Count elements of an object"/>
+      <return type="int"/>
+    </docblock>
+  </method>
+  </interface>
+  <interface full="IteratorAggregate" namespace="" name="IteratorAggregate">
+    <extends full="Traversable" namespace="" name="Traversable"/>
+    <method name="getIterator" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact="Retrieve an external iterator"/>
+      <return type="Traversable"/>
+    </docblock>
+  </method>
+  </interface>
+</class>

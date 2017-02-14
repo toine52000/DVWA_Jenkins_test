@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - HTMLPurifier_Config</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.html">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.html">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.html">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.html">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.html">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.html">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.html">Classes</a>
+          </li>
+          <li class="separator">HTMLPurifier_Config</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#tasks">Tasks</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Config.php.html#line17">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>HTMLPurifier_Config</h1>
+        <h4>Configuration object that triggers customizable behavior.</h4>
+        <p/>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class HTMLPurifier_Config
+            {<br/><ul class="none"><li>// members</li><li>public string <a href="#members">$version</a> =
+                        '3.2.0';
+                    </li><li>public boolean <a href="#members">$autoFinalize</a> =
+                        true;
+                    </li><li>protected array <a href="#members">$serials</a> =
+                        ;
+                    </li><li>protected  <a href="#members">$serial</a>;
+                    </li><li>protected  <a href="#members">$conf</a>;
+                    </li><li>protected  <a href="#members">$parser</a>;
+                    </li><li>public  <a href="#members">$def</a>;
+                    </li><li>protected  <a href="#members">$definitions</a>;
+                    </li><li>protected boolean <a href="#members">$finalized</a> =
+                        false;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="HTMLPurifier_Config" href="../classes/HTMLPurifier_Config/__construct.html">__construct</a>()
+                    </li><li>public static Configured <a title="HTMLPurifier_Config" href="../classes/HTMLPurifier_Config/create.html">create</a>()
+                    </li><li>public static Default <a title="HTMLPurifier_Config" href="../classes/HTMLPurifier_Config/createDefault.html">createDefault</a>()
+                    </li><li>public void <a title="HTMLPurifier_Config" href="../classes/HTMLPurifier_Config/get.html">get</a>()
+                    </li><li>public void <a title="HTMLPurifier_Config" href="../classes/HTMLPurifier_Config/getBatch.html">getBatch</a>()
+                    </li><li>public void <a title="HTMLPurifier_Config" href="../classes/HTMLPurifier_Config/getBatchSerial.html">getBatchSerial</a>()
+                    </li><li>public void <a title="HTMLPurifier_Config" href="../classes/HTMLPurifier_Config/getSerial.html">getSerial</a>()
+                    </li><li>public void <a title="HTMLPurifier_Config" href="../classes/HTMLPurifier_Config/getAll.html">getAll</a>()
+                    </li><li>public void <a title="HTMLPurifier_Config" href="../classes/HTMLPurifier_Config/set.html">set</a>()
+                    </li><li>private void <a title="HTMLPurifier_Config" href="../classes/HTMLPurifier_Config/_listify.html">_listify</a>()
+                    </li><li>public void <a title="HTMLPurifier_Config" href="../classes/HTMLPurifier_Config/getHTMLDefinition.html">getHTMLDefinition</a>()
+                    </li><li>public void <a title="HTMLPurifier_Config" href="../classes/HTMLPurifier_Config/getCSSDefinition.html">getCSSDefinition</a>()
+                    </li><li>public void <a title="HTMLPurifier_Config" href="../classes/HTMLPurifier_Config/getDefinition.html">getDefinition</a>()
+                    </li><li>public void <a title="HTMLPurifier_Config" href="../classes/HTMLPurifier_Config/loadArray.html">loadArray</a>()
+                    </li><li>public static void <a title="HTMLPurifier_Config" href="../classes/HTMLPurifier_Config/getAllowedDirectivesForForm.html">getAllowedDirectivesForForm</a>()
+                    </li><li>public static void <a title="HTMLPurifier_Config" href="../classes/HTMLPurifier_Config/loadArrayFromForm.html">loadArrayFromForm</a>()
+                    </li><li>public void <a title="HTMLPurifier_Config" href="../classes/HTMLPurifier_Config/mergeArrayFromForm.html">mergeArrayFromForm</a>()
+                    </li><li>public static void <a title="HTMLPurifier_Config" href="../classes/HTMLPurifier_Config/prepareArrayFromForm.html">prepareArrayFromForm</a>()
+                    </li><li>public void <a title="HTMLPurifier_Config" href="../classes/HTMLPurifier_Config/loadIni.html">loadIni</a>()
+                    </li><li>public void <a title="HTMLPurifier_Config" href="../classes/HTMLPurifier_Config/isFinalized.html">isFinalized</a>()
+                    </li><li>public void <a title="HTMLPurifier_Config" href="../classes/HTMLPurifier_Config/autoFinalize.html">autoFinalize</a>()
+                    </li><li>public void <a title="HTMLPurifier_Config" href="../classes/HTMLPurifier_Config/finalize.html">finalize</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="tasks">Tasks</h2>
+        <table class="styled">
+          <thead>
+            <tr>
+              <th style="width:3em;">Line</th>
+              <th>Task</th>
+            </tr>
+          </thead>
+          <tr>
+            <td class="nummeric">17+</td>
+            <td>Reconsider some of the public member variables</td>
+          </tr>
+        </table>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="conf">
+              <strong>$conf</strong>
+              <br/>
+              <span class="indent">Two-level associative array of configuration directives</span>
+            </li>
+            <li id="definitions">
+              <strong>$definitions</strong>
+              <br/>
+              <span class="indent">Indexed array of definitions</span>
+            </li>
+            <li id="finalized">
+              <strong>$finalized</strong>
+              <br/>
+              <span class="indent">Bool indicator whether or not config is finalized</span>
+            </li>
+            <li id="parser">
+              <strong>$parser</strong>
+              <br/>
+              <span class="indent">Parser for variables</span>
+            </li>
+            <li id="serial">
+              <strong>$serial</strong>
+              <br/>
+              <span class="indent">Serial for entire configuration object</span>
+            </li>
+            <li id="serials">
+              <strong>$serials</strong>
+              <br/>
+              <span class="indent">Namespace indexed array of serials for specific namespaces (see getSerial() for more info).</span>
+            </li>
+          </ul>
+          <h4>public</h4>
+          <ul class="members">
+            <li id="autoFinalize">
+              <strong>$autoFinalize</strong>
+              <br/>
+              <span class="indent">Bool indicator whether or not to automatically finalize the object if a read operation is done</span>
+            </li>
+            <li id="def">
+              <strong>$def</strong>
+              <br/>
+              <span class="indent">Reference HTMLPurifier_ConfigSchema for value checking</span>
+            </li>
+            <li id="version">
+              <strong>$version</strong>
+              <br/>
+              <span class="indent">HTML Purifier's version</span>
+            </li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>private</h4>
+          <ul>
+            <li id="_listify"><a title="HTMLPurifier_Config" href="../classes/HTMLPurifier_Config/_listify.html">_listify()</a>
+                — Convenience function for error reporting</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__construct">
+              <a title="HTMLPurifier_Config" href="../classes/HTMLPurifier_Config/__construct.html">__construct()</a>
+            </li>
+            <li id="autoFinalize"><a title="HTMLPurifier_Config" href="../classes/HTMLPurifier_Config/autoFinalize.html">autoFinalize()</a>
+                — Finalizes configuration only if auto finalize is on and not already finalized</li>
+            <li id="create"><a title="HTMLPurifier_Config" href="../classes/HTMLPurifier_Config/create.html">create()</a>
+                — Convenience constructor that creates a config object based on a mixed var</li>
+            <li id="createDefault"><a title="HTMLPurifier_Config" href="../classes/HTMLPurifier_Config/createDefault.html">createDefault()</a>
+                — Convenience constructor that creates a default configuration object.</li>
+            <li id="finalize"><a title="HTMLPurifier_Config" href="../classes/HTMLPurifier_Config/finalize.html">finalize()</a>
+                — Finalizes a configuration object, prohibiting further change</li>
+            <li id="get"><a title="HTMLPurifier_Config" href="../classes/HTMLPurifier_Config/get.html">get()</a>
+                — Retreives a value from the configuration.</li>
+            <li id="getAll"><a title="HTMLPurifier_Config" href="../classes/HTMLPurifier_Config/getAll.html">getAll()</a>
+                — Retrieves all directives, organized by namespace</li>
+            <li id="getAllowedDirectivesForForm"><a title="HTMLPurifier_Config" href="../classes/HTMLPurifier_Config/getAllowedDirectivesForForm.html">getAllowedDirectivesForForm()</a>
+                — Returns a list of array(namespace, directive) for all directives that are allowed in a web-form context as per an allowed namespaces/directives list.</li>
+            <li id="getBatch"><a title="HTMLPurifier_Config" href="../classes/HTMLPurifier_Config/getBatch.html">getBatch()</a>
+                — Retreives an array of directives to values from a given namespace</li>
+            <li id="getBatchSerial"><a title="HTMLPurifier_Config" href="../classes/HTMLPurifier_Config/getBatchSerial.html">getBatchSerial()</a>
+                — Returns a md5 signature of a segment of the configuration object that uniquely identifies that particular configuration</li>
+            <li id="getCSSDefinition"><a title="HTMLPurifier_Config" href="../classes/HTMLPurifier_Config/getCSSDefinition.html">getCSSDefinition()</a>
+                — Retrieves object reference to the CSS definition</li>
+            <li id="getDefinition"><a title="HTMLPurifier_Config" href="../classes/HTMLPurifier_Config/getDefinition.html">getDefinition()</a>
+                — Retrieves a definition</li>
+            <li id="getHTMLDefinition"><a title="HTMLPurifier_Config" href="../classes/HTMLPurifier_Config/getHTMLDefinition.html">getHTMLDefinition()</a>
+                — Retrieves object reference to the HTML definition.</li>
+            <li id="getSerial"><a title="HTMLPurifier_Config" href="../classes/HTMLPurifier_Config/getSerial.html">getSerial()</a>
+                — Returns a md5 signature for the entire configuration object that uniquely identifies that particular configuration</li>
+            <li id="isFinalized"><a title="HTMLPurifier_Config" href="../classes/HTMLPurifier_Config/isFinalized.html">isFinalized()</a>
+                — Checks whether or not the configuration object is finalized.</li>
+            <li id="loadArray"><a title="HTMLPurifier_Config" href="../classes/HTMLPurifier_Config/loadArray.html">loadArray()</a>
+                — Loads configuration values from an array with the following structure: Namespace.Directive =&gt; Value</li>
+            <li id="loadArrayFromForm"><a title="HTMLPurifier_Config" href="../classes/HTMLPurifier_Config/loadArrayFromForm.html">loadArrayFromForm()</a>
+                — Loads configuration values from $_GET/$_POST that were posted via ConfigForm</li>
+            <li id="loadIni"><a title="HTMLPurifier_Config" href="../classes/HTMLPurifier_Config/loadIni.html">loadIni()</a>
+                — Loads configuration values from an ini file</li>
+            <li id="mergeArrayFromForm"><a title="HTMLPurifier_Config" href="../classes/HTMLPurifier_Config/mergeArrayFromForm.html">mergeArrayFromForm()</a>
+                — Merges in configuration values from $_GET/$_POST to object. NOT STATIC.</li>
+            <li id="prepareArrayFromForm"><a title="HTMLPurifier_Config" href="../classes/HTMLPurifier_Config/prepareArrayFromForm.html">prepareArrayFromForm()</a>
+                — Prepares an array from a form into something usable for the more strict parts of HTMLPurifier_Config</li>
+            <li id="set"><a title="HTMLPurifier_Config" href="../classes/HTMLPurifier_Config/set.html">set()</a>
+                — Sets a value to configuration.</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.9.0 - Copyright (C) 2010 - 2017 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - IDS_Log_Database</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.html">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.html">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.html">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.html">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.html">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.html">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.html">Classes</a>
+          </li>
+          <li class="separator">IDS_Log_Database</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/external/phpids/0.6/lib/IDS/Log/Database.php.html#line75">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>IDS_Log_Database</h1>
+        <h4>Database logging wrapper</h4>
+        <p>The database wrapper is designed to store reports into an sql database. It<br/>implements the singleton pattern and is based in PDO, supporting<br/>different database types.</p>
+        <ul>
+          <li>Author: Christian Matthies &lt;ch0012@gmail.com&gt;</li>
+          <li>Copyright: 2007 The PHPIDS Group</li>
+          <li>License: http://www.gnu.org/licenses/lgpl.html LGPL</li>
+        </ul>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class IDS_Log_Database
+                implements
+                <a title="IDS_Log_Interface" href="../interfaces/IDS_Log_Interface.html">IDS_Log_Interface</a>
+            {<br/><ul class="none"><li>// members</li><li>private string <a href="#members">$wrapper</a> =
+                        null;
+                    </li><li>private string <a href="#members">$user</a> =
+                        null;
+                    </li><li>private string <a href="#members">$password</a> =
+                        null;
+                    </li><li>private string <a href="#members">$table</a> =
+                        null;
+                    </li><li>private <span title=""/> <a href="#members">$handle</a> =
+                        null;
+                    </li><li>private string <a href="#members">$statement</a> =
+                        null;
+                    </li><li>private string <a href="#members">$ip</a> =
+                        'local/unknown';
+                    </li><li>private static array <a href="#members">$instances</a> =
+                        ;
+                    </li></ul><ul class="none"><li>// methods</li><li>protected void <a title="IDS_Log_Database" href="../classes/IDS_Log_Database/__construct.html">__construct</a>()
+                    </li><li>public static  <a title="IDS_Log_Database" href="../classes/IDS_Log_Database/getInstance.html">getInstance</a>()
+                    </li><li>private void <a title="IDS_Log_Database" href="../classes/IDS_Log_Database/__clone.html">__clone</a>()
+                    </li><li>public boolean <a title="IDS_Log_Database" href="../classes/IDS_Log_Database/execute.html">execute</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Implements</h4>
+          <ul>
+            <li>
+              <a title="IDS_Log_Interface" href="../interfaces/IDS_Log_Interface.html">IDS_Log_Interface</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="handle"><strong>$handle</strong>
+                —
+                <a title="" href="../classes/.html"/><br/><span class="indent">Database handle</span></li>
+            <li id="instances"><strong>$instances</strong>
+                —
+                array<br/><span class="indent">Instance container</span></li>
+            <li id="ip"><strong>$ip</strong>
+                —
+                string<br/><span class="indent">Holds current remote address</span></li>
+            <li id="password"><strong>$password</strong>
+                —
+                string<br/><span class="indent">Database password</span></li>
+            <li id="statement"><strong>$statement</strong>
+                —
+                string<br/><span class="indent">Prepared SQL statement</span></li>
+            <li id="table"><strong>$table</strong>
+                —
+                string<br/><span class="indent">Database table</span></li>
+            <li id="user"><strong>$user</strong>
+                —
+                string<br/><span class="indent">Database user</span></li>
+            <li id="wrapper"><strong>$wrapper</strong>
+                —
+                string<br/><span class="indent">Database wrapper</span></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>private</h4>
+          <ul>
+            <li id="__clone"><a title="IDS_Log_Database" href="../classes/IDS_Log_Database/__clone.html">__clone()</a>
+                — Permitting to clone this object</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="execute"><a title="IDS_Log_Database" href="../classes/IDS_Log_Database/execute.html">execute()</a>
+                — Stores given data into the database</li>
+            <li id="getInstance"><a title="IDS_Log_Database" href="../classes/IDS_Log_Database/getInstance.html">getInstance()</a>
+                — Returns an instance of this class</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.9.0 - Copyright (C) 2010 - 2017 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

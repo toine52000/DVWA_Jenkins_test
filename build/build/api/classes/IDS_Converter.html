@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - IDS_Converter</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.html">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.html">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.html">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.html">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.html">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.html">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.html">Classes</a>
+          </li>
+          <li class="separator">IDS_Converter</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/external/phpids/0.6/lib/IDS/Converter.php.html#line51">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>IDS_Converter</h1>
+        <h4>PHPIDS specific utility class to convert charsets manually</h4>
+        <p>Note that if you make use of IDS_Converter::runAll(), existing class<br/>methods will be executed in the same order as they are implemented in the<br/>class tree!</p>
+        <ul>
+          <li>Author: Christian Matthies &lt;ch0012@gmail.com&gt;</li>
+          <li>Copyright: 2007 The PHPIDS Group</li>
+          <li>License: http://www.gnu.org/licenses/lgpl.html LGPL</li>
+        </ul>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class IDS_Converter
+            {<br/><ul class="none"><li>// methods</li><li>public static string <a title="IDS_Converter" href="../classes/IDS_Converter/runAll.html">runAll</a>()
+                    </li><li>public static string <a title="IDS_Converter" href="../classes/IDS_Converter/convertFromCommented.html">convertFromCommented</a>()
+                    </li><li>public static string <a title="IDS_Converter" href="../classes/IDS_Converter/convertFromNewLines.html">convertFromNewLines</a>()
+                    </li><li>public static string <a title="IDS_Converter" href="../classes/IDS_Converter/convertFromJSCharcode.html">convertFromJSCharcode</a>()
+                    </li><li>public static string <a title="IDS_Converter" href="../classes/IDS_Converter/convertJSRegexModifiers.html">convertJSRegexModifiers</a>()
+                    </li><li>public static string <a title="IDS_Converter" href="../classes/IDS_Converter/convertEntities.html">convertEntities</a>()
+                    </li><li>public static string <a title="IDS_Converter" href="../classes/IDS_Converter/convertQuotes.html">convertQuotes</a>()
+                    </li><li>public static string <a title="IDS_Converter" href="../classes/IDS_Converter/convertFromSQLHex.html">convertFromSQLHex</a>()
+                    </li><li>public static string <a title="IDS_Converter" href="../classes/IDS_Converter/convertFromSQLKeywords.html">convertFromSQLKeywords</a>()
+                    </li><li>public static string <a title="IDS_Converter" href="../classes/IDS_Converter/convertFromControlChars.html">convertFromControlChars</a>()
+                    </li><li>public static string <a title="IDS_Converter" href="../classes/IDS_Converter/convertFromNestedBase64.html">convertFromNestedBase64</a>()
+                    </li><li>public static string <a title="IDS_Converter" href="../classes/IDS_Converter/convertFromOutOfRangeChars.html">convertFromOutOfRangeChars</a>()
+                    </li><li>public static string <a title="IDS_Converter" href="../classes/IDS_Converter/convertFromXML.html">convertFromXML</a>()
+                    </li><li>public static string <a title="IDS_Converter" href="../classes/IDS_Converter/convertFromJSUnicode.html">convertFromJSUnicode</a>()
+                    </li><li>public static string <a title="IDS_Converter" href="../classes/IDS_Converter/convertFromUTF7.html">convertFromUTF7</a>()
+                    </li><li>public static string <a title="IDS_Converter" href="../classes/IDS_Converter/convertFromConcatenated.html">convertFromConcatenated</a>()
+                    </li><li>public static string <a title="IDS_Converter" href="../classes/IDS_Converter/convertFromProprietaryEncodings.html">convertFromProprietaryEncodings</a>()
+                    </li><li>public static string <a title="IDS_Converter" href="../classes/IDS_Converter/runCentrifuge.html">runCentrifuge</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>public</h4>
+          <ul>
+            <li id="convertEntities"><a title="IDS_Converter" href="../classes/IDS_Converter/convertEntities.html">convertEntities()</a>
+                — Converts from hex/dec entities</li>
+            <li id="convertFromCommented"><a title="IDS_Converter" href="../classes/IDS_Converter/convertFromCommented.html">convertFromCommented()</a>
+                — Check for comments and erases them if available</li>
+            <li id="convertFromConcatenated"><a title="IDS_Converter" href="../classes/IDS_Converter/convertFromConcatenated.html">convertFromConcatenated()</a>
+                — Converts basic concatenations</li>
+            <li id="convertFromControlChars"><a title="IDS_Converter" href="../classes/IDS_Converter/convertFromControlChars.html">convertFromControlChars()</a>
+                — Detects nullbytes and controls chars via ord()</li>
+            <li id="convertFromJSCharcode"><a title="IDS_Converter" href="../classes/IDS_Converter/convertFromJSCharcode.html">convertFromJSCharcode()</a>
+                — Checks for common charcode pattern and decodes them</li>
+            <li id="convertFromJSUnicode"><a title="IDS_Converter" href="../classes/IDS_Converter/convertFromJSUnicode.html">convertFromJSUnicode()</a>
+                — This method converts JS unicode code points to regular characters</li>
+            <li id="convertFromNestedBase64"><a title="IDS_Converter" href="../classes/IDS_Converter/convertFromNestedBase64.html">convertFromNestedBase64()</a>
+                — This method matches and translates base64 strings and fragments used in data URIs</li>
+            <li id="convertFromNewLines"><a title="IDS_Converter" href="../classes/IDS_Converter/convertFromNewLines.html">convertFromNewLines()</a>
+                — Strip newlines</li>
+            <li id="convertFromOutOfRangeChars"><a title="IDS_Converter" href="../classes/IDS_Converter/convertFromOutOfRangeChars.html">convertFromOutOfRangeChars()</a>
+                — Detects nullbytes and controls chars via ord()</li>
+            <li id="convertFromProprietaryEncodings"><a title="IDS_Converter" href="../classes/IDS_Converter/convertFromProprietaryEncodings.html">convertFromProprietaryEncodings()</a>
+                — This method collects and decodes proprietary encoding types</li>
+            <li id="convertFromSQLHex"><a title="IDS_Converter" href="../classes/IDS_Converter/convertFromSQLHex.html">convertFromSQLHex()</a>
+                — Converts SQLHEX to plain text</li>
+            <li id="convertFromSQLKeywords"><a title="IDS_Converter" href="../classes/IDS_Converter/convertFromSQLKeywords.html">convertFromSQLKeywords()</a>
+                — Converts basic SQL keywords and obfuscations</li>
+            <li id="convertFromUTF7"><a title="IDS_Converter" href="../classes/IDS_Converter/convertFromUTF7.html">convertFromUTF7()</a>
+                — Converts relevant UTF-7 tags to UTF-8</li>
+            <li id="convertFromXML"><a title="IDS_Converter" href="../classes/IDS_Converter/convertFromXML.html">convertFromXML()</a>
+                — Strip XML patterns</li>
+            <li id="convertJSRegexModifiers"><a title="IDS_Converter" href="../classes/IDS_Converter/convertJSRegexModifiers.html">convertJSRegexModifiers()</a>
+                — Eliminate JS regex modifiers</li>
+            <li id="convertQuotes"><a title="IDS_Converter" href="../classes/IDS_Converter/convertQuotes.html">convertQuotes()</a>
+                — Normalize quotes</li>
+            <li id="runAll"><a title="IDS_Converter" href="../classes/IDS_Converter/runAll.html">runAll()</a>
+                — Runs all converter functions</li>
+            <li id="runCentrifuge"><a title="IDS_Converter" href="../classes/IDS_Converter/runCentrifuge.html">runCentrifuge()</a>
+                — This method is the centrifuge prototype</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.9.0 - Copyright (C) 2010 - 2017 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

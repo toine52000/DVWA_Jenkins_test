@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="HTMLPurifier_ErrorStruct" namespace="" name="HTMLPurifier_ErrorStruct" abstract="false" final="false" start="9" end="58">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier" file="ErrorStruct.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ErrorStruct.php" size="1713" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="8b8179177e15d20c16d71d88386ad6554677c514" relative="external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ErrorStruct.php"/>
+  <docblock>
+    <description compact="Records errors for particular segments of an HTML document such as tokens, attributes or CSS properties. They can contain error structs (which apply to components of what they represent), but their main purpose is to hold errors applying to whatever struct is being used."/>
+  </docblock>
+  <constant type="integer" name="TOKEN" value="0">
+    <docblock>
+      <description compact="Possible values for $children first-key. Note that top-level structures are automatically token-level."/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="ATTR" value="1"/>
+  <constant type="integer" name="CSSPROP" value="2"/>
+  <member name="type" visibility="public" static="false" line="23">
+    <docblock>
+      <description compact="Type of this struct."/>
+    </docblock>
+  </member>
+  <member name="value" visibility="public" static="false" line="32">
+    <docblock>
+      <description compact="Value of the struct we are recording errors for. There are various values for this:  - TOKEN: Instance of HTMLPurifier_Token  - ATTR: array('attr-name', 'value')  - CSSPROP: array('prop-name', 'value')"/>
+    </docblock>
+  </member>
+  <member name="errors" type="array" default="" visibility="public" static="false" line="37">
+    <docblock>
+      <description compact="Errors registered for this structure."/>
+    </docblock>
+  </member>
+  <member name="children" type="array" default="" visibility="public" static="false" line="44">
+    <docblock>
+      <description compact="Child ErrorStructs that are from this structure. For example, a TOKEN ErrorStruct would contain ATTR ErrorStructs. This is a multi-dimensional array in structure: [TYPE]['identifier']"/>
+    </docblock>
+  </member>
+  <method name="getChild" start="46" end="52" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="type" byreference="false" type="{unknown}"/>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="addError" start="54" end="56" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="severity" byreference="false" type="{unknown}"/>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+  </method>
+</class>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="HTMLPurifier_DefinitionCache_Null" namespace="" name="HTMLPurifier_DefinitionCache_Null" abstract="false" final="false" start="6" end="37">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/DefinitionCache" file="Null.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/DefinitionCache/Null.php" size="698" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="ad4b1f64bb4967d8410d4d631afde521e571dab6" relative="external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/DefinitionCache/Null.php"/>
+  <docblock>
+    <description compact="Null cache object to use when no caching is on."/>
+  </docblock>
+  <extends full="HTMLPurifier_DefinitionCache" namespace="" name="HTMLPurifier_DefinitionCache"/>
+  <method name="add" start="9" end="11" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="def" byreference="false" type="{unknown}"/>
+    <parameter name="config" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="set" start="13" end="15" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="def" byreference="false" type="{unknown}"/>
+    <parameter name="config" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="replace" start="17" end="19" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="def" byreference="false" type="{unknown}"/>
+    <parameter name="config" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="remove" start="21" end="23" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="config" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="get" start="25" end="27" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="config" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="flush" start="29" end="31" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="config" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="cleanup" start="33" end="35" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="config" byreference="false" type="{unknown}"/>
+  </method>
+  <parent full="HTMLPurifier_DefinitionCache" namespace="" name="HTMLPurifier_DefinitionCache">
+    <member name="type" visibility="public" static="false" line="14"/>
+    <constructor name="__construct" start="20" end="22" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description/>
+        <param description="of definition objects this instance of the" variable="$name" type="object">cache will handle.<type full="Type" namespace="" name="Type"/></param>
+      </docblock>
+      <parameter name="type" byreference="false" type="{unknown}"/>
+    </constructor>
+    <method name="generateKey" start="28" end="32" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Generates a unique identifier for a particular configuration"/>
+        <param description="of HTMLPurifier_Config" type="object">
+          <type full="Instance" namespace="" name="Instance"/>
+        </param>
+      </docblock>
+      <parameter name="config" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="isOld" start="40" end="52" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Tests whether or not a key is old with respect to the configuration's version and revision number."/>
+        <param description="to test" variable="$key" type="object">
+          <type full="Key" namespace="" name="Key"/>
+        </param>
+        <param description="of HTMLPurifier_Config to test against" variable="$config" type="object">
+          <type full="Instance" namespace="" name="Instance"/>
+        </param>
+      </docblock>
+      <parameter name="key" byreference="false" type="{unknown}"/>
+      <parameter name="config" byreference="false" type="{unknown}"/>
+      <inline>
+        <comment value="version mismatch, is always old" line="44"/>
+        <comment value="versions match, ids match, check revision number" line="46"/>
+      </inline>
+    </method>
+    <method name="checkDefType" start="60" end="66" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Checks if a definition's type jives with the cache's type"/>
+        <note value="Throws an error on failure"/>
+        <param description="object to check" variable="$def" type="object">
+          <type full="Definition" namespace="" name="Definition"/>
+        </param>
+        <return description="true if good, false if not" type="object">
+          <type full="Boolean" namespace="" name="Boolean"/>
+        </return>
+      </docblock>
+      <parameter name="def" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="add" start="71" end="71" abstract="true" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Adds a definition object to the cache"/>
+      </docblock>
+      <parameter name="def" byreference="false" type="{unknown}"/>
+      <parameter name="config" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="set" start="76" end="76" abstract="true" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Unconditionally saves a definition object to the cache"/>
+      </docblock>
+      <parameter name="def" byreference="false" type="{unknown}"/>
+      <parameter name="config" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="replace" start="81" end="81" abstract="true" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Replace an object in the cache"/>
+      </docblock>
+      <parameter name="def" byreference="false" type="{unknown}"/>
+      <parameter name="config" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="get" start="86" end="86" abstract="true" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Retrieves a definition object from the cache"/>
+      </docblock>
+      <parameter name="config" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="remove" start="91" end="91" abstract="true" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Removes a definition object to the cache"/>
+      </docblock>
+      <parameter name="config" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="flush" start="96" end="96" abstract="true" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Clears all objects from cache"/>
+      </docblock>
+      <parameter name="config" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="cleanup" start="104" end="104" abstract="true" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Clears all expired (older version or revision) objects from cache"/>
+        <note value="Be carefuly implementing this method as flush. Flush must">not interfere with other Definition types, and cleanup()
+      should not be repeatedly called by userland code.</note>
+      </docblock>
+      <parameter name="config" byreference="false" type="{unknown}"/>
+    </method>
+  </parent>
+</class>

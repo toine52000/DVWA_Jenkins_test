@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface xmlns="http://xml.phpdox.net/src" full="IDS_Log_Interface" namespace="" name="IDS_Log_Interface" abstract="false" final="false" start="47" end="57">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/Log" file="Interface.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/Log/Interface.php" size="1834" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="e099033668299b76594cbe874da6144a36770506" relative="external/phpids/0.6/lib/IDS/Log/Interface.php"/>
+  <docblock>
+    <description compact="Interface for logging wrappers"/>
+    <category value="Security"/>
+    <package value="PHPIDS"/>
+    <author value="Christian Matthies &lt;ch0012@gmail.com&gt;"/>
+    <author value="Mario Heiderich &lt;mario.heiderich@gmail.com&gt;"/>
+    <author value="Lars Strojny &lt;lars@strojny.net&gt;"/>
+    <copyright value="2007 The PHPIDS Group"/>
+    <version value="Release: $Id:Interface.php 517 2007-09-15 15:04:13Z mario $"/>
+    <license name="http://www.gnu.org/licenses/lgpl.html LGPL"/>
+    <link value="http://php-ids.org/"/>
+  </docblock>
+  <method name="execute" start="56" end="56" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Interface method"/>
+      <param description="the report data" type="object" variable="$data">
+        <type full="IDS_Report" namespace="" name="IDS_Report"/>
+      </param>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="data" byreference="false" type="object">
+      <type full="IDS_Report" namespace="" name="IDS_Report"/>
+    </parameter>
+  </method>
+  <implementors>
+    <class full="IDS_Log_File" namespace="" name="IDS_Log_File"/>
+    <class full="IDS_Log_Email" namespace="" name="IDS_Log_Email"/>
+    <class full="IDS_Log_Database" namespace="" name="IDS_Log_Database"/>
+  </implementors>
+</interface>

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="HTMLPurifier_Lexer_PEARSax3" namespace="" name="HTMLPurifier_Lexer_PEARSax3" abstract="false" final="false" start="22" end="104">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Lexer" file="PEARSax3.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Lexer/PEARSax3.php" size="3615" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="5f9cd10fcc67faace667029da1ce122ce987a613" relative="external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Lexer/PEARSax3.php"/>
+  <docblock>
+    <description compact="Proof-of-concept lexer that uses the PEAR package XML_HTMLSax3 to parse HTML.">PEAR, not suprisingly, also has a SAX parser for HTML.  I don't know
+very much about implementation, but it's fairly well written.  However, that
+abstraction comes at a price: performance. You need to have it installed,
+and if the API changes, it might break our adapter. Not sure whether or not
+it's UTF-8 aware, but it has some entity parsing trouble (in all areas,
+text and attributes).
+
+Quite personally, I don't recommend using the PEAR class, and the defaults
+don't use it. The unit tests do perform the tests on the SAX parser too, but
+whatever it does for poorly formed HTML is up to it.</description>
+    <todo value="Generalize so that XML_HTMLSax is also supported."/>
+    <warning value="Entity-resolution inside attributes is broken."/>
+  </docblock>
+  <extends full="HTMLPurifier_Lexer" namespace="" name="HTMLPurifier_Lexer"/>
+  <member name="tokens" type="array" default="" visibility="protected" static="false" line="28">
+    <docblock>
+      <description compact="Internal accumulator array for SAX parsers."/>
+    </docblock>
+  </member>
+  <method name="tokenizeHTML" start="30" end="49" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="string" byreference="false" type="{unknown}"/>
+    <parameter name="config" byreference="false" type="{unknown}"/>
+    <parameter name="context" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="doesn't seem to work correctly for attributes" line="42"/>
+    </inline>
+  </method>
+  <method name="openHandler" start="54" end="65" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Open tag event handler, interface is defined by PEAR package."/>
+    </docblock>
+    <parameter name="parser" byreference="true" type="{unknown}"/>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="attrs" byreference="false" type="{unknown}"/>
+    <parameter name="closed" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="entities are not resolved in attrs" line="55"/>
+    </inline>
+  </method>
+  <method name="closeHandler" start="70" end="79" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Close tag event handler, interface is defined by PEAR package."/>
+    </docblock>
+    <parameter name="parser" byreference="true" type="{unknown}"/>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="HTMLSax3 seems to always send empty tags an extra close tag" line="71"/>
+      <comment value="check and ignore if you see it:" line="72"/>
+      <comment value="[TESTME] to make sure it doesn't overreach" line="73"/>
+    </inline>
+  </method>
+  <method name="dataHandler" start="84" end="87" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Data event handler, interface is defined by PEAR package."/>
+    </docblock>
+    <parameter name="parser" byreference="true" type="{unknown}"/>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="escapeHandler" start="92" end="102" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Escaped text handler, interface is defined by PEAR package."/>
+    </docblock>
+    <parameter name="parser" byreference="true" type="{unknown}"/>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="CDATA is handled elsewhere, but if it was handled here:" line="96"/>
+      <comment value="if (strpos($data, '[CDATA[') === 0) {" line="97"/>
+      <comment value="$this-&gt;tokens[] = new HTMLPurifier_Token_Text(" line="98"/>
+      <comment value="substr($data, 7, strlen($data) - 9) );" line="99"/>
+      <comment value="}" line="100"/>
+    </inline>
+  </method>
+  <parent full="HTMLPurifier_Lexer" namespace="" name="HTMLPurifier_Lexer">
+    <member name="tracksLineNumbers" type="boolean" default="false" visibility="public" static="false" line="49">
+      <docblock>
+        <description compact="Whether or not this lexer implements line-number/column-number tracking.">If it does, set to true.</description>
+      </docblock>
+    </member>
+    <member name="_special_entity2str" type="array" default="" visibility="protected" static="false" line="149">
+      <docblock>
+        <description compact="Most common entity to raw value conversion table for special entities."/>
+      </docblock>
+    </member>
+    <method name="create" start="68" end="138" abstract="false" final="false" static="true" visibility="public">
+      <docblock>
+        <description compact="Retrieves or sets the default Lexer as a Prototype Factory.">By default HTMLPurifier_Lexer_DOMLex will be returned. There are
+a few exceptions involving special features that only DirectLex
+implements.</description>
+        <note value="The behavior of this class has changed, rather than accepting">a prototype object, it now accepts a configuration object.
+      To specify your own prototype, set %Core.LexerImpl to it.
+      This change in behavior de-singletonizes the lexer object.</note>
+        <param description="of HTMLPurifier_Config" variable="$config" type="object">
+          <type full="Instance" namespace="" name="Instance"/>
+        </param>
+        <return description="lexer." type="object">
+          <type full="Concrete" namespace="" name="Concrete"/>
+        </return>
+      </docblock>
+      <parameter name="config" byreference="false" type="{unknown}"/>
+      <inline>
+        <comment value="once PHP DOM implements native line numbers, or we" line="130"/>
+        <comment value="hack out something using XSLT, remove this stipulation" line="131"/>
+      </inline>
+    </method>
+    <constructor name="__construct" start="142" end="144" abstract="false" final="false" static="false" visibility="public"/>
+    <method name="parseData" start="174" end="196" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Parses special entities into the proper characters.">This string will translate escaped versions of the special characters
+into the correct ones.</description>
+        <warning>You should be able to treat the output of this function as
+completely parsed, but that's only because all other entities should
+have been handled previously in substituteNonSpecialEntities()</warning>
+        <param description="character data to be parsed." variable="$string" type="object">
+          <type full="String" namespace="" name="String"/>
+        </param>
+        <returns value="Parsed character data."/>
+      </docblock>
+      <parameter name="string" byreference="false" type="{unknown}"/>
+      <inline>
+        <comment value="following functions require at least one character" line="176"/>
+        <comment value="subtracts amps that cannot possibly be escaped" line="179"/>
+        <comment value="abort if no entities" line="183"/>
+        <comment value="code duplication for sake of optimization, see above" line="187"/>
+        <comment value="hmm... now we have some uncommon entities. Use the callback." line="193"/>
+      </inline>
+    </method>
+    <method name="tokenizeHTML" start="204" end="206" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Lexes an HTML string into tokens."/>
+        <param description="HTML." variable="$string" type="object">
+          <type full="String" namespace="" name="String"/>
+        </param>
+        <return description="array representation of HTML." type="object">
+          <type full="HTMLPurifier_Token" namespace="" name="HTMLPurifier_Token"/>
+        </return>
+      </docblock>
+      <parameter name="string" byreference="false" type="{unknown}"/>
+      <parameter name="config" byreference="false" type="{unknown}"/>
+      <parameter name="context" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="escapeCDATA" start="214" end="220" abstract="false" final="false" static="true" visibility="protected">
+      <docblock>
+        <description compact="Translates CDATA sections into regular sections (through escaping)."/>
+        <param description="string to process." variable="$string" type="object">
+          <type full="HTML" namespace="" name="HTML"/>
+        </param>
+        <returns value="HTML with CDATA sections escaped."/>
+      </docblock>
+      <parameter name="string" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="escapeCommentedCDATA" start="225" end="231" abstract="false" final="false" static="true" visibility="protected">
+      <docblock>
+        <description compact="Special CDATA case that is especially convoluted for &lt;script&gt;"/>
+      </docblock>
+      <parameter name="string" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="CDATACallback" start="242" end="245" abstract="false" final="false" static="true" visibility="protected">
+      <docblock>
+        <description compact="Callback function for escapeCDATA() that does the work."/>
+        <warning value="Though this is public in order to let the callback happen,">calling it directly is not recommended.</warning>
+        <params value="$matches PCRE matches array, with index 0 the entire match">and 1 the inside of the CDATA section.</params>
+        <returns value="Escaped internals of the CDATA section."/>
+      </docblock>
+      <parameter name="matches" byreference="false" type="{unknown}"/>
+      <inline>
+        <comment value="not exactly sure why the character set is needed, but whatever" line="243"/>
+      </inline>
+    </method>
+    <method name="normalize" start="252" end="280" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Takes a piece of HTML and normalizes it by converting entities, fixing encoding, extracting bits, and other good stuff."/>
+        <todo value="Consider making protected"/>
+      </docblock>
+      <parameter name="html" byreference="false" type="{unknown}"/>
+      <parameter name="config" byreference="false" type="{unknown}"/>
+      <parameter name="context" byreference="false" type="{unknown}"/>
+      <inline>
+        <comment value="normalize newlines to \n" line="254"/>
+        <comment value="escape CDATA" line="263"/>
+        <comment value="extract body from document if applicable" line="266"/>
+        <comment value="expand entities that aren't the big five" line="271"/>
+        <comment value="clean into wellformed UTF-8 string for an SGML context: this has" line="274"/>
+        <comment value="to be done after entity expansion because the entities sometimes" line="275"/>
+        <comment value="represent non-SGML characters (horror, horror!)" line="276"/>
+      </inline>
+    </method>
+    <method name="extractBody" start="286" end="294" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Takes a string of HTML (fragment or document) and returns the content"/>
+        <todo value="Consider making protected"/>
+      </docblock>
+      <parameter name="html" byreference="false" type="{unknown}"/>
+    </method>
+  </parent>
+</class>

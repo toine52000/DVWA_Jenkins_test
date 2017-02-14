@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="HTMLPurifier_Config" namespace="" name="HTMLPurifier_Config" abstract="false" final="false" start="17" end="489">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier" file="Config.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Config.php" size="18684" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="d27722e5f25e9c6735396286b9fe627d34d904e6" relative="external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Config.php"/>
+  <docblock>
+    <description compact="Configuration object that triggers customizable behavior."/>
+    <warning value="This class is strongly defined: that means that the class">will fail if an undefined directive is retrieved or set.</warning>
+    <note value="Many classes that could (although many times don't) use the">configuration object make it a mandatory parameter.  This is
+      because a configuration object should always be forwarded,
+      otherwise, you run the risk of missing a parameter and then
+      being stumped when a configuration directive doesn't work.</note>
+    <todo value="Reconsider some of the public member variables"/>
+  </docblock>
+  <member name="version" type="string" default="'3.2.0'" visibility="public" static="false" line="23">
+    <docblock>
+      <description compact="HTML Purifier's version"/>
+    </docblock>
+  </member>
+  <member name="autoFinalize" type="boolean" default="true" visibility="public" static="false" line="29">
+    <docblock>
+      <description compact="Bool indicator whether or not to automatically finalize the object if a read operation is done"/>
+    </docblock>
+  </member>
+  <member name="serials" type="array" default="" visibility="protected" static="false" line="37">
+    <docblock>
+      <description compact="Namespace indexed array of serials for specific namespaces (see getSerial() for more info)."/>
+    </docblock>
+  </member>
+  <member name="serial" visibility="protected" static="false" line="42">
+    <docblock>
+      <description compact="Serial for entire configuration object"/>
+    </docblock>
+  </member>
+  <member name="conf" visibility="protected" static="false" line="47">
+    <docblock>
+      <description compact="Two-level associative array of configuration directives"/>
+    </docblock>
+  </member>
+  <member name="parser" visibility="protected" static="false" line="52">
+    <docblock>
+      <description compact="Parser for variables"/>
+    </docblock>
+  </member>
+  <member name="def" visibility="public" static="false" line="59">
+    <docblock>
+      <description compact="Reference HTMLPurifier_ConfigSchema for value checking"/>
+      <note value="This is public for introspective purposes. Please don't">abuse!</note>
+    </docblock>
+  </member>
+  <member name="definitions" visibility="protected" static="false" line="64">
+    <docblock>
+      <description compact="Indexed array of definitions"/>
+    </docblock>
+  </member>
+  <member name="finalized" type="boolean" default="false" visibility="protected" static="false" line="69">
+    <docblock>
+      <description compact="Bool indicator whether or not config is finalized"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="75" end="79" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param description="that defines what directives" variable="$definition" type="object">are allowed.<type full="HTMLPurifier_ConfigSchema" namespace="" name="HTMLPurifier_ConfigSchema"/></param>
+    </docblock>
+    <parameter name="definition" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="set up, copy in defaults" line="76"/>
+      <comment value="keep a copy around for checking" line="77"/>
+    </inline>
+  </constructor>
+  <method name="create" start="90" end="103" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Convenience constructor that creates a config object based on a mixed var"/>
+      <param description="Variable that defines the state of the config" type="mixed" variable="$config">object. Can be: a HTMLPurifier_Config() object,
+                     an array of directives based on loadArray(),
+                     or a string filename of an ini file.</param>
+      <param description="Schema object" type="object">
+        <type full="HTMLPurifier_ConfigSchema" namespace="" name="HTMLPurifier_ConfigSchema"/>
+      </param>
+      <return description="HTMLPurifier_Config object" type="object">
+        <type full="Configured" namespace="" name="Configured"/>
+      </return>
+    </docblock>
+    <parameter name="config" byreference="false" type="{unknown}"/>
+    <parameter name="schema" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="createDefault" start="109" end="113" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Convenience constructor that creates a default configuration object."/>
+      <return description="HTMLPurifier_Config object." type="object">
+        <type full="Default" namespace="" name="Default"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="get" start="120" end="135" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retreives a value from the configuration."/>
+      <param description="namespace" variable="$namespace" type="object">
+        <type full="String" namespace="" name="String"/>
+      </param>
+      <param description="key" variable="$key" type="object">
+        <type full="String" namespace="" name="String"/>
+      </param>
+    </docblock>
+    <parameter name="namespace" byreference="false" type="{unknown}"/>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getBatch" start="141" end="149" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retreives an array of directives to values from a given namespace"/>
+      <param description="namespace" variable="$namespace" type="object">
+        <type full="String" namespace="" name="String"/>
+      </param>
+    </docblock>
+    <parameter name="namespace" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getBatchSerial" start="158" end="165" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns a md5 signature of a segment of the configuration object that uniquely identifies that particular configuration"/>
+      <note value="Revision is handled specially and is removed from the batch">before processing!</note>
+      <param description="to get serial for" variable="$namespace" type="object">
+        <type full="Namespace" namespace="" name="Namespace"/>
+      </param>
+    </docblock>
+    <parameter name="namespace" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getSerial" start="171" end="176" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns a md5 signature for the entire configuration object that uniquely identifies that particular configuration"/>
+    </docblock>
+  </method>
+  <method name="getAll" start="181" end="184" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieves all directives, organized by namespace"/>
+    </docblock>
+  </method>
+  <method name="set" start="192" end="253" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets a value to configuration."/>
+      <param description="namespace" variable="$namespace" type="object">
+        <type full="String" namespace="" name="String"/>
+      </param>
+      <param description="key" variable="$key" type="object">
+        <type full="String" namespace="" name="String"/>
+      </param>
+      <param description="value" variable="$value" type="object">
+        <type full="Mixed" namespace="" name="Mixed"/>
+      </param>
+    </docblock>
+    <parameter name="namespace" byreference="false" type="{unknown}"/>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="from_alias" byreference="false" type="boolean" default="false"/>
+    <inline>
+      <comment value="Raw type might be negative when using the fully optimized form" line="214"/>
+      <comment value="of stdclass, which indicates allow_null == true" line="215"/>
+      <comment value="reset definitions if the directives they depend on changed" line="245"/>
+      <comment value="this is a very costly process, so it's discouraged" line="246"/>
+      <comment value="with finalization" line="247"/>
+    </inline>
+  </method>
+  <method name="_listify" start="258" end="262" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Convenience function for error reporting"/>
+    </docblock>
+    <parameter name="lookup" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getHTMLDefinition" start="269" end="271" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieves object reference to the HTML definition."/>
+      <param description="a copy that has not been setup yet. Must be" variable="$raw" type="object">called before it's been setup, otherwise won't work.<type full="Return" namespace="" name="Return"/></param>
+    </docblock>
+    <parameter name="raw" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="getCSSDefinition" start="278" end="280" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieves object reference to the CSS definition"/>
+      <param description="a copy that has not been setup yet. Must be" variable="$raw" type="object">called before it's been setup, otherwise won't work.<type full="Return" namespace="" name="Return"/></param>
+    </docblock>
+    <parameter name="raw" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="getDefinition" start="287" end="336" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieves a definition"/>
+      <param description="of definition: HTML, CSS, etc" variable="$type" type="object">
+        <type full="Type" namespace="" name="Type"/>
+      </param>
+      <param description="or not definition should be returned raw" variable="$raw" type="object">
+        <type full="Whether" namespace="" name="Whether"/>
+      </param>
+    </docblock>
+    <parameter name="type" byreference="false" type="{unknown}"/>
+    <parameter name="raw" byreference="false" type="boolean" default="false"/>
+    <inline>
+      <comment value="quick checks failed, let's create the object" line="313"/>
+      <comment value="quick abort if raw" line="323"/>
+      <comment value="set it up" line="331"/>
+      <comment value="save in cache" line="333"/>
+    </inline>
+  </method>
+  <method name="loadArray" start="343" end="359" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Loads configuration values from an array with the following structure: Namespace.Directive =&gt; Value"/>
+      <param description="associative array" variable="$config_array" type="object">
+        <type full="Configuration" namespace="" name="Configuration"/>
+      </param>
+    </docblock>
+    <parameter name="config_array" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getAllowedDirectivesForForm" start="367" end="403" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Returns a list of array(namespace, directive) for all directives that are allowed in a web-form context as per an allowed namespaces/directives list."/>
+      <param description="of allowed namespaces/directives" variable="$allowed" type="object">
+        <type full="List" namespace="" name="List"/>
+      </param>
+    </docblock>
+    <parameter name="allowed" byreference="false" type="{unknown}"/>
+    <parameter name="schema" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="loadArrayFromForm" start="414" end="418" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Loads configuration values from $_GET/$_POST that were posted via ConfigForm"/>
+      <param description="or $_POST array to import" variable="$array" type="object">
+        <type full="$_GET" namespace="" name="$_GET"/>
+      </param>
+      <param description="that the config variables are in" variable="$index" type="object">
+        <type full="Index/name" namespace="" name="Index/name"/>
+      </param>
+      <param description="of allowed namespaces/directives" variable="$allowed" type="object">
+        <type full="List" namespace="" name="List"/>
+      </param>
+      <param description="whether or not to enable magic quotes fix" variable="$mq_fix" type="object">
+        <type full="Boolean" namespace="" name="Boolean"/>
+      </param>
+      <param description="of HTMLPurifier_ConfigSchema to use, if not global copy" variable="$schema" type="object">
+        <type full="Instance" namespace="" name="Instance"/>
+      </param>
+    </docblock>
+    <parameter name="array" byreference="false" type="{unknown}"/>
+    <parameter name="index" byreference="false" type="boolean" default="false"/>
+    <parameter name="allowed" byreference="false" type="boolean" default="true"/>
+    <parameter name="mq_fix" byreference="false" type="boolean" default="true"/>
+    <parameter name="schema" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="mergeArrayFromForm" start="424" end="427" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Merges in configuration values from $_GET/$_POST to object. NOT STATIC."/>
+      <note value="Same parameters as loadArrayFromForm"/>
+    </docblock>
+    <parameter name="array" byreference="false" type="{unknown}"/>
+    <parameter name="index" byreference="false" type="boolean" default="false"/>
+    <parameter name="allowed" byreference="false" type="boolean" default="true"/>
+    <parameter name="mq_fix" byreference="false" type="boolean" default="true"/>
+  </method>
+  <method name="prepareArrayFromForm" start="433" end="451" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Prepares an array from a form into something usable for the more strict parts of HTMLPurifier_Config"/>
+    </docblock>
+    <parameter name="array" byreference="false" type="{unknown}"/>
+    <parameter name="index" byreference="false" type="boolean" default="false"/>
+    <parameter name="allowed" byreference="false" type="boolean" default="true"/>
+    <parameter name="mq_fix" byreference="false" type="boolean" default="true"/>
+    <parameter name="schema" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="loadIni" start="457" end="461" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Loads configuration values from an ini file"/>
+      <param description="of ini file" variable="$filename" type="object">
+        <type full="Name" namespace="" name="Name"/>
+      </param>
+    </docblock>
+    <parameter name="filename" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="isFinalized" start="467" end="472" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Checks whether or not the configuration object is finalized."/>
+      <param description="error message, or false for no error" variable="$error" type="object">
+        <type full="String" namespace="" name="String"/>
+      </param>
+    </docblock>
+    <parameter name="error" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="autoFinalize" start="478" end="480" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Finalizes configuration only if auto finalize is on and not already finalized"/>
+    </docblock>
+  </method>
+  <method name="finalize" start="485" end="487" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Finalizes a configuration object, prohibiting further change"/>
+    </docblock>
+  </method>
+</class>

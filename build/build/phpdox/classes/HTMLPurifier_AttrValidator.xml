@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="HTMLPurifier_AttrValidator" namespace="" name="HTMLPurifier_AttrValidator" abstract="false" final="false" start="8" end="160">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier" file="AttrValidator.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrValidator.php" size="6782" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="94bf1aedf7cc0aceafec625274ded5c41a8ea627" relative="external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrValidator.php"/>
+  <docblock>
+    <description compact="Validates the attributes of a token. Doesn't manage required attributes very well. The only reason we factored this out was because RemoveForeignElements also needed it besides ValidateAttributes."/>
+  </docblock>
+  <method name="validateToken" start="21" end="157" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Validates the attributes of a token, returning a modified token that has valid tokens"/>
+      <param description="to token to validate. We require a reference" variable="$token" type="object">because the operation this class performs on the token are
+    not atomic, so the context CurrentToken to be updated
+    throughout<type full="Reference" namespace="" name="Reference"/></param>
+      <param description="of HTMLPurifier_Config" variable="$config" type="object">
+        <type full="Instance" namespace="" name="Instance"/>
+      </param>
+      <param description="of HTMLPurifier_Context" variable="$context" type="object">
+        <type full="Instance" namespace="" name="Instance"/>
+      </param>
+    </docblock>
+    <parameter name="token" byreference="true" type="{unknown}"/>
+    <parameter name="config" byreference="true" type="{unknown}"/>
+    <parameter name="context" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="initialize IDAccumulator if necessary" line="26"/>
+      <comment value="initialize CurrentToken if necessary" line="33"/>
+      <comment value="create alias to global definition array, see also $defs" line="42"/>
+      <comment value="DEFINITION CALL" line="43"/>
+      <comment value="don't update token until the very end, to ensure an atomic update" line="46"/>
+      <comment value="do global transformations (pre)" line="49"/>
+      <comment value="nothing currently utilizes this" line="50"/>
+      <comment value="do local transformations only applicable to this element (pre)" line="58"/>
+      <comment value="ex. &lt;p align=&quot;right&quot;&gt; to &lt;p style=&quot;text-align:right;&quot;&gt;" line="59"/>
+      <comment value="create alias to this element's attribute definition array, see" line="67"/>
+      <comment value="also $d_defs (global attribute definition array)" line="68"/>
+      <comment value="DEFINITION CALL" line="69"/>
+      <comment value="iterate through all the attribute keypairs" line="75"/>
+      <comment value="Watch out for name collisions: $key has previously been used" line="76"/>
+      <comment value="post transforms" line="134"/>
+      <comment value="global (error reporting untested)" line="136"/>
+      <comment value="local (error reporting untested)" line="144"/>
+      <comment value="destroy CurrentToken if we made it ourselves" line="154"/>
+    </inline>
+  </method>
+</class>

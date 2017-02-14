@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="HTMLPurifier_Bootstrap" namespace="" name="HTMLPurifier_Bootstrap" abstract="false" final="false" start="30" end="96">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier" file="Bootstrap.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Bootstrap.php" size="3695" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="670d0c80a3b33bc6322cee3e54198fd1cc2996fe" relative="external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Bootstrap.php"/>
+  <docblock>
+    <description compact="Bootstrap class that contains meta-functionality for HTML Purifier such as the autoload function."/>
+    <note>This class may be used without any other files from HTML Purifier.</note>
+  </docblock>
+  <method name="autoload" start="37" end="42" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Autoload function for HTML Purifier"/>
+      <param description="to load" variable="$class" type="object">
+        <type full="Class" namespace="" name="Class"/>
+      </param>
+    </docblock>
+    <parameter name="class" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getPath" start="47" end="58" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Returns the path for a specific class."/>
+    </docblock>
+    <parameter name="class" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Custom implementations" line="49"/>
+    </inline>
+  </method>
+  <method name="registerAutoload" start="63" end="94" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="&quot;Pre-registers&quot; our autoloader on the SPL stack."/>
+    </docblock>
+  </method>
+</class>

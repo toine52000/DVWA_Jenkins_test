@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="HTMLPurifier_PercentEncoder" namespace="" name="HTMLPurifier_PercentEncoder" abstract="false" final="false" start="11" end="96">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier" file="PercentEncoder.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/PercentEncoder.php" size="3473" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="7733cbeb46b83b644c90f37fb40154b6fe46917f" relative="external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/PercentEncoder.php"/>
+  <docblock>
+    <description compact="Class that handles operations involving percent-encoding in URIs."/>
+    <warning>Be careful when reusing instances of PercentEncoder. The object
+     you use for normalize() SHOULD NOT be used for encode(), or
+     vice-versa.</warning>
+  </docblock>
+  <member name="preserve" type="array" default="" visibility="protected" static="false" line="17">
+    <docblock>
+      <description compact="Reserved characters to preserve when using encode()."/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="22" end="38" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="String of characters that should be preserved while using encode()."/>
+    </docblock>
+    <parameter name="preserve" byreference="false" type="boolean" default="false"/>
+    <inline>
+      <comment value="unreserved letters, ought to const-ify" line="23"/>
+      <comment value="digits" line="24"/>
+      <comment value="upper-case" line="25"/>
+      <comment value="lower-case" line="26"/>
+      <comment value="Dash         -" line="27"/>
+      <comment value="Period       ." line="28"/>
+      <comment value="Underscore   _" line="29"/>
+      <comment value="Tilde        ~" line="30"/>
+      <comment value="extra letters not to escape" line="32"/>
+    </inline>
+  </constructor>
+  <method name="encode" start="50" end="60" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Our replacement for urlencode, it encodes all non-reserved characters, as well as any extra characters that were instructed to be preserved."/>
+      <note>Assumes that the string has already been normalized, making any
+     and all percent escape sequences valid. Percents will not be
+     re-escaped, regardless of their status in $preserve</note>
+      <param description="to be encoded" variable="$string" type="object">
+        <type full="String" namespace="" name="String"/>
+      </param>
+      <return description="string." type="object">
+        <type full="Encoded" namespace="" name="Encoded"/>
+      </return>
+    </docblock>
+    <parameter name="string" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="normalize" start="69" end="94" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Fix up percent-encoding by decoding unreserved characters and normalizing."/>
+      <warning value="This function is affected by $preserve, even though the">usual desired behavior is for this not to preserve those
+         characters. Be careful when reusing instances of PercentEncoder!</warning>
+      <param description="to normalize" variable="$string" type="object">
+        <type full="String" namespace="" name="String"/>
+      </param>
+    </docblock>
+    <parameter name="string" byreference="false" type="{unknown}"/>
+  </method>
+</class>

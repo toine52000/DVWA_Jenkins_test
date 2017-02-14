@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="HTMLPurifier_ChildDef" namespace="" name="HTMLPurifier_ChildDef" abstract="true" final="false" start="6" end="46">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier" file="ChildDef.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ChildDef.php" size="1458" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="fb3bc60d2cd668e18f14f27baf1dc9dea0025b04" relative="external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ChildDef.php"/>
+  <docblock>
+    <description compact="Defines allowed child nodes and validates tokens against it."/>
+  </docblock>
+  <member name="type" visibility="public" static="false" line="12">
+    <docblock>
+      <description compact="Type of child definition, usually right-most part of class name lowercase.">Used occasionally in terms of context.</description>
+    </docblock>
+  </member>
+  <member name="allow_empty" visibility="public" static="false" line="20">
+    <docblock>
+      <description compact="Bool that indicates whether or not an empty array of children is okay">This is necessary for redundant checking when changes affecting
+a child node may cause a parent node to now be disallowed.</description>
+    </docblock>
+  </member>
+  <member name="elements" type="array" default="" visibility="public" static="false" line="25">
+    <docblock>
+      <description compact="Lookup array of all elements that this definition could possibly allow"/>
+    </docblock>
+  </member>
+  <method name="getNonAutoCloseElements" start="31" end="33" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get lookup of tag names that should not close this element automatically.">All other elements will do so.</description>
+    </docblock>
+    <parameter name="config" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateChildren" start="45" end="45" abstract="true" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Validates nodes according to definition and returns modification."/>
+      <param description="of HTMLPurifier_Token" variable="$tokens_of_children" type="object">
+        <type full="Array" namespace="" name="Array"/>
+      </param>
+      <param description="object" variable="$config" type="object">
+        <type full="HTMLPurifier_Config" namespace="" name="HTMLPurifier_Config"/>
+      </param>
+      <param description="object" variable="$context" type="object">
+        <type full="HTMLPurifier_Context" namespace="" name="HTMLPurifier_Context"/>
+      </param>
+      <return description="true to leave nodes as is" type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+      <return description="false to remove parent node" type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+      <return description="of replacement child tokens" type="array"/>
+    </docblock>
+    <parameter name="tokens_of_children" byreference="false" type="{unknown}"/>
+    <parameter name="config" byreference="false" type="{unknown}"/>
+    <parameter name="context" byreference="false" type="{unknown}"/>
+  </method>
+  <extenders>
+    <extender full="HTMLPurifier_ChildDef_Table" namespace="" name="HTMLPurifier_ChildDef_Table"/>
+    <extender full="HTMLPurifier_ChildDef_Optional" namespace="" name="HTMLPurifier_ChildDef_Optional"/>
+    <extender full="HTMLPurifier_ChildDef_Required" namespace="" name="HTMLPurifier_ChildDef_Required"/>
+    <extender full="HTMLPurifier_ChildDef_StrictBlockquote" namespace="" name="HTMLPurifier_ChildDef_StrictBlockquote"/>
+    <extender full="HTMLPurifier_ChildDef_Empty" namespace="" name="HTMLPurifier_ChildDef_Empty"/>
+    <extender full="HTMLPurifier_ChildDef_Custom" namespace="" name="HTMLPurifier_ChildDef_Custom"/>
+    <extender full="HTMLPurifier_ChildDef_Chameleon" namespace="" name="HTMLPurifier_ChildDef_Chameleon"/>
+  </extenders>
+</class>

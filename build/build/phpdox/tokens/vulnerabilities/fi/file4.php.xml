@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<source xmlns="http://xml.phpdox.net/token">
+  <file xmlns="http://xml.phpdox.net/src" path="/home/user/Documents/DVWA-master/build/../src/vulnerabilities/fi" file="file4.php" realpath="/home/user/Documents/DVWA-master/src/vulnerabilities/fi/file4.php" size="372" time="2017-02-13T08:45:28+00:00" unixtime="1486975528" sha1="dcb56d5d6df8d27f8bd8b520f9f007c764375a04" relative="vulnerabilities/fi/file4.php"/>
+  <line no="1">
+    <token name="T_OPEN_TAG">&lt;?php</token>
+  </line>
+  <line no="2"/>
+  <line no="3">
+    <token name="T_VARIABLE">$page</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'body'</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONCAT_EQUAL">.=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"</token>
+  </line>
+  <line no="4">
+    <token name="T_CONSTANT_ENCAPSED_STRING">&lt;div class=\"body_padded\"&gt;</token>
+  </line>
+  <line no="5">
+    <token name="T_CONSTANT_ENCAPSED_STRING">	&lt;h1&gt;Vulnerability: File Inclusion&lt;/h1&gt;</token>
+  </line>
+  <line no="6">
+    <token name="T_CONSTANT_ENCAPSED_STRING">	&lt;div class=\"vulnerable_code_area\"&gt;</token>
+  </line>
+  <line no="7">
+    <token name="T_CONSTANT_ENCAPSED_STRING">		&lt;h3&gt;File 4 (Hidden)&lt;/h3&gt;</token>
+  </line>
+  <line no="8">
+    <token name="T_CONSTANT_ENCAPSED_STRING">		&lt;hr /&gt;</token>
+  </line>
+  <line no="9">
+    <token name="T_CONSTANT_ENCAPSED_STRING">		Good job!&lt;br /&gt;</token>
+  </line>
+  <line no="10">
+    <token name="T_CONSTANT_ENCAPSED_STRING">		This file isn't listed at all on DVWA. If you are reading this, you did something right ;-)&lt;br /&gt;</token>
+  </line>
+  <line no="11">
+    <token name="T_CONSTANT_ENCAPSED_STRING">		&lt;!-- You did an even better job to see this :-)! --&gt;</token>
+  </line>
+  <line no="12">
+    <token name="T_CONSTANT_ENCAPSED_STRING">&lt;/div&gt;\n"</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="13"/>
+  <line no="14">
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="15"/>
+</source>

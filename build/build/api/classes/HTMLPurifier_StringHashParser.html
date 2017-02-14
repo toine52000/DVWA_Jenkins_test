@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - HTMLPurifier_StringHashParser</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.html">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.html">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.html">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.html">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.html">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.html">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.html">Classes</a>
+          </li>
+          <li class="separator">HTMLPurifier_StringHashParser</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/StringHashParser.php.html#line28">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>HTMLPurifier_StringHashParser</h1>
+        <h4>Parses string hash files. File format is as such:</h4>
+        <p>DefaultKeyValue<br/>KEY: Value<br/>KEY2: Value2<br/>--MULTILINE-KEY--<br/>Multiline<br/>value.<br/><br/>Which would output something similar to:<br/><br/>array(<br/>'ID' =&gt; 'DefaultKeyValue',<br/>'KEY' =&gt; 'Value',<br/>'KEY2' =&gt; 'Value2',<br/>'MULTILINE-KEY' =&gt; "Multiline\nvalue.\n",<br/>)<br/><br/>We use this as an easy to use file-format for configuration schema<br/>files, but the class itself is usage agnostic.<br/><br/>You can use ---- to forcibly terminate parsing of a single string-hash;<br/>this marker is used in multi string-hashes to delimit boundaries.</p>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class HTMLPurifier_StringHashParser
+            {<br/><ul class="none"><li>// members</li><li>public string <a href="#members">$default</a> =
+                        'ID';
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="HTMLPurifier_StringHashParser" href="../classes/HTMLPurifier_StringHashParser/parseFile.html">parseFile</a>()
+                    </li><li>public void <a title="HTMLPurifier_StringHashParser" href="../classes/HTMLPurifier_StringHashParser/parseMultiFile.html">parseMultiFile</a>()
+                    </li><li>protected void <a title="HTMLPurifier_StringHashParser" href="../classes/HTMLPurifier_StringHashParser/parseHandle.html">parseHandle</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>public</h4>
+          <ul class="members">
+            <li id="default">
+              <strong>$default</strong>
+            </li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>protected</h4>
+          <ul>
+            <li id="parseHandle"><a title="HTMLPurifier_StringHashParser" href="../classes/HTMLPurifier_StringHashParser/parseHandle.html">parseHandle()</a>
+                — Internal parser that acepts a file handle.</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="parseFile"><a title="HTMLPurifier_StringHashParser" href="../classes/HTMLPurifier_StringHashParser/parseFile.html">parseFile()</a>
+                — Parses a file that contains a single string-hash.</li>
+            <li id="parseMultiFile"><a title="HTMLPurifier_StringHashParser" href="../classes/HTMLPurifier_StringHashParser/parseMultiFile.html">parseMultiFile()</a>
+                — Parses a file that contains multiple string-hashes delimited by '----'</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.9.0 - Copyright (C) 2010 - 2017 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

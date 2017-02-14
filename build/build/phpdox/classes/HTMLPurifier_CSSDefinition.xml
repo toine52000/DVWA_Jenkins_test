@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="HTMLPurifier_CSSDefinition" namespace="" name="HTMLPurifier_CSSDefinition" abstract="false" final="false" start="7" end="289">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier" file="CSSDefinition.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/CSSDefinition.php" size="12764" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="c51caed40904de44654c0ff6071a85544c348714" relative="external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/CSSDefinition.php"/>
+  <docblock>
+    <description compact="Defines allowed CSS attributes and what their values are."/>
+    <see value="HTMLPurifier_HTMLDefinition"/>
+  </docblock>
+  <extends full="HTMLPurifier_Definition" namespace="" name="HTMLPurifier_Definition"/>
+  <member name="type" type="string" default="'CSS'" visibility="public" static="false" line="10"/>
+  <member name="info" type="array" default="" visibility="public" static="false" line="15">
+    <docblock>
+      <description compact="Assoc array of attribute name to definition object."/>
+    </docblock>
+  </member>
+  <method name="doSetup" start="20" end="229" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Constructs the info array.  The meat of this class."/>
+    </docblock>
+    <parameter name="config" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="non-negative" line="135"/>
+      <comment value="this could use specialized code" line="177"/>
+      <comment value="MUST be called after other font properties, as it references" line="182"/>
+      <comment value="a CSSDefinition object" line="183"/>
+      <comment value="same here" line="186"/>
+      <comment value="partial support" line="211"/>
+      <comment value="wrap all attr-defs with decorator that handles !important" line="223"/>
+    </inline>
+  </method>
+  <method name="doSetupProprietary" start="231" end="248" abstract="false" final="false" static="false" visibility="protected">
+    <parameter name="config" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Internet Explorer only scrollbar colors" line="232"/>
+      <comment value="technically not proprietary, but CSS3, and no one supports it" line="240"/>
+      <comment value="only opacity, for now" line="245"/>
+    </inline>
+  </method>
+  <method name="doSetupTricky" start="250" end="260" abstract="false" final="false" static="false" visibility="protected">
+    <parameter name="config" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setupConfigStuff" start="269" end="288" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Performs extra config-based processing. Based off of HTMLPurifier_HTMLDefinition."/>
+      <todo value="Refactor duplicate elements into common class (probably using">composition, not inheritance).</todo>
+    </docblock>
+    <parameter name="config" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="setup allowed elements" line="271"/>
+    </inline>
+  </method>
+  <parent full="HTMLPurifier_Definition" namespace="" name="HTMLPurifier_Definition">
+    <member name="setup" type="boolean" default="false" visibility="public" static="false" line="13">
+      <docblock>
+        <description compact="Has setup() been called yet?"/>
+      </docblock>
+    </member>
+    <member name="type" visibility="public" static="false" line="18">
+      <docblock>
+        <description compact="What type of definition is it?"/>
+      </docblock>
+    </member>
+    <method name="doSetup" start="25" end="25" abstract="true" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Sets up the definition object into the final form, something not done by the constructor"/>
+        <param description="instance" variable="$config" type="object">
+          <type full="HTMLPurifier_Config" namespace="" name="HTMLPurifier_Config"/>
+        </param>
+      </docblock>
+      <parameter name="config" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="setup" start="31" end="35" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Setup function that aborts if already setup"/>
+        <param description="instance" variable="$config" type="object">
+          <type full="HTMLPurifier_Config" namespace="" name="HTMLPurifier_Config"/>
+        </param>
+      </docblock>
+      <parameter name="config" byreference="false" type="{unknown}"/>
+    </method>
+  </parent>
+</class>

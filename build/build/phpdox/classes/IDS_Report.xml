@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="IDS_Report" namespace="" name="IDS_Report" abstract="false" final="false" start="53" end="333">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS" file="Report.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/Report.php" size="9071" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="97da209243e826c9703bc6927c3499653953d369" relative="external/phpids/0.6/lib/IDS/Report.php"/>
+  <docblock>
+    <description compact="PHPIDS report object">The report objects collects a number of events and thereby presents the
+detected results. It provides a convenient API to work with the results.
+
+Note that this class implements Countable, IteratorAggregate and
+a __toString() method</description>
+    <category value="Security"/>
+    <package value="PHPIDS"/>
+    <author value="Christian Matthies &lt;ch0012@gmail.com&gt;"/>
+    <author value="Mario Heiderich &lt;mario.heiderich@gmail.com&gt;"/>
+    <author value="Lars Strojny &lt;lars@strojny.net&gt;"/>
+    <copyright value="2007 The PHPIDS Group"/>
+    <license name="http://www.gnu.org/licenses/lgpl.html LGPL"/>
+    <version value="Release: $Id:Report.php 517 2007-09-15 15:04:13Z mario $"/>
+    <link value="http://php-ids.org/"/>
+  </docblock>
+  <implements full="Countable" namespace="" name="Countable"/>
+  <implements full="IteratorAggregate" namespace="" name="IteratorAggregate"/>
+  <member name="events" type="array" default="" visibility="protected" static="false" line="61">
+    <docblock>
+      <description compact="Event container"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="tags" type="array" default="" visibility="protected" static="false" line="71">
+    <docblock>
+      <description compact="List of affected tags">This list of tags is collected from the collected event objects on
+demand when IDS_Report-&gt;getTags() is called</description>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="impact" type="integer" default="0" visibility="protected" static="false" line="81">
+    <docblock>
+      <description compact="Impact level">The impact level is calculated on demand by adding the results of the
+event objects on IDS_Report-&gt;getImpact()</description>
+      <var type="integer"/>
+    </docblock>
+  </member>
+  <member name="centrifuge" type="array" default="" visibility="protected" static="false" line="91">
+    <docblock>
+      <description compact="Centrifuge data">This variable - initiated as an empty array - carries all information
+about the centrifuge data if available</description>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="100" end="107" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Constructor"/>
+      <param description="the events the report should include" type="array" variable="$events"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="events" byreference="false" type="{unknown}" default="" constant="null"/>
+  </constructor>
+  <method name="addEvent" start="116" end="122" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Adds an IDS_Event object to the report"/>
+      <param description="IDS_Event" type="object" variable="$event"/>
+      <return description="$this" type="object"/>
+    </docblock>
+    <parameter name="event" byreference="false" type="object">
+      <type full="IDS_Event" namespace="" name="IDS_Event"/>
+    </parameter>
+  </method>
+  <method name="getEvent" start="135" end="148" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get event by name">In most cases an event is identified by the key of the variable that
+contained maliciously appearing content</description>
+      <param description="the event name" type="object" variable="$name">
+        <type full="scalar" namespace="" name="scalar"/>
+      </param>
+      <throws description="if argument is invalid" type="object">
+        <type full="InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+      </throws>
+      <return description="IDS_Event object or false if the event does not exist" type="mixed"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getTags" start="155" end="169" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns list of affected tags"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="getImpact" start="179" end="189" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns total impact">Each stored IDS_Event object and its IDS_Filter sub-object are called
+to calculate the overall impact level of this request</description>
+      <return type="integer"/>
+    </docblock>
+  </method>
+  <method name="hasEvent" start="200" end="207" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Checks if a specific event with given name exists"/>
+      <param description="the event name" type="object" variable="$name">
+        <type full="scalar" namespace="" name="scalar"/>
+      </param>
+      <throws description="if argument is illegal" type="object">
+        <type full="InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+      </throws>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="count" start="214" end="217" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns total amount of events"/>
+      <return type="integer"/>
+    </docblock>
+  </method>
+  <method name="getIterator" start="228" end="231" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return iterator object">In order to provide the possibility to directly iterate over the
+IDS_Event object the IteratorAggregate is implemented. One can easily
+use foreach() to iterate through all stored IDS_Event objects.</description>
+      <return type="object">
+        <type full="Iterator" namespace="" name="Iterator"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="isEmpty" start="238" end="241" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Checks if any events are registered"/>
+      <return type="boolean"/>
+    </docblock>
+  </method>
+  <method name="clear" start="248" end="252" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Clears calculated/collected values"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getCentrifuge" start="260" end="264" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="This method returns the centrifuge property or null if not filled with data"/>
+      <return type="object">
+        <type full="array/null" namespace="" name="array/null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setCentrifuge" start="275" end="282" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="This method sets the centrifuge property"/>
+      <param description="the centrifuge data" type="array" variable="$centrifuge"/>
+      <throws description="if argument is illegal" type="object">
+        <type full="InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+      </throws>
+      <return description="true is arguments were valid" type="boolean"/>
+    </docblock>
+    <parameter name="centrifuge" byreference="false" type="array" default=""/>
+  </method>
+  <method name="__toString" start="289" end="332" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Directly outputs all available information"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <interface full="Countable" namespace="" name="Countable">
+    <method name="count" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact="Count elements of an object"/>
+      <return type="int"/>
+    </docblock>
+  </method>
+  </interface>
+  <interface full="IteratorAggregate" namespace="" name="IteratorAggregate">
+    <extends full="Traversable" namespace="" name="Traversable"/>
+    <method name="getIterator" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact="Retrieve an external iterator"/>
+      <return type="Traversable"/>
+    </docblock>
+  </method>
+  </interface>
+</class>

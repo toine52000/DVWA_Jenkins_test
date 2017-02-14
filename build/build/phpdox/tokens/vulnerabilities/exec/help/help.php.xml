@@ -1,0 +1,185 @@
+<?xml version="1.0"?>
+<source xmlns="http://xml.phpdox.net/token">
+  <file xmlns="http://xml.phpdox.net/src" path="/home/user/Documents/DVWA-master/build/../src/vulnerabilities/exec/help" file="help.php" realpath="/home/user/Documents/DVWA-master/src/vulnerabilities/exec/help/help.php" size="3178" time="2017-02-13T08:45:28+00:00" unixtime="1486975528" sha1="5ec0f936967eafba1b3693b785b6690b737052f6" relative="vulnerabilities/exec/help/help.php"/>
+  <line no="1">
+    <token name="T_INLINE_HTML">&lt;div class="body_padded"&gt;</token>
+  </line>
+  <line no="2">
+    <token name="T_INLINE_HTML">	&lt;h1&gt;Help - Command Injection&lt;/h1&gt;</token>
+  </line>
+  <line no="3"/>
+  <line no="4">
+    <token name="T_INLINE_HTML">	&lt;div id="code"&gt;</token>
+  </line>
+  <line no="5">
+    <token name="T_INLINE_HTML">	&lt;table width='100%' bgcolor='white' style="border:2px #C0C0C0 solid"&gt;</token>
+  </line>
+  <line no="6">
+    <token name="T_INLINE_HTML">	&lt;tr&gt;</token>
+  </line>
+  <line no="7">
+    <token name="T_INLINE_HTML">	&lt;td&gt;&lt;div id="code"&gt;</token>
+  </line>
+  <line no="8">
+    <token name="T_INLINE_HTML">		&lt;h3&gt;About&lt;/h3&gt;</token>
+  </line>
+  <line no="9">
+    <token name="T_INLINE_HTML">		&lt;p&gt;The purpose of the command injection attack is to inject and execute commands specified by the attacker in the vulnerable application.</token>
+  </line>
+  <line no="10">
+    <token name="T_INLINE_HTML">			In situation like this, the application, which executes unwanted system commands, is like a pseudo system shell, and the attacker may use it</token>
+  </line>
+  <line no="11">
+    <token name="T_INLINE_HTML">			as any authorized system user. However, commands are executed with the same privileges and environment as the web service has.&lt;/p&gt;</token>
+  </line>
+  <line no="12"/>
+  <line no="13">
+    <token name="T_INLINE_HTML">		&lt;p&gt;Command injection attacks are possible in most cases because of lack of correct input data validation, which can be manipulated by the attacker</token>
+  </line>
+  <line no="14">
+    <token name="T_INLINE_HTML">			(forms, cookies, HTTP headers etc.).&lt;/p&gt;</token>
+  </line>
+  <line no="15"/>
+  <line no="16">
+    <token name="T_INLINE_HTML">		&lt;p&gt;The syntax and commands may differ between the Operating Systems (OS), such as Linux and Windows, depending on their desired actions.&lt;/p&gt;</token>
+  </line>
+  <line no="17"/>
+  <line no="18">
+    <token name="T_INLINE_HTML">		&lt;p&gt;This attack may also be called "Remote Command Execution (RCE)".&lt;/p&gt;</token>
+  </line>
+  <line no="19"/>
+  <line no="20">
+    <token name="T_INLINE_HTML">		&lt;br /&gt;&lt;hr /&gt;&lt;br /&gt;</token>
+  </line>
+  <line no="21"/>
+  <line no="22">
+    <token name="T_INLINE_HTML">		&lt;h3&gt;Objective&lt;/h3&gt;</token>
+  </line>
+  <line no="23">
+    <token name="T_INLINE_HTML">		&lt;p&gt;Remotely, find out the user of the web service on the OS, as well as the machines hostname via RCE.&lt;/p&gt;</token>
+  </line>
+  <line no="24"/>
+  <line no="25">
+    <token name="T_INLINE_HTML">		&lt;br /&gt;&lt;hr /&gt;&lt;br /&gt;</token>
+  </line>
+  <line no="26"/>
+  <line no="27">
+    <token name="T_INLINE_HTML">		&lt;h3&gt;Low Level&lt;/h3&gt;</token>
+  </line>
+  <line no="28">
+    <token name="T_INLINE_HTML">		&lt;p&gt;This allows for direct input into one of &lt;u&gt;many PHP functions&lt;/u&gt; that will execute commands on the OS. It is possible to escape out of the designed command and</token>
+  </line>
+  <line no="29">
+    <token name="T_INLINE_HTML">			executed unintentional actions.&lt;/p&gt;</token>
+  </line>
+  <line no="30">
+    <token name="T_INLINE_HTML">		&lt;p&gt;This can be done by adding on to the request, "once the command has executed successfully, run this command".</token>
+  </line>
+  <line no="31">
+    <token name="T_INLINE_HTML">		&lt;pre&gt;Spoiler: &lt;span class="spoiler"&gt;To add a command "&amp;&amp;"&lt;/span&gt;. Example: &lt;span class="spoiler"&gt;127.0.0.1 &amp;&amp; dir&lt;/span&gt;.&lt;/pre&gt;</token>
+  </line>
+  <line no="32"/>
+  <line no="33">
+    <token name="T_INLINE_HTML">		&lt;br /&gt;</token>
+  </line>
+  <line no="34"/>
+  <line no="35">
+    <token name="T_INLINE_HTML">		&lt;h3&gt;Medium Level&lt;/h3&gt;</token>
+  </line>
+  <line no="36">
+    <token name="T_INLINE_HTML">		&lt;p&gt;The developer has read up on some of the issues with command injection, and placed in various pattern patching to filter the input. However, this isn't enough.&lt;/p&gt;</token>
+  </line>
+  <line no="37">
+    <token name="T_INLINE_HTML">		&lt;p&gt;Various other system syntaxes can be used to break out of the desired command.&lt;/p&gt;</token>
+  </line>
+  <line no="38">
+    <token name="T_INLINE_HTML">		&lt;pre&gt;Spoiler: &lt;span class="spoiler"&gt;e.g. background the ping command&lt;/span&gt;.&lt;/pre&gt;</token>
+  </line>
+  <line no="39"/>
+  <line no="40">
+    <token name="T_INLINE_HTML">		&lt;br /&gt;</token>
+  </line>
+  <line no="41"/>
+  <line no="42">
+    <token name="T_INLINE_HTML">		&lt;h3&gt;High Level&lt;/h3&gt;</token>
+  </line>
+  <line no="43">
+    <token name="T_INLINE_HTML">		&lt;p&gt;In the high level, the developer goes back to the drawing board and puts in even more pattern to match. But even this isn't enough.&lt;/p&gt;</token>
+  </line>
+  <line no="44">
+    <token name="T_INLINE_HTML">		&lt;p&gt;The developer has either made a slight typo with the filters and believes a certain PHP command will save them from this mistake.&lt;/p&gt;</token>
+  </line>
+  <line no="45">
+    <token name="T_INLINE_HTML">		&lt;pre&gt;Spoiler: &lt;span class="spoiler"&gt;</token>
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_ECHO">echo</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">dvwaExternalLinkUrlGet</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'https://secure.php.net/manual/en/function.trim.php'</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'trim()'</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="46">
+    <token name="T_INLINE_HTML">			removes all leading &amp; trailing spaces, right?&lt;/span&gt;.&lt;/pre&gt;</token>
+  </line>
+  <line no="47"/>
+  <line no="48">
+    <token name="T_INLINE_HTML">		&lt;br /&gt;</token>
+  </line>
+  <line no="49"/>
+  <line no="50">
+    <token name="T_INLINE_HTML">		&lt;h3&gt;Impossible Level&lt;/h3&gt;</token>
+  </line>
+  <line no="51">
+    <token name="T_INLINE_HTML">		&lt;p&gt;In the impossible level, the challenge has been re-written, only to allow a very stricted input. If this doesn't match and doesn't produce a certain result,</token>
+  </line>
+  <line no="52">
+    <token name="T_INLINE_HTML">			it will not be allowed to execute. Rather than "black listing" filtering (allowing any input and removing unwanted), this uses "white listing" (only allow certain values).&lt;/p&gt;</token>
+  </line>
+  <line no="53">
+    <token name="T_INLINE_HTML">	&lt;/div&gt;&lt;/td&gt;</token>
+  </line>
+  <line no="54">
+    <token name="T_INLINE_HTML">	&lt;/tr&gt;</token>
+  </line>
+  <line no="55">
+    <token name="T_INLINE_HTML">	&lt;/table&gt;</token>
+  </line>
+  <line no="56"/>
+  <line no="57">
+    <token name="T_INLINE_HTML">	&lt;/div&gt;</token>
+  </line>
+  <line no="58"/>
+  <line no="59">
+    <token name="T_INLINE_HTML">	&lt;br /&gt;</token>
+  </line>
+  <line no="60"/>
+  <line no="61">
+    <token name="T_INLINE_HTML">	&lt;p&gt;Reference: </token>
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_ECHO">echo</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">dvwaExternalLinkUrlGet</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'https://www.owasp.org/index.php/Command_Injection'</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">&lt;/p&gt;</token>
+  </line>
+  <line no="62">
+    <token name="T_INLINE_HTML">&lt;/div&gt;</token>
+  </line>
+  <line no="63"/>
+</source>

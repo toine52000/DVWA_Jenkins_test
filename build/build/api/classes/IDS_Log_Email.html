@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - IDS_Log_Email</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.html">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.html">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.html">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.html">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.html">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.html">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.html">Classes</a>
+          </li>
+          <li class="separator">IDS_Log_Email</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/external/phpids/0.6/lib/IDS/Log/Email.php.html#line52">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>IDS_Log_Email</h1>
+        <h4>Email logging wrapper</h4>
+        <p>The Email wrapper is designed to send reports via email. It implements the<br/>singleton pattern.</p>
+        <ul>
+          <li>Author: Christian Matthies &lt;ch0012@gmail.com&gt;</li>
+          <li>Copyright: 2007 The PHPIDS Group</li>
+          <li>License: http://www.gnu.org/licenses/lgpl.html LGPL</li>
+        </ul>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class IDS_Log_Email
+                implements
+                <a title="IDS_Log_Interface" href="../interfaces/IDS_Log_Interface.html">IDS_Log_Interface</a>
+            {<br/><ul class="none"><li>// members</li><li>private array <a href="#members">$recipients</a> =
+                        ;
+                    </li><li>private string <a href="#members">$subject</a> =
+                        null;
+                    </li><li>private string <a href="#members">$headers</a> =
+                        null;
+                    </li><li>private boolean <a href="#members">$safemode</a> =
+                        true;
+                    </li><li>private boolean <a href="#members">$urlencode</a> =
+                        true;
+                    </li><li>private integer <a href="#members">$allowed_rate</a> =
+                        15;
+                    </li><li>private string <a href="#members">$tmp_path</a> =
+                        'IDS/tmp/';
+                    </li><li>private string <a href="#members">$file_prefix</a> =
+                        'PHPIDS_Log_Email_';
+                    </li><li>private string <a href="#members">$ip</a> =
+                        'local/unknown';
+                    </li><li>private static array <a href="#members">$instance</a> =
+                        ;
+                    </li></ul><ul class="none"><li>// methods</li><li>protected void <a title="IDS_Log_Email" href="../classes/IDS_Log_Email/__construct.html">__construct</a>()
+                    </li><li>public static  <a title="IDS_Log_Email" href="../classes/IDS_Log_Email/getInstance.html">getInstance</a>()
+                    </li><li>private void <a title="IDS_Log_Email" href="../classes/IDS_Log_Email/__clone.html">__clone</a>()
+                    </li><li>protected boolean <a title="IDS_Log_Email" href="../classes/IDS_Log_Email/isSpamAttempt.html">isSpamAttempt</a>()
+                    </li><li>protected string <a title="IDS_Log_Email" href="../classes/IDS_Log_Email/prepareData.html">prepareData</a>()
+                    </li><li>public boolean <a title="IDS_Log_Email" href="../classes/IDS_Log_Email/execute.html">execute</a>()
+                    </li><li>protected boolean <a title="IDS_Log_Email" href="../classes/IDS_Log_Email/send.html">send</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Implements</h4>
+          <ul>
+            <li>
+              <a title="IDS_Log_Interface" href="../interfaces/IDS_Log_Interface.html">IDS_Log_Interface</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="allowed_rate"><strong>$allowed_rate</strong>
+                —
+                integer<br/><span class="indent">Send rate</span></li>
+            <li id="file_prefix"><strong>$file_prefix</strong>
+                —
+                string<br/><span class="indent">File prefix for tmp files</span></li>
+            <li id="headers"><strong>$headers</strong>
+                —
+                string<br/><span class="indent">Additional mail headers</span></li>
+            <li id="instance"><strong>$instance</strong>
+                —
+                array<br/><span class="indent">Instance container</span></li>
+            <li id="ip"><strong>$ip</strong>
+                —
+                string<br/><span class="indent">Holds current remote address</span></li>
+            <li id="recipients"><strong>$recipients</strong>
+                —
+                array<br/><span class="indent">Recipient container</span></li>
+            <li id="safemode"><strong>$safemode</strong>
+                —
+                boolean<br/><span class="indent">Safemode switch</span></li>
+            <li id="subject"><strong>$subject</strong>
+                —
+                string<br/><span class="indent">Mail subject</span></li>
+            <li id="tmp_path"><strong>$tmp_path</strong>
+                —
+                string<br/><span class="indent">PHPIDS temp directory</span></li>
+            <li id="urlencode"><strong>$urlencode</strong>
+                —
+                boolean<br/><span class="indent">Urlencode for result strings</span></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>private</h4>
+          <ul>
+            <li id="__clone"><a title="IDS_Log_Email" href="../classes/IDS_Log_Email/__clone.html">__clone()</a>
+                — Permitting to clone this object</li>
+          </ul>
+          <h4>protected</h4>
+          <ul>
+            <li id="__construct"><a title="IDS_Log_Email" href="../classes/IDS_Log_Email/__construct.html">__construct()</a>
+                — Constructor</li>
+            <li id="isSpamAttempt"><a title="IDS_Log_Email" href="../classes/IDS_Log_Email/isSpamAttempt.html">isSpamAttempt()</a>
+                — Detects spam attempts</li>
+            <li id="prepareData"><a title="IDS_Log_Email" href="../classes/IDS_Log_Email/prepareData.html">prepareData()</a>
+                — Prepares data</li>
+            <li id="send"><a title="IDS_Log_Email" href="../classes/IDS_Log_Email/send.html">send()</a>
+                — Sends an email</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="execute"><a title="IDS_Log_Email" href="../classes/IDS_Log_Email/execute.html">execute()</a>
+                — Sends the report to registered recipients</li>
+            <li id="getInstance"><a title="IDS_Log_Email" href="../classes/IDS_Log_Email/getInstance.html">getInstance()</a>
+                — Returns an instance of this class</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.9.0 - Copyright (C) 2010 - 2017 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

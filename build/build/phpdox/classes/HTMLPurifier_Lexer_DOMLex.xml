@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="HTMLPurifier_Lexer_DOMLex" namespace="" name="HTMLPurifier_Lexer_DOMLex" abstract="false" final="false" start="27" end="211">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Lexer" file="DOMLex.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Lexer/DOMLex.php" size="8648" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="00fc402b13a8f10f8a90c7e85ed90b270f2dcbce" relative="external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Lexer/DOMLex.php"/>
+  <docblock>
+    <description compact="Parser that uses PHP 5's DOM extension (part of the core).">In PHP 5, the DOM XML extension was revamped into DOM and added to the core.
+It gives us a forgiving HTML parser, which we use to transform the HTML
+into a DOM, and then into the tokens.  It is blazingly fast (for large
+documents, it performs twenty times faster than
+HTMLPurifier_Lexer_DirectLex,and is the default choice for PHP 5.</description>
+    <note value="Any empty elements will have empty tokens associated with them, even if">this is prohibited by the spec. This is cannot be fixed until the spec
+comes into play.</note>
+    <note value="PHP's DOM extension does not actually parse any entities, we use">our own function to do that.</note>
+    <warning value="DOM tends to drop whitespace, which may wreak havoc on indenting.">If this is a huge problem, due to the fact that HTML is hand
+         edited and you are unable to get a parser cache that caches the
+         the output of HTML Purifier while keeping the original HTML lying
+         around, you may want to run Tidy on the resulting output or use
+         HTMLPurifier_DirectLex</warning>
+  </docblock>
+  <extends full="HTMLPurifier_Lexer" namespace="" name="HTMLPurifier_Lexer"/>
+  <member name="factory" visibility="private" static="false" line="30"/>
+  <constructor name="__construct" start="32" end="36" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="setup the factory" line="33"/>
+    </inline>
+  </constructor>
+  <method name="tokenizeHTML" start="38" end="72" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="html" byreference="false" type="{unknown}"/>
+    <parameter name="config" byreference="false" type="{unknown}"/>
+    <parameter name="context" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="attempt to armor stray angled brackets that cannot possibly" line="42"/>
+      <comment value="form tags and thus are probably being used as emoticons" line="43"/>
+      <comment value="preprocess html, essential for UTF-8" line="55"/>
+      <comment value="theoretically, the above has this covered" line="59"/>
+    </inline>
+  </method>
+  <method name="tokenizeDOM" start="84" end="149" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Recursive function that tokenizes a node, putting it into an accumulator."/>
+      <param description="to be tokenized." variable="$node" type="object">
+        <type full="DOMNode" namespace="" name="DOMNode"/>
+      </param>
+      <param description="of already tokenized tokens." variable="$tokens" type="object">
+        <type full="Array-list" namespace="" name="Array-list"/>
+      </param>
+      <param description="whether or start and close are collected, set to" variable="$collect" type="object">false at first recursion because it's the implicit DIV
+                 tag you're dealing with.<type full="Says" namespace="" name="Says"/></param>
+      <returns value="Tokens of node appended to previously passed tokens."/>
+    </docblock>
+    <parameter name="node" byreference="false" type="{unknown}"/>
+    <parameter name="tokens" byreference="true" type="{unknown}"/>
+    <parameter name="collect" byreference="false" type="boolean" default="false"/>
+    <inline>
+      <comment value="intercept non element nodes. WE MUST catch all of them," line="86"/>
+      <comment value="but we're not getting the character reference nodes because" line="87"/>
+      <comment value="those should have been preprocessed" line="88"/>
+      <comment value="We still have to make sure that the element actually IS empty" line="127"/>
+    </inline>
+  </method>
+  <method name="transformAttrToAssoc" start="157" end="167" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Converts a DOMNamedNodeMap of DOMAttr objects into an assoc array."/>
+      <param description="of DOMAttr objects." variable="$attribute_list" type="object">
+        <type full="DOMNamedNodeMap" namespace="" name="DOMNamedNodeMap"/>
+      </param>
+      <returns value="Associative array of attributes."/>
+    </docblock>
+    <parameter name="node_map" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="NamedNodeMap is documented very well, so we're using undocumented" line="158"/>
+      <comment value="features, namely, the fact that it implements Iterator and" line="159"/>
+      <comment value="has a -&gt;length attribute" line="160"/>
+    </inline>
+  </method>
+  <method name="muteErrorHandler" start="172" end="172" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="An error handler that mutes all errors"/>
+    </docblock>
+    <parameter name="errno" byreference="false" type="{unknown}"/>
+    <parameter name="errstr" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="callbackUndoCommentSubst" start="178" end="180" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Callback function for undoing escaping of stray angled brackets in comments"/>
+    </docblock>
+    <parameter name="matches" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="callbackArmorCommentEntities" start="186" end="188" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Callback function that entity-izes ampersands in comments so that callbackUndoCommentSubst doesn't clobber them"/>
+    </docblock>
+    <parameter name="matches" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="wrapHTML" start="193" end="209" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Wraps an HTML fragment in the necessary HTML"/>
+    </docblock>
+    <parameter name="html" byreference="false" type="{unknown}"/>
+    <parameter name="config" byreference="false" type="{unknown}"/>
+    <parameter name="context" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="No protection if $html contains a stray &lt;/div&gt;!" line="206"/>
+    </inline>
+  </method>
+  <parent full="HTMLPurifier_Lexer" namespace="" name="HTMLPurifier_Lexer">
+    <member name="tracksLineNumbers" type="boolean" default="false" visibility="public" static="false" line="49">
+      <docblock>
+        <description compact="Whether or not this lexer implements line-number/column-number tracking.">If it does, set to true.</description>
+      </docblock>
+    </member>
+    <member name="_special_entity2str" type="array" default="" visibility="protected" static="false" line="149">
+      <docblock>
+        <description compact="Most common entity to raw value conversion table for special entities."/>
+      </docblock>
+    </member>
+    <method name="create" start="68" end="138" abstract="false" final="false" static="true" visibility="public">
+      <docblock>
+        <description compact="Retrieves or sets the default Lexer as a Prototype Factory.">By default HTMLPurifier_Lexer_DOMLex will be returned. There are
+a few exceptions involving special features that only DirectLex
+implements.</description>
+        <note value="The behavior of this class has changed, rather than accepting">a prototype object, it now accepts a configuration object.
+      To specify your own prototype, set %Core.LexerImpl to it.
+      This change in behavior de-singletonizes the lexer object.</note>
+        <param description="of HTMLPurifier_Config" variable="$config" type="object">
+          <type full="Instance" namespace="" name="Instance"/>
+        </param>
+        <return description="lexer." type="object">
+          <type full="Concrete" namespace="" name="Concrete"/>
+        </return>
+      </docblock>
+      <parameter name="config" byreference="false" type="{unknown}"/>
+      <inline>
+        <comment value="once PHP DOM implements native line numbers, or we" line="130"/>
+        <comment value="hack out something using XSLT, remove this stipulation" line="131"/>
+      </inline>
+    </method>
+    <constructor name="__construct" start="142" end="144" abstract="false" final="false" static="false" visibility="public"/>
+    <method name="parseData" start="174" end="196" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Parses special entities into the proper characters.">This string will translate escaped versions of the special characters
+into the correct ones.</description>
+        <warning>You should be able to treat the output of this function as
+completely parsed, but that's only because all other entities should
+have been handled previously in substituteNonSpecialEntities()</warning>
+        <param description="character data to be parsed." variable="$string" type="object">
+          <type full="String" namespace="" name="String"/>
+        </param>
+        <returns value="Parsed character data."/>
+      </docblock>
+      <parameter name="string" byreference="false" type="{unknown}"/>
+      <inline>
+        <comment value="following functions require at least one character" line="176"/>
+        <comment value="subtracts amps that cannot possibly be escaped" line="179"/>
+        <comment value="abort if no entities" line="183"/>
+        <comment value="code duplication for sake of optimization, see above" line="187"/>
+        <comment value="hmm... now we have some uncommon entities. Use the callback." line="193"/>
+      </inline>
+    </method>
+    <method name="tokenizeHTML" start="204" end="206" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Lexes an HTML string into tokens."/>
+        <param description="HTML." variable="$string" type="object">
+          <type full="String" namespace="" name="String"/>
+        </param>
+        <return description="array representation of HTML." type="object">
+          <type full="HTMLPurifier_Token" namespace="" name="HTMLPurifier_Token"/>
+        </return>
+      </docblock>
+      <parameter name="string" byreference="false" type="{unknown}"/>
+      <parameter name="config" byreference="false" type="{unknown}"/>
+      <parameter name="context" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="escapeCDATA" start="214" end="220" abstract="false" final="false" static="true" visibility="protected">
+      <docblock>
+        <description compact="Translates CDATA sections into regular sections (through escaping)."/>
+        <param description="string to process." variable="$string" type="object">
+          <type full="HTML" namespace="" name="HTML"/>
+        </param>
+        <returns value="HTML with CDATA sections escaped."/>
+      </docblock>
+      <parameter name="string" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="escapeCommentedCDATA" start="225" end="231" abstract="false" final="false" static="true" visibility="protected">
+      <docblock>
+        <description compact="Special CDATA case that is especially convoluted for &lt;script&gt;"/>
+      </docblock>
+      <parameter name="string" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="CDATACallback" start="242" end="245" abstract="false" final="false" static="true" visibility="protected">
+      <docblock>
+        <description compact="Callback function for escapeCDATA() that does the work."/>
+        <warning value="Though this is public in order to let the callback happen,">calling it directly is not recommended.</warning>
+        <params value="$matches PCRE matches array, with index 0 the entire match">and 1 the inside of the CDATA section.</params>
+        <returns value="Escaped internals of the CDATA section."/>
+      </docblock>
+      <parameter name="matches" byreference="false" type="{unknown}"/>
+      <inline>
+        <comment value="not exactly sure why the character set is needed, but whatever" line="243"/>
+      </inline>
+    </method>
+    <method name="normalize" start="252" end="280" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Takes a piece of HTML and normalizes it by converting entities, fixing encoding, extracting bits, and other good stuff."/>
+        <todo value="Consider making protected"/>
+      </docblock>
+      <parameter name="html" byreference="false" type="{unknown}"/>
+      <parameter name="config" byreference="false" type="{unknown}"/>
+      <parameter name="context" byreference="false" type="{unknown}"/>
+      <inline>
+        <comment value="normalize newlines to \n" line="254"/>
+        <comment value="escape CDATA" line="263"/>
+        <comment value="extract body from document if applicable" line="266"/>
+        <comment value="expand entities that aren't the big five" line="271"/>
+        <comment value="clean into wellformed UTF-8 string for an SGML context: this has" line="274"/>
+        <comment value="to be done after entity expansion because the entities sometimes" line="275"/>
+        <comment value="represent non-SGML characters (horror, horror!)" line="276"/>
+      </inline>
+    </method>
+    <method name="extractBody" start="286" end="294" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Takes a string of HTML (fragment or document) and returns the content"/>
+        <todo value="Consider making protected"/>
+      </docblock>
+      <parameter name="html" byreference="false" type="{unknown}"/>
+    </method>
+  </parent>
+  <extenders>
+    <extender full="HTMLPurifier_Lexer_PH5P" namespace="" name="HTMLPurifier_Lexer_PH5P"/>
+  </extenders>
+</class>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - HTMLPurifier_Token_Text</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.html">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.html">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.html">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.html">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.html">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.html">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.html">Classes</a>
+          </li>
+          <li class="separator">HTMLPurifier_Token_Text</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Token/Text.php.html#line12">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>HTMLPurifier_Token_Text</h1>
+        <h4>Concrete text token class.</h4>
+        <p>Text tokens comprise of regular parsed character data (PCDATA) and raw<br/>character data (from the CDATA sections). Internally, their<br/>data is parsed with all entities expanded. Surprisingly, the text token<br/>does have a "tag name" called #PCDATA, which is how the DTD represents it<br/>in permissible child nodes.</p>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class HTMLPurifier_Token_Text
+                extends <a title="HTMLPurifier_Token" href="../classes/HTMLPurifier_Token.html">HTMLPurifier_Token</a>
+            {<br/><ul class="none"><li>// members</li><li>public string <a href="#members">$name</a> =
+                        '#PCDATA';
+                    </li><li>public  <a href="#members">$data</a>;
+                    </li><li>public  <a href="#members">$is_whitespace</a>;
+                    </li></ul><ul class="none"><li>// Inherited members from <span title="HTMLPurifier_Token">HTMLPurifier_Token</span></li><li>public  <a href="#members">$line</a>;
+                        </li><li>public  <a href="#members">$col</a>;
+                        </li><li>public array <a href="#members">$armor</a>;
+                        </li><li>public  <a href="#members">$skip</a>;
+                        </li><li>public  <a href="#members">$rewind</a>;
+                        </li></ul><ul class="none"><li>// methods</li><li>public void <a title="HTMLPurifier_Token_Text" href="../classes/HTMLPurifier_Token_Text/__construct.html">__construct</a>()
+                    </li></ul><ul class="none"><li>// Inherited methods from <span title="HTMLPurifier_Token">HTMLPurifier_Token</span></li><li>public void <a title="HTMLPurifier_Token" href="../classes/HTMLPurifier_Token/__get.html">__get</a>()
+                        </li><li>public void <a title="HTMLPurifier_Token" href="../classes/HTMLPurifier_Token/position.html">position</a>()
+                        </li><li>public void <a title="HTMLPurifier_Token" href="../classes/HTMLPurifier_Token/rawPosition.html">rawPosition</a>()
+                        </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Extends</h4>
+          <ul>
+            <li>
+              <a title="HTMLPurifier_Token" href="../classes/HTMLPurifier_Token.html">HTMLPurifier_Token</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>public</h4>
+          <ul class="members">
+            <li id="armor">
+              <strong>$armor</strong>
+              <br/>
+              <span class="indent">Lookup array of processing that this token is exempt from.</span>
+            </li>
+            <li id="col">
+              <strong>$col</strong>
+            </li>
+            <li id="data">
+              <strong>$data</strong>
+            </li>
+            <li id="is_whitespace">
+              <strong>$is_whitespace</strong>
+            </li>
+            <li id="line">
+              <strong>$line</strong>
+            </li>
+            <li id="name">
+              <strong>$name</strong>
+            </li>
+            <li id="rewind">
+              <strong>$rewind</strong>
+            </li>
+            <li id="skip">
+              <strong>$skip</strong>
+              <br/>
+              <span class="indent">Used during MakeWellFormed.</span>
+            </li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h3>Inherited from <a title="HTMLPurifier_Token" href="../classes/HTMLPurifier_Token.html">HTMLPurifier_Token</a></h3>
+          <h4>public</h4>
+          <ul>
+            <li id="__get">
+              <a title="HTMLPurifier_Token" href="../classes/HTMLPurifier_Token/__get.html">__get()</a>
+            </li>
+            <li id="position"><a title="HTMLPurifier_Token" href="../classes/HTMLPurifier_Token/position.html">position()</a>
+                — Sets the position of the token in the source document.</li>
+            <li id="rawPosition"><a title="HTMLPurifier_Token" href="../classes/HTMLPurifier_Token/rawPosition.html">rawPosition()</a>
+                — Convenience function for DirectLex settings line/col position.</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.9.0 - Copyright (C) 2010 - 2017 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

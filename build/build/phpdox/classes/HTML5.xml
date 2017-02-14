@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="HTML5" namespace="" name="HTML5" abstract="false" final="false" start="63" end="1178">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Lexer" file="PH5P.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Lexer/PH5P.php" size="168940" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="40591263575aae03d60e52b4b02bcf543ab312c1" relative="external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Lexer/PH5P.php"/>
+  <member name="data" visibility="private" static="false" line="64"/>
+  <member name="char" visibility="private" static="false" line="65"/>
+  <member name="EOF" visibility="private" static="false" line="66"/>
+  <member name="state" visibility="private" static="false" line="67"/>
+  <member name="tree" visibility="private" static="false" line="68"/>
+  <member name="token" visibility="private" static="false" line="69"/>
+  <member name="content_model" visibility="private" static="false" line="70"/>
+  <member name="escape" type="boolean" default="false" visibility="private" static="false" line="71"/>
+  <member name="entities" type="array" default="" visibility="private" static="false" line="72"/>
+  <constant type="integer" name="PCDATA" value="0"/>
+  <constant type="integer" name="RCDATA" value="1"/>
+  <constant type="integer" name="CDATA" value="2"/>
+  <constant type="integer" name="PLAINTEXT" value="3"/>
+  <constant type="integer" name="DOCTYPE" value="0"/>
+  <constant type="integer" name="STARTTAG" value="1"/>
+  <constant type="integer" name="ENDTAG" value="2"/>
+  <constant type="integer" name="COMMENT" value="3"/>
+  <constant type="integer" name="CHARACTR" value="4"/>
+  <constant type="integer" name="EOF" value="5"/>
+  <constructor name="__construct" start="127" end="142" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="data" byreference="false" type="{unknown}"/>
+  </constructor>
+  <method name="save" start="144" end="146" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="char" start="148" end="152" abstract="false" final="false" static="false" visibility="private"/>
+  <method name="character" start="154" end="162" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="s" byreference="false" type="{unknown}"/>
+    <parameter name="l" byreference="false" type="integer" default="0"/>
+  </method>
+  <method name="characters" start="164" end="166" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="char_class" byreference="false" type="{unknown}"/>
+    <parameter name="start" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="dataState" start="168" end="266" abstract="false" final="false" static="false" visibility="private">
+    <inline>
+      <comment value="Consume the next input character" line="169"/>
+    </inline>
+  </method>
+  <method name="entityDataState" start="268" end="282" abstract="false" final="false" static="false" visibility="private">
+    <inline>
+      <comment value="Attempt to consume an entity." line="269"/>
+      <comment value="If nothing is returned, emit a U+0026 AMPERSAND character token." line="272"/>
+      <comment value="Otherwise, emit the character token that was returned." line="273"/>
+      <comment value="Finally, switch to the data state." line="280"/>
+    </inline>
+  </method>
+  <method name="tagOpenState" start="284" end="367" abstract="false" final="false" static="false" visibility="private"/>
+  <method name="closeTagOpenState" start="369" end="440" abstract="false" final="false" static="false" visibility="private"/>
+  <method name="tagNameState" start="442" end="484" abstract="false" final="false" static="false" visibility="private">
+    <inline>
+      <comment value="Consume the next input character:" line="443"/>
+    </inline>
+  </method>
+  <method name="beforeAttributeNameState" start="486" end="533" abstract="false" final="false" static="false" visibility="private">
+    <inline>
+      <comment value="Consume the next input character:" line="487"/>
+    </inline>
+  </method>
+  <method name="attributeNameState" start="535" end="584" abstract="false" final="false" static="false" visibility="private">
+    <inline>
+      <comment value="Consume the next input character:" line="536"/>
+    </inline>
+  </method>
+  <method name="afterAttributeNameState" start="586" end="638" abstract="false" final="false" static="false" visibility="private">
+    <inline>
+      <comment value="Consume the next input character:" line="587"/>
+    </inline>
+  </method>
+  <method name="beforeAttributeValueState" start="640" end="686" abstract="false" final="false" static="false" visibility="private">
+    <inline>
+      <comment value="Consume the next input character:" line="641"/>
+    </inline>
+  </method>
+  <method name="attributeValueDoubleQuotedState" start="688" end="721" abstract="false" final="false" static="false" visibility="private">
+    <inline>
+      <comment value="Consume the next input character:" line="689"/>
+    </inline>
+  </method>
+  <method name="attributeValueSingleQuotedState" start="723" end="756" abstract="false" final="false" static="false" visibility="private">
+    <inline>
+      <comment value="Consume the next input character:" line="724"/>
+    </inline>
+  </method>
+  <method name="attributeValueUnquotedState" start="758" end="792" abstract="false" final="false" static="false" visibility="private">
+    <inline>
+      <comment value="Consume the next input character:" line="759"/>
+    </inline>
+  </method>
+  <method name="entityInAttributeValueState" start="794" end="807" abstract="false" final="false" static="false" visibility="private">
+    <inline>
+      <comment value="Attempt to consume an entity." line="795"/>
+      <comment value="If nothing is returned, append a U+0026 AMPERSAND character to the" line="798"/>
+      <comment value="current attribute's value. Otherwise, emit the character token that" line="799"/>
+      <comment value="was returned." line="800"/>
+    </inline>
+  </method>
+  <method name="bogusCommentState" start="809" end="833" abstract="false" final="false" static="false" visibility="private">
+    <inline>
+      <comment value="Consume every character up to the first U+003E GREATER-THAN SIGN" line="810"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="character (&gt;) or the end of the file (EOF), whichever comes first. Emit" line="811"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="a comment token whose data is the concatenation of all the characters" line="812"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="starting from and including the character that caused the state machine" line="813"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="to switch into the bogus comment state, up to and including the last" line="814"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="consumed character before the U+003E character, if any, or up to the" line="815"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="end of the file otherwise. (If the comment was started by the end of" line="816"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="the file (EOF), the token is empty.)" line="817"/>
+      <comment value="Switch to the data state." line="826"/>
+      <comment value="If the end of the file was reached, reconsume the EOF character." line="829"/>
+    </inline>
+  </method>
+  <method name="markupDeclarationOpenState" start="835" end="861" abstract="false" final="false" static="false" visibility="private">
+    <inline>
+      <comment value="If the next two characters are both U+002D HYPHEN-MINUS (-)" line="836"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="characters, consume those two characters, create a comment token whose" line="837"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="data is the empty string, and switch to the comment state." line="838"/>
+    </inline>
+  </method>
+  <method name="commentState" start="863" end="887" abstract="false" final="false" static="false" visibility="private">
+    <inline>
+      <comment value="Consume the next input character:" line="864"/>
+      <comment value="U+002D HYPHEN-MINUS (-)" line="868"/>
+    </inline>
+  </method>
+  <method name="commentDashState" start="889" end="914" abstract="false" final="false" static="false" visibility="private">
+    <inline>
+      <comment value="Consume the next input character:" line="890"/>
+      <comment value="U+002D HYPHEN-MINUS (-)" line="894"/>
+    </inline>
+  </method>
+  <method name="commentEndState" start="916" end="937" abstract="false" final="false" static="false" visibility="private">
+    <inline>
+      <comment value="Consume the next input character:" line="917"/>
+    </inline>
+  </method>
+  <method name="doctypeState" start="939" end="951" abstract="false" final="false" static="false" visibility="private">
+    <inline>
+      <comment value="Consume the next input character:" line="940"/>
+    </inline>
+  </method>
+  <method name="beforeDoctypeNameState" start="953" end="998" abstract="false" final="false" static="false" visibility="private">
+    <inline>
+      <comment value="Consume the next input character:" line="954"/>
+    </inline>
+  </method>
+  <method name="doctypeNameState" start="1000" end="1027" abstract="false" final="false" static="false" visibility="private">
+    <inline>
+      <comment value="Consume the next input character:" line="1001"/>
+    </inline>
+  </method>
+  <method name="afterDoctypeNameState" start="1029" end="1050" abstract="false" final="false" static="false" visibility="private">
+    <inline>
+      <comment value="Consume the next input character:" line="1030"/>
+    </inline>
+  </method>
+  <method name="bogusDoctypeState" start="1052" end="1069" abstract="false" final="false" static="false" visibility="private">
+    <inline>
+      <comment value="Consume the next input character:" line="1053"/>
+    </inline>
+  </method>
+  <method name="entity" start="1071" end="1159" abstract="false" final="false" static="false" visibility="private">
+    <inline>
+      <comment value="This section defines how to consume an entity. This definition is" line="1074"/>
+      <comment value="used when parsing entities in text and in attributes." line="1075"/>
+      <comment value="The behaviour depends on the identity of the next character (the" line="1077"/>
+      <comment value="one immediately after the U+0026 AMPERSAND character):" line="1078"/>
+      <comment value="Return a character token for the character corresponding to the" line="1156"/>
+      <comment value="entity name (as given by the second column of the entities table)." line="1157"/>
+    </inline>
+  </method>
+  <method name="emitToken" start="1161" end="1170" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="token" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="EOF" start="1172" end="1177" abstract="false" final="false" static="false" visibility="private"/>
+</class>

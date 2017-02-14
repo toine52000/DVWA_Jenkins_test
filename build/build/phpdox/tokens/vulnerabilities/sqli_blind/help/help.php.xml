@@ -1,0 +1,188 @@
+<?xml version="1.0"?>
+<source xmlns="http://xml.phpdox.net/token">
+  <file xmlns="http://xml.phpdox.net/src" path="/home/user/Documents/DVWA-master/build/../src/vulnerabilities/sqli_blind/help" file="help.php" realpath="/home/user/Documents/DVWA-master/src/vulnerabilities/sqli_blind/help/help.php" size="3135" time="2017-02-13T08:45:28+00:00" unixtime="1486975528" sha1="fd3f684a87fa3c592f7fdf11892ee923cd6cce49" relative="vulnerabilities/sqli_blind/help/help.php"/>
+  <line no="1">
+    <token name="T_INLINE_HTML">&lt;div class="body_padded"&gt;</token>
+  </line>
+  <line no="2">
+    <token name="T_INLINE_HTML">	&lt;h1&gt;Help - SQL Injection (Blind)&lt;/h1&gt;</token>
+  </line>
+  <line no="3"/>
+  <line no="4">
+    <token name="T_INLINE_HTML">	&lt;div id="code"&gt;</token>
+  </line>
+  <line no="5">
+    <token name="T_INLINE_HTML">	&lt;table width='100%' bgcolor='white' style="border:2px #C0C0C0 solid"&gt;</token>
+  </line>
+  <line no="6">
+    <token name="T_INLINE_HTML">	&lt;tr&gt;</token>
+  </line>
+  <line no="7">
+    <token name="T_INLINE_HTML">	&lt;td&gt;&lt;div id="code"&gt;</token>
+  </line>
+  <line no="8">
+    <token name="T_INLINE_HTML">		&lt;h3&gt;About&lt;/h3&gt;</token>
+  </line>
+  <line no="9">
+    <token name="T_INLINE_HTML">		&lt;p&gt;When an attacker executes SQL injection attacks, sometimes the server responds with error messages from the database server complaining that the SQL query's syntax is incorrect.</token>
+  </line>
+  <line no="10">
+    <token name="T_INLINE_HTML">			Blind SQL injection is identical to normal SQL Injection except that when an attacker attempts to exploit an application, rather then getting a useful error message,</token>
+  </line>
+  <line no="11">
+    <token name="T_INLINE_HTML">			they get a generic page specified by the developer instead. This makes exploiting a potential SQL Injection attack more difficult but not impossible.</token>
+  </line>
+  <line no="12">
+    <token name="T_INLINE_HTML">			An attacker can still steal data by asking a series of True and False questions through SQL statements, and monitoring how the web application response</token>
+  </line>
+  <line no="13">
+    <token name="T_INLINE_HTML">			(valid entry retunred or 404 header set).&lt;/p&gt;</token>
+  </line>
+  <line no="14"/>
+  <line no="15">
+    <token name="T_INLINE_HTML">		&lt;p&gt;"time based" injection method is often used when there is no visible feedback in how the page different in its response (hence its a blind attack).</token>
+  </line>
+  <line no="16">
+    <token name="T_INLINE_HTML">		 	This means the attacker will wait to see how long the page takes to response back. If it takes longer than normal, their query was successful.&lt;/p&gt;</token>
+  </line>
+  <line no="17"/>
+  <line no="18">
+    <token name="T_INLINE_HTML">		&lt;br /&gt;&lt;hr /&gt;&lt;br /&gt;</token>
+  </line>
+  <line no="19"/>
+  <line no="20">
+    <token name="T_INLINE_HTML">		&lt;h3&gt;Objective&lt;/h3&gt;</token>
+  </line>
+  <line no="21">
+    <token name="T_INLINE_HTML">		&lt;p&gt;Find the version of the SQL database software through a blind SQL attack.&lt;/p&gt;</token>
+  </line>
+  <line no="22"/>
+  <line no="23">
+    <token name="T_INLINE_HTML">		&lt;br /&gt;&lt;hr /&gt;&lt;br /&gt;</token>
+  </line>
+  <line no="24"/>
+  <line no="25">
+    <token name="T_INLINE_HTML">		&lt;h3&gt;Low Level&lt;/h3&gt;</token>
+  </line>
+  <line no="26">
+    <token name="T_INLINE_HTML">		&lt;p&gt;The SQL query uses RAW input that is directly controlled by the attacker. All they need to-do is escape the query and then they are able</token>
+  </line>
+  <line no="27">
+    <token name="T_INLINE_HTML">			to execute any SQL query they wish.&lt;/p&gt;</token>
+  </line>
+  <line no="28">
+    <token name="T_INLINE_HTML">		&lt;pre&gt;Spoiler: &lt;span class="spoiler"&gt;?id=1' AND sleep 5&amp;Submit=Submit&lt;/span&gt;.&lt;/pre&gt;</token>
+  </line>
+  <line no="29"/>
+  <line no="30">
+    <token name="T_INLINE_HTML">		&lt;br /&gt;</token>
+  </line>
+  <line no="31"/>
+  <line no="32">
+    <token name="T_INLINE_HTML">		&lt;h3&gt;Medium Level&lt;/h3&gt;</token>
+  </line>
+  <line no="33">
+    <token name="T_INLINE_HTML">		&lt;p&gt;The medium level uses a form of SQL injection protection, with the function of</token>
+  </line>
+  <line no="34">
+    <token name="T_INLINE_HTML">			"</token>
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_ECHO">echo</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">dvwaExternalLinkUrlGet</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'https://secure.php.net/manual/en/function.mysql-real-escape-string.php'</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'mysql_real_escape_string()'</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">".</token>
+  </line>
+  <line no="35">
+    <token name="T_INLINE_HTML">			However due to the SQL query not having quotes around the parameter, this will not fully protect the query from being altered.&lt;/p&gt;</token>
+  </line>
+  <line no="36"/>
+  <line no="37">
+    <token name="T_INLINE_HTML">		&lt;p&gt;The text box has been replaced with a pre-defined dropdown list and uses POST to submit the form.&lt;/p&gt;</token>
+  </line>
+  <line no="38">
+    <token name="T_INLINE_HTML">		&lt;pre&gt;Spoiler: &lt;span class="spoiler"&gt;?id=1 AND sleep 3&amp;Submit=Submit&lt;/span&gt;.&lt;/pre&gt;</token>
+  </line>
+  <line no="39"/>
+  <line no="40">
+    <token name="T_INLINE_HTML">		&lt;br /&gt;</token>
+  </line>
+  <line no="41"/>
+  <line no="42">
+    <token name="T_INLINE_HTML">		&lt;h3&gt;High Level&lt;/h3&gt;</token>
+  </line>
+  <line no="43">
+    <token name="T_INLINE_HTML">		&lt;p&gt;This is very similar to the low level, however this time the attacker is inputting the value in a different manner.</token>
+  </line>
+  <line no="44">
+    <token name="T_INLINE_HTML">			The input values are being set on a different page, rather than a GET request.&lt;/p&gt;</token>
+  </line>
+  <line no="45">
+    <token name="T_INLINE_HTML">		&lt;pre&gt;Spoiler: &lt;span class="spoiler"&gt;ID: 1' AND sleep 10&amp;Submit=Submit&lt;/span&gt;.</token>
+  </line>
+  <line no="46">
+    <token name="T_INLINE_HTML">			Spoiler: &lt;span class="spoiler"&gt;Should be able to cut out the middle man.&lt;/span&gt;.&lt;/pre&gt;</token>
+  </line>
+  <line no="47"/>
+  <line no="48">
+    <token name="T_INLINE_HTML">		&lt;br /&gt;</token>
+  </line>
+  <line no="49"/>
+  <line no="50">
+    <token name="T_INLINE_HTML">		&lt;h3&gt;Impossible Level&lt;/h3&gt;</token>
+  </line>
+  <line no="51">
+    <token name="T_INLINE_HTML">		&lt;p&gt;The queries are now parameterized queries (rather than being dynamic). This means the query has been defined by the developer,</token>
+  </line>
+  <line no="52">
+    <token name="T_INLINE_HTML">			and has distinguish which sections are code, and the rest is data.&lt;/p&gt;</token>
+  </line>
+  <line no="53">
+    <token name="T_INLINE_HTML">	&lt;/div&gt;&lt;/td&gt;</token>
+  </line>
+  <line no="54">
+    <token name="T_INLINE_HTML">	&lt;/tr&gt;</token>
+  </line>
+  <line no="55">
+    <token name="T_INLINE_HTML">	&lt;/table&gt;</token>
+  </line>
+  <line no="56"/>
+  <line no="57">
+    <token name="T_INLINE_HTML">	&lt;/div&gt;</token>
+  </line>
+  <line no="58"/>
+  <line no="59">
+    <token name="T_INLINE_HTML">	&lt;br /&gt;</token>
+  </line>
+  <line no="60"/>
+  <line no="61">
+    <token name="T_INLINE_HTML">	&lt;p&gt;Reference: </token>
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_ECHO">echo</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">dvwaExternalLinkUrlGet</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'https://www.owasp.org/index.php/Blind_SQL_Injection'</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">&lt;/p&gt;</token>
+  </line>
+  <line no="62">
+    <token name="T_INLINE_HTML">&lt;/div&gt;</token>
+  </line>
+  <line no="63"/>
+</source>

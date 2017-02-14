@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - HTMLPurifier_ContentSets</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.html">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.html">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.html">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.html">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.html">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.html">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.html">Classes</a>
+          </li>
+          <li class="separator">HTMLPurifier_ContentSets</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#tasks">Tasks</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ContentSets.php.html#line6">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>HTMLPurifier_ContentSets</h1>
+        <h4/>
+        <p/>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class HTMLPurifier_ContentSets
+            {<br/><ul class="none"><li>// members</li><li>public array <a href="#members">$info</a> =
+                        ;
+                    </li><li>public array <a href="#members">$lookup</a> =
+                        ;
+                    </li><li>protected array <a href="#members">$keys</a> =
+                        ;
+                    </li><li>protected array <a href="#members">$values</a> =
+                        ;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="HTMLPurifier_ContentSets" href="../classes/HTMLPurifier_ContentSets/__construct.html">__construct</a>()
+                    </li><li>public void <a title="HTMLPurifier_ContentSets" href="../classes/HTMLPurifier_ContentSets/generateChildDef.html">generateChildDef</a>()
+                    </li><li>public void <a title="HTMLPurifier_ContentSets" href="../classes/HTMLPurifier_ContentSets/generateChildDefCallback.html">generateChildDefCallback</a>()
+                    </li><li>public HTMLPurifier_ChildDef <a title="HTMLPurifier_ContentSets" href="../classes/HTMLPurifier_ContentSets/getChildDef.html">getChildDef</a>()
+                    </li><li>protected Lookup <a title="HTMLPurifier_ContentSets" href="../classes/HTMLPurifier_ContentSets/convertToLookup.html">convertToLookup</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="tasks">Tasks</h2>
+        <table class="styled">
+          <thead>
+            <tr>
+              <th style="width:3em;">Line</th>
+              <th>Task</th>
+            </tr>
+          </thead>
+          <tr>
+            <td class="nummeric">6+</td>
+            <td>Unit test</td>
+          </tr>
+        </table>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="keys">
+              <strong>$keys</strong>
+              <br/>
+              <span class="indent">Synchronized list of defined content sets (keys of info)</span>
+            </li>
+            <li id="values">
+              <strong>$values</strong>
+              <br/>
+              <span class="indent">Synchronized list of defined content values (values of info)</span>
+            </li>
+          </ul>
+          <h4>public</h4>
+          <ul class="members">
+            <li id="info">
+              <strong>$info</strong>
+              <br/>
+              <span class="indent">List of content set strings (pipe seperators) indexed by name.</span>
+            </li>
+            <li id="lookup">
+              <strong>$lookup</strong>
+              <br/>
+              <span class="indent">List of content set lookups (element =&gt; true) indexed by name.</span>
+            </li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>protected</h4>
+          <ul>
+            <li id="convertToLookup"><a title="HTMLPurifier_ContentSets" href="../classes/HTMLPurifier_ContentSets/convertToLookup.html">convertToLookup()</a>
+                — Converts a string list of elements separated by pipes into a lookup array.</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="HTMLPurifier_ContentSets" href="../classes/HTMLPurifier_ContentSets/__construct.html">__construct()</a>
+                — Merges in module's content sets, expands identifiers in the content sets and populates the keys, values and lookup member variables.</li>
+            <li id="generateChildDef"><a title="HTMLPurifier_ContentSets" href="../classes/HTMLPurifier_ContentSets/generateChildDef.html">generateChildDef()</a>
+                — Accepts a definition; generates and assigns a ChildDef for it</li>
+            <li id="generateChildDefCallback">
+              <a title="HTMLPurifier_ContentSets" href="../classes/HTMLPurifier_ContentSets/generateChildDefCallback.html">generateChildDefCallback()</a>
+            </li>
+            <li id="getChildDef"><a title="HTMLPurifier_ContentSets" href="../classes/HTMLPurifier_ContentSets/getChildDef.html">getChildDef()</a>
+                — Instantiates a ChildDef based on content_model and content_model_type member variables in HTMLPurifier_ElementDef</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.9.0 - Copyright (C) 2010 - 2017 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

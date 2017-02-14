@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="HTMLPurifier_ChildDef_Table" namespace="" name="HTMLPurifier_ChildDef_Table" abstract="false" final="false" start="6" end="140">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ChildDef" file="Table.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ChildDef/Table.php" size="5822" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="050963225d99db4f9b01148beef28954c3fa1bf2" relative="external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ChildDef/Table.php"/>
+  <docblock>
+    <description compact="Definition for tables"/>
+  </docblock>
+  <extends full="HTMLPurifier_ChildDef" namespace="" name="HTMLPurifier_ChildDef"/>
+  <member name="allow_empty" type="boolean" default="false" visibility="public" static="false" line="8"/>
+  <member name="type" type="string" default="'table'" visibility="public" static="false" line="9"/>
+  <member name="elements" type="array" default="" visibility="public" static="false" line="10"/>
+  <constructor name="__construct" start="12" end="12" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="validateChildren" start="13" end="139" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="tokens_of_children" byreference="false" type="{unknown}"/>
+    <parameter name="config" byreference="false" type="{unknown}"/>
+    <parameter name="context" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="this ensures that the loop gets run one last time before closing" line="16"/>
+      <comment value="up. It's a little bit of a hack, but it works! Just make sure you" line="17"/>
+      <comment value="get rid of the token later." line="18"/>
+      <comment value="only one of these elements is allowed in a table" line="21"/>
+      <comment value="as many of these as you want" line="26"/>
+      <comment value="current depth so we can determine nodes" line="30"/>
+      <comment value="are we globbing together tokens to package" line="31"/>
+      <comment value="into one of the collectors?" line="32"/>
+      <comment value="collected nodes" line="33"/>
+      <comment value="the first node might be whitespace," line="34"/>
+      <comment value="so this tells us where the start tag is" line="35"/>
+      <comment value="remove phantom token" line="135"/>
+    </inline>
+  </method>
+  <parent full="HTMLPurifier_ChildDef" namespace="" name="HTMLPurifier_ChildDef">
+    <member name="type" visibility="public" static="false" line="12">
+      <docblock>
+        <description compact="Type of child definition, usually right-most part of class name lowercase.">Used occasionally in terms of context.</description>
+      </docblock>
+    </member>
+    <member name="allow_empty" visibility="public" static="false" line="20">
+      <docblock>
+        <description compact="Bool that indicates whether or not an empty array of children is okay">This is necessary for redundant checking when changes affecting
+a child node may cause a parent node to now be disallowed.</description>
+      </docblock>
+    </member>
+    <member name="elements" type="array" default="" visibility="public" static="false" line="25">
+      <docblock>
+        <description compact="Lookup array of all elements that this definition could possibly allow"/>
+      </docblock>
+    </member>
+    <method name="getNonAutoCloseElements" start="31" end="33" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Get lookup of tag names that should not close this element automatically.">All other elements will do so.</description>
+      </docblock>
+      <parameter name="config" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="validateChildren" start="45" end="45" abstract="true" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Validates nodes according to definition and returns modification."/>
+        <param description="of HTMLPurifier_Token" variable="$tokens_of_children" type="object">
+          <type full="Array" namespace="" name="Array"/>
+        </param>
+        <param description="object" variable="$config" type="object">
+          <type full="HTMLPurifier_Config" namespace="" name="HTMLPurifier_Config"/>
+        </param>
+        <param description="object" variable="$context" type="object">
+          <type full="HTMLPurifier_Context" namespace="" name="HTMLPurifier_Context"/>
+        </param>
+        <return description="true to leave nodes as is" type="object">
+          <type full="bool" namespace="" name="bool"/>
+        </return>
+        <return description="false to remove parent node" type="object">
+          <type full="bool" namespace="" name="bool"/>
+        </return>
+        <return description="of replacement child tokens" type="array"/>
+      </docblock>
+      <parameter name="tokens_of_children" byreference="false" type="{unknown}"/>
+      <parameter name="config" byreference="false" type="{unknown}"/>
+      <parameter name="context" byreference="false" type="{unknown}"/>
+    </method>
+  </parent>
+</class>

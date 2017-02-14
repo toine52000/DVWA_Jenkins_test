@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="HTMLPurifier_AttrTransform_BgColor" namespace="" name="HTMLPurifier_AttrTransform_BgColor" abstract="false" final="false" start="6" end="21">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrTransform" file="BgColor.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrTransform/BgColor.php" size="544" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="f0bcfc5fa5cbfc877fc958d00261d99539dc91c4" relative="external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/AttrTransform/BgColor.php"/>
+  <docblock>
+    <description compact="Pre-transform that changes deprecated bgcolor attribute to CSS."/>
+  </docblock>
+  <extends full="HTMLPurifier_AttrTransform" namespace="" name="HTMLPurifier_AttrTransform"/>
+  <method name="transform" start="8" end="19" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="attr" byreference="false" type="{unknown}"/>
+    <parameter name="config" byreference="false" type="{unknown}"/>
+    <parameter name="context" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="some validation should happen here" line="13"/>
+    </inline>
+  </method>
+  <parent full="HTMLPurifier_AttrTransform" namespace="" name="HTMLPurifier_AttrTransform">
+    <method name="transform" start="29" end="29" abstract="true" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Abstract: makes changes to the attributes dependent on multiple values."/>
+        <param description="array of attributes, usually from" variable="$attr" type="object">HTMLPurifier_Token_Tag::$attr<type full="Assoc" namespace="" name="Assoc"/></param>
+        <param description="HTMLPurifier_Config object." variable="$config" type="object">
+          <type full="Mandatory" namespace="" name="Mandatory"/>
+        </param>
+        <param description="HTMLPurifier_Context object" variable="$context" type="object">
+          <type full="Mandatory" namespace="" name="Mandatory"/>
+        </param>
+        <returns value="Processed attribute array."/>
+      </docblock>
+      <parameter name="attr" byreference="false" type="{unknown}"/>
+      <parameter name="config" byreference="false" type="{unknown}"/>
+      <parameter name="context" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="prependCSS" start="37" end="40" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Prepends CSS properties to the style attribute, creating the attribute if it doesn't exist."/>
+        <param description="array to process (passed by reference)" variable="$attr" type="object">
+          <type full="Attribute" namespace="" name="Attribute"/>
+        </param>
+        <param description="to prepend" variable="$css" type="object">
+          <type full="CSS" namespace="" name="CSS"/>
+        </param>
+      </docblock>
+      <parameter name="attr" byreference="true" type="{unknown}"/>
+      <parameter name="css" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="confiscateAttr" start="47" end="52" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Retrieves and removes an attribute"/>
+        <param description="array to process (passed by reference)" variable="$attr" type="object">
+          <type full="Attribute" namespace="" name="Attribute"/>
+        </param>
+        <param description="of attribute to confiscate" variable="$key" type="object">
+          <type full="Key" namespace="" name="Key"/>
+        </param>
+      </docblock>
+      <parameter name="attr" byreference="true" type="{unknown}"/>
+      <parameter name="key" byreference="false" type="{unknown}"/>
+    </method>
+  </parent>
+</class>

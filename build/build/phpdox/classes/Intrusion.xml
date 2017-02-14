@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Intrusion" namespace="" name="Intrusion" abstract="false" final="false" start="19" end="21">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/docs/examples/cakephp" file="intrusion.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/docs/examples/cakephp/intrusion.php" size="653" time="2017-02-13T08:45:28+00:00" unixtime="1486975528" sha1="0eb6ea51fad450305d8c05533ae61e53192fe441" relative="external/phpids/0.6/docs/examples/cakephp/intrusion.php"/>
+  <docblock>
+    <description compact="PHP IDS">Requirements: PHP5, SimpleXML
+
+Copyright (c) 2007 PHPIDS (http://php-ids.org)
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; version 2 of the license.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.</description>
+  </docblock>
+  <extends full="AppModel" namespace="" name="AppModel" unresolved="true"/>
+</class>

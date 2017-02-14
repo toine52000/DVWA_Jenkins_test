@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="HTMLPurifier" namespace="" name="HTMLPurifier" abstract="false" final="false" start="54" end="234">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier" file="HTMLPurifier.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier.php" size="9183" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="764ae1f426b17e27cb7fcb78f33b89f27b345e3f" relative="external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier.php"/>
+  <docblock>
+    <description compact="Facade that coordinates HTML Purifier's subsystems in order to purify HTML."/>
+    <note value="There are several points in which configuration can be specified">for HTML Purifier.  The precedence of these (from lowest to
+      highest) is as follows:
+         -# Instance: new HTMLPurifier($config)
+         -# Invocation: purify($html, $config)
+      These configurations are entirely independent of each other and
+      are *not* merged (this behavior may change in the future).</note>
+    <todo value="We need an easier way to inject strategies using the configuration">object.</todo>
+  </docblock>
+  <member name="version" type="string" default="'3.2.0'" visibility="public" static="false" line="58">
+    <docblock>
+      <description compact="Version of HTML Purifier"/>
+    </docblock>
+  </member>
+  <constant type="string" name="VERSION" value="'3.2.0'">
+    <docblock>
+      <description compact="Constant with version of HTML Purifier"/>
+    </docblock>
+  </constant>
+  <member name="config" visibility="public" static="false" line="64">
+    <docblock>
+      <description compact="Global configuration object"/>
+    </docblock>
+  </member>
+  <member name="filters" type="array" default="" visibility="private" static="false" line="67">
+    <docblock>
+      <description compact="Array of extra HTMLPurifier_Filter objects to run on HTML, for backwards compatibility"/>
+    </docblock>
+  </member>
+  <member name="instance" visibility="private" static="true" line="70">
+    <docblock>
+      <description compact="Single instance of HTML Purifier"/>
+    </docblock>
+  </member>
+  <member name="strategy" visibility="protected" static="false" line="72"/>
+  <member name="context" visibility="public" static="false" line="78">
+    <docblock>
+      <description compact="Resultant HTMLPurifier_Context of last run purification. Is an array of contexts if the last called method was purifyArray()."/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="88" end="94" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Initializes the purifier."/>
+      <param description="HTMLPurifier_Config object for all instances of" variable="$config" type="object">the purifier, if omitted, a default configuration is
+               supplied (which can be overridden on a per-use basis).
+               The parameter can also be any type that
+               HTMLPurifier_Config::create() supports.<type full="Optional" namespace="" name="Optional"/></param>
+    </docblock>
+    <parameter name="config" byreference="false" type="{unknown}" default="" constant="null"/>
+  </constructor>
+  <method name="addFilter" start="100" end="103" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Adds a filter to process the output. First come first serve"/>
+      <param description="object" variable="$filter" type="object">
+        <type full="HTMLPurifier_Filter" namespace="" name="HTMLPurifier_Filter"/>
+      </param>
+    </docblock>
+    <parameter name="filter" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="purify" start="115" end="190" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Filters an HTML snippet/document to be XSS-free and standards-compliant."/>
+      <param description="of HTML to purify" variable="$html" type="object">
+        <type full="String" namespace="" name="String"/>
+      </param>
+      <param description="object for this operation, if omitted," variable="$config" type="object">defaults to the config object specified during this
+               object's construction. The parameter can also be any type
+               that HTMLPurifier_Config::create() supports.<type full="HTMLPurifier_Config" namespace="" name="HTMLPurifier_Config"/></param>
+      <return description="HTML" type="object">
+        <type full="Purified" namespace="" name="Purified"/>
+      </return>
+    </docblock>
+    <parameter name="html" byreference="false" type="{unknown}"/>
+    <parameter name="config" byreference="false" type="{unknown}" default="" constant="null"/>
+    <inline>
+      <comment value=":TODO: make the config merge in, instead of replace" line="117"/>
+      <comment value="implementation is partially environment dependant, partially" line="120"/>
+      <comment value="configuration dependant" line="121"/>
+      <comment value="setup HTML generator" line="126"/>
+      <comment value="set up global context variables" line="130"/>
+      <comment value="setup id_accumulator context, necessary due to the fact that" line="141"/>
+      <comment value="AttrValidator can be called from many places" line="142"/>
+      <comment value="setup filters" line="148"/>
+      <comment value="maybe prepare(), but later" line="163"/>
+      <comment value="purified HTML" line="169"/>
+    </inline>
+  </method>
+  <method name="purifyArray" start="198" end="206" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Filters an array of HTML snippets"/>
+      <param description="HTMLPurifier_Config object for this operation." variable="$config" type="object">See HTMLPurifier::purify() for more details.<type full="Optional" namespace="" name="Optional"/></param>
+      <return description="of purified HTML" type="object">
+        <type full="Array" namespace="" name="Array"/>
+      </return>
+    </docblock>
+    <parameter name="array_of_html" byreference="false" type="{unknown}"/>
+    <parameter name="config" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="instance" start="214" end="225" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Singleton for enforcing just one HTML Purifier in your system"/>
+      <param description="prototype HTMLPurifier instance to" variable="$prototype" type="object">overload singleton with, or HTMLPurifier_Config
+                  instance to configure the generated version with.<type full="Optional" namespace="" name="Optional"/></param>
+    </docblock>
+    <parameter name="prototype" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="getInstance" start="230" end="232" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <note value="Backwards compatibility, see instance()"/>
+    </docblock>
+    <parameter name="prototype" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+</class>

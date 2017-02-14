@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="HTMLPurifier_ConfigSchema_Builder_Xml" namespace="" name="HTMLPurifier_ConfigSchema_Builder_Xml" abstract="false" final="false" start="7" end="106">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ConfigSchema/Builder" file="Xml.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ConfigSchema/Builder/Xml.php" size="4005" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="986dab86da94c15297dbfe4929f6295e487296cf" relative="external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/ConfigSchema/Builder/Xml.php"/>
+  <docblock>
+    <description compact="Converts HTMLPurifier_ConfigSchema_Interchange to an XML format, which can be further processed to generate documentation."/>
+  </docblock>
+  <extends full="XMLWriter" namespace="" name="XMLWriter" unresolved="true"/>
+  <member name="interchange" visibility="protected" static="false" line="10"/>
+  <method name="writeHTMLDiv" start="12" end="21" abstract="false" final="false" static="false" visibility="protected">
+    <parameter name="html" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="div" line="20"/>
+    </inline>
+  </method>
+  <method name="export" start="23" end="26" abstract="false" final="false" static="false" visibility="protected">
+    <parameter name="var" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="build" start="28" end="43" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="interchange" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="global access, only use as last resort" line="29"/>
+      <comment value="configdoc" line="41"/>
+    </inline>
+  </method>
+  <method name="buildNamespace" start="45" end="60" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="namespace" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="description" line="52"/>
+      <comment value="namespace" line="59"/>
+    </inline>
+  </method>
+  <method name="buildDirective" start="62" end="104" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="directive" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="aliases" line="70"/>
+      <comment value="type" line="77"/>
+      <comment value="constraints" line="90"/>
+      <comment value="description" line="101"/>
+      <comment value="directive" line="103"/>
+    </inline>
+  </method>
+</class>

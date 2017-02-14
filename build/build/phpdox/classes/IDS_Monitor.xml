@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="IDS_Monitor" namespace="" name="IDS_Monitor" abstract="false" final="false" start="51" end="673">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS" file="Monitor.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/Monitor.php" size="18660" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="32a302e78ebd39830b9477dc1cd8f9f02c74348a" relative="external/phpids/0.6/lib/IDS/Monitor.php"/>
+  <docblock>
+    <description compact="Monitoring engine">This class represents the core of the frameworks attack detection mechanism
+and provides functions to scan incoming data for malicious appearing script
+fragments.</description>
+    <category value="Security"/>
+    <package value="PHPIDS"/>
+    <author value="Christian Matthies &lt;ch0012@gmail.com&gt;"/>
+    <author value="Mario Heiderich &lt;mario.heiderich@gmail.com&gt;"/>
+    <author value="Lars Strojny &lt;lars@strojny.net&gt;"/>
+    <copyright value="2007 The PHPIDS Group"/>
+    <license name="http://www.gnu.org/licenses/lgpl.html LGPL"/>
+    <version value="Release: $Id:Monitor.php 949 2008-06-28 01:26:03Z christ1an $"/>
+    <link value="http://php-ids.org/"/>
+  </docblock>
+  <member name="tags" type="{unknown}" default="" constant="null" visibility="private" static="false" line="61">
+    <docblock>
+      <description compact="Tags to define what to search for">Accepted values are xss, csrf, sqli, dt, id, lfi, rfe, spam, dos</description>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="request" type="{unknown}" default="" constant="null" visibility="private" static="false" line="70">
+    <docblock>
+      <description compact="Request array">Array containing raw data to search in</description>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="storage" type="{unknown}" default="" constant="null" visibility="private" static="false" line="79">
+    <docblock>
+      <description compact="Container for filter rules">Holds an instance of IDS_Filter_Storage</description>
+      <var type="object"/>
+    </docblock>
+  </member>
+  <member name="report" type="{unknown}" default="" constant="null" visibility="private" static="false" line="89">
+    <docblock>
+      <description compact="Results">Holds an instance of IDS_Report which itself provides an API to
+access the detected results</description>
+      <var type="object"/>
+    </docblock>
+  </member>
+  <member name="scanKeys" type="boolean" default="false" visibility="public" static="false" line="99">
+    <docblock>
+      <description compact="Scan keys switch">Enabling this property will cause the monitor to scan both the key and
+the value of variables</description>
+      <var type="boolean"/>
+    </docblock>
+  </member>
+  <member name="exceptions" type="array" default="" visibility="private" static="false" line="109">
+    <docblock>
+      <description compact="Exception container">Using this array it is possible to define variables that must not be
+scanned. Per default, utmz google analytics parameters are permitted.</description>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="html" type="array" default="" visibility="private" static="false" line="120">
+    <docblock>
+      <description compact="Html container">Using this array it is possible to define variables that legally
+contain html and have to be prepared before hitting the rules to
+avoid too many false alerts</description>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="json" type="array" default="" visibility="private" static="false" line="130">
+    <docblock>
+      <description compact="JSON container">Using this array it is possible to define variables that contain
+JSON data - and should be treated as such</description>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="htmlpurifier" type="{unknown}" default="" constant="NULL" visibility="private" static="false" line="137">
+    <docblock>
+      <description compact="Holds HTMLPurifier object"/>
+      <var type="object"/>
+    </docblock>
+  </member>
+  <member name="pathToHTMLPurifier" type="string" default="''" visibility="private" static="false" line="148">
+    <docblock>
+      <description compact="Path to HTMLPurifier source">This path might be changed in case one wishes to make use of a
+different HTMLPurifier source file e.g. if already used in the
+application PHPIDS is protecting</description>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="HTMLPurifierCache" type="string" default="''" visibility="private" static="false" line="155">
+    <docblock>
+      <description compact="HTMLPurifier cache directory"/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="tmpJsonString" type="string" default="''" visibility="private" static="false" line="163">
+    <docblock>
+      <description compact="This property holds the tmp JSON string from the _jsonDecodeValues() callback"/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="175" end="226" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Constructor"/>
+      <param description="array to scan" type="array" variable="$request"/>
+      <param description="instance of IDS_Init" type="object" variable="$init"/>
+      <param description="list of tags to which filters should be applied" type="array" variable="$tags"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="array"/>
+    <parameter name="init" byreference="false" type="object">
+      <type full="IDS_Init" namespace="" name="IDS_Init"/>
+    </parameter>
+    <parameter name="tags" byreference="false" type="{unknown}" default="" constant="null"/>
+  </constructor>
+  <method name="run" start="233" end="242" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Starts the scan mechanism"/>
+      <return description="IDS_Report" type="object"/>
+    </docblock>
+  </method>
+  <method name="_iterate" start="253" end="275" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Iterates through given data and delegates it to IDS_Monitor::_detect() in order to check for malicious appearing fragments"/>
+      <param description="the former array key" type="mixed" variable="$key"/>
+      <param description="the former array value" type="mixed" variable="$value"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_detect" start="285" end="350" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Checks whether given value matches any of the supplied filter patterns"/>
+      <param description="the key of the value to scan" type="mixed" variable="$key"/>
+      <param description="the value to scan" type="mixed" variable="$value"/>
+      <return description="false or array of filter(s) that matched the value" type="object">
+        <type full="bool|array" namespace="" name="bool|array"/>
+      </return>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="to increase performance, only start detection if value" line="288"/>
+      <comment value="isn't alphanumeric" line="289"/>
+      <comment value="check if this field is part of the exceptions" line="294"/>
+      <comment value="check for magic quotes and remove them if necessary" line="300"/>
+      <comment value="if html monitoring is enabled for this field - then do it!" line="306"/>
+      <comment value="check if json monitoring is enabled for this field" line="311"/>
+      <comment value="use the converter" line="316"/>
+      <comment value="scan keys if activated via config" line="321"/>
+    </inline>
+  </method>
+  <method name="_purifyValues" start="366" end="407" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Purifies given key and value variables using HTMLPurifier">This function is needed whenever there is variables for which HTML
+might be allowed like e.g. WYSIWYG post bodies. It will dectect malicious
+code fragments and leaves harmless parts untouched.</description>
+      <param type="mixed" variable="$key"/>
+      <param type="mixed" variable="$value"/>
+      <since value="0.5"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_diff" start="420" end="469" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="This method calculates the difference between the original and the purified markup strings."/>
+      <param description="the original markup" type="string" variable="$original"/>
+      <param description="the purified markup" type="string" variable="$purified"/>
+      <param description="the string without html" type="string" variable="$redux"/>
+      <since value="0.5"/>
+      <return description="the difference between the strings" type="string"/>
+    </docblock>
+    <parameter name="original" byreference="false" type="{unknown}"/>
+    <parameter name="purified" byreference="false" type="{unknown}"/>
+    <parameter name="redux" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="deal with over-sensitive alt-attribute addition of the purifier" line="422"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="and other common html formatting problems" line="423"/>
+      <comment value="check which string is longer" line="432"/>
+      <comment value="Calculate the difference between the original html input" line="434"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="and the purified string." line="435"/>
+      <comment value="return the diff - ready to hit the converter and the rules" line="453"/>
+      <comment value="clean up spaces between tag delimiters" line="457"/>
+      <comment value="correct over-sensitively stripped bad html elements" line="460"/>
+    </inline>
+  </method>
+  <method name="_jsonDecodeValues" start="482" end="498" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="This method prepares incoming JSON data for the PHPIDS detection process. It utilizes _jsonConcatContents() as callback and returns a string version of the JSON data structures."/>
+      <param type="mixed" variable="$key"/>
+      <param type="mixed" variable="$value"/>
+      <since value="0.5.3"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_jsonConcatContents" start="510" end="513" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="This is the callback used in _jsonDecodeValues(). The method concatenates key and value and stores them in $this-&gt;tmpJsonString."/>
+      <param type="mixed" variable="$key"/>
+      <param type="mixed" variable="$value"/>
+      <since value="0.5.3"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_match" start="524" end="537" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Matches given value and/or key against given filter"/>
+      <param description="the key to optionally scan" type="mixed" variable="$key"/>
+      <param description="the value to scan" type="mixed" variable="$value"/>
+      <param description="the filter object" type="object" variable="$filter"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="filter" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setExceptions" start="546" end="553" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets exception array"/>
+      <param description="the thrown exceptions" type="mixed" variable="$exceptions"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="exceptions" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getExceptions" start="560" end="563" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns exception array"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="setHtml" start="573" end="580" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets html array"/>
+      <param description="the fields containing html" type="mixed" variable="$html"/>
+      <since value="0.5"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="html" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="addHtml" start="589" end="592" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Adds a value to the html array"/>
+      <since value="0.5"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getHtml" start="601" end="604" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns html array"/>
+      <since value="0.5"/>
+      <return description="the fields that contain allowed html" type="array"/>
+    </docblock>
+  </method>
+  <method name="setJson" start="614" end="621" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets json array"/>
+      <param description="the fields containing json" type="mixed" variable="$json"/>
+      <since value="0.5.3"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="json" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="addJson" start="630" end="633" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Adds a value to the json array"/>
+      <since value="0.5.3"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getJson" start="642" end="645" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns json array"/>
+      <since value="0.5.3"/>
+      <return description="the fields that contain json" type="array"/>
+    </docblock>
+  </method>
+  <method name="getStorage" start="652" end="655" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns storage container"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="getReport" start="664" end="671" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns report object providing various functions to work with detected results. Also the centrifuge data is being set as property of the report object."/>
+      <return description="IDS_Report" type="object"/>
+    </docblock>
+  </method>
+</class>

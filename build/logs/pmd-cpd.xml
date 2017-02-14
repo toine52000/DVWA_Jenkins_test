@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd-cpd>
+  <duplication lines="39" tokens="82">
+    <file path="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Lexer/PH5P.php" line="537"/>
+    <file path="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Lexer/PH5P.php" line="588"/>
+    <codefragment>        $this-&gt;char++;&#13;
+        $char = $this-&gt;character($this-&gt;char);&#13;
+&#13;
+        if(preg_match('/^[\t\n\x0b\x0c ]$/', $char)) {&#13;
+            /* U+0009 CHARACTER TABULATION&#13;
+            U+000A LINE FEED (LF)&#13;
+            U+000B LINE TABULATION&#13;
+            U+000C FORM FEED (FF)&#13;
+            U+0020 SPACE&#13;
+            Stay in the before attribute name state. */&#13;
+            $this-&gt;state = 'afterAttributeName';&#13;
+&#13;
+        } elseif($char === '=') {&#13;
+            /* U+003D EQUALS SIGN (=)&#13;
+            Switch to the before attribute value state. */&#13;
+            $this-&gt;state = 'beforeAttributeValue';&#13;
+&#13;
+        } elseif($char === '&gt;') {&#13;
+            /* U+003E GREATER-THAN SIGN (&gt;)&#13;
+            Emit the current tag token. Switch to the data state. */&#13;
+            $this-&gt;emitToken($this-&gt;token);&#13;
+            $this-&gt;state = 'data';&#13;
+&#13;
+        } elseif($char === '/' &amp;&amp; $this-&gt;character($this-&gt;char + 1) !== '&gt;') {&#13;
+            /* U+002F SOLIDUS (/)&#13;
+            Parse error unless this is a permitted slash. Switch to the before&#13;
+            attribute name state. */&#13;
+            $this-&gt;state = 'beforeAttributeName';&#13;
+&#13;
+        } elseif($this-&gt;char === $this-&gt;EOF) {&#13;
+            /* EOF&#13;
+            Parse error. Emit the current tag token. Reconsume the EOF&#13;
+            character in the data state. */&#13;
+            $this-&gt;emitToken($this-&gt;token);&#13;
+&#13;
+            $this-&gt;char--;&#13;
+            $this-&gt;state = 'data';&#13;
+&#13;
+        } else {&#13;
+</codefragment>
+  </duplication>
+  <duplication lines="41" tokens="94">
+    <file path="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/Filter/Storage.php" line="231"/>
+    <file path="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/Filter/Storage.php" line="326"/>
+    <codefragment>            $filters = $nocache ? $filters-&gt;filter : $filters;
+
+            include_once 'IDS/Filter.php';
+
+            foreach ($filters as $filter) {
+
+                $id          = $nocache ? (string) $filter-&gt;id : 
+                    $filter['id'];
+                $rule        = $nocache ? (string) $filter-&gt;rule : 
+                    $filter['rule'];
+                $impact      = $nocache ? (string) $filter-&gt;impact : 
+                    $filter['impact'];
+                $tags        = $nocache ? array_values((array) $filter-&gt;tags) : 
+                    $filter['tags'];
+                $description = $nocache ? (string) $filter-&gt;description : 
+                    $filter['description'];
+
+                $this-&gt;addFilter(new IDS_Filter($id,
+                                                $rule,
+                                                $description,
+                                                (array) $tags[0],
+                                                (int) $impact));
+
+                $data[] = array(
+                    'id'          =&gt; $id, 
+                    'rule'        =&gt; $rule,
+                    'impact'      =&gt; $impact,
+                    'tags'        =&gt; $tags,
+                    'description' =&gt; $description
+                );
+            }
+
+            /*
+             * If caching is enabled, the fetched data will be cached
+             */
+            if ($this-&gt;cacheSettings) {
+
+                $this-&gt;cache-&gt;setCache($data);
+            }
+
+        } else {
+</codefragment>
+  </duplication>
+  <duplication lines="37" tokens="104">
+    <file path="/home/user/Documents/DVWA-master/src/vulnerabilities/sqli_blind/index.php" line="56"/>
+    <file path="/home/user/Documents/DVWA-master/src/vulnerabilities/sqli/index.php" line="56"/>
+    <codefragment>else {&#13;
+	$page[ 'body' ] .= "&#13;
+		&lt;form action=\"#\" method=\"{$method}\"&gt;&#13;
+			&lt;p&gt;&#13;
+				User ID:";&#13;
+	if( $vulnerabilityFile == 'medium.php' ) {&#13;
+		$page[ 'body' ] .= "\n				&lt;select name=\"id\"&gt;";&#13;
+		$query  = "SELECT COUNT(*) FROM users;";&#13;
+		$result = mysqli_query($GLOBALS["___mysqli_ston"],  $query ) or die( '&lt;pre&gt;' . ((is_object($GLOBALS["___mysqli_ston"])) ? mysqli_error($GLOBALS["___mysqli_ston"]) : (($___mysqli_res = mysqli_connect_error()) ? $___mysqli_res : false)) . '&lt;/pre&gt;' );&#13;
+		$num    = mysqli_fetch_row( $result )[0];&#13;
+		$i      = 0;&#13;
+		while( $i &lt; $num ) { $i++; $page[ 'body' ] .= "&lt;option value=\"{$i}\"&gt;{$i}&lt;/option&gt;"; }&#13;
+		$page[ 'body' ] .= "&lt;/select&gt;";&#13;
+	}&#13;
+	else&#13;
+		$page[ 'body' ] .= "\n				&lt;input type=\"text\" size=\"15\" name=\"id\"&gt;";&#13;
+&#13;
+	$page[ 'body' ] .= "\n				&lt;input type=\"submit\" name=\"Submit\" value=\"Submit\"&gt;&#13;
+			&lt;/p&gt;\n";&#13;
+&#13;
+	if( $vulnerabilityFile == 'impossible.php' )&#13;
+		$page[ 'body' ] .= "			" . tokenField();&#13;
+&#13;
+	$page[ 'body' ] .= "&#13;
+		&lt;/form&gt;";&#13;
+}&#13;
+$page[ 'body' ] .= "&#13;
+		{$html}&#13;
+	&lt;/div&gt;&#13;
+&#13;
+	&lt;h2&gt;More Information&lt;/h2&gt;&#13;
+	&lt;ul&gt;&#13;
+		&lt;li&gt;" . dvwaExternalLinkUrlGet( 'http://www.securiteam.com/securityreviews/5DP0N1P76E.html' ) . "&lt;/li&gt;&#13;
+		&lt;li&gt;" . dvwaExternalLinkUrlGet( 'https://en.wikipedia.org/wiki/SQL_injection' ) . "&lt;/li&gt;&#13;
+		&lt;li&gt;" . dvwaExternalLinkUrlGet( 'http://ferruh.mavituna.com/sql-injection-cheatsheet-oku/' ) . "&lt;/li&gt;&#13;
+		&lt;li&gt;" . dvwaExternalLinkUrlGet( 'http://pentestmonkey.net/cheat-sheet/sql-injection/mysql-sql-injection-cheat-sheet' ) . "&lt;/li&gt;&#13;
+		&lt;li&gt;" . dvwaExternalLinkUrlGet( 'https://www.owasp.org/index.php/Blind_SQL_Injection' ) . "&lt;/li&gt;&#13;
+</codefragment>
+  </duplication>
+  <duplication lines="19" tokens="72">
+    <file path="/home/user/Documents/DVWA-master/src/vulnerabilities/brute/source/medium.php" line="10"/>
+    <file path="/home/user/Documents/DVWA-master/src/vulnerabilities/brute/source/high.php" line="15"/>
+    <codefragment>	$pass = ((isset($GLOBALS["___mysqli_ston"]) &amp;&amp; is_object($GLOBALS["___mysqli_ston"])) ? mysqli_real_escape_string($GLOBALS["___mysqli_ston"],  $pass ) : ((trigger_error("[MySQLConverterToo] Fix the mysql_escape_string() call! This code does not work.", E_USER_ERROR)) ? "" : ""));&#13;
+	$pass = md5( $pass );&#13;
+&#13;
+	// Check the database&#13;
+	$query  = "SELECT * FROM `users` WHERE user = '$user' AND password = '$pass';";&#13;
+	$result = mysqli_query($GLOBALS["___mysqli_ston"],  $query ) or die( '&lt;pre&gt;' . ((is_object($GLOBALS["___mysqli_ston"])) ? mysqli_error($GLOBALS["___mysqli_ston"]) : (($___mysqli_res = mysqli_connect_error()) ? $___mysqli_res : false)) . '&lt;/pre&gt;' );&#13;
+&#13;
+	if( $result &amp;&amp; mysqli_num_rows( $result ) == 1 ) {&#13;
+		// Get users details&#13;
+		$row    = mysqli_fetch_assoc( $result );&#13;
+		$avatar = $row["avatar"];&#13;
+&#13;
+		// Login successful&#13;
+		$html .= "&lt;p&gt;Welcome to the password protected area {$user}&lt;/p&gt;";&#13;
+		$html .= "&lt;img src=\"{$avatar}\" /&gt;";&#13;
+	}&#13;
+	else {&#13;
+		// Login failed&#13;
+		sleep( 2 );&#13;
+</codefragment>
+  </duplication>
+</pmd-cpd>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="IDS_Caching" namespace="" name="IDS_Caching" abstract="false" final="false" start="51" end="86">
+  <file path="/home/user/Documents/DVWA-master/build/../src/external/phpids/0.6/lib/IDS/Caching" file="Factory.php" realpath="/home/user/Documents/DVWA-master/src/external/phpids/0.6/lib/IDS/Caching/Factory.php" size="2552" time="2017-02-13T08:45:29+00:00" unixtime="1486975529" sha1="55deb02b1e8d24f288c369203e8d833a7efcac3f" relative="external/phpids/0.6/lib/IDS/Caching/Factory.php"/>
+  <docblock>
+    <description compact="Caching factory">This class is used as a factory to load the correct concrete caching
+implementation.</description>
+    <category value="Security"/>
+    <package value="PHPIDS"/>
+    <author value="Christian Matthies &lt;ch0012@gmail.com&gt;"/>
+    <author value="Mario Heiderich &lt;mario.heiderich@gmail.com&gt;"/>
+    <author value="Lars Strojny &lt;lars@strojny.net&gt;"/>
+    <copyright value="2007 The PHPIDS Group"/>
+    <license name="http://www.gnu.org/licenses/lgpl.html LGPL"/>
+    <version value="Release: $Id:Factory.php 517 2007-09-15 15:04:13Z mario $"/>
+    <link value="http://php-ids.org/"/>
+    <since value="Version 0.4"/>
+  </docblock>
+  <method name="factory" start="62" end="85" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Factory method"/>
+      <param description="the IDS_Init object" type="array" variable="$init"/>
+      <param description="the caching type" type="string" variable="$type"/>
+      <return description="the caching facility" type="object"/>
+    </docblock>
+    <parameter name="init" byreference="false" type="{unknown}"/>
+    <parameter name="type" byreference="false" type="{unknown}"/>
+  </method>
+</class>

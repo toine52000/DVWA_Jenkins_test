@@ -1,0 +1,180 @@
+<?xml version="1.0"?>
+<source xmlns="http://xml.phpdox.net/token">
+  <file xmlns="http://xml.phpdox.net/src" path="/home/user/Documents/DVWA-master/build/../src/vulnerabilities/sqli/help" file="help.php" realpath="/home/user/Documents/DVWA-master/src/vulnerabilities/sqli/help/help.php" size="2885" time="2017-02-13T08:45:28+00:00" unixtime="1486975528" sha1="d376afdccd95d1a0b8ede6b604e5e14db5ba3c9a" relative="vulnerabilities/sqli/help/help.php"/>
+  <line no="1">
+    <token name="T_INLINE_HTML">&lt;div class="body_padded"&gt;</token>
+  </line>
+  <line no="2">
+    <token name="T_INLINE_HTML">	&lt;h1&gt;Help - SQL Injection&lt;/h1&gt;</token>
+  </line>
+  <line no="3"/>
+  <line no="4">
+    <token name="T_INLINE_HTML">	&lt;div id="code"&gt;</token>
+  </line>
+  <line no="5">
+    <token name="T_INLINE_HTML">	&lt;table width='100%' bgcolor='white' style="border:2px #C0C0C0 solid"&gt;</token>
+  </line>
+  <line no="6">
+    <token name="T_INLINE_HTML">	&lt;tr&gt;</token>
+  </line>
+  <line no="7">
+    <token name="T_INLINE_HTML">	&lt;td&gt;&lt;div id="code"&gt;</token>
+  </line>
+  <line no="8">
+    <token name="T_INLINE_HTML">		&lt;h3&gt;About&lt;/h3&gt;</token>
+  </line>
+  <line no="9">
+    <token name="T_INLINE_HTML">		&lt;p&gt;A SQL injection attack consists of insertion or "injection" of a SQL query via the input data from the client to the application.</token>
+  </line>
+  <line no="10">
+    <token name="T_INLINE_HTML">			A successful SQL injection exploit can read sensitive data from the database, modify database data (insert/update/delete), execute administration operations on the database</token>
+  </line>
+  <line no="11">
+    <token name="T_INLINE_HTML">			(such as shutdown the DBMS), recover the content of a given file present on the DBMS file system (load_file) and in some cases issue commands to the operating system.&lt;/p&gt;</token>
+  </line>
+  <line no="12"/>
+  <line no="13">
+    <token name="T_INLINE_HTML">		&lt;p&gt;SQL injection attacks are a type of injection attack, in which SQL commands are injected into data-plane input in order to effect the execution of predefined SQL commands.&lt;/p&gt;</token>
+  </line>
+  <line no="14"/>
+  <line no="15">
+    <token name="T_INLINE_HTML">		&lt;p&gt;This attack may also be called "SQLi".&lt;/p&gt;</token>
+  </line>
+  <line no="16"/>
+  <line no="17">
+    <token name="T_INLINE_HTML">		&lt;br /&gt;&lt;hr /&gt;&lt;br /&gt;</token>
+  </line>
+  <line no="18"/>
+  <line no="19">
+    <token name="T_INLINE_HTML">		&lt;h3&gt;Objective&lt;/h3&gt;</token>
+  </line>
+  <line no="20">
+    <token name="T_INLINE_HTML">		&lt;p&gt;There are 5 users in the database, with id's from 1 to 5. Your mission... to steal their passwords via SQLi.&lt;/p&gt;</token>
+  </line>
+  <line no="21"/>
+  <line no="22">
+    <token name="T_INLINE_HTML">		&lt;br /&gt;&lt;hr /&gt;&lt;br /&gt;</token>
+  </line>
+  <line no="23"/>
+  <line no="24">
+    <token name="T_INLINE_HTML">		&lt;h3&gt;Low Level&lt;/h3&gt;</token>
+  </line>
+  <line no="25">
+    <token name="T_INLINE_HTML">		&lt;p&gt;The SQL query uses RAW input that is directly controlled by the attacker. All they need to-do is escape the query and then they are able</token>
+  </line>
+  <line no="26">
+    <token name="T_INLINE_HTML">			to execute any SQL query they wish.&lt;/p&gt;</token>
+  </line>
+  <line no="27">
+    <token name="T_INLINE_HTML">		&lt;pre&gt;Spoiler: &lt;span class="spoiler"&gt;?id=a' UNION SELECT "text1","text2";-- -&amp;Submit=Submit&lt;/span&gt;.&lt;/pre&gt;</token>
+  </line>
+  <line no="28"/>
+  <line no="29">
+    <token name="T_INLINE_HTML">		&lt;br /&gt;</token>
+  </line>
+  <line no="30"/>
+  <line no="31">
+    <token name="T_INLINE_HTML">		&lt;h3&gt;Medium Level&lt;/h3&gt;</token>
+  </line>
+  <line no="32">
+    <token name="T_INLINE_HTML">		&lt;p&gt;The medium level uses a form of SQL injection protection, with the function of</token>
+  </line>
+  <line no="33">
+    <token name="T_INLINE_HTML">			"</token>
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_ECHO">echo</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">dvwaExternalLinkUrlGet</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'https://secure.php.net/manual/en/function.mysql-real-escape-string.php'</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'mysql_real_escape_string()'</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">".</token>
+  </line>
+  <line no="34">
+    <token name="T_INLINE_HTML">			However due to the SQL query not having quotes around the parameter, this will not fully protect the query from being altered.&lt;/p&gt;</token>
+  </line>
+  <line no="35"/>
+  <line no="36">
+    <token name="T_INLINE_HTML">		&lt;p&gt;The text box has been replaced with a pre-defined dropdown list and uses POST to submit the form.&lt;/p&gt;</token>
+  </line>
+  <line no="37">
+    <token name="T_INLINE_HTML">		&lt;pre&gt;Spoiler: &lt;span class="spoiler"&gt;?id=a UNION SELECT 1,2;-- -&amp;Submit=Submit&lt;/span&gt;.&lt;/pre&gt;</token>
+  </line>
+  <line no="38"/>
+  <line no="39">
+    <token name="T_INLINE_HTML">		&lt;br /&gt;</token>
+  </line>
+  <line no="40"/>
+  <line no="41">
+    <token name="T_INLINE_HTML">		&lt;h3&gt;High Level&lt;/h3&gt;</token>
+  </line>
+  <line no="42">
+    <token name="T_INLINE_HTML">		&lt;p&gt;This is very similar to the low level, however this time the attacker is inputting the value in a different manner.</token>
+  </line>
+  <line no="43">
+    <token name="T_INLINE_HTML">			The input values are being transferred to the vulnerable query via session variables using another page, rather than a direct GET request.&lt;/p&gt;</token>
+  </line>
+  <line no="44">
+    <token name="T_INLINE_HTML">		&lt;pre&gt;Spoiler: &lt;span class="spoiler"&gt;ID: a' UNION SELECT "text1","text2";-- -&amp;Submit=Submit&lt;/span&gt;.&lt;/pre&gt;</token>
+  </line>
+  <line no="45"/>
+  <line no="46">
+    <token name="T_INLINE_HTML">		&lt;br /&gt;</token>
+  </line>
+  <line no="47"/>
+  <line no="48">
+    <token name="T_INLINE_HTML">		&lt;h3&gt;Impossible Level&lt;/h3&gt;</token>
+  </line>
+  <line no="49">
+    <token name="T_INLINE_HTML">		&lt;p&gt;The queries are now parameterized queries (rather than being dynamic). This means the query has been defined by the developer,</token>
+  </line>
+  <line no="50">
+    <token name="T_INLINE_HTML">			and has distinguish which sections are code, and the rest is data.&lt;/p&gt;</token>
+  </line>
+  <line no="51">
+    <token name="T_INLINE_HTML">	&lt;/div&gt;&lt;/td&gt;</token>
+  </line>
+  <line no="52">
+    <token name="T_INLINE_HTML">	&lt;/tr&gt;</token>
+  </line>
+  <line no="53">
+    <token name="T_INLINE_HTML">	&lt;/table&gt;</token>
+  </line>
+  <line no="54"/>
+  <line no="55">
+    <token name="T_INLINE_HTML">	&lt;/div&gt;</token>
+  </line>
+  <line no="56"/>
+  <line no="57">
+    <token name="T_INLINE_HTML">	&lt;br /&gt;</token>
+  </line>
+  <line no="58"/>
+  <line no="59">
+    <token name="T_INLINE_HTML">	&lt;p&gt;Reference: </token>
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_ECHO">echo</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">dvwaExternalLinkUrlGet</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'https://www.owasp.org/index.php/SQL_Injection'</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">&lt;/p&gt;</token>
+  </line>
+  <line no="60">
+    <token name="T_INLINE_HTML">&lt;/div&gt;</token>
+  </line>
+  <line no="61"/>
+</source>

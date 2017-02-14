@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - HTML5TreeConstructer</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.html">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.html">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.html">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.html">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.html">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.html">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.html">Classes</a>
+          </li>
+          <li class="separator">HTML5TreeConstructer</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#constants">Constants</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/Lexer/PH5P.php.html#line1180">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>HTML5TreeConstructer</h1>
+        <h4/>
+        <p/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class HTML5TreeConstructer
+            {<br/><ul class="none"><li>// constants</li><li>const INIT_PHASE = 0;</li><li>const ROOT_PHASE = 1;</li><li>const MAIN_PHASE = 2;</li><li>const END_PHASE = 3;</li><li>const BEFOR_HEAD = 0;</li><li>const IN_HEAD = 1;</li><li>const AFTER_HEAD = 2;</li><li>const IN_BODY = 3;</li><li>const IN_TABLE = 4;</li><li>const IN_CAPTION = 5;</li><li>const IN_CGROUP = 6;</li><li>const IN_TBODY = 7;</li><li>const IN_ROW = 8;</li><li>const IN_CELL = 9;</li><li>const IN_SELECT = 10;</li><li>const AFTER_BODY = 11;</li><li>const IN_FRAME = 12;</li><li>const AFTR_FRAME = 13;</li><li>const SPECIAL = 0;</li><li>const SCOPING = 1;</li><li>const FORMATTING = 2;</li><li>const PHRASING = 3;</li><li>const MARKER = 0;</li></ul><ul class="none"><li>// members</li><li>public array <a href="#members">$stack</a> =
+                        ;
+                    </li><li>private  <a href="#members">$phase</a>;
+                    </li><li>private  <a href="#members">$mode</a>;
+                    </li><li>private  <a href="#members">$dom</a>;
+                    </li><li>private <a href="#members">$foster_parent</a> =
+                        null;
+                    </li><li>private array <a href="#members">$a_formatting</a> =
+                        ;
+                    </li><li>private <a href="#members">$head_pointer</a> =
+                        null;
+                    </li><li>private <a href="#members">$form_pointer</a> =
+                        null;
+                    </li><li>private array <a href="#members">$scoping</a> =
+                        ;
+                    </li><li>private array <a href="#members">$formatting</a> =
+                        ;
+                    </li><li>private array <a href="#members">$special</a> =
+                        ;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/__construct.html">__construct</a>()
+                    </li><li>public void <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/emitToken.html">emitToken</a>()
+                    </li><li>private void <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/initPhase.html">initPhase</a>()
+                    </li><li>private void <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/rootElementPhase.html">rootElementPhase</a>()
+                    </li><li>private void <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/mainPhase.html">mainPhase</a>()
+                    </li><li>private void <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/beforeHead.html">beforeHead</a>()
+                    </li><li>private void <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/inHead.html">inHead</a>()
+                    </li><li>private void <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/afterHead.html">afterHead</a>()
+                    </li><li>private void <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/inBody.html">inBody</a>()
+                    </li><li>private void <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/inTable.html">inTable</a>()
+                    </li><li>private void <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/inCaption.html">inCaption</a>()
+                    </li><li>private void <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/inColumnGroup.html">inColumnGroup</a>()
+                    </li><li>private void <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/inTableBody.html">inTableBody</a>()
+                    </li><li>private void <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/inRow.html">inRow</a>()
+                    </li><li>private void <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/inCell.html">inCell</a>()
+                    </li><li>private void <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/inSelect.html">inSelect</a>()
+                    </li><li>private void <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/afterBody.html">afterBody</a>()
+                    </li><li>private void <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/inFrameset.html">inFrameset</a>()
+                    </li><li>private void <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/afterFrameset.html">afterFrameset</a>()
+                    </li><li>private void <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/trailingEndPhase.html">trailingEndPhase</a>()
+                    </li><li>private void <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/insertElement.html">insertElement</a>()
+                    </li><li>private void <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/insertText.html">insertText</a>()
+                    </li><li>private void <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/insertComment.html">insertComment</a>()
+                    </li><li>private void <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/appendToRealParent.html">appendToRealParent</a>()
+                    </li><li>private void <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/elementInScope.html">elementInScope</a>()
+                    </li><li>private void <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/reconstructActiveFormattingElements.html">reconstructActiveFormattingElements</a>()
+                    </li><li>private void <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/clearTheActiveFormattingElementsUpToTheLastMarker.html">clearTheActiveFormattingElementsUpToTheLastMarker</a>()
+                    </li><li>private void <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/generateImpliedEndTags.html">generateImpliedEndTags</a>()
+                    </li><li>private void <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/getElementCategory.html">getElementCategory</a>()
+                    </li><li>private void <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/clearStackToTableContext.html">clearStackToTableContext</a>()
+                    </li><li>private void <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/resetInsertionMode.html">resetInsertionMode</a>()
+                    </li><li>private void <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/closeCell.html">closeCell</a>()
+                    </li><li>public void <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/save.html">save</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="constants">Constants</h2>
+        <table class="styled">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="INIT_PHASE">INIT_PHASE</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td id="ROOT_PHASE">ROOT_PHASE</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td id="MAIN_PHASE">MAIN_PHASE</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td id="END_PHASE">END_PHASE</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td id="BEFOR_HEAD">BEFOR_HEAD</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td id="IN_HEAD">IN_HEAD</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td id="AFTER_HEAD">AFTER_HEAD</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td id="IN_BODY">IN_BODY</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td id="IN_TABLE">IN_TABLE</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td id="IN_CAPTION">IN_CAPTION</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td id="IN_CGROUP">IN_CGROUP</td>
+              <td>6</td>
+            </tr>
+            <tr>
+              <td id="IN_TBODY">IN_TBODY</td>
+              <td>7</td>
+            </tr>
+            <tr>
+              <td id="IN_ROW">IN_ROW</td>
+              <td>8</td>
+            </tr>
+            <tr>
+              <td id="IN_CELL">IN_CELL</td>
+              <td>9</td>
+            </tr>
+            <tr>
+              <td id="IN_SELECT">IN_SELECT</td>
+              <td>10</td>
+            </tr>
+            <tr>
+              <td id="AFTER_BODY">AFTER_BODY</td>
+              <td>11</td>
+            </tr>
+            <tr>
+              <td id="IN_FRAME">IN_FRAME</td>
+              <td>12</td>
+            </tr>
+            <tr>
+              <td id="AFTR_FRAME">AFTR_FRAME</td>
+              <td>13</td>
+            </tr>
+            <tr>
+              <td id="SPECIAL">SPECIAL</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td id="SCOPING">SCOPING</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td id="FORMATTING">FORMATTING</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td id="PHRASING">PHRASING</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td id="MARKER">MARKER</td>
+              <td>0</td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="a_formatting">
+              <strong>$a_formatting</strong>
+            </li>
+            <li id="dom">
+              <strong>$dom</strong>
+            </li>
+            <li id="form_pointer">
+              <strong>$form_pointer</strong>
+            </li>
+            <li id="formatting">
+              <strong>$formatting</strong>
+            </li>
+            <li id="foster_parent">
+              <strong>$foster_parent</strong>
+            </li>
+            <li id="head_pointer">
+              <strong>$head_pointer</strong>
+            </li>
+            <li id="mode">
+              <strong>$mode</strong>
+            </li>
+            <li id="phase">
+              <strong>$phase</strong>
+            </li>
+            <li id="scoping">
+              <strong>$scoping</strong>
+            </li>
+            <li id="special">
+              <strong>$special</strong>
+            </li>
+          </ul>
+          <h4>public</h4>
+          <ul class="members">
+            <li id="stack">
+              <strong>$stack</strong>
+            </li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>private</h4>
+          <ul>
+            <li id="afterBody">
+              <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/afterBody.html">afterBody()</a>
+            </li>
+            <li id="afterFrameset">
+              <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/afterFrameset.html">afterFrameset()</a>
+            </li>
+            <li id="afterHead">
+              <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/afterHead.html">afterHead()</a>
+            </li>
+            <li id="appendToRealParent">
+              <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/appendToRealParent.html">appendToRealParent()</a>
+            </li>
+            <li id="beforeHead">
+              <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/beforeHead.html">beforeHead()</a>
+            </li>
+            <li id="clearStackToTableContext">
+              <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/clearStackToTableContext.html">clearStackToTableContext()</a>
+            </li>
+            <li id="clearTheActiveFormattingElementsUpToTheLastMarker">
+              <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/clearTheActiveFormattingElementsUpToTheLastMarker.html">clearTheActiveFormattingElementsUpToTheLastMarker()</a>
+            </li>
+            <li id="closeCell">
+              <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/closeCell.html">closeCell()</a>
+            </li>
+            <li id="elementInScope">
+              <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/elementInScope.html">elementInScope()</a>
+            </li>
+            <li id="generateImpliedEndTags">
+              <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/generateImpliedEndTags.html">generateImpliedEndTags()</a>
+            </li>
+            <li id="getElementCategory">
+              <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/getElementCategory.html">getElementCategory()</a>
+            </li>
+            <li id="inBody">
+              <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/inBody.html">inBody()</a>
+            </li>
+            <li id="inCaption">
+              <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/inCaption.html">inCaption()</a>
+            </li>
+            <li id="inCell">
+              <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/inCell.html">inCell()</a>
+            </li>
+            <li id="inColumnGroup">
+              <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/inColumnGroup.html">inColumnGroup()</a>
+            </li>
+            <li id="inFrameset">
+              <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/inFrameset.html">inFrameset()</a>
+            </li>
+            <li id="inHead">
+              <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/inHead.html">inHead()</a>
+            </li>
+            <li id="inRow">
+              <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/inRow.html">inRow()</a>
+            </li>
+            <li id="inSelect">
+              <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/inSelect.html">inSelect()</a>
+            </li>
+            <li id="inTable">
+              <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/inTable.html">inTable()</a>
+            </li>
+            <li id="inTableBody">
+              <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/inTableBody.html">inTableBody()</a>
+            </li>
+            <li id="initPhase">
+              <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/initPhase.html">initPhase()</a>
+            </li>
+            <li id="insertComment">
+              <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/insertComment.html">insertComment()</a>
+            </li>
+            <li id="insertElement">
+              <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/insertElement.html">insertElement()</a>
+            </li>
+            <li id="insertText">
+              <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/insertText.html">insertText()</a>
+            </li>
+            <li id="mainPhase">
+              <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/mainPhase.html">mainPhase()</a>
+            </li>
+            <li id="reconstructActiveFormattingElements">
+              <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/reconstructActiveFormattingElements.html">reconstructActiveFormattingElements()</a>
+            </li>
+            <li id="resetInsertionMode">
+              <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/resetInsertionMode.html">resetInsertionMode()</a>
+            </li>
+            <li id="rootElementPhase">
+              <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/rootElementPhase.html">rootElementPhase()</a>
+            </li>
+            <li id="trailingEndPhase">
+              <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/trailingEndPhase.html">trailingEndPhase()</a>
+            </li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__construct">
+              <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/__construct.html">__construct()</a>
+            </li>
+            <li id="emitToken">
+              <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/emitToken.html">emitToken()</a>
+            </li>
+            <li id="save">
+              <a title="HTML5TreeConstructer" href="../classes/HTML5TreeConstructer/save.html">save()</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.9.0 - Copyright (C) 2010 - 2017 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - HTMLPurifier_DefinitionCache</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.html">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.html">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.html">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.html">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.html">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.html">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.html">Classes</a>
+          </li>
+          <li class="separator">HTMLPurifier_DefinitionCache</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#tasks">Tasks</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/external/phpids/0.6/lib/IDS/vendors/htmlpurifier/HTMLPurifier/DefinitionCache.php.html#line11">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>HTMLPurifier_DefinitionCache</h1>
+        <h4>Abstract class representing Definition cache managers that implements useful common methods and is a factory.</h4>
+        <p/>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class HTMLPurifier_DefinitionCache
+            {<br/><ul class="none"><li>// members</li><li>public  <a href="#members">$type</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="HTMLPurifier_DefinitionCache" href="../classes/HTMLPurifier_DefinitionCache/__construct.html">__construct</a>()
+                    </li><li>public void <a title="HTMLPurifier_DefinitionCache" href="../classes/HTMLPurifier_DefinitionCache/generateKey.html">generateKey</a>()
+                    </li><li>public void <a title="HTMLPurifier_DefinitionCache" href="../classes/HTMLPurifier_DefinitionCache/isOld.html">isOld</a>()
+                    </li><li>public Boolean <a title="HTMLPurifier_DefinitionCache" href="../classes/HTMLPurifier_DefinitionCache/checkDefType.html">checkDefType</a>()
+                    </li><li>public abstract void <a title="HTMLPurifier_DefinitionCache" href="../classes/HTMLPurifier_DefinitionCache/add.html">add</a>()
+                    </li><li>public abstract void <a title="HTMLPurifier_DefinitionCache" href="../classes/HTMLPurifier_DefinitionCache/set.html">set</a>()
+                    </li><li>public abstract void <a title="HTMLPurifier_DefinitionCache" href="../classes/HTMLPurifier_DefinitionCache/replace.html">replace</a>()
+                    </li><li>public abstract void <a title="HTMLPurifier_DefinitionCache" href="../classes/HTMLPurifier_DefinitionCache/get.html">get</a>()
+                    </li><li>public abstract void <a title="HTMLPurifier_DefinitionCache" href="../classes/HTMLPurifier_DefinitionCache/remove.html">remove</a>()
+                    </li><li>public abstract void <a title="HTMLPurifier_DefinitionCache" href="../classes/HTMLPurifier_DefinitionCache/flush.html">flush</a>()
+                    </li><li>public abstract void <a title="HTMLPurifier_DefinitionCache" href="../classes/HTMLPurifier_DefinitionCache/cleanup.html">cleanup</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="tasks">Tasks</h2>
+        <table class="styled">
+          <thead>
+            <tr>
+              <th style="width:3em;">Line</th>
+              <th>Task</th>
+            </tr>
+          </thead>
+          <tr>
+            <td class="nummeric">11+</td>
+            <td>Create a separate maintenance file advanced users can use to</td>
+          </tr>
+          <tr>
+            <td class="nummeric">11+</td>
+            <td>Implement memcached</td>
+          </tr>
+        </table>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>public</h4>
+          <ul class="members">
+            <li id="type">
+              <strong>$type</strong>
+            </li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>public</h4>
+          <ul>
+            <li id="__construct">
+              <a title="HTMLPurifier_DefinitionCache" href="../classes/HTMLPurifier_DefinitionCache/__construct.html">__construct()</a>
+            </li>
+            <li id="add"><a title="HTMLPurifier_DefinitionCache" href="../classes/HTMLPurifier_DefinitionCache/add.html">add()</a>
+                — Adds a definition object to the cache</li>
+            <li id="checkDefType"><a title="HTMLPurifier_DefinitionCache" href="../classes/HTMLPurifier_DefinitionCache/checkDefType.html">checkDefType()</a>
+                — Checks if a definition's type jives with the cache's type</li>
+            <li id="cleanup"><a title="HTMLPurifier_DefinitionCache" href="../classes/HTMLPurifier_DefinitionCache/cleanup.html">cleanup()</a>
+                — Clears all expired (older version or revision) objects from cache</li>
+            <li id="flush"><a title="HTMLPurifier_DefinitionCache" href="../classes/HTMLPurifier_DefinitionCache/flush.html">flush()</a>
+                — Clears all objects from cache</li>
+            <li id="generateKey"><a title="HTMLPurifier_DefinitionCache" href="../classes/HTMLPurifier_DefinitionCache/generateKey.html">generateKey()</a>
+                — Generates a unique identifier for a particular configuration</li>
+            <li id="get"><a title="HTMLPurifier_DefinitionCache" href="../classes/HTMLPurifier_DefinitionCache/get.html">get()</a>
+                — Retrieves a definition object from the cache</li>
+            <li id="isOld"><a title="HTMLPurifier_DefinitionCache" href="../classes/HTMLPurifier_DefinitionCache/isOld.html">isOld()</a>
+                — Tests whether or not a key is old with respect to the configuration's version and revision number.</li>
+            <li id="remove"><a title="HTMLPurifier_DefinitionCache" href="../classes/HTMLPurifier_DefinitionCache/remove.html">remove()</a>
+                — Removes a definition object to the cache</li>
+            <li id="replace"><a title="HTMLPurifier_DefinitionCache" href="../classes/HTMLPurifier_DefinitionCache/replace.html">replace()</a>
+                — Replace an object in the cache</li>
+            <li id="set"><a title="HTMLPurifier_DefinitionCache" href="../classes/HTMLPurifier_DefinitionCache/set.html">set()</a>
+                — Unconditionally saves a definition object to the cache</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.9.0 - Copyright (C) 2010 - 2017 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

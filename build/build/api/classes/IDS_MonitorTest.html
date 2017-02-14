@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - IDS_MonitorTest</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.html">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.html">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.html">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.html">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.html">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.html">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.html">Classes</a>
+          </li>
+          <li class="separator">IDS_MonitorTest</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/external/phpids/0.6/tests/IDS/MonitorTest.php.html#line27">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>IDS_MonitorTest</h1>
+        <h4/>
+        <p/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class IDS_MonitorTest
+                extends PHPUnit_Framework_TestCase
+            {<br/><ul class="none"><li>// methods</li><li>public void <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/setUp.html">setUp</a>()
+                    </li><li>public void <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testGetHTML.html">testGetHTML</a>()
+                    </li><li>public void <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testGetStorage.html">testGetStorage</a>()
+                    </li><li>public void <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testRunWithTags.html">testRunWithTags</a>()
+                    </li><li>public void <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testRun.html">testRun</a>()
+                    </li><li>public void <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testNoResult.html">testNoResult</a>()
+                    </li><li>public void <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testSetExceptionsString.html">testSetExceptionsString</a>()
+                    </li><li>public void <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testSetExceptionsArray.html">testSetExceptionsArray</a>()
+                    </li><li>public void <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testList.html">testList</a>()
+                    </li><li>public void <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testListWithJsonFilters.html">testListWithJsonFilters</a>()
+                    </li><li>public void <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testListWithKeyScanning.html">testListWithKeyScanning</a>()
+                    </li><li>public void <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testListWithException.html">testListWithException</a>()
+                    </li><li>public void <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testListWithSubKeys.html">testListWithSubKeys</a>()
+                    </li><li>public void <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testListWithSubKeysAndExceptions.html">testListWithSubKeysAndExceptions</a>()
+                    </li><li>public void <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testAttributeBreakerList.html">testAttributeBreakerList</a>()
+                    </li><li>public void <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testCommentList.html">testCommentList</a>()
+                    </li><li>public void <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testConcatenatedXSSList.html">testConcatenatedXSSList</a>()
+                    </li><li>public void <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testConcatenatedXSSList2.html">testConcatenatedXSSList2</a>()
+                    </li><li>public void <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testXMLPredicateXSSList.html">testXMLPredicateXSSList</a>()
+                    </li><li>public void <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testConditionalCompilationXSSList.html">testConditionalCompilationXSSList</a>()
+                    </li><li>public void <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testXSSList.html">testXSSList</a>()
+                    </li><li>public void <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testSelfContainedXSSList.html">testSelfContainedXSSList</a>()
+                    </li><li>public void <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testSQLIList.html">testSQLIList</a>()
+                    </li><li>public void <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testSQLIList2.html">testSQLIList2</a>()
+                    </li><li>public void <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testSQLIList3.html">testSQLIList3</a>()
+                    </li><li>public void <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testSQLIList4.html">testSQLIList4</a>()
+                    </li><li>public void <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testSQLIList5.html">testSQLIList5</a>()
+                    </li><li>public void <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testSQLIList6.html">testSQLIList6</a>()
+                    </li><li>public void <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testDTList.html">testDTList</a>()
+                    </li><li>public void <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testURIList.html">testURIList</a>()
+                    </li><li>public void <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testRFEList.html">testRFEList</a>()
+                    </li><li>public void <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testUTF7List.html">testUTF7List</a>()
+                    </li><li>public void <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testBase64CCConverter.html">testBase64CCConverter</a>()
+                    </li><li>public void <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testDecimalCCConverter.html">testDecimalCCConverter</a>()
+                    </li><li>public void <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testOctalCCConverter.html">testOctalCCConverter</a>()
+                    </li><li>public void <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testHexCCConverter.html">testHexCCConverter</a>()
+                    </li><li>public void <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testLDAPInjectionList.html">testLDAPInjectionList</a>()
+                    </li><li>public void <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testAllowedHTMLScanningPositive.html">testAllowedHTMLScanningPositive</a>()
+                    </li><li>public void <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testAllowedHTMLScanningNegative.html">testAllowedHTMLScanningNegative</a>()
+                    </li><li>public void <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testJSONScanning.html">testJSONScanning</a>()
+                    </li><li>public void <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testForFalseAlerts.html">testForFalseAlerts</a>()
+                    </li><li>private void <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/_testForPlainEvent.html">_testForPlainEvent</a>()
+                    </li><li>public void <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/assertImpact.html">assertImpact</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Extends</h4>
+          <ul>
+            <li>PHPUnit_Framework_TestCase</li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>private</h4>
+          <ul>
+            <li id="_testForPlainEvent"><a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/_testForPlainEvent.html">_testForPlainEvent()</a>
+                — This method checks for the plain event of every single exploit array item</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="assertImpact">
+              <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/assertImpact.html">assertImpact()</a>
+            </li>
+            <li id="setUp">
+              <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/setUp.html">setUp()</a>
+            </li>
+            <li id="testAllowedHTMLScanningNegative">
+              <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testAllowedHTMLScanningNegative.html">testAllowedHTMLScanningNegative()</a>
+            </li>
+            <li id="testAllowedHTMLScanningPositive">
+              <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testAllowedHTMLScanningPositive.html">testAllowedHTMLScanningPositive()</a>
+            </li>
+            <li id="testAttributeBreakerList">
+              <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testAttributeBreakerList.html">testAttributeBreakerList()</a>
+            </li>
+            <li id="testBase64CCConverter">
+              <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testBase64CCConverter.html">testBase64CCConverter()</a>
+            </li>
+            <li id="testCommentList">
+              <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testCommentList.html">testCommentList()</a>
+            </li>
+            <li id="testConcatenatedXSSList">
+              <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testConcatenatedXSSList.html">testConcatenatedXSSList()</a>
+            </li>
+            <li id="testConcatenatedXSSList2">
+              <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testConcatenatedXSSList2.html">testConcatenatedXSSList2()</a>
+            </li>
+            <li id="testConditionalCompilationXSSList">
+              <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testConditionalCompilationXSSList.html">testConditionalCompilationXSSList()</a>
+            </li>
+            <li id="testDTList">
+              <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testDTList.html">testDTList()</a>
+            </li>
+            <li id="testDecimalCCConverter">
+              <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testDecimalCCConverter.html">testDecimalCCConverter()</a>
+            </li>
+            <li id="testForFalseAlerts">
+              <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testForFalseAlerts.html">testForFalseAlerts()</a>
+            </li>
+            <li id="testGetHTML">
+              <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testGetHTML.html">testGetHTML()</a>
+            </li>
+            <li id="testGetStorage">
+              <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testGetStorage.html">testGetStorage()</a>
+            </li>
+            <li id="testHexCCConverter">
+              <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testHexCCConverter.html">testHexCCConverter()</a>
+            </li>
+            <li id="testJSONScanning">
+              <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testJSONScanning.html">testJSONScanning()</a>
+            </li>
+            <li id="testLDAPInjectionList">
+              <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testLDAPInjectionList.html">testLDAPInjectionList()</a>
+            </li>
+            <li id="testList">
+              <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testList.html">testList()</a>
+            </li>
+            <li id="testListWithException">
+              <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testListWithException.html">testListWithException()</a>
+            </li>
+            <li id="testListWithJsonFilters">
+              <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testListWithJsonFilters.html">testListWithJsonFilters()</a>
+            </li>
+            <li id="testListWithKeyScanning">
+              <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testListWithKeyScanning.html">testListWithKeyScanning()</a>
+            </li>
+            <li id="testListWithSubKeys">
+              <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testListWithSubKeys.html">testListWithSubKeys()</a>
+            </li>
+            <li id="testListWithSubKeysAndExceptions">
+              <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testListWithSubKeysAndExceptions.html">testListWithSubKeysAndExceptions()</a>
+            </li>
+            <li id="testNoResult">
+              <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testNoResult.html">testNoResult()</a>
+            </li>
+            <li id="testOctalCCConverter">
+              <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testOctalCCConverter.html">testOctalCCConverter()</a>
+            </li>
+            <li id="testRFEList">
+              <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testRFEList.html">testRFEList()</a>
+            </li>
+            <li id="testRun">
+              <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testRun.html">testRun()</a>
+            </li>
+            <li id="testRunWithTags">
+              <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testRunWithTags.html">testRunWithTags()</a>
+            </li>
+            <li id="testSQLIList">
+              <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testSQLIList.html">testSQLIList()</a>
+            </li>
+            <li id="testSQLIList2">
+              <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testSQLIList2.html">testSQLIList2()</a>
+            </li>
+            <li id="testSQLIList3">
+              <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testSQLIList3.html">testSQLIList3()</a>
+            </li>
+            <li id="testSQLIList4">
+              <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testSQLIList4.html">testSQLIList4()</a>
+            </li>
+            <li id="testSQLIList5">
+              <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testSQLIList5.html">testSQLIList5()</a>
+            </li>
+            <li id="testSQLIList6">
+              <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testSQLIList6.html">testSQLIList6()</a>
+            </li>
+            <li id="testSelfContainedXSSList">
+              <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testSelfContainedXSSList.html">testSelfContainedXSSList()</a>
+            </li>
+            <li id="testSetExceptionsArray">
+              <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testSetExceptionsArray.html">testSetExceptionsArray()</a>
+            </li>
+            <li id="testSetExceptionsString">
+              <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testSetExceptionsString.html">testSetExceptionsString()</a>
+            </li>
+            <li id="testURIList">
+              <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testURIList.html">testURIList()</a>
+            </li>
+            <li id="testUTF7List">
+              <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testUTF7List.html">testUTF7List()</a>
+            </li>
+            <li id="testXMLPredicateXSSList">
+              <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testXMLPredicateXSSList.html">testXMLPredicateXSSList()</a>
+            </li>
+            <li id="testXSSList">
+              <a title="IDS_MonitorTest" href="../classes/IDS_MonitorTest/testXSSList.html">testXSSList()</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.9.0 - Copyright (C) 2010 - 2017 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>
